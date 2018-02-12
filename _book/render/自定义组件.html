@@ -1,0 +1,1122 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>render自定义组件 | 移动执法3.0开发文档</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        <meta name="identifier" content="978-3-16-148410-0" scheme="ISBN">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../render/插件开发.html" />
+    
+    
+    <link rel="prev" href="../components/iselect.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.2"
+        data-chapter-title="render自定义组件"
+        data-filepath="render/自定义组件.md"
+        data-basepath=".."
+        data-revision="Mon Jun 06 2016 16:02:13 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        介紹
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="webFrontEnd.html">
+            
+                
+                    <a href="../webFrontEnd.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        移动执法3.0前端文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="render/组件使用基础说明.html">
+            
+                
+                    <a href="../render/组件使用基础说明.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        render组件使用文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="components/form.html">
+            
+                
+                    <a href="../components/form.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        基本表单美化组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="components/table.html">
+            
+                
+                    <a href="../components/table.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        table相关组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="components/tabs.html">
+            
+                
+                    <a href="../components/tabs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.3.</b>
+                        
+                        tabs选项卡
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="components/page.html">
+            
+                
+                    <a href="../components/page.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.4.</b>
+                        
+                        page分页组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="components/pin.html">
+            
+                
+                    <a href="../components/pin.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.5.</b>
+                        
+                        pin固定元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="components/loadPage.html">
+            
+                
+                    <a href="../components/loadPage.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.6.</b>
+                        
+                        loadPage加载页面
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="components/search.html">
+            
+                
+                    <a href="../components/search.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.7.</b>
+                        
+                        search搜索框
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="components/icheck.html">
+            
+                
+                    <a href="../components/icheck.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.8.</b>
+                        
+                        icheck按钮组
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="components/iselect.html">
+            
+                
+                    <a href="../components/iselect.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.9.</b>
+                        
+                        iselct高级下拉框
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="render/自定义组件.html">
+            
+                
+                    <a href="../render/自定义组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        render自定义组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="render/插件开发.html">
+            
+                
+                    <a href="../render/插件开发.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        render插件开发
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="modules/页面模块化概述.html">
+            
+                
+                    <a href="../modules/页面模块化概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        render-module页面模块化开发
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="modules/base.html">
+            
+                
+                    <a href="../modules/base.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                        base模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="modules/datagrid.html">
+            
+                
+                    <a href="../modules/datagrid.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.2.</b>
+                        
+                        datagrid模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="modules/form.html">
+            
+                
+                    <a href="../modules/form.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.3.</b>
+                        
+                        form模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="modules/subList.html">
+            
+                
+                    <a href="../modules/subList.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.4.</b>
+                        
+                        subList模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="modules/list.html">
+            
+                
+                    <a href="../modules/list.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.5.</b>
+                        
+                        list模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="modules/sideList.html">
+            
+                
+                    <a href="../modules/sideList.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.6.</b>
+                        
+                        sideList模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="modules/sideMenu.html">
+            
+                
+                    <a href="../modules/sideMenu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.7.</b>
+                        
+                        sideMenu模块
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="util/commonJs.html">
+            
+                
+                    <a href="../util/commonJs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        common工具库
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="util/layer使用.html">
+            
+                
+                    <a href="../util/layer使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        layer弹窗
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="util/ztree使用.html">
+            
+                
+                    <a href="../util/ztree使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        ztree
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="java/java.html">
+            
+                
+                    <a href="../java/java.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        后台代码封装文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="java/GenericService使用.html">
+            
+                
+                    <a href="../java/GenericService使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        GenericService使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="java/最简单的ORM映射.html">
+            
+                
+                    <a href="../java/最简单的ORM映射.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        最简单的ORM映射
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="java/附件管理.html">
+            
+                
+                    <a href="../java/附件管理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        附件管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="java/污染源信息修改记录封装.html">
+            
+                
+                    <a href="../java/污染源信息修改记录封装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        污染源信息修改记录封装
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="webapp/webapp.html">
+            
+                
+                    <a href="../webapp/webapp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        webapp开发文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="webapp/移动web页面开发.html">
+            
+                
+                    <a href="../webapp/移动web页面开发.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        移动web页面开发
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="webapp/缓存设计.html">
+            
+                
+                    <a href="../webapp/缓存设计.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        缓存设计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="webapp/webapp开发基础.html">
+            
+                
+                    <a href="../webapp/webapp开发基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        webapp开发基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="webapp/webapp性能优化.html">
+            
+                
+                    <a href="../webapp/webapp性能优化.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        webapp性能优化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="webapp/vue+webpack开发.html">
+            
+                
+                    <a href="../webapp/vue+webpack开发.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        vue+webpack开发
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="workNotes/workNotes.html">
+            
+                
+                    <a href="../workNotes/workNotes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        实施文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="workNotes/ydzfv3.html">
+            
+                
+                    <a href="../workNotes/ydzfv3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        移动执法3.0
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="workNotes/sjcc.html">
+            
+                
+                    <a href="../workNotes/sjcc.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        随机抽查
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="html5/html5.html">
+            
+                
+                    <a href="../html5/html5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        HTML5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="html5/html5语义化标签和表单.html">
+            
+                
+                    <a href="../html5/html5语义化标签和表单.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        语义化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="html5/HTML5离线存储.html">
+            
+                
+                    <a href="../html5/HTML5离线存储.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        离线存储
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="html5/设备api.html">
+            
+                
+                    <a href="../html5/设备api.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        设备接口
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="html5/网络连接.html">
+            
+                
+                    <a href="../html5/网络连接.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        网络连接
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="html5/多媒体.html">
+            
+                
+                    <a href="../html5/多媒体.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        多媒体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="html5/svg_canvas_webgl.html">
+            
+                
+                    <a href="../html5/svg_canvas_webgl.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        3D，图形和效果
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="html5/性能和集成.html">
+            
+                
+                    <a href="../html5/性能和集成.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        性能&amp;集成
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="html5/CSS3.html">
+            
+                
+                    <a href="../html5/CSS3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        CSS3
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="javascript/javascript.html">
+            
+                
+                    <a href="../javascript/javascript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        javascript文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="javascript/javascript作用域和闭包.html">
+            
+                
+                    <a href="../javascript/javascript作用域和闭包.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        javascript作用域和闭包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="javascript/javascript模块化编程.html">
+            
+                
+                    <a href="../javascript/javascript模块化编程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        javascript模块化编程（一）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="javascript/javascript模块化规范（commonJs,AMD,CMD）.html">
+            
+                
+                    <a href="../javascript/javascript模块化规范（commonJs,AMD,CMD）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        javascript模块化编程（二）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="javascript/javascript面向对象编程.html">
+            
+                
+                    <a href="../javascript/javascript面向对象编程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        javascript面向对象编程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="javascript/javascript异步处理.html">
+            
+                
+                    <a href="../javascript/javascript异步处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        javascript异步处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="javascript/javascript数据驱动页面.html">
+            
+                
+                    <a href="../javascript/javascript数据驱动页面.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        javascript数据驱动页面
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="javascript/如何写一个完善的jquery ui组件.html">
+            
+                
+                    <a href="../javascript/如何写一个完善的jquery ui组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        如何写一个完善的jquery ui组件
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >移动执法3.0开发文档</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x7EC4;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;">&#x7EC4;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;</h1>
+<p><strong>render</strong> &#x5728;&#x9875;&#x9762;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x626B;&#x63CF;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5F53;&#x53D1;&#x73B0;&#x5143;&#x7D20;&#x4E0A;&#x5E26;&#x6709; <strong>render</strong> &#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x4F1A;&#x627E;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x7EC4;&#x4EF6;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x3002;&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x9875;&#x9762;&#x7684;&#x6E32;&#x67D3;&#x903B;&#x8F91;&#x662F;&#x5378;&#x8F7D;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x4E2D;&#x3002;<strong>render</strong> &#x5BF9;&#x4E8E;&#x7EC4;&#x4EF6;&#x7684;&#x5B9A;&#x4E49;&#x6211;&#x662F;&#x501F;&#x9274; <strong>jqueryui</strong> &#x7684; <strong><a href="https://jqueryui.com/widget/" target="_blank">widget</a></strong> &#x601D;&#x60F3;&#xFF0C;&#x63D0;&#x4F9B;&#x5B8C;&#x5584;&#x7684; &#x7EC4;&#x4EF6;&#x7EE7;&#x627F;&#x548C;&#x6DF7;&#x5408;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD8;&#x662F;&#x6709;&#x53C2;&#x6570;&#x3001;&#x4E8B;&#x4EF6;&#x7B49;&#x7B49;&#x5904;&#x7406;&#x3002;</p>
+<h2 id="&#x6700;&#x7B80;&#x5355;&#x7684;&#x7EC4;&#x4EF6;">&#x6700;&#x7B80;&#x5355;&#x7684;&#x7EC4;&#x4EF6;</h2>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;hello &#x6309;&#x94AE;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C; &#x5F53;&#x70B9;&#x51FB;&#x6309;&#x94AE;&#x65F6;&#x4F1A;&#x5728;&#x6309;&#x94AE;&#x4E4B;&#x524D;&#x663E;&#x793A;hello world</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//&#x7EC4;&#x4EF6;&#x540D;&#x79F0;hello</span>
+$.render(<span class="hljs-string">&apos;hello&apos;</span>, {
+    options: {
+        msg: <span class="hljs-string">&apos;hello word&apos;</span>
+    },
+    createDom: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element, options</span>)</span>{
+        <span class="hljs-keyword">return</span> $(<span class="hljs-string">&apos;&lt;span&gt;&apos;</span> + options.msg + <span class="hljs-string">&apos;&lt;/span&gt;&apos;</span>).insertAfter(element)[<span class="hljs-number">0</span>];
+    },
+    init: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+        <span class="hljs-comment">//this.$target &#x4EE3;&#x8868; render&#x6807;&#x8BB0;&#x7684;&#x5143;&#x7D20;JQuery&#x5BF9;&#x8C61;</span>
+        <span class="hljs-keyword">this</span>.$target.on(<span class="hljs-string">&apos;click&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            self.$element.toggle(); <span class="hljs-comment">//$element createDom&#x8FD4;&#x56DE;&#x5143;&#x7D20;&#x7684;JQuery&#x5BF9;&#x8C61;</span>
+        })
+    },
+    destory: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-comment">//&#x5F53;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x9500;&#x6BC1;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x6B21;&#x65B9;&#x6CD5;</span>
+    }
+})
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x65F6;&#x8DDF;&#x4E4B;&#x524D;&#x4E00;&#x6837;&#x5199;&#x5728;&#x6807;&#x7B7E;&#x91CC;&#x5373;&#x53EF;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">render</span>=<span class="hljs-value">&quot;hello&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-comment">&lt;!--&#x81EA;&#x5B9A;&#x4E49;msg&#x5185;&#x5BB9;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">render</span>=<span class="hljs-value">&quot;hello&quot;</span> <span class="hljs-attribute">options</span>=<span class="hljs-value">&quot;msg:&apos;hello &#x8FD9;&#x4E16;&#x754C;&apos;&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+</code></pre>
+<h2 id="options">options</h2>
+<p>&#x7531;&#x4E0A;&#x8FF0;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;options&#x51B3;&#x5B9A;&#x4E86;&#x7EC4;&#x4EF6;&#x7684;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x4F7F;&#x7528;&#x7EC4;&#x4EF6;&#x662F;&#xFF0C;&#x6307;&#x5B9A;&#x4E86;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x5C31;&#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x503C;&#xFF0C;&#x6CA1;&#x6709;&#x5219;&#x53D6;&#x9ED8;&#x8BA4;&#x503C;&#x3002;&#x5728;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x5C3D;&#x91CF;&#x8003;&#x8651;&#x597D;&#x5E38;&#x7528;&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x7ED9;&#x4E88;&#x76F8;&#x5E94;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x8BA9;&#x5F00;&#x53D1;&#x65F6;&#x5C3D;&#x91CF;&#x5C11;&#x7684;&#x914D;&#x7F6E;&#x5219;&#x53EF;&#x5B8C;&#x6210;&#x529F;&#x80FD;&#x3002;</p>
+<hr>
+<p>&#x5728;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x8BBF;&#x95EE;options&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>this.options&#x8BBF;&#x95EE;</strong></p>
+<h2 id="createdom">createDom</h2>
+<p>&#x8BA9;&#x7EC4;&#x4EF6;&#x9700;&#x8981;&#x989D;&#x5916;&#x521B;&#x5EFA;dom&#x6216;&#x662F;&#x6539;&#x53D8;&#x73B0;&#x6709;&#x7684;dom&#x7ED3;&#x6784;&#x662F;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>createdDom</strong> ,&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x521B;&#x5EFA;&#x6216;&#x662F;&#x4FEE;&#x6539;dom&#x7684;&#x64CD;&#x4F5C;&#x5199;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x5C06;&#x65B0;&#x7684;dom&#x8FD4;&#x56DE;&#x56DE;&#x6765;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">this</span>.$element <span class="hljs-comment">//&#x8FD4;&#x56DE;&#x7684;&#x65B0;&#x7684;dom&#x7684;jQuery&#x5BF9;&#x8C61;</span>
+<span class="hljs-keyword">this</span>.$target <span class="hljs-comment">//&#x539F;&#x59CB;dom&#x7684;jQuery&#x5BF9;&#x8C61;</span>
+
+<span class="hljs-keyword">this</span>.targetElement <span class="hljs-comment">//&#x539F;&#x59CB;dom</span>
+<span class="hljs-keyword">this</span>.element      <span class="hljs-comment">// &#x8FD4;&#x56DE;&#x7684;&#x65B0;&#x7684;dom</span>
+</code></pre>
+<h2 id="init-&#x548C;-destory">init &#x548C; destory</h2>
+<p>&#x7EC4;&#x4EF6;&#x5728;createDom&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;init&#x65B9;&#x6CD5;&#x5B8C;&#x6210;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;&#x5FC5;&#x9700;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x91CC;&#x6700;&#x597D;&#x7528;&#x6765; <strong>&#x7ED1;&#x5B9A;&#x4E8B;&#x4EF6;</strong> &#x548C; <strong>&#x521D;&#x59CB;&#x5316;&#x7684;&#x6570;&#x636E;&#x52A0;&#x8F7D;</strong></p>
+<hr>
+<p>&#x5F53;&#x7EC4;&#x4EF6;&#x88AB;jq&#x7684; <strong>remove</strong> &#x65B9;&#x6CD5;&#x79FB;&#x9664;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x8C03;&#x7528;destory&#x65B9;&#x6CD5;&#xFF08;&#x8FD9;&#x91CC;&#x6539;&#x5199;&#x8FC7;jq&#x7684;&#x4EE3;&#x7801;&#xFF09;, &#x5982;&#x679C;&#x6CA1;&#x6709;&#x4E00;&#x4E9B;&#x8D44;&#x6E90;&#x9700;&#x8981;&#x91CA;&#x653E;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x4E0D;&#x5199;.
+<strong>destory</strong> &#x91CC;&#x5E94;&#x5904;&#x89E3;&#x7ED1;&#x4E00;&#x4E9B;&#x4E0E;&#x7EC4;&#x4EF6;&#x5185;dom&#x65E0;&#x5173;&#x7684;&#x4E8B;&#x4EF6;&#xFF0C; &#x4F8B;&#x5982;&#xFF1A; window&#x4E8B;&#x4EF6;&#x6216;&#x662F;&#x522B;&#x7684;dom&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#x6E05;&#x7A7A;&#x4E00;&#x4E9B;&#x7F13;&#x5B58;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x96E8;&#x591A;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x5185;&#x5B58;&#x6D88;&#x8017;&#x3002;</p>
+<h2 id="&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;">&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;</h2>
+<p>&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x5728;&#x5916;&#x8FB9;&#x662F;&#x65E0;&#x6CD5;&#x76D1;&#x542C;&#x5230;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x5F53;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E8B;&#x4EF6;&#x540D;&#x4EE5; <strong>&#x7EC4;&#x4EF6;&#x540D;.&#x4E8B;&#x4EF6;&#x540D;</strong> &#x65B9;&#x5F0F;&#x547D;&#x540D;&#xFF0C;&#x5E76;&#x4FDD;&#x8BC1;&#x7528; <strong>targetElement</strong> &#x89E6;&#x53D1;&#xFF0C;&#x8FD9;&#x4E2A;&#x90E8;&#x5206;&#x65B9;&#x6CD5;&#x5DF2;&#x7ECF;&#x5C01;&#x88C5;&#x597D;&#x4E86;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">this</span>._trigger(<span class="hljs-string">&apos;event&apos;</span>); <span class="hljs-comment">//&#x8FD9;&#x91CC;&#x4F1A;&#x7528;targetElement&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#xFF0C;&#x5E76;&#x81EA;&#x52A8;&#x52A0;&#x4E0A;&#x7EC4;&#x4EF6;&#x540D;&#x79F0;</span>
+</code></pre>
+<h2 id="&#x5B9A;&#x4E49;&#x8868;&#x5355;&#x7EC4;&#x4EF6;">&#x5B9A;&#x4E49;&#x8868;&#x5355;&#x7EC4;&#x4EF6;</h2>
+<p>&#x8868;&#x5355;&#x7EC4;&#x4EF6;&#x548C;&#x57FA;&#x7840;&#x7684;&#x7EC4;&#x4EF6;&#x6709;&#x4E9B;&#x4E0D;&#x540C;</p>
+<blockquote>
+<ol>
+<li>&#x5FC5;&#x987B;&#x7EE7;&#x627F;form&#x7EC4;&#x4EF6;</li>
+<li>&#x52A0;&#x5165;&#x4E86;&#x66F4;&#x591A;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x7684;&#x65B9;&#x6CD5;</li>
+</ol>
+</blockquote>
+<pre><code class="lang-javascript">$.render(<span class="hljs-string">&apos;iText&apos;</span>, <span class="hljs-string">&apos;form&apos;</span>, {
+    options: {
+
+    },
+    init: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">this</span>._super.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>); <span class="hljs-comment">//&#x8C03;&#x7528;&#x7236;&#x7EC4;&#x4EF6;&#x7684;&#x6B64;&#x65B9;&#x6CD5;</span>
+    },
+    change: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-comment">//targetElement &#x503C;&#x6539;&#x53D8;&#x65F6;&#x8C03;&#x7528;&#x65B9;&#x6CD5;</span>
+        <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x4FEE;&#x6539;&#x8FC7;jq&#x7684; val&#x65B9;&#x6CD5;&#xFF0C;&#x5F53;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x6539;&#x53D8;&#x503C;&#x5F97;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x7EC4;&#x4EF6;&#x7684;change&#x65B9;&#x6CD5; &#x6B64;&#x5904;&#x9700;&#x8981;&#x52A0;&#x4E0A;&#xFF0C;&#x4FEE;&#x6539;dom&#x903B;&#x8F91;</span>
+    },
+    focus: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-comment">//&#x5143;&#x7D20;&#x83B7;&#x53D6;&#x7126;&#x70B9;&#x65F6;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;</span>
+    },
+    blur: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-comment">//&#x5143;&#x7D20;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x65F6;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;</span>
+    },
+    valid: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">valid, msg</span>)</span>{
+        <span class="hljs-comment">//&#x8FD9;&#x91CC;&#x4FEE;&#x6539;&#x4E86;easyui&#x7684; &#x9A8C;&#x8BC1;&#x65B9;&#x6CD5;&#xFF0C;&#x5F53;&#x5143;&#x7D20;&#x8981;&#x9A8C;&#x8BC1;&#x65F6;&#x4F1A;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;</span>
+        <span class="hljs-comment">//valid &#x662F;&#x5426;&#x9A8C;&#x8BC1;&#x901A;&#x8FC7;</span>
+        <span class="hljs-comment">//msg &#x9A8C;&#x8BC1;&#x63D0;&#x793A;&#x4FE1;&#x606F;</span>
+    }
+
+})
+</code></pre>
+<p>form&#x8868;&#x5355;&#x5B9A;&#x4E49;&#x6A21;&#x677F;&#x5C31;&#x662F;&#x4E0A;&#x9762;&#x8FD9;&#x6837;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C; focus&#x3001;blur, valid&#x5728;form&#x7EC4;&#x4EF6;&#x4E2D;&#x90FD;&#x6709;&#x505A;&#x5904;&#x7406;&#xFF0C;&#x975E;&#x5FC5;&#x8981;&#x60C5;&#x51B5;&#x4E0D;&#x5FC5;&#x91CD;&#x5199;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../components/iselect.html" class="navigation navigation-prev " aria-label="Previous page: iselct高级下拉框"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../render/插件开发.html" class="navigation navigation-next " aria-label="Next page: render插件开发"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

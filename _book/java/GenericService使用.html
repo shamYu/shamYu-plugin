@@ -1,0 +1,1276 @@
+<!DOCTYPE HTML>
+<html lang="zh-tw" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>GenericService使用 | 移动执法3.0开发文档</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        <meta name="identifier" content="978-3-16-148410-0" scheme="ISBN">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../java/最简单的ORM映射.html" />
+    
+    
+    <link rel="prev" href="../java/java.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.1"
+        data-chapter-title="GenericService使用"
+        data-filepath="java/GenericService使用.md"
+        data-basepath=".."
+        data-revision="Mon Jun 06 2016 16:02:13 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        介紹
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="webFrontEnd.html">
+            
+                
+                    <a href="../webFrontEnd.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        移动执法3.0前端文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="render/组件使用基础说明.html">
+            
+                
+                    <a href="../render/组件使用基础说明.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        render组件使用文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="components/form.html">
+            
+                
+                    <a href="../components/form.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        基本表单美化组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="components/table.html">
+            
+                
+                    <a href="../components/table.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        table相关组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="components/tabs.html">
+            
+                
+                    <a href="../components/tabs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.3.</b>
+                        
+                        tabs选项卡
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="components/page.html">
+            
+                
+                    <a href="../components/page.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.4.</b>
+                        
+                        page分页组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="components/pin.html">
+            
+                
+                    <a href="../components/pin.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.5.</b>
+                        
+                        pin固定元素
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="components/loadPage.html">
+            
+                
+                    <a href="../components/loadPage.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.6.</b>
+                        
+                        loadPage加载页面
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="components/search.html">
+            
+                
+                    <a href="../components/search.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.7.</b>
+                        
+                        search搜索框
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" data-path="components/icheck.html">
+            
+                
+                    <a href="../components/icheck.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.8.</b>
+                        
+                        icheck按钮组
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="components/iselect.html">
+            
+                
+                    <a href="../components/iselect.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.9.</b>
+                        
+                        iselct高级下拉框
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="render/自定义组件.html">
+            
+                
+                    <a href="../render/自定义组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        render自定义组件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="render/插件开发.html">
+            
+                
+                    <a href="../render/插件开发.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        render插件开发
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="modules/页面模块化概述.html">
+            
+                
+                    <a href="../modules/页面模块化概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        render-module页面模块化开发
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="modules/base.html">
+            
+                
+                    <a href="../modules/base.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                        base模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="modules/datagrid.html">
+            
+                
+                    <a href="../modules/datagrid.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.2.</b>
+                        
+                        datagrid模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="modules/form.html">
+            
+                
+                    <a href="../modules/form.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.3.</b>
+                        
+                        form模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="modules/subList.html">
+            
+                
+                    <a href="../modules/subList.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.4.</b>
+                        
+                        subList模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="modules/list.html">
+            
+                
+                    <a href="../modules/list.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.5.</b>
+                        
+                        list模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="modules/sideList.html">
+            
+                
+                    <a href="../modules/sideList.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.6.</b>
+                        
+                        sideList模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="modules/sideMenu.html">
+            
+                
+                    <a href="../modules/sideMenu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.7.</b>
+                        
+                        sideMenu模块
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="util/commonJs.html">
+            
+                
+                    <a href="../util/commonJs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        common工具库
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="util/layer使用.html">
+            
+                
+                    <a href="../util/layer使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        layer弹窗
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="util/ztree使用.html">
+            
+                
+                    <a href="../util/ztree使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        ztree
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="java/java.html">
+            
+                
+                    <a href="../java/java.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        后台代码封装文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1" data-path="java/GenericService使用.html">
+            
+                
+                    <a href="../java/GenericService使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        GenericService使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="java/最简单的ORM映射.html">
+            
+                
+                    <a href="../java/最简单的ORM映射.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        最简单的ORM映射
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="java/附件管理.html">
+            
+                
+                    <a href="../java/附件管理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        附件管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="java/污染源信息修改记录封装.html">
+            
+                
+                    <a href="../java/污染源信息修改记录封装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        污染源信息修改记录封装
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="webapp/webapp.html">
+            
+                
+                    <a href="../webapp/webapp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        webapp开发文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="webapp/移动web页面开发.html">
+            
+                
+                    <a href="../webapp/移动web页面开发.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        移动web页面开发
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="webapp/缓存设计.html">
+            
+                
+                    <a href="../webapp/缓存设计.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        缓存设计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="webapp/webapp开发基础.html">
+            
+                
+                    <a href="../webapp/webapp开发基础.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        webapp开发基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="webapp/webapp性能优化.html">
+            
+                
+                    <a href="../webapp/webapp性能优化.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        webapp性能优化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="webapp/vue+webpack开发.html">
+            
+                
+                    <a href="../webapp/vue+webpack开发.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        vue+webpack开发
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="workNotes/workNotes.html">
+            
+                
+                    <a href="../workNotes/workNotes.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        实施文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="workNotes/ydzfv3.html">
+            
+                
+                    <a href="../workNotes/ydzfv3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        移动执法3.0
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="workNotes/sjcc.html">
+            
+                
+                    <a href="../workNotes/sjcc.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        随机抽查
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="html5/html5.html">
+            
+                
+                    <a href="../html5/html5.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        HTML5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="html5/html5语义化标签和表单.html">
+            
+                
+                    <a href="../html5/html5语义化标签和表单.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        语义化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="html5/HTML5离线存储.html">
+            
+                
+                    <a href="../html5/HTML5离线存储.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        离线存储
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="html5/设备api.html">
+            
+                
+                    <a href="../html5/设备api.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        设备接口
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="html5/网络连接.html">
+            
+                
+                    <a href="../html5/网络连接.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        网络连接
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="html5/多媒体.html">
+            
+                
+                    <a href="../html5/多媒体.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        多媒体
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="html5/svg_canvas_webgl.html">
+            
+                
+                    <a href="../html5/svg_canvas_webgl.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        3D，图形和效果
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="html5/性能和集成.html">
+            
+                
+                    <a href="../html5/性能和集成.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        性能&amp;集成
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="html5/CSS3.html">
+            
+                
+                    <a href="../html5/CSS3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        CSS3
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="javascript/javascript.html">
+            
+                
+                    <a href="../javascript/javascript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        javascript文档
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="javascript/javascript作用域和闭包.html">
+            
+                
+                    <a href="../javascript/javascript作用域和闭包.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        javascript作用域和闭包
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="javascript/javascript模块化编程.html">
+            
+                
+                    <a href="../javascript/javascript模块化编程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        javascript模块化编程（一）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="javascript/javascript模块化规范（commonJs,AMD,CMD）.html">
+            
+                
+                    <a href="../javascript/javascript模块化规范（commonJs,AMD,CMD）.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        javascript模块化编程（二）
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="javascript/javascript面向对象编程.html">
+            
+                
+                    <a href="../javascript/javascript面向对象编程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        javascript面向对象编程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="javascript/javascript异步处理.html">
+            
+                
+                    <a href="../javascript/javascript异步处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        javascript异步处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="javascript/javascript数据驱动页面.html">
+            
+                
+                    <a href="../javascript/javascript数据驱动页面.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        javascript数据驱动页面
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="javascript/如何写一个完善的jquery ui组件.html">
+            
+                
+                    <a href="../javascript/如何写一个完善的jquery ui组件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        如何写一个完善的jquery ui组件
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    本書使用 GitBook 釋出
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >移动执法3.0开发文档</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="genericservice-&#x4F7F;&#x7528;">GenericService &#x4F7F;&#x7528;</h1>
+<p>&#x5E73;&#x53F0;&#x5C01;&#x88C5;&#x7684; serviceHelper &#x5206;&#x9875;&#x67E5;&#x8BE2;&#xFF0C; sql + bindParams &#x751F;&#x6210;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#xFF0C; &#x901A;&#x5E38;&#x7684;&#x60C5;&#x51B5;&#x8FD9;&#x4E48;&#x5199;:</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">queryGgdmj</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="hljs-keyword">throws</span> Exception</span>{
+
+        ServiceHelper helper = <span class="hljs-keyword">new</span> ServiceHelper(request,response, <span class="hljs-keyword">this</span>.getClass(), <span class="hljs-string">&quot;QUERY_GGDMJ&quot;</span>);
+        StringBuilder sql = <span class="hljs-keyword">new</span> StringBuilder();
+
+        sql.append(helper.bindWhere(<span class="hljs-string">&quot;searchDmjBhMc&quot;</span>, <span class="hljs-string">&quot;DMJBH&quot;</span>, Types.VARCHAR,  LogicSymbol.Like, ConnectSymbol.And, BracketType.SMALL_LEFT));
+        sql.append(helper.bindWhere(<span class="hljs-string">&quot;searchDmjBhMc&quot;</span>, <span class="hljs-string">&quot;DMJMC&quot;</span>, Types.VARCHAR, LogicSymbol.Like,ConnectSymbol.Or, BracketType.SMALL_RIGHT));
+        sql.append(helper.bindWhere(<span class="hljs-string">&quot;searchDmjMk&quot;</span>, <span class="hljs-string">&quot;SXMK&quot;</span>, Types.VARCHAR, LogicSymbol.Like));
+
+        helper.replaceSql(<span class="hljs-string">&quot;#WHERESTRING#&quot;</span>,sql.toString());
+        String result = helper.executePagedSQL(<span class="hljs-keyword">null</span>, <span class="hljs-string">&quot;DMJBH&quot;</span>);
+        helper.write(result);
+}
+</code></pre>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">sql</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;QUERY_GGDMJ&quot;</span> <span class="hljs-attribute">orderby</span>=<span class="hljs-value">&quot;XGSJ DESC&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">both</span>&gt;</span><span class="hljs-cdata">&lt;![CDATA[
+        SELECT * FROM T_COMN_GGDMJ WHERE 1=1 AND XGSJ IS NOT NULL #WHERESTRING#
+    ]]&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">both</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">sql</span>&gt;</span>
+</code></pre>
+<p>&#x4E8E;&#x662F;&#xFF0C;&#x6211;&#x4EEC;&#x6BCF;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x7684;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;&#x90FD;&#x8981;&#x5199;&#x4E00;&#x4E2A; query&#x65B9;&#x6CD5;&#x548C;sql&#x914D;&#x7F6E;&#xFF0C; query&#x65B9;&#x6CD5;&#x5B9E;&#x9645;&#x53EA;&#x662F;&#x6267;&#x884C;&#x4E86;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x5230; sql&#x7684;&#x903B;&#x8F91;&#x800C;&#x5DF2;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5427;&#x8FD9;&#x90E8;&#x5206;&#x7684;&#x903B;&#x8F91;&#x62BD;&#x8C61;&#x5904;&#x7406;&#xFF0C;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x516C;&#x5171;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x518D;&#x67E5;&#x8BE2;&#x65F6;&#xFF0C;&#x53EA;&#x7528;&#x914D;&#x7F6E;sql.xml&#xFF0C; &#x548C;ajax&#x8BF7;&#x6C42;&#x4E0D;&#x9700;&#x8981;&#x53CD;&#x590D;&#x7684;&#x5199; query &#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x8FD9;&#x79CD;mvc&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x4F20;&#x5165; HttpServletRequest &#x548C; HttpServletResponse &#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x4E2A;servlet&#x6709;&#x5565;&#x5B50;&#x533A;&#x522B;&#x5462;&#xFF1F;&#x53EA;&#x4E0D;&#x8FC7;&#x628A;&#x4E00;&#x4E2A;servlet&#x7C7B;&#x53D8;&#x4E3A;&#x4E86;&#x8BB8;&#x591A;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x548C;servlet&#x7684;&#x8026;&#x5408;&#x5EA6;&#x592A;&#x9AD8;&#xFF0C; &#x8FD9;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86; business &#x65B9;&#x6CD5;&#x505A;&#x4E2D;&#x95F4;&#x5C42;&#x8F6C;&#x53D1;&#xFF0C; &#x5B9E;&#x9645;&#x7684;service&#x91CC;&#x9762;&#x4E0D;&#x9650;&#x5236;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x4E9B;&#xFF0C;&#x66F4;&#x52A0;&#x89E3;&#x8026;&#x3002;</p>
+<p>GenericService &#x57FA;&#x672C;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;</p>
+<pre><code class="lang-java">
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WryglService</span> <span class="hljs-title">extend</span> <span class="hljs-title">GenericService</span> </span>{
+
+}
+</code></pre>
+<h2 id="sqlparam-&#x5BF9;&#x8C61;">SqlParam &#x5BF9;&#x8C61;</h2>
+<p>sql &#x7ED1;&#x5B9A;&#x53C2;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x6839;&#x636E; serviceHelp &#x4F20;&#x5165;&#x7684;&#x7ED1;&#x5B9A;&#x53C2;&#x6570;&#x800C;&#x5B9A;&#x7684;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SqlParam</span> </span>{
+    <span class="hljs-comment">/**
+     * &#x53C2;&#x6570;&#x7C7B;&#x578B;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">enum</span> Type {
+        STRING,
+        INTEGER,
+        FLOAT,
+        DATE,
+    }
+    <span class="hljs-keyword">private</span> String key;
+    <span class="hljs-keyword">private</span> String value;
+    <span class="hljs-keyword">private</span> Type type;  
+    <span class="hljs-keyword">private</span> LogicSymbol logicSymbol; <span class="hljs-comment">//&#x6BD4;&#x8F83;&#x7B26;&#x53F7;</span>
+    <span class="hljs-keyword">private</span> ConnectSymbol connectSymbol; <span class="hljs-comment">// &#x94FE;&#x63A5;&#x7B26;&#x53F7;</span>
+    <span class="hljs-keyword">private</span> BracketType bracketType ; <span class="hljs-comment">//&#x62EC;&#x53F7;&#x5B9A;&#x4E49;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SqlParam</span><span class="hljs-params">()</span></span>{}
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SqlParam</span><span class="hljs-params">(String key, String value, Type type)</span></span>{
+        <span class="hljs-keyword">this</span>.key = key;
+        <span class="hljs-keyword">this</span>.value = value;
+        <span class="hljs-keyword">this</span>.type = type;
+    }
+    <span class="hljs-comment">//&#x7701;&#x7565;&#x4E86;set get &#x65B9;&#x6CD5;</span>
+}
+</code></pre>
+<blockquote>
+<p>key &#x5BF9;&#x5E94; column &#x5373;&#x67E5;&#x8BE2;&#x7684;&#x5217;&#x540D;
+value &#x503C;
+type &#x7C7B;&#x578B; STRING&#xFF0C;INTEGER, FLOAT, DATE
+logicSymbol &#x903B;&#x8F91;&#x7B26;&#x53F7; Like(&quot;LIKE&quot;),LeftLike(&quot;LIKE&quot;),RightLike(&quot;LIKE&quot;),Equals(&quot;=&quot;),Greater(&quot;&gt;&quot;),Lesser(&quot;&lt;&quot;),GreaterOrEquals(&quot;&gt;=&quot;),LesserOrEquals(&quot;&lt;=&quot;),IsNull(&quot;IS NULL&quot;),IsNotNull(&quot;IS NOT NULL&quot;),NotEquals(&quot;&lt;&gt;&quot;),In(&quot;IN&quot;);
+connectSymbol &#x8FDE;&#x63A5;&#x7B26;&#x53F7;  And(&quot;AND&quot;),Or(&quot;OR&quot;),None(&quot;&quot;);
+bracketType   &#x62EC;&#x53F7;&#x5B9A;&#x4E49; BIG_LEFT(&quot;{&quot;),BIG_RIGHT(&quot;}&quot;),MIDDLE_LEFT(&quot;[&quot;),MIDDLE_RIGHT(&quot;]&quot;),SMALL_LEFT(&quot;(&quot;),SMALL_RIGHT(&quot;)&quot;),NONE(&quot;&quot;);</p>
+</blockquote>
+<h2 id="list-&#x65B9;&#x6CD5;">list &#x65B9;&#x6CD5;</h2>
+<p>&#x901A;&#x7528;&#x67E5;&#x8BE2;&#x65B9;&#x6CD5;&#xFF0C;&#x652F;&#x6301;&#x5206;&#x9875;&#x548C;&#x4E0D;&#x5206;&#x9875;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x3002;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">sql</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;LIST_HJXF&quot;</span> <span class="hljs-attribute">orderby</span>=<span class="hljs-value">&quot;CJSJ DESC&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">both</span>&gt;</span><span class="hljs-cdata">&lt;![CDATA[
+                SELECT
+                    XH, XFBH, WRYBH, BTSWRY, SZXZQ, XZQH AS SZXZQNAME, TSSJ, TSRXM, TSRDH,
+                    TSRDZ, TSFS, DMNR AS TSFSNAME,  TSNR, XCDCQK, BLR, BLDW, CLJG,
+                    BLSJ, HFSJ, HFNR, T_WRY_HJXF.CJSJ
+                FROM T_WRY_HJXF
+                LEFT JOIN T_COMN_XZQHDM ON XZQHDM = SZXZQ
+                LEFT JOIN T_COMN_GGDMZ ON DM = TSFS AND     DMJBH=&apos;TSFS&apos;
+                WHERE 1=1 #WHERESTRING# #ORDERSTRING#
+        ]]&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">both</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">sql</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-html">
+<span class="hljs-tag">&lt;<span class="hljs-title">nbean:ajaxUrl</span> <span class="hljs-attribute">var</span>=<span class="hljs-value">&quot;listUrl&quot;</span> <span class="hljs-attribute">clazz</span>=<span class="hljs-value">&quot;com.szboanda.ydzf.wrygl.services.WryglService&quot;</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">&quot;list&quot;</span> <span class="hljs-attribute">parameters</span>=<span class="hljs-value">&quot;sql=LIST_HJXF&amp;pk=XH&amp;isPage=true&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript">
+    $(<span class="hljs-string">&apos;#datagrid&apos;</span>).datagrid({
+        url: <span class="hljs-string">&apos;${listUrl}&apos;</span>,
+        queryParam:{
+            params: <span class="hljs-built_in">JSON</span>.stringify([{
+                key: <span class="hljs-string">&apos;WRYBH&apos;</span>,
+                value: <span class="hljs-string">&apos;${WRYBH}&apos;</span>
+            }])
+        }
+    });
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h3 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x9ED8;&#x8BA4;&#x503C;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sql</td>
+<td>null</td>
+<td>sql.xml&#x4E2D;&#x7684;id</td>
+</tr>
+<tr>
+<td>pk</td>
+<td>&apos;XH&apos;</td>
+<td>&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x4E2D;&#x7684;&#x552F;&#x4E00;&#x5B57;&#x6BB5;</td>
+</tr>
+<tr>
+<td>isPage</td>
+<td>true</td>
+<td>&#x662F;&#x5426;&#x5206;&#x9875;</td>
+</tr>
+<tr>
+<td>params</td>
+<td>&apos;&apos;</td>
+<td>sqlParams &#x5BF9;&#x8C61;&#x6570;&#x7EC4;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="save-&#x65B9;&#x6CD5;">save &#x65B9;&#x6CD5;</h2>
+<p>&#x901A;&#x7528;&#x4FDD;&#x5B58;&#x65B9;&#x6CD5;, &#x7528;&#x4E8E;&#x901A;&#x7528;&#x7684;ajax&#x4FDD;&#x5B58;&#xFF0C; &#x57FA;&#x4E8E;FormBeanDao&#x5B9E;&#x73B0;, &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">nbean:ajaxUrl</span> <span class="hljs-attribute">var</span>=<span class="hljs-value">&quot;saveUrl&quot;</span> <span class="hljs-attribute">clazz</span>=<span class="hljs-value">&quot;com.szboanda.ydzf.wrygl.services.WryglService&quot;</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">&quot;save&quot;</span>/&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript">
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">save</span>(<span class="hljs-params"></span>)</span>{
+        $.ajax({
+            url: <span class="hljs-string">&apos;${saveUrl}&apos;</span>,
+            dataType: <span class="hljs-string">&apos;json&apos;</span>,
+            type: <span class="hljs-string">&apos;post&apos;</span>,
+            data: {
+                params: <span class="hljs-built_in">JSON</span>.stringify([{
+                    table: <span class="hljs-string">&apos;T_WRY_HJXF&apos;</span>, <span class="hljs-comment">//&#x8868;&#x540D;&#x79F0;</span>
+                    data: {
+                        XH : <span class="hljs-string">&apos;111&apos;</span>,
+                        <span class="hljs-comment">//...</span>
+                    }
+                }])
+            }
+        })
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h2 id="delete-&#x65B9;&#x6CD5;">delete &#x65B9;&#x6CD5;</h2>
+<p>&#x901A;&#x7528;&#x5220;&#x9664;&#x65B9;&#x6CD5;&#x65B9;&#x6CD5;, &#x7528;&#x4E8E;&#x901A;&#x7528;&#x7684;ajax&#x5220;&#x9664;&#x6570;&#x636E;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">nbean:ajaxUrl</span> <span class="hljs-attribute">var</span>=<span class="hljs-value">&quot;deleteFspfk&quot;</span> <span class="hljs-attribute">clazz</span>=<span class="hljs-value">&quot;com.szboanda.ydzf.wrygl.services.WryglService&quot;</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">&quot;delete&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript">
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">removeData</span>(<span class="hljs-params">xh</span>)</span>{
+        $.ajax({
+            url: <span class="hljs-string">&apos;${deleteFspfk}&apos;</span>,
+            dataType: <span class="hljs-string">&apos;json&apos;</span>,
+            type: <span class="hljs-string">&apos;post&apos;</span>,
+            data: {
+                params : <span class="hljs-built_in">JSON</span>.stringify([{
+                    table : <span class="hljs-string">&apos;T_WRY_FSPFYZ&apos;</span>, <span class="hljs-comment">//&#x8868;&#x540D;</span>
+                    where : {
+                        PFKXH : xh         <span class="hljs-comment">//&#x5220;&#x9664;&#x7684;&#x6761;&#x4EF6;</span>
+                    }
+                },{
+                    table : <span class="hljs-string">&apos;T_WRY_FSPFK&apos;</span>,
+                    where : {
+                        XH : xh
+                    }
+                }])
+            }
+        })
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h2 id="business-&#x65B9;&#x6CD5;">business &#x65B9;&#x6CD5;</h2>
+<p>&#x6B64;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8BA9; javascript &#x8FDC;&#x7A0B;&#x8C03;&#x7528;java&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x622A;&#x53D6; HandBookService &#x4E2D;&#x7684;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HandBookService</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">GenericService</span></span>{
+    <span class="hljs-comment">//treeCatalog &#x65B9;&#x6CD5;, &#x63A5;&#x53D7;catalogId &#x4E3A;&#x53C2;&#x6570;, &#x8FD4;&#x56DE;List</span>
+    <span class="hljs-keyword">public</span> List&lt;Map&lt;String, Object&gt;&gt; treeCatalog(String catalogId) <span class="hljs-keyword">throws</span> IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+       <span class="hljs-keyword">if</span>(StringUtils.isEmpty(catalogId)) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+       List&lt;HandBook&gt; handBookList = orm.clear().bindWhere(<span class="hljs-string">&quot;isCatalog&quot;</span>, <span class="hljs-number">1</span>).bindWhere(<span class="hljs-string">&quot;type&quot;</span>, FILETYPE)
+               .bindWhere(<span class="hljs-string">&quot;catalogId&quot;</span>, catalogId).orderBy(<span class="hljs-string">&quot;sortNum&quot;</span>, Orm.SortWay.ASC).search();
+       <span class="hljs-keyword">if</span>(handBookList == <span class="hljs-keyword">null</span> || handBookList.isEmpty()) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+       List&lt;Map&lt;String, Object&gt;&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;Map&lt;String, Object&gt;&gt;();
+       <span class="hljs-keyword">for</span> (HandBook book  : handBookList) {
+           Map&lt;String, Object&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;String, Object&gt;();
+           map.put(<span class="hljs-string">&quot;id&quot;</span>, book.getId());
+           map.put(<span class="hljs-string">&quot;name&quot;</span>, book.getName());
+           map.put(<span class="hljs-string">&quot;children&quot;</span>, treeCatalog(book.getId()));
+           list.add(map);
+       }
+       <span class="hljs-keyword">return</span> list;
+   }
+}
+</code></pre>
+<p>&#x524D;&#x7AEF;&#x8C03;&#x7528;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">nbean:ajaxUrl</span> <span class="hljs-attribute">var</span>=<span class="hljs-value">&quot;treeCatalogUrl&quot;</span> <span class="hljs-attribute">clazz</span>=<span class="hljs-value">&quot;com.szboanda.ydzf.handbook.HandBookService&quot;</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">&quot;business&quot;</span> <span class="hljs-attribute">parameters</span>=<span class="hljs-value">&quot;actionType=treeCatalog&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadTree</span>(<span class="hljs-params">catalogId</span>)</span>{
+    $.ajax({
+        url:<span class="hljs-string">&apos;${treeCatalogUrl}&apos;</span>,
+        dataType: <span class="hljs-string">&apos;json&apos;</span>,
+        type: <span class="hljs-string">&apos;post&apos;</span>,
+        data: {
+            params: <span class="hljs-built_in">JSON</span>.stringify([{
+                value: <span class="hljs-string">&apos;1&apos;</span>,
+                type: <span class="hljs-string">&apos;STRING&apos;</span>
+            }])
+        },
+        success: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>{
+            data = data.result; <span class="hljs-comment">//&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;</span>
+        }
+    })
+}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5C06;&#x65B9;&#x6CD5;&#x548C;servlet&#x5B8C;&#x5168;&#x7684;&#x7ED3;&#x6784;&#xFF0C; &#x5B83;&#x53EF;&#x4EE5;&#x88AB;&#x524D;&#x7AEF;&#x8C03;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x88AB;&#x5176;&#x4ED6;&#x7684;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#xFF0C;&#x4FBF;&#x4E8E;jUnit&#x6D4B;&#x8BD5;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4E00;&#x4E0B;&#x51E0;&#x70B9;</p>
+<blockquote>
+<p>actionType &#x5FC5;&#x987B;&#x6307;&#x5B9A;&#xFF0C;&#x6307;&#x5411;&#x65B9;&#x6CD5;&#x540D;&#x79F0;.
+params &#x662F;&#x53C2;&#x6570;&#x6570;&#x7EC4; &#xFF0C;&#x5176;&#x4E2D; value&#x662F;&#x503C;&#xFF0C; type&#x662F;&#x7C7B;&#x578B;
+java &#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E0D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5305;&#x88C5;&#x7C7B;&#x578B; &#x5982; Integer Float &#x8FD9;&#x4E9B;&#xFF0C; &#x9700;&#x4F7F;&#x7528; int Float</p>
+</blockquote>
+<p>&#x76EE;&#x524D;&#x53EF;&#x4EE5;&#x89E3;&#x6790;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#xFF1A;</p>
+<ul>
+<li>STRING    {value : &#x2019;ttt&#x2019;, type:&#x2019;STRING&#x2019;}    &#x89E3;&#x6790;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x53C2;&#x6570;</li>
+<li>boolean    {value : &#x2019;ttt&#x2019;,type:&#x2019;BOOLEAN&#x2019;}    &#x89E3;&#x6790;&#x5E03;&#x5C14;&#x7C7B;&#x578B;&#x53C2;&#x6570;</li>
+<li>Integer    {value : 2,type:&#x2019;INTEGER}    &#x89E3;&#x6790;int&#x7C7B;&#x578B;&#x53C2;&#x6570;</li>
+<li>long    {value : 2,type:&#x2019;LONG&#x2019;}    &#x89E3;&#x6790;long&#x7C7B;&#x578B;&#x53C2;&#x6570;</li>
+<li>double    {value : 2,type:&#x2019;DOUBLE&#x2019;}    &#x89E3;&#x6790;double&#x7C7B;&#x578B;&#x53C2;&#x6570;</li>
+<li>float    {value : 2,type:&#x2019;FLOAT}    &#x89E3;&#x6790;float&#x7C7B;&#x578B;&#x53C2;&#x6570;</li>
+<li>Date    {value: &#x2018;1994-02-03&#x2019;,,type : &#x2018;DATE&#x2019;}    &#x89E3;&#x6790;date&#x7C7B;&#x578B;&#x53C2;&#x6570;</li>
+<li>Map    {value : {aa : &#x2018;aa&#x2019;,bb : &#x2018;bb&#x2019;},type : &#x2018;MAP&#x2019;}    &#x89E3;&#x6790;Map&#x7C7B;&#x578B;&#x53C2;&#x6570;</li>
+<li>Array    {value : &#x2018;aaa,bbb,cc&#x2019;,  type : &#x2018;ARRAY&#x2019;}    &#x89E3;&#x6790;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x53C2;&#x6570;</li>
+<li>LIST    {value :[ {aa : &#x2018;aa&#x2019;, bb : &#x2018;bb&#x2019;}],type : &#x2018;LIST,className : &#x2018;MAP&#x2019;}    &#x89E3;&#x6790;list&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x53C2;&#x6570; className &#xFF1A; &#x96C6;&#x5408;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#xFF0C;&#x5982;&#x679C;&#x662F;list<Map>&#x5219;&#x76F4;&#x63A5;&#x5199;MAP&#x5373;&#x53EF;&#xFF0C;&#x5176;&#x4ED6;&#x5219;&#x9700;&#x8981;&#x5199;&#x5B8C;&#x6574;&#x7C7B;&#x540D;</Map></li>
+<li>Bean    {value : {,aa : &#x2018;aa&#x2019;,bb : &#x2018;bb&#x2019;},,type : &#x2018;BEAN&#x2019;className : &#x2018;com.test&#x2019;}    &#x89E3;&#x6790;javabean&#x7C7B;&#x578B;&#x53C2;&#x6570; &#x9700;&#x8981;&#x6307;&#x5B9A;&#x7C7B;&#x540D;</li>
+</ul>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../java/java.html" class="navigation navigation-prev " aria-label="Previous page: 后台代码封装文档"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../java/最简单的ORM映射.html" class="navigation navigation-next " aria-label="Next page: 最简单的ORM映射"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
