@@ -1,0 +1,40 @@
+1.IE 下 使用AJAX请求数据,参数未发生改变,浏览器会默认取缓存数据,导致拿到的数据与之前拿到的数据一模一样
+  谷歌就不会有缓存.
+  var param = {
+					method : 'getElementId'
+				};
+			$.ajax({
+				url:dynamic.element.url,
+				dataType:'text',
+				async:false,
+				data:param,
+				success:function(data){
+					dates = data;
+				},
+				error:function(){
+					console.error("加载【getElementId】元素信息异常");
+				}
+			});
+			return dates.replace(/\s/g,"");
+		},
+   解决方法
+      var param = {
+					method : 'getElementId',
+					localDate:new Date().getTime()   //给参数加个随机数
+				};
+			$.ajax({
+				url:dynamic.element.url,
+				dataType:'text',
+				async:false,
+				data:param,
+				success:function(data){
+					dates = data;
+				},
+				error:function(){
+					console.error("加载【getElementId】元素信息异常");
+				}
+			});
+			return dates.replace(/\s/g,"");
+		},
+2.echarts热力图兼容IE9  Uint8ClampedArray	 
+	   引入typedarray.js  
