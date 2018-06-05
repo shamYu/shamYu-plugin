@@ -1,0 +1,15 @@
+for(var i = 0 ;i < data.length;i++){
+	xData.push(EchartsModel.getStrln(data[i].WGMC,3));
+}
+
+EchartsModel.getStrln:function(str,n){
+		 var len = str.length;
+		 var strTemp = '';
+		 if(len > n){
+		  	strTemp = str.substring(0,n);
+		  	str = str.substring(n,len);
+		  	return strTemp+'\r\n'+EchartsModel.getStrln(str,n);
+		 }else{
+		  	return str;
+		 }
+}

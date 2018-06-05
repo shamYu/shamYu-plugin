@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单的双向绑定</title>
+</head>
+<body>
+    <p>
+        input1=><input type="text" id="input1">
+    </p>
+    <p>
+        input2=>
+        <input type="text" id="input2">
+    </p>
+    <div>
+        我每次比input1的值加1=>
+        <span id="span"></span>
+    </div>
+</body>
+<script>
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    var oSpan = document.getElementById("span");
+
+    var obj = new Object();
+
+    Object.defineProperties(obj,{
+        val1:{
+            configurable:true,
+            get: function(){
+                input1.value = 0;
+                input2.value = 0;
+                oSpan.innerHTML = 0;
+                return 0
+            },
+            set: function(newVal){
+                input2.value = newVal;
+                oSpan.innerHTML = Number(newVal) ? Number(newVal) +1 : 0;
+            }
+        },
+        val2:{
+            configurable:true,
+            get: function(){
+                input1.value = 0;
+                input2.value = 0;
+                oSpan.innerHTML = 0;
+                return 0
+            },
+            set: function(newVal){
+                input1.value = newVal;
+                oSpan.innerHTML = Number(newVal) ? Number(newVal) + 1 : 0;
+            }
+        }
+    })
+
+    input1.value = obj.val1;
+    input1.addEventListener("keyup", function(){
+        obj.val1 = input1.value;
+    },false)
+    input2.addEventListener("keyup",function(){
+        obj.val2 = input2.value;
+    },false)
+</script>
+</html>
