@@ -1,0 +1,28 @@
+let API = userModel.login;
+        Axios.post(API,{},{
+          data:{
+            user:this.formInline.user,
+            userpwd:this.formInline.password
+          },
+          transformRequest: [function (data) {
+            // Do whatever you want to transform the data
+            let ret = ''
+            for (let it in data) {
+              ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
+            }
+            return ret
+          }],
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }).then((res) =>{
+            let data = res.data;
+            if(data!=null && data.result == 'false1'){
+                this.$Message.error("帐号密码不正确，请重新输入!");
+                return
+            }
+            this.$Message.success("登录成功")
+        },(err) =>{
+            this.$Message.error("登录失败,请稍后再试");
+             this.$Loading.error();
+        })
