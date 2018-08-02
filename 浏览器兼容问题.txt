@@ -1,4 +1,4 @@
-1.IE 下 使用AJAX请求数据,参数未发生改变,浏览器会默认取缓存数据,导致拿到的数据与之前拿到的数据一模一样
+﻿1.IE 下 使用AJAX请求数据,参数未发生改变,浏览器会默认取缓存数据,导致拿到的数据与之前拿到的数据一模一样
   谷歌就不会有缓存.
   var param = {
 					method : 'getElementId'
@@ -38,3 +38,15 @@
 		},
 2.echarts热力图兼容IE9  Uint8ClampedArray	 
 	   引入typedarray.js  
+
+
+
+3.IE8兼容background-size
+   body {
+    height: 100%;
+    width: 100%; 
+    overflow: hidden;
+    background: url(${ctx}/scripts/jcpt/images/app_bg.png) no-repeat;
+    background-size: 100% 100%;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='${ctx}/scripts/jcpt/images/app_bg.png',sizingMethod='scale'); 
+}
