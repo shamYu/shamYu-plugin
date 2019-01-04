@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text1" id="text1" value="" />*
+		<input type="text1" id="text2" value="" />
+		<input type="button" id="btn1" value="按钮" />
+		<hr />
+		<input type="text1" id="text3" value="" />*
+		<input type="text1" id="text4" value="" />
+		<input type="button" id="btn2" value="按钮" />
+	</body>
+	<script type="text/javascript">
+		
+		//封装成一个有参数的函数。
+		var oText1=document.getElementById("text1");
+		var oText2=document.getElementById("text2");
+		var oBtn1=document.getElementById("btn1");
+		
+		var oText3=document.getElementById("text3");
+		var oText4=document.getElementById("text4");
+		var oBtn2=document.getElementById("btn2");
+		
+//		oBtn1.onclick=getResult;
+		
+//		function getResult(){
+//			alert(oText1.value*oText2.value);
+//		}
+		
+//		oBtn2.onclick=getResult1;
+//		
+//		function getResult1(){
+//			alert(oText3.value*oText4.value);
+//		}
+				
+		oBtn1.onclick=function(){
+			getResult (oText1.value,oText2.value);
+		}
+		oBtn2.onclick=function(){
+			getResult (oText3.value,oText4.value);
+		}
+		
+		//z=x*y
+		function getResult (x,y){
+			alert(x*y);
+		}
+		
+	</script>
+</html>

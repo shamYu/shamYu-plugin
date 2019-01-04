@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*not()->()内写选择器*/
+			
+			/*li:not(#li3){
+				background: red;
+			}*/
+			
+			/*是li并且又不是第三个子元素*/
+			li:not(:nth-child(3)){
+				background: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li id='li3'>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+//		var oLi=document.getElementById("li3");
+//		var oLi=document.querySelector('#li3');
+
+	</script>
+</html>

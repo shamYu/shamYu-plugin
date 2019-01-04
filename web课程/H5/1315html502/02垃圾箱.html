@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box div{
+				width:10px;
+				padding:50px 50px 50px 30px;;
+				background: #999;
+				color: #fff;
+				font-size: 30px;
+			}
+			#box,ul{
+				float: left;
+				margin-left:20px;
+			}
+			ul>li{
+				width: 500px;
+				list-style: none;
+				border:1px dashed #999;
+				padding: 20px;
+				cursor: move;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='box'>
+			<div>垃圾箱</div>
+			<p></p>
+		</div>
+		<ul>
+			<li draggable="true" id='li1'>马云</li>
+			<li draggable="true" id='li2'>2222</li>
+			<li draggable="true" id='li3'>3333</li>
+			<li draggable="true" id='li4'>鹿晗</li>
+			<li draggable="true" id='li5'>吴亦凡</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		var aLi=document.querySelectorAll('li');
+		var oDiv=document.querySelector('#box>div');
+		var oP=document.querySelector('#box>p');
+		var oUl=document.querySelector('ul');
+		
+		for(var i=0;i<aLi.length;i++){
+			//每个元素存下标
+			aLi[i].index=i;
+			aLi[i].addEventListener('dragstart',start);
+		}
+		
+		oDiv.addEventListener('drop',drop);
+		
+		oDiv.addEventListener('dragover',function(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+		});
+		
+		function drop(ev){
+			var ev=ev||window.event;
+			//获取共享的下标
+			var index=ev.dataTransfer.getData('i');
+			//通过下标来删除应该删除的元素。
+			oUl.removeChild(aLi[index]);
+			oP.innerText=aLi[index].innerText+'被删除了';
+		}
+		
+		function start(ev){
+			var ev=ev||window.event;
+			//共享当前被拖元素的下标，以便在drop事件内使用。
+			ev.dataTransfer.setData('i',this.index);
+		}
+		
+	</script>
+</html>

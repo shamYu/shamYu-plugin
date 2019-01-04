@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<div class='container'>
+			<table class='table table-striped table-bordered table-hover'>
+				<thead>
+					<tr>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+						<td>4312</td>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		function ShowTableData(selector,num,url){
+			this.oWrap=document.querySelector(selector);
+			this.aInput=this.oWrap.getElementsByTagName('input');
+			this.oTbody=this.oWrap.querySelector('tbody');
+			this.num=num;
+			this.url=url;
+			this.nowData=[];
+			//给wrap委托事件
+			this.oWrap.addEventListener('click',this.showData(this));
+			//默认请求一次数据
+			this.getJsonpData(this.num,1);
+		}
+		
+		ShowTableData.prototype.getData=function(data){
+			console.log(data);
+			//需要显示的数组
+			this.nowData=data.result.data.data;
+			//跟具数据显示tr
+			this.showTr(data);	
+			//如果没有插入过按钮。
+			if(this.aInput.length==0){
+				this.insertInput(data);
+			}
+		}
+		
+		ShowTableData.prototype.insertInput=function(data){
+			//数据总条数。
+			var total=data.result.data.total;
+			//应该插入的按钮个数。
+			var length=Math.ceil(total/num);
+			//批量插入按钮。
+			for(var i=0;i<length;i++){
+				var oInput=document.createElement("input");
+				this.oWrap.appendChild(oInput);
+				oInput.value=i+1;
+				oInput.type='button';
+				oInput.classList.add('btn');
+				oInput.style.marginLeft='8px';
+			}			
+			this.aInput[0].classList.add('btn-danger');
+		}
+		
+		ShowTableData.prototype.setInputColor=function(ele){
+			for(var i=0;i<this.aInput.length;i++){
+				this.aInput[i].classList.remove('btn-danger');
+				ele.classList.add('btn-danger');
+			}
+		}
+		
+		ShowTableData.prototype.getJsonpData=function(num,page){
+			var oScript=document.createElement("script");
+			document.body.appendChild(oScript);
+			oScript.src=this.url+'&num='+num+'&page='+page;
+			//引入跨域文件之后删除当前script
+			document.body.removeChild(oScript);
+			console.log('请求了数据')
+			oScript.onload=function(){
+				var str=JSON.stringify(this.nowData);
+				sessionStorage.setItem('page'+page,str);
+			}
+		}
+		
+		ShowTableData.prototype.showTr=function(arr){
+			//先清空tbody的内容
+			this.oTbody.innerHTML='';
+			//根据数据重新渲染表格
+			arr.forEach(function(items,i){
+				var oTr=document.createElement("tr");
+				for(var prop in items){
+					var oTd=document.createElement("td");
+					oTd.innerText=items[prop];
+					oTr.appendChild(oTd);
+				}
+				this.oTbody.appendChild(oTr);
+			})
+		}
+		
+		ShowTableData.prototype.showData=function(_this){
+			return function(ev){
+				var ev=ev||window.event;
+				var et=ev.target||ev.srcElement;
+				
+				if(et.nodeName=='INPUT'){
+					//根据当前inut的value值来显示不同的数据				
+					var thisStr=sessionStorage.getItem('page'+et.value);
+					//如果请求过数据，就直接用本地数据渲染tr
+					if(thisStr){
+						var thisData=JSON.parse(thisStr);
+						_this.showTr(thisData);					
+					}else{
+					//如果没有请求过，就使用jsonp请求数据
+						_this.getJsonpData(num,et.value);
+					}
+					//切换input的样式
+					_this.setInputColor(et);
+				}
+			}			
+		}
+		
+		new ShowTableData('.container',10,'http://money.finance.sina.com.cn/jiaoyifenxi/api/openapi.php/DataService.getUserProfit?callback=ShowTableData.prototype.getData')
+		
+	</script>
+</html>

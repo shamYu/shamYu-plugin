@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.active{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+
+        <!-- 在视图里 -->
+        <!-- @指令后面='表达式'; :指令后面='表达式'; {{表达式}} -->
+
+        <!-- input被点击时,计算1+1表达式的返回值 -->
+        <input type="button" @click='1+1'>
+        <!-- input被点击时,计算add()的返回值(调用add) -->
+        <input type="button" @click='add()'>
+        <!-- input被点击时,给当前的vue实例的flag属性赋值100 -->
+        <input type="button" @click='flag=100'>
+        
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            flag:'',
+            //在这里this指向window,不是指向vue实例.
+            // num:this.num1+this.num2
+        },
+        methods:{
+            //methods内的所有方法都胡变成vue实例的属性
+            add(){
+                //window的alert()
+                //alert(200);
+
+                // vm实例的alert()
+                this.alert();
+            },
+            alert(){
+                console.log(100);
+            }
+        }
+    })
+
+
+</script>
+</html>

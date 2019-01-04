@@ -1,0 +1,28 @@
+#slider { width: 100%; padding-top: 8px; background-color: rgb(0, 0, 0); }
+.slider_box { margin: 0px auto; width: 960px; height: 338px; overflow: hidden; position: relative; }
+.silder_tip { background: url("../images/tip-tt.gif") no-repeat; top: 0px; width: 92px; height: 92px; right: 0px; text-indent: -999px; overflow: hidden; position: absolute; z-index: 1; }
+#movie_tip { background-position: -93px 0px; }
+.silder_con { height: 270px; overflow: hidden; position: absolute; }
+.silder_panel { background: rgb(17, 17, 17); width: 960px; height: 270px; overflow: hidden; float: left; position: relative; }
+.silder_panel img { width: 690px; height: 270px; overflow: hidden; display: block; }
+.silder_intro { padding: 0px 40px 0px 0px; width: 210px; height: 270px; color: rgb(153, 153, 153); line-height: 20px; overflow: hidden; }
+.silder_intro h3 { padding: 10px 0px; height: 50px; color: rgb(122, 207, 57); line-height: 30px; overflow: hidden; }
+.silder_intro h3 strong { height: 30px; overflow: hidden; font-family: "ËÎÌו"; font-size: 24px; font-weight: normal; display: block; }
+.silder_intro h3 strong a { color: rgb(255, 255, 255); font-weight: bold; }
+.silder_intro ul { height: 60px; overflow: hidden; }
+.silder_intro li { height: 20px; color: rgb(120, 120, 120); overflow: hidden; }
+.silder_intro li a { margin: 0px 6px; color: rgb(120, 120, 120); }
+.silder_intro span { margin: 0px 10px 0px 0px; }
+.silder_intro p { height: 72px; color: rgb(120, 120, 120); line-height: 18px; overflow: hidden; margin-top: 10px; }
+.silder_play { background: url("../images/silder-play.png") no-repeat 0px -30px; width: 136px; height: 30px; right: 45px; bottom: 13px; text-indent: -999px; overflow: hidden; display: block; position: absolute; }
+.silder_play:hover { }
+.silder_nav { margin: 0px auto; width: 960px; height: 58px; bottom: 0px; overflow: hidden; position: absolute; }
+.silder_nav li { margin: 2px; padding: 0px; border: 1px solid rgb(255, 255, 255); float: left; }
+.silder_nav li.current { margin: 0px 4px; border: 3px solid rgb(122, 207, 57); }
+.silder_nav li { width: 112px; height: 48px; overflow: hidden; display: block; }
+.silder_nav img { width: 112px; height: 48px; overflow: hidden; display: block; }
+.slider_box a.prev { background: url("../images/silder_btn.gif") no-repeat; margin: 85px 0px 0px; width: 45px; height: 100px; text-indent: -999px; overflow: hidden; display: block; position: absolute; cursor: pointer; }
+.slider_box a.next { background: url("../images/silder_btn.gif") no-repeat; margin: 85px 0px 0px; width: 45px; height: 100px; text-indent: -999px; overflow: hidden; display: block; position: absolute; cursor: pointer; }
+.slider_box a.prev { left: 0px; }
+.slider_box a.next { background-position: right 0px; right: 0px; }
+.silderBox { height: 8px; line-height: 8px; }

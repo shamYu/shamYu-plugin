@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>留言版</h3>
+		<hr />
+		<div id='div1'>
+			<!--<p>1楼：1</p>
+			<p>2楼：2</p>
+			<p>3楼：3</p>-->
+		</div>
+		<textarea name="" rows="20" cols="40" id='text'></textarea>
+		<input type="button" id="btn" value="发表留言" />
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+		var oBtn=document.getElementById("btn");
+		var oText=document.getElementById("text");
+		
+		var iCount=0;
+		
+		//在没输入之前获取到的文本就是空的字符串
+//		var str=oText.value;
+		
+		oBtn.onclick=function (){
+			//每次点击都重新获取当前文本域内的value值;
+			var str=oText.value;
+			iCount++;
+			oDiv.innerHTML+='<p>'+iCount+'楼：'+str+'</p>';
+		}
+		
+	</script>
+</html>

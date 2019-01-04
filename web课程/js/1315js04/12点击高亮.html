@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li red>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		var aLi=document.getElementsByTagName('li');
+		
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].onclick=function (){
+				
+				for(var i=0;i<aLi.length;i++){
+					if(aLi[i].clicked=='被点过'){
+						//背景变白
+						aLi[i].style.background='';
+						//变白之后，清空clicked属性
+						aLi[i].clicked='';
+						//如果找到了被点击的元素，就跳出循环(就不找了);
+						break;
+					}
+				}
+				
+				this.style.background='red';
+				//给当前的元素属性一个自定义属性，标记它是被点过的。
+				this.clicked='被点过';				
+			}
+		}
+		
+		
+	</script>
+</html>

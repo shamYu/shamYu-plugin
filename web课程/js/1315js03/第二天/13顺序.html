@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="删除p" />
+		<input type="button" id="btn2" value="p的内容" />
+		<div id='div1'>
+			我想活命
+		</div>
+	</body>
+	<script type="text/javascript">
+//		点击btn1,删除div1的内容, 点击btn2,弹出div被删前的内容;
+		
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+		
+		var oDiv1=document.getElementById("div1");
+		
+		//删除之前，把div的内容保存起来；
+		var str=oDiv1.innerText;
+		
+		oBtn1.onclick=function () {
+			oDiv1.innerText='';
+		}
+		
+		oBtn2.onclick=function () {
+//			alert(str);
+			alert(oDiv1.innerText);
+		}
+		
+	</script>
+</html>

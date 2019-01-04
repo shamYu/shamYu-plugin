@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		json对象没有length属性来获取json对象的属性个数
+		var oYm={
+			name:'杨幂',
+			age:'32',
+			sex:'female',
+			exhusband:'刘禽兽',
+			height:168
+		}
+		
+		//对象有多少个属性，for in循环会自动循环相应的次数。
+		//prop是当前循环到的对象的属性的属性名。oYm[prop]属性值。
+		for(var prop in oYm){};	
+		//循环完成之后prop就是oYm的最后一个属性名。
+		console.log(prop);
+		
+	</script>
+</html>

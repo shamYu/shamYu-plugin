@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>考试宝典手机版</title>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+
+<div id="beijing">
+  <div id="head">
+    <ul>
+      <li> <a href="" target="_blank"><img src="images/goumai1.jpg" /></a></li>
+      <li> <a href="" target="_blank"><img src="images/yijianfankui1.jpg" /></a></li>
+    </ul>
+  </div>
+<div id="content">
+  <div id="divDonw">
+      <div id="Biaoti"><ul class="ulBiaoti"></ul></div>
+      <div id="Kmubiao"><ul class="ulKmubiao"></ul></div>
+      <ul class="ul1">
+        <div class="divP1"><li class="liAND1"><a href="http://up.ksbao.com/android/ksbao/ksbao_andriod.apk"></a></li></div>
+        <div class="divP2"><li class="liIOS1"><a href="http://up.ksbao.com/iPhone/ksbao/ksbao_iPhone.ipa"></a></li></div>
+        <div class="divP3"><li class="liLixian1"><a href=""></a></li> </div>   
+      </ul> 
+      <ul class="ul2">
+        <li class="limenu"><a href="jiaocheng.html" target="_blank" >查看添加题库教程</a>
+        <div style="position:relative; width:163;height:60px;"><ul><li><a href="jiaocheng.html" target="_blank">Android版</a></li><li><a href="jiaochengIos.html" target="_blank">IOS版</a></li></ul></div>
+                           
+        </li>
+      </ul>
+  </div>
+    <div id="divpics">
+      <div id="phone">
+       <div id="Iphone">
+       <ul class="ulIphone">
+       <div id="light"></div>
+       <div id="Fpics">
+        <ul id="ul1">
+          <li class="li_This" style="background: url(images/MNKC.gif)"></li>
+          <li style="background:url(images/ZJLX.gif)"></li>
+          <li style="background:url(images/CTCZ.gif)"></li>
+          <li style="background:url(images/TJFX.gif)"></li>
+        </ul>
+       </div>
+       </ul>
+       </div>
+      </div>
+      <div id="Ficon">
+        <ul id="ul2">
+          <div class="divI1"><li class="limnkc"></li></div>
+          <div class="divI2"><li class="lizjlx"></li></div>
+          <div class="divI3"><li class="lictcz"></li></div>
+          <div class="divI4"><li class="litjfx"></li></div>
+        </ul>
+        <ul id="ul3">
+          <li></li>
+        </ul>
+      </div>
+    </div>
+<div id="foot">
+      <ul class="ul1">
+        <li><a href="http://www.yingsoft.com/" target="_blank">考试宝典官方网站</a></li>
+        <li><a href="http://www.ksbao.com/" target="_blank">Ksbao考试资讯站</a></li>
+        <li><a href="http://soft.ksbao.com/" target="_blank">考试典宝产品站</a></li>
+        <li><a href="http://exam.ksbao.com/" target="_blank">网页版考试宝典</a></li>
+      </ul>
+      <ul class="ul2"><li>Copyright © 2012柳州英腾软件有限责任公司  桂ICP备09009842号 增值电信业务经营许可证： 桂B2-20120024 </li></ul>
+</div> 
+</div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#divDonw .ul1 .liAND1").hover(function(){
+		$(this).attr("class","liAND2");},function(){
+			$(this).attr("class","liAND1")});
+	$("#divDonw .ul1 .liIOS1").hover(function(){
+		$(this).attr("class","liIOS2");},function(){
+			$(this).attr("class","liIOS1")});
+	$("#divDonw .ul1 .liLixian1").hover(function(){
+		$(this).attr("class","liLixian2");},function(){
+			$(this).attr("class","liLixian1")});
+			
+	$("#divpics #Ficon #ul2 .limnkc").hover(function(){
+		$(this).attr("class","limnkc2");
+		$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":-10},300).animate({"top":0},100);},function(){
+			$(this).attr("class","limnkc");
+			var xuanZtop=LastPics*115;
+			$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":xuanZtop+10},300).animate({"top":xuanZtop},100);});
+	$("#divpics #Ficon #ul2 .lizjlx").hover(function(){
+		$(this).attr("class","lizjlx2");
+		if(LastPics<1)
+		{$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":125},300).animate({"top":115},100)}
+		else{$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":105},300).animate({"top":115},100)};},function(){
+			$(this).attr("class","lizjlx");
+		if(LastPics<1)
+		{$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":-10},300).animate({"top":0},100)}
+		else{var xuanZtop=LastPics*115; $("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":xuanZtop+10},300).animate({"top":xuanZtop},100)}});
+	$("#divpics #Ficon #ul2 .lictcz").hover(function(){
+		$(this).attr("class","lictcz2");
+		if(LastPics<2)
+		{$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":240},300).animate({"top":230},100)}
+		else{$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":220},300).animate({"top":230},100)};},function(){
+		$(this).attr("class","lictcz");
+		var xuanZtop=LastPics*115;
+		if(LastPics<2)
+		{$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":xuanZtop-10},300).animate({"top":xuanZtop},100)}
+		else{$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":xuanZtop+10},300).animate({"top":xuanZtop},100)}});
+	$("#divpics #Ficon #ul2 .litjfx").hover(function(){
+		$(this).attr("class","litjfx2");
+		$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":355},300).animate({"top":345},100)
+            },function(){
+			$(this).attr("class","litjfx");
+			if(LastPics<3)
+		    {var xuanZtop=LastPics*115; $("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":xuanZtop-10},300).animate({"top":xuanZtop},100)}
+		    else{$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":355},300).animate({"top":345},100)}
+			
+			});
+	$("#divDonw .ul2 .limenu").hover(function(){
+		$("#divDonw .ul2 .limenu ul").stop(true,true).slideDown(300);
+		},function(){
+		$("#divDonw .ul2 .limenu ul").stop(true,true).slideUp(300);
+			});
+	var StopPics;
+	var LastPics=0;
+	var ThisPics;
+    var Pics_or_Icon=0;
+	var PDone=0;
+	var $li_This=$("#divpics #phone #Fpics #ul1 .li_This");
+	var $li_Next;
+	$("#divpics #Ficon #ul2 li").click(function(){
+		ThisPics=$("#divpics #Ficon #ul2 li").index(this); 
+		function ShowPics_onleft(){
+		PDone=1;
+		LastPics=ThisPics;
+		$li_This=$("#divpics #phone #Fpics #ul1 .li_This");
+		var $ThePics_byclick=$("#divpics #phone #Fpics #ul1 li").eq(ThisPics);
+		$ThePics_byclick.attr("class","li_Next").css({"left":0});
+		$li_This.stop().animate({"left":500},500,function(){$(this).removeClass("li_This")});
+		$ThePics_byclick.stop().animate({"left":250},500,function(){$(this).attr("class","li_This");PDone=0;
+		$li_This=$("#divpics #phone #Fpics #ul1 li").eq(ThisPics);
+		});
+		var xuanZtop=LastPics*115;
+		$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":xuanZtop-10},200).animate({"top":xuanZtop},100);
+		};
+	    function ShowPics_onright(){
+		PDone=1;
+		LastPics=ThisPics;
+		$li_This=$("#divpics #phone #Fpics #ul1 .li_This");
+		var $ThePics_byclick=$("#divpics #phone #Fpics #ul1 li").eq(ThisPics);
+		$ThePics_byclick.attr("class","li_Next").css({"left":500});
+		$li_This.stop().animate({"left":0},500,function(){$(this).removeClass("li_This")});
+		$ThePics_byclick.stop().animate({"left":250},500,function(){$(this).attr("class","li_This");PDone=0;
+		$li_This=$("#divpics #phone #Fpics #ul1 li").eq(ThisPics);
+		});
+		var xuanZtop=LastPics*115;
+		$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":xuanZtop+10},200).animate({"top":xuanZtop},100);
+		};
+        if(PDone==0){if(ThisPics!=LastPics)
+    	{ThisPics>LastPics ? ShowPics_onright() : ShowPics_onleft()};
+	    }});
+	$("#divpics #Ficon #ul2 li").hover(function(){
+		Pics_or_Icon=1;
+		clearInterval(StopPics);
+		},function(){
+				StopPics=setInterval(function(){
+				WhichPics(ThisPics);
+				},3000);
+			});
+	$("#divpics #phone #light").hover(function(){
+		Pics_or_Icon=0;
+		clearInterval(StopPics);
+		},function(){
+			if(Pics_or_Icon==0)
+			    {StopPics=setInterval(function(){
+				WhichPics(ThisPics);
+				},4000)};
+			}).trigger("mouseleave");
+	$("#divDonw #Biaoti").animate({"opacity":0},0).animate({"left":10,"opacity":0.7},500).animate({"left":0},100).animate({"opacity":1},300,function(){
+	$("#divpics #Ficon #ul2 li").css("display","block");
+	$("#divpics #Ficon #ul2 .divI1").animate({"opacity":0},0).animate({"top":10,"opacity":0.3},300).animate({"top":0},100).animate({"opacity":1},300,function(){
+		$("#divpics #phone #Iphone").css("display","block").animate({"opacity":0},0).animate({"opacity":1},1500)});
+	$("#divpics #Ficon #ul2 .divI2").animate({"opacity":0},0).animate({"top":125,"opacity":0.3},450).animate({"top":115},125).animate({"opacity":1},300);
+	$("#divpics #Ficon #ul2 .divI3").animate({"opacity":0},0).animate({"top":240,"opacity":0.3},600).animate({"top":230},150).animate({"opacity":1},300);
+	$("#divpics #Ficon #ul2 .divI4").animate({"opacity":0},0).animate({"top":355,"opacity":0.3},750).animate({"top":345},200,function(){
+		$("#divpics #Ficon #ul3").animate({"top":100,"opacity":1},400).animate({"top":90},100);
+		}).animate({"opacity":1},300);
+		});
+	$("#divDonw #Kmubiao").animate({"opacity":0},0).animate({"left":10,"opacity":0.5},650).animate({"left":0},100).animate({"opacity":1},400);
+	$("#divDonw .ul1 .divP1").animate({"opacity":0},0).animate({"left":10,"opacity":0.3},700).animate({"left":0},100).animate({"opacity":1},300);
+	$("#divDonw .ul1 .divP2").animate({"opacity":0},0).animate({"left":220,"opacity":0.3},900).animate({"left":210},150).animate({"opacity":1},300);
+	$("#divDonw .ul1 .divP3").animate({"opacity":0},0).animate({"left":410,"opacity":0.3},1100).animate({"left":400},200).animate({"opacity":1},300);
+ 
+	function WhichPics(ThisPics){
+	    $li_This=$("#divpics #phone #Fpics #ul1 .li_This");
+	    $li_Next=$li_This.next().length ? $li_This.next() : $("#divpics #phone #Fpics #ul1 li:first");
+		$li_Next.attr("class","li_Next").css({"left":500});
+		$li_This.stop(true,false).animate({"left":0},500,function(){$(this).removeClass("li_This")});
+    	$li_Next.stop(true,false).animate({"left":250},500,function(){$(this).attr("class","li_This")});
+		LastPics= $("#divpics #phone #Fpics #ul1 li").index($li_Next)
+		var xuanZtop=LastPics*115;
+		if(LastPics==0){$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":xuanZtop-10},500).animate({"top":xuanZtop},100)}
+		else{$("#divpics #Ficon #ul3 li").stop(true,false).animate({"top":xuanZtop+10},500).animate({"top":xuanZtop},100)}};
+});
+</script>
+</html>

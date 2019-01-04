@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            background: red
+        }
+        .green{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- v-bind:属性名->给这个属性添加一个vm的属性变量 -->
+        <!-- :属性名->v-bind的简写 -->
+       <!-- <p v-bind:class='msg'>{{msg}}</p> -->
+       <input type="button" value="value" @click='changeColor'>
+       <p :class='flag?abc:msg'>{{msg}}msg</p>
+       <!-- 属性前面有:(或者@)那么属性值就肯定是表达式,就会解析运算,就会有返回值.没有就是字符串-->
+       <span :name='1+1' name='1+1'></span>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'div',
+        data:{
+            msg:'red',
+            abc:'green',
+            flag:true,
+        },
+        methods:{
+            changeColor(){
+                //通过数据修改来更新视图的变化
+                this.flag=!this.flag;
+            }
+        }
+    })
+
+</script>
+</html>

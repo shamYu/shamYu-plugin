@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text" value="" />
+		<input type="button" id="btn" value="检测邮箱" />
+	</body>
+	<script type="text/javascript">
+		
+		var oText=document.getElementById("text");
+		var oBtn=document.getElementById("btn");
+		
+//		^ ->行首,开始匹配的位置. $->行尾,结束匹配的位置
+
+		var re=/^\w+@[a-z0-9]+\.[a-z]{2,3}$/;
+		
+//		re.test(str)->正则的方法,不是字符串的方法,不要用字符串来调用.
+//		检测str是否匹配re规则,匹配返回true,不匹配返回false
+		
+		oBtn.addEventListener('click',function(){
+			if(re.test(oText.value)){
+				alert('邮箱对了');
+			}else{
+				alert('邮箱格式错误');
+			}
+		});
+		
+	</script>
+</html>

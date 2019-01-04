@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.active{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <!-- 同时绑定两个类 -->
+        <p :class='["red","green"]'></p>
+        <p :class='[abc,edf]'></p>
+
+        <!-- 通过配置json对象,控制哪些类有,哪些类没有 -->
+        <!-- 通过类名后面的表达式的返回值来确定 -->
+        <p :class={box1:true,box2:false}></p>
+        <p :class={box1:flag,box2:1<0}></p>
+
+        <p :style='msg'>ddddd</p>
+        <p :style='{width:w,height:h,background:b}'>wwwww</p>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            abc:'box1',
+            edf:'box2',
+            flag:true,
+            msg:'width:100px;height:100px;background:red',
+            w:'100px',
+            h:'200px',
+            b:'green',
+        }
+    })
+
+
+</script>
+</html>

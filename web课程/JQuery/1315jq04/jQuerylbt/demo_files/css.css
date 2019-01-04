@@ -1,0 +1,64 @@
+div { margin: 0px; padding: 0px; }
+hr { margin: 0px; padding: 0px; }
+blockquote { margin: 0px; padding: 0px; }
+ul { margin: 0px; padding: 0px; }
+ol { margin: 0px; padding: 0px; }
+li { margin: 0px; padding: 0px; }
+table { margin: 0px; padding: 0px; }
+th { margin: 0px; padding: 0px; }
+td { margin: 0px; padding: 0px; }
+dl { margin: 0px; padding: 0px; }
+dt { margin: 0px; padding: 0px; }
+dd { margin: 0px; padding: 0px; }
+h1 { margin: 0px; padding: 0px; }
+h2 { margin: 0px; padding: 0px; }
+h3 { margin: 0px; padding: 0px; }
+h4 { margin: 0px; padding: 0px; }
+h5 { margin: 0px; padding: 0px; }
+h6 { margin: 0px; padding: 0px; }
+pre { margin: 0px; padding: 0px; }
+form { margin: 0px; padding: 0px; }
+input { margin: 0px; padding: 0px; }
+button { margin: 0px; padding: 0px; }
+select { margin: 0px; padding: 0px; }
+textarea { margin: 0px; padding: 0px; }
+fieldset { margin: 0px; padding: 0px; }
+legend { margin: 0px; padding: 0px; }
+body { color: rgb(51, 51, 51); font-family: Tahoma, Geneva, sans-serif, "ËÎÌו"; font-size: 12px; background-color: rgb(244, 244, 244); }
+h1 { font-size: 100%; font-weight: normal; }
+h2 { font-size: 100%; font-weight: normal; }
+h3 { font-size: 100%; font-weight: normal; }
+h4 { font-size: 100%; font-weight: normal; }
+h5 { font-size: 100%; font-weight: normal; }
+h6 { font-size: 100%; font-weight: normal; }
+.clearfix { }
+.clearfix::after { height: 0px; clear: both; display: block; visibility: hidden; content: "."; }
+* + html img { -ms-interpolation-mode: bicubic; }
+.clearboth { clear: both; }
+ul { list-style: none; }
+ol { list-style: none; }
+fieldset { border: 0px currentColor; }
+img { border: 0px currentColor; }
+address { font-style: normal; }
+cite { font-style: normal; }
+dfn { font-style: normal; }
+em { font-style: normal; }
+var { font-style: normal; }
+strong { font-weight: bold; }
+.fcu { font-weight: bold; }
+table { border-collapse: collapse; border-spacing: 0; }
+button { cursor: pointer; }
+.fhand { cursor: pointer; }
+button { font-size: 100%; }
+input { font-size: 100%; }
+select { font-size: 100%; }
+textarea { font-size: 100%; }
+html { }
+.navbox_ { margin: 0px auto; width: 960px; overflow: hidden; zoom: 1; }
+.navbox { margin: 8px auto 0px; width: 960px; overflow: hidden; zoom: 1; }
+.f_l { float: left; }
+.f_r { float: right; }
+.margintop { margin-top: 8px; }
+.paddingtop { padding-top: 8px; }
+a { color: rgb(56, 56, 56); text-decoration: none; }
+a:hover { color: rgb(204, 0, 0); text-decoration: underline; }

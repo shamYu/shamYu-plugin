@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="加数字" />
+		<div id='div1'>这是第0次点击</div>
+	</body>
+	<script type="text/javascript">
+//		点击按钮,根据点击次数,每点击一次,div的内容设置为：这是第*次点击
+		
+		var oDiv=document.getElementById("div1");
+		var oBtn=document.getElementById("btn");
+		
+		var iCount=0;
+		
+		oBtn.onclick=function () {
+			
+//			oDiv.innerText++;
+			iCount++;
+			oDiv.innerText='这是第'+iCount+'次点击';		
+		}
+		
+	</script>
+</html>

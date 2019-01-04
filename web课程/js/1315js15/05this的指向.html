@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		要判断this指向需要2个步骤:
+//			1:确定this在哪个函数声明里(这个函数什么不包括箭头函数).
+//			2:再确定这个函数声明调用时,是被谁调用的.
+//				如何知道这个函数被谁调用->函数调用的前面有没有别的对象名字.如果有,就是这个对象调用,如果没有就是window.
+//		
+//		特殊的:
+//			a:标签的事件句柄内的this指向标签本身.oDiv.onclick=function(){this->oDiv};//oDiv.click();
+//			b:如果有call和apply,那么this指向call和apply的第一个参数.
+//			c:如果有new 函数内的this指向实例. 指向new 函数()的返回值.
+//			d:如果this在箭头函数里,那么这个this指向箭头函数所在函数声明内的this.如果箭头函数不在任何函数申明内,就是指向window
+//			e:如果有bind,那么bind(对象1)返回的函数声明fn,在fn被调用时,无论以何种形式调用,fn内的this都指向对象1;
+//			
+//		小细节:
+//			自执行函数内的this指向window,定时器的回调函数内的this指向window.
+		
+	</script>
+</html>

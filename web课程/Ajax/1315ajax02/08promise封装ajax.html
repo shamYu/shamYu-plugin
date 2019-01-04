@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//promise的参数是回调函数,回调函数的第一个参数,异步操作成功时触发的函数,第二个参数是异步操作失败时触发的函数.
+		//then一定是触发成功的函数.
+		//catch一定是触发失败的函数.
+				
+		new Promise(function(success,err){
+			var xhr=new XMLHttpRequest();			
+			xhr.open('GET','php/getList1.php',true);
+			xhr.send();			
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200){
+						success(xhr.responseText);
+					}else{
+						err(xhr.status);
+					}
+				}
+			}
+		}).then(function(data){
+			alert(data);
+		}).catch(function(str){
+			alert('出错了'+str)
+		})
+		
+	</script>
+</html>

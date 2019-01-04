@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body></body>
+<script>
+
+    // 1:<keep-alive></keep-alive> -> 动态组件(路由)在切换时,组件不会重复创建和销毁.(复用组件)
+    // activated(){组件激活时},deactivated(){组件销毁时};
+
+    // 2:vuex的getters
+    // {
+    //     state:{a:10,b:20},
+    //     getters:{total(state){return state.a*state.b}}
+    // }
+
+    // {
+    //     computed:{
+    //         abc(){
+    //             return this.$store.getters.total
+    //         }
+    //     }
+    // }
+
+    // 3:动态路由->只用一个组件表示所有相同布局的路由视图，切换路由时更改组件数据。
+
+    // 路由视图a，b，c，3个视图的结构相同。那么需要给a，b，c三个视图声明同一个组件，不是三个
+    // 设置路由path时，路径设置变量：path:'/:变量名',这个变量名存储a,b,c三视图对应的哈希值.
+    // (this.$route.params.变量名)->当前的变量存储的是哪个哈希值.
+    // $route->只有父组件注册了路由器router,那么所有的子组件都可以访问$route对象
+    // //$route 可以设置watch监听
+
+    // 4:嵌套路由->某个路由视图view1内又嵌套另一个路由router2.
+
+    //     a:在view1的template内插入router2的html模板,包括routerlink和routerview
+    //     b:在view1的路由选项内插入children属性,再书写router2的路有选项
+
+    // 5:<router-link> 
+    // to属性类似于href属性,书写时可以写路径(不能写锚点);还可以绑定表达式,:to="{name:'路由名'}"
+    // routes:[
+    //     {
+    //         path:'/home',
+    //         //路由名
+    //         name:'wwww'
+    //     }
+    // ]
+    // 6:this.$router.push('路径')->让url跳转到该路径上.
+
+</script>
+</html>

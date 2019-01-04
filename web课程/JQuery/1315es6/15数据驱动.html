@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--真实DOM-->
+		<div id='wrap'>
+			<div>
+				<div></div>
+			</div>
+			<p></p>
+			<h3></h3>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		//虚拟DOM				
+		ele={
+			selctor:'#wrap',
+			tag:'div',
+			attributes:[{id:'wrap'},{class:'box'}],
+			children:[
+				{
+					tag:'div',
+					children:[
+						{
+							tag:'div',
+							children:[]
+						}
+					]
+				},
+				{
+					tag:'p',
+					children:[],
+				},
+				{
+					tag:'h3',
+					children:[],
+				}
+			]
+		}
+		
+		//100个人里面找1个人。只有身份证号。
+		
+//		挨家挨户取对身份证号.100个人去100家(跑腿跑100次);
+//			没有名单,找人只能挨家挨户.
+//			
+//		获取这100个人的信息,列成名单.找到相应的人,直接去他家(跑腿1次);
+//			有名单,直接找到
+		
+//		DOM操作查找元素,每次总是在真实的DOM树内查找元素(效率低);
+//		var oP=document.querySelector('body>div>div+p');		
+//		var oP1=document.querySelector('body>div>div+p');
+		
+//		vue->不直接操作真实DOM,操作虚拟DOM(名单)
+		
+	</script>
+</html>

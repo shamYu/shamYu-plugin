@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <input type="button" @click='change()' value='赌一把'>
+        <input type="text" v-model='abc'>
+        <p ref='p'>{{msg}}</p>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{msg:'哈哈哈',abc:'1111'},
+        methods:{
+            change(){
+                this.msg='没早餐了';
+                //当前的数据变化导致的视图更新，可以使用nextTick做本次变化的更新
+                //nextTick也是在视图更新后触发。但是只触发一次。
+                this.$nextTick(()=>{
+                    alert(this.$refs.p.innerText);
+                })
+            }
+        },
+        //updated(){
+            //视图更新之后弹内容,但是任何视图更新都会弹这个内容,这可能不是我们希望的效果
+        //     alert(this.$refs.p.innerText);
+        // }
+    })
+</script>
+</html>

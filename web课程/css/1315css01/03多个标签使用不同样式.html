@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*.red,div,#divf6->选择器->选中元素*/
+			/*div->标签选择器.
+			.red->类选择器
+			#div6->id选择器*/
+			/*优先级->id>类>标签*/			
+			.red{
+				width:100px;
+				height:100px;
+				background:red;
+			}
+			#div6{
+				width:100px;
+				height:100px;
+				background:blue;
+			}
+			.green{
+				width:100px;
+				height:100px;
+				background:green;
+			}
+			.blue{
+				width:100px;
+				height:100px;
+				background:blue;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<!--div.red-->
+		
+		<div class='red'>1</div>
+		<div class='red'>2</div>
+		<div class='red'>3</div>
+		<div class='red'>4</div>
+		<div class='red'>5</div>
+		<div class='green' id='div6'>6</div>
+		<div class='green'>7</div>
+		<div class='green'>8</div>
+		<div class='green'>9</div>
+		<div class='green'>10</div>
+		<div class='green'>11</div>
+	</body>
+</html>

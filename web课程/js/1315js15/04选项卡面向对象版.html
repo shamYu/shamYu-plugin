@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			div>div{
+				width: 200px;
+				height: 200px;
+				border:1px solid #000;
+				display: none;				
+			}
+			input.active{
+				background: red;
+			}
+			div.active{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap1'>
+			<input class='active' type="button" value="111" />
+			<input type="button" value="222" />
+			<input type="button" value="333" />
+			<div class='active'>1111</div>
+			<div>2222</div>
+			<div>3333</div>
+		</div>
+		<div id='wrap2'>
+			<input class='active' type="button" value="111" />
+			<input type="button" value="222" />
+			<input type="button" value="333" />
+			<div class='active'>1111</div>
+			<div>2222</div>
+			<div>3333</div>
+		</div>
+		<div id='wrap3'>
+			<input class='active' type="button" value="111" />
+			<input type="button" value="222" />
+			<input type="button" value="333" />
+			<input type="button" value="444" />
+			<div class='active'>1111</div>
+			<div>2222</div>
+			<div>3333</div>
+			<div>4444</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//创建一个选项卡的类，然后实例化一个选项卡对象
+				
+		function Tab(wrap){
+			this.wrap=document.getElementById(wrap);
+			this.divs=this.wrap.getElementsByTagName('div');
+			this.inputs=this.wrap.getElementsByTagName('input');
+			
+			//实例化的同时初始化实例的inputs属性，(给它们加事件)
+			this.initTab();
+		}
+		//每个tab实例初始化是需要给自身的input属性初始化(加事件)
+		Tab.prototype.initTab=function(){
+			
+			//缓存当前的实例this
+			var _this=this;
+			
+			for(let i=0;i<this.inputs.length;i++){
+				
+				this.inputs[i].index=i;
+				
+				this.inputs[i].addEventListener('click',function(){
+					for(let i=0;i<_this.inputs.length;i++){
+						_this.inputs[i].className='';
+						_this.divs[i].className='';
+					}
+					this.className='active';
+					_this.divs[this.index].className='active';
+				});
+			}
+		}
+				
+		var tab1=new Tab('wrap1');
+		var tab2=new Tab('wrap2');
+		var tab3=new Tab('wrap3');
+		
+	</script>
+</html>

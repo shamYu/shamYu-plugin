@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding:0;margin:0;list-style: none;}
+			li{
+				float: left;
+				width: 100px;
+				height: 100px;
+				margin-left:1px;
+				text-align: center;
+				line-height: 100px;
+				background: red;
+			}
+			ul{
+				border:5px solid #000;
+			}
+			div{
+				/*元素的两边不能出现浮动元素*/
+				clear:both;
+/*				height: 50px;*/
+				/*background: blue;*/
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--清除浮动的第四种方法:-->
+			<!--给父元素的最末尾添加一个空的块级元素,然后添加clear:both(莫名其妙多了一个元素)-->
+		
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<div></div>
+		</ul>
+	</body>
+</html>

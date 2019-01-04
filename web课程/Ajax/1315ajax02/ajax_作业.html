@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<style>
+    #oUl>li{
+        width: 20px;
+        height: 20px;
+        border-bottom: 2px solid #000000;
+        margin-left: 2px;
+    }
+    .active{
+        background: red;
+    }
+</style>
+<body>
+    <table class="table table-hover table-bordered" id="tab">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+        </tr>
+    </table>
+    <ul id="oUl" class="list-inline"></ul>
+</body>
+    <script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var oUl = document.getElementById("oUl");
+        var oTb = document.getElementById("tab");
+        var aLi = oUl.getElementsByTagName("li");
+        var aTr = oTb.getElementsByClassName("aTr");
+        var oBody = document.getElementsByTagName("body")[0];
+
+        /*初始化页面*/
+        fn(10,1);
+
+        /*ajax获取数据*/
+        function fn(num,page) {
+            ajax({
+                method:'GET',
+                isJsonp:'jsonp',
+                url:'http://money.finance.sina.com.cn/jiaoyifenxi/api/openapi.php/DataService.getUserProfit?num='+num+'&page='+page,
+                success:function(data){
+                    /*根据数据总量计算页面按钮的数量*/
+                    console.log(data.result);
+                    createPageCount(num,page);
+                    function createPageCount(n,p){
+                        var total = data.result.data.total;
+                        var pageCount = Math.ceil(total/n);
+
+                        if(aLi.length == 0){
+                            for(var i=0;i<pageCount;i++){
+                                var oLi = document.createElement("li");
+                                oUl.appendChild(oLi);
+                                oLi.innerText = i+1;
+                            }
+                        }
+
+                        /*给按钮添加点击事件*/
+                        window.onload = function(){
+                            if(window.sessionStorage.getItem("html")){
+                                oBody.innerHTML = window.sessionStorage.getItem("html")
+                            }
+                            /*fn(window.sessionStorage.getItem("num"),window.sessionStorage.getItem("page"));*/
+                            for(var i=0;i<aLi.length;i++){
+                                aLi[i].onclick = function () {
+                                    fn(10,this.innerText);
+                                    /*在本地储存页面状态*/
+                                   /* window.sessionStorage.setItem("num",num);
+                                    window.sessionStorage.setItem("page",this.innerText);*/
+                                    window.sessionStorage.setItem("html",oBody.innerHTML);
+                                }
+                            }
+                        }
+
+                        /*给被点击的按钮添加样式*/
+                        for (var i=0;i<aLi.length;i++){
+                            aLi[i].className = "";
+                        }
+                        aLi[page-1].className = "active";
+                    }
+
+                    /*根据获取到的数据创建tr和td，并填充数据进去*/
+                    var obj = data.result.data.data
+                    createContent(obj);
+                    function createContent(a){
+                        if (aTr.length == 0){
+                            for(var i=0;i<a.length;i++){
+                                var oTr = document.createElement("tr");
+                                oTr.className = "aTr";
+                                oTb.appendChild(oTr);
+                            }
+                        }
+
+                        for(var i=0;i<aTr.length;i++){
+                            aTr[i].innerHTML = "";
+                            for (var porp in a[i]){
+                                aTr[i].innerHTML += "<td>"+a[i][porp]+"</td>";
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+
+
+    </script>
+</html>

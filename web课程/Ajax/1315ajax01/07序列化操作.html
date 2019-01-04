@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--后端:php,java,.net,node.js-->
+		<!--前端--后端(java,php)--数据库-->
+		<input type="text" id="user" placeholder="账号" value="" />
+		<input type="text" id="age" placeholder="年龄" value="" />
+		<input type="button" id="btn" value="发送数据" />
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.querySelector('div');
+		var oBtn=document.getElementById("btn");
+		
+		var oUser=document.getElementById("user");
+		var oAge=document.getElementById("age");
+					
+		oBtn.onclick=function(){
+			
+			var xhr=null;
+		
+			try{
+				xhr=new XMLHttpRequest();			
+			}catch(e){
+				xhr=new ActiveXObject('Microsoft XMLHTTP');
+			}
+			
+			var person=new CreatePerson(oUser.value,oAge.value);
+			
+			xhr.open('POST','php/1.post.php',true);			
+			xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');			
+			xhr.send(parseStr(person));
+			
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200){
+						oDiv.innerText=xhr.responseText;
+					}else{
+						alert('出错了：'+xhr.status);
+					}
+				}
+			}
+		}
+		
+		function CreatePerson(name,age){
+			this.username=name;
+			this.age=age;
+		}
+		
+		function parseStr(obj){
+			var arr=[];			
+			for(var prop in obj){
+				arr.push(prop+'='+obj[prop]);
+			}			
+			return arr.join('&');
+		}
+		
+		
+		
+	</script>
+</html>

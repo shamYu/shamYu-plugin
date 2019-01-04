@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <p>{{str}}</p>
+        <!-- send是一个自定义事件,赋值父组件的函数名 -->
+        <!-- 让自定义事件send触发时来调用getData函数 -->
+        <!-- 这里send赋值时只能赋值函数声明,不能填写函数调用表达式 -->
+        <!-- 自定义事件的名字不能用驼峰,驼峰的命名换成带-的命名,例如sendData替换成send-data -->
+        <show @send='getData'></show>
+        <!-- <input type="text" v-model='msg'> -->
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    const show={
+        template:'<input type="text" v-model="msg">',
+        data(){
+            return {
+                msg:'子组件的数据'
+            }
+        },
+        watch:{
+            msg(){
+                //手动触发自定义事件send,并且把当前子组件的数据msg传递给getData
+                this.$emit('send',this.msg);
+            }
+        }
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            str:''
+        },
+        methods:{
+            //获取子组件的数据.子组件的数据每次发生变化都可以出发
+            //newVal就是子组件传递过来的数据
+            getData(ev){
+                this.str=newVal;
+            }
+        },
+        components:{
+            show
+        }
+    })
+</script>
+</html>

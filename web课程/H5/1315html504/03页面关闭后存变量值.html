@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id='text' value="" />
+		<input type="button" id='btn' value="按钮" />
+	</body>
+	<script type="text/javascript">
+		
+//		var str='';
+//		var oText=document.getElementById("text");
+//		var oBtn=document.getElementById("btn");
+//		
+//		oBtn.onclick=function(){
+//			str=oText.value;
+//		}
+		
+		var str=window.localStorage.getItem('str');
+		
+		var oText=document.getElementById("text");
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function(){
+//			str=oText.value;
+			window.localStorage.setItem('str',oText.value);
+		}
+		
+	</script>
+</html>

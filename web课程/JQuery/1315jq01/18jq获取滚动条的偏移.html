@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height:2000px;
+			}
+			div{
+				width: 50px;
+				height: 50px;
+				position: fixed;
+				right:10px;
+				bottom:10px;
+				background: red;
+				cursor: pointer;
+			}
+			p{
+				width: 200px;
+				height: 300px;
+				border:1px solid #000;
+				overflow-y:auto;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			家华盛顿附近哈是打开房间哈萨克京东方哈克东方航空炬华科技水电费看见爱上大富科技阿士大夫看
+			见爱上的房间开家华盛顿附近哈是打开房间哈萨克京东方哈克东方
+			航空炬华科技水电费看见爱上大富科技阿士大夫看见爱上的房间开
+			家华盛顿附近哈是打开房间哈萨克京东方哈克东方航空炬华科技水电费看见爱上大富科技阿士大夫看
+			见爱上的房间开家华盛顿附近哈是打开房间哈萨克京东方哈克东方
+			航空炬华科技水电费看见爱上大富科技阿士大夫看见爱上的房间开
+		</p>
+		<div>回到顶部</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$('div').click(function(){
+//			document.documentElement.scrollTop=0;
+			$('body').scrollTop(0);
+
+			//设置滚动条的偏移(卷去的距离)
+			$(document).scrollTop(0);
+			//获取当前滚动条卷去的距离
+//			console.log($(document).scrollTop());
+			
+			//某个元素的滚动条的偏移.
+			console.log($('p').scrollTop());
+		})
+		
+	</script>
+</html>

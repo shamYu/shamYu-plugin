@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<iframe id='if' src="01复习.html" width="500" height=""></iframe>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var oIf=document.getElementById("if");
+		
+		oIf.onload=function(){
+			console.log(oIf.contentWindow.a);
+		}
+		
+		//检查一个变量的数据类型
+//		console.log($.type(9000));
+//		console.log($.type(null));
+//		console.log($.type([]));
+		
+//		Object.prototype.toString.call([])=='[object Array]';
+		
+		//检查一个对象是不是数组
+//		console.log($.isArray([]));
+		
+		//判断一个数字是不是纯数字
+//		console.log($.isNumeric(NaN));
+//		console.log($.isNumeric(Infinity));
+		
+//		是不是json对象		
+//		console.log($.isPlainObject(null));
+//		console.log($.isPlainObject({}));
+//		console.log($.isPlainObject(document));//false
+//		console.log($.isPlainObject(window));//false
+		
+//		空对象
+//		console.log($.isEmptyObject({}));//true
+//		console.log($.isEmptyObject(null));//true
+//		console.log($.isEmptyObject(document));//false
+		
+//		var abc=window;		
+//		console.log($.isWindow(oIf.contentWindow));
+		
+	</script>
+</html>

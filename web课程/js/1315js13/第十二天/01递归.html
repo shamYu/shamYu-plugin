@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		用递归实现阶乘,例如
+//		fn(3),返回3*2*1.fn(5),返回5*4*3*2*1
+		
+		var result=1;
+		
+//		for(var i=5;i>1;i--){
+//			result*=i;
+//		}
+				
+		function fn(i){
+			if(i>1){
+				result*=i;
+				fn(i-1);
+			}
+			return result
+		}
+		
+//		fn();		
+		var a=fn(a);
+		
+		function fn(n){
+			if(n==1){
+				return 1;
+			}else{
+				return fn(n-1)*n;
+			}
+		}
+		
+		function fn(n){
+			return n==1 ? 1 : fn(n-1)*n
+		}
+		
+//		fn(3)->fn(2)->fn(1)*2*3
+		
+	</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				border:1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id='text1' value='' />
+		<input type="button" id='btn' value='恳请皇上预览' />
+		<ul id='ul'></ul>
+	</body>
+	<script type="text/javascript">
+//		点击按钮,判断,如果文本框内输入的文字是杨幂，给ul内部添加一个li，li的内容是：'我爱杨幂'；
+//				   如果文本框内输入的内容是范冰冰,给ul内部添加一个li，li的内容是：'老是老了点，但是还凑合'；
+//				   如果文本框内输入的内容是林志玲,给ul内部添加一个li，li的内容是：'声音很好听，就是太老了'；
+//				   如果文本框内输入的内容是迪丽热巴,给ul内部添加一个li，li的内容是：'唔……'；
+//				   如果文本框内输入的内容是凤姐,给ul内部添加一个li，li的内容是：'are u kidding me？'；
+//				   如果都不是以上人名,弹出'我要看美女'
+				 
+//				 要求每次插入的li都不替换之前插入的li
+		
+		var oBtn=document.getElementById("btn");
+		var oText=document.getElementById("text1");
+		var oUl=document.getElementById("ul");
+		
+		oBtn.onclick=function () {
+			
+			if(oText.value=='杨幂'){
+				oUl.innerHTML+='<li>我爱杨幂</li>';
+			}else if(oText.value=='范冰冰'){
+				oUl.innerHTML+='<li>老是老了点,但是还凑合</li>';
+			}else if(oText.value=='林志玲'){
+				oUl.innerHTML+='<li>声音很好听，就是太老了</li>';
+			}else if(oText.value=='迪丽热巴'){
+				oUl.innerHTML+='<li>唔……</li>';
+			}else if(oText.value=='凤姐'){
+				oUl.innerHTML+='<li>are u kidding me？</li>';
+			}else{
+				alert('朕要看美女');
+			}
+		}
+		
+		
+	</script>
+</html>

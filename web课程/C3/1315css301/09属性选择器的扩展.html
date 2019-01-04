@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*以holy开头的abc属性所在的元素*/
+			/*[abc^='holy']{
+				background: red;
+			}*/
+			
+			/*[abc^='h']{
+				background: red;
+			}*/
+			
+			/*[abc$='crazy']{
+				background: red;
+			}*/
+			
+			/*以azy结尾的abc属性所在的元素*/
+			/*[abc$='azy']{
+				background: red;
+			}*/
+			
+			/*abc属性内包含azy的属性所在的元素*/
+			[abc*='holy']{
+				background: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li abc='Amazing_holy_crazy'>111</li>
+			<li abc='Amazing_crazy_holy'>222</li>
+			<li abc='holy_Amazing_crazy'>333</li>
+			<li abc='ahc'></li>
+			<li></li>
+		</ul>
+		<div style='background: red;'>1111</div>
+		<div style='background: green;'>2222</div>
+		<div style='width:100px;height:100px;background: blue;'>3333</div>
+	</body>
+	<script type="text/javascript">
+		
+		//通过属性选择器选中背景是蓝色的div
+		var oDiv=document.querySelector([style*='background: blue']);
+		
+	</script>
+</html>

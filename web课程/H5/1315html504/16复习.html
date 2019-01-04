@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点击" />
+	</body>
+	<script type="text/javascript">
+		
+		var oBtn=document.getElementById("btn");
+		
+//		1:表达式.		
+//			什么是true,什么是false?
+//			0,NaN,undefined,null,false,''->都是false
+//		  算术运算符表达式->返回number. 如果+的操作数有一个是字符串,那么返回字符串.
+//		   比较运算符表达式->肯定返回布尔值.
+//		   逻辑与和逻辑或->返回某个操作数.
+//		   &&->第一个操作数隐式转换为布尔值是true,那么返回第二个操作数,否则返回第一个操作数.
+//		   ||->第一个操作数隐式转换为布尔值是true,那么返回第一个操作数,否则返回第二个操作数.
+//		 逻辑非->!返回布尔值.
+//		
+//		三目运算符->第一个操作数隐式转换为布尔值是true,返回第二个操作数,否则第三个操作数.
+		
+//		赋值表达式->返回第二个操作数的值.
+		
+//		隐式转换->类型不符合规范，就会发生隐式转换
+//			算术运算符,比较运算符->要求操作数都是number,不是就转换.
+//			+ 如果有操作数是number,就不会隐式转换.
+//			==如果操作数两个都是对象,比较两个对象是否是同一个对象.
+//			undefined==null -> true undefined===null -> false
+		
+//		变量提升:
+//			程序运行前,会把var 声明的变量和函数声明提升到相应作用域顶端.赋值部分不提升.
+//			当变量提升的名字与函数提升的名字冲突,忽略变量提升.
+		
+//		变量查找:
+//			需要求一个变量的值,会涉及到变量查找.
+//			沿着作用域链,逐层往上查找这边变量的声明在哪个作用域里.如果查找到就停止查找.
+		
+//		js的作用域链是声明时确定的(静态作用域,词法作用域);
+//		动态作用域是调用时确定.
+//		有形参的函数的作用域链:fn->参数作用域->全局;		
+		
+//		闭包:
+//			1:子函数使用了祖先函数内声明的变量a.
+//			2:子函数还可以在外部调用。
+//		闭包的特性:
+//			1:变量a就一直在内存中.只能通过调用子函数来访问。
+//			2:变量a有多少个，取决于祖先函数调用多少次。
+//			3:访问某个a的值是什么。得确定这个a的作用域链。
+		
+		var oYm={name:'杨幂'};
+		var oFbb={name:'范冰冰'};
+				
+		function fn(){
+			console.log(this);
+		}
+		
+//		var show=fn.bind(oYm);
+
+		//bind()返回的函数声明，调用时(除了new)，肯定是用bind()的参数来调用的。
+//		show();//oYm
+//		new show();//实例
+//		show.call(oFbb);//oYm;
+		
+//		fn.call(oFbb);//
+		
+//		let c=10;
+//		
+//		function fn(){
+//			var b = this.c ? c++ : --c;
+//			console.log(b);//9
+//		}
+//		
+//		fn();
+				
+//		for(var i=0;i<5;i++){
+//			show(i);					
+//		}
+//		
+//		function show (index){
+//			var x=index;
+//			oBtn.addEventListener('click',function(){
+//				console.log(index);
+//			});	
+//		}
+			
+//		var x=10;
+//		console.log(x);
+//		
+//		var x1=11;
+//		console.log(x1);
+//		
+//		var x2=12;
+//		console.log(x2);
+		
+		
+//		var a=10;
+//		
+//		function add(){
+//			var a=20;
+//			fn();
+//		}
+//		
+//		function fn(a){
+//			alert(a);  //弹10; fn->全局.书写函数声明时作用域就确定了。跟函数调用没有关系。
+//		}		
+//			
+//		add();
+		
+//		function add(){
+//			return a++
+//		}
+//		
+//		var b= add() ? a++ : add();
+//		
+//		console.log(b);//11
+//		console.log(a);//12
+		
+	</script>
+</html>

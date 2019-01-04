@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		1:cookie
+			document.cookie='name=abc'
+			document.cookie='name=abc;expires='+new Date().toUTCString();
+		2:本地存储
+			document.localStorage.setItem('abc',123);
+			document.localStorage.getItem('abc');
+			document.localStorage.removeItem('abc');
+			document.localStorage.clear();
+			
+			document.sessionStorage.setItem('abc',123);
+			document.sessionStorage.getItem('abc');
+			document.sessionStorage.removeItem('abc');
+			document.sessionStorage.clear();
+		
+			storage->本地存储的数据有任何一个真正发生变化时,就会触发.值变化,新增,删除
+					 ev.newValue,ev.oldValue,ev.key
+			
+			//存储数据,共享数据.
+		
+		cookie与本地存储
+			共同点:
+				1:同源页面都能共享.
+				2:都是存字符串数据.
+			
+			区别:
+				1:cookie是4k,本地存储5M
+				2:cookie会默认在头信息里.本地存储不参与数据请求.
+				3:本地存储没有过期时间.
+	</script>
+</html>

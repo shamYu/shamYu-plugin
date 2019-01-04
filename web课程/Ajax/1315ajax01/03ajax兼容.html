@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		var xhr=new XMLHttpRequest();
+		
+		var xhr=null;
+		
+//		if(XMLHttpRequest){
+//			xhr=new XMLHttpRequest();
+//		}else{
+//			xhr=ActiveXObject('Microsoft XMLHTTP');
+//		}
+		
+		//容错调试，(异常捕获)
+		try{
+			xhr=new XMLHttpRequest();
+		}catch(e){
+			xhr=ActiveXObject('Microsoft XMLHTTP');
+		}
+		
+	</script>
+</html>

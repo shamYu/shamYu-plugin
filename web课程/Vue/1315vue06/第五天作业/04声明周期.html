@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <input type="text" v-model.lazy='msg'>
+        {{msg}}
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script>
+    //在app内显示input输入的结果。
+    //input输入的内容如果不是纯数字，则输入的内容不显示。提示。lazy
+
+    var vm=new Vue({
+        el:'#app',
+        data:{msg:''},
+        watch:{
+            msg(){
+                if(!(+this.msg==(+this.msg))){
+                    this.msg='';
+                }
+            }
+        }
+    })
+
+</script>
+</html>

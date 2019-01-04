@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				height: 100%;
+			}
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			body>div{
+				display: flex;
+				width: 400px;
+				flex-wrap:wrap;
+				transition: 2s linear;
+			}
+			div>div{
+				width: 200px;
+				height: 200px;
+				border:1px solid forestgreen;
+				box-sizing: border-box;				
+			}
+			div>div:nth-child(1),div>div:nth-child(4){
+				border-radius: 0 90%;
+			}
+			div>div:nth-child(2),div>div:nth-child(3){
+				border-radius: 90% 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		window.onload=function(){
+			var oDiv=document.querySelector('body>div');
+		
+	//		var angle=0;
+	//		
+	//		setInterval(function(){
+	//			angle+=360;
+	//			oDiv.style.webkitTransform='rotate('+angle+'deg)';
+	//		},2000);
+			
+			var angle=360;
+			
+			oDiv.style.webkitTransform='rotate('+angle+'deg)';
+			
+			//动画结束事件
+			oDiv.addEventListener('webkitTransitionEnd',function(){
+//				console.log('动画结束了');
+				angle+=360;
+				oDiv.style.webkitTransform='rotate('+angle+'deg)';
+			});
+						
+//			oDiv.onwebkitTransitionEnd=function(){
+//				console.log('动画结束了')
+//			}
+			
+			
+			
+		}
+		
+
+		
+		
+	</script>
+</html>

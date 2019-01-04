@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		Fn.prototype.fn=function(){};
+		
+//		function abc(){
+//			console.log(100)
+//		}
+		
+//		$.prototype.abc=function(){
+//			console.log(100)
+//		}
+		
+//		$.fn->所有jq对象共同的原型.->类似于原生的Object.prototype
+//		给$.fn添加的所有私有方法或者属性，所有的jq对象都可以访问。因为$.fn是所有jq对象的上一层原型对象
+
+		$.fn.abc=function(){
+			console.log(100)
+		}
+		
+		console.log($.prototype==$.fn);//true	
+		
+		$('div').abc();
+		
+		
+	</script>
+</html>

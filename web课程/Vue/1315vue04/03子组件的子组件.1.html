@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+        <p>{{val}}</p>
+        <p>{{Count}}</p>
+        <!-- 可以通过一个自定义标签来插入子组件，插入后这个自定义标签会被删除 -->
+        <sonvm></sonvm>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            msg:[{msg1:0},{msg2:2}],
+            val:[{haha:0},{bebe:000}],
+            Count
+        },
+        watch:{
+            Count(){
+                return this.msg=this.val
+            }
+            
+        }
+        //子组件也同时是一个vue实例。
+    })
+</script>
+</html>

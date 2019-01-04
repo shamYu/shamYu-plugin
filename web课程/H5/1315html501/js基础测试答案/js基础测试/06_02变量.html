@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text" value="10" />
+		<input type="button" id="btn" value="点击" />
+	</body>
+	<script type="text/javascript">
+		//在文本框内输入任意文字，点击btn按钮后弹出没输入之前的内容(不要给我直接alert(10));
+		var oText=document.getElementById("text");
+		var oBtn=document.getElementById("btn");
+		var str=oText.value;
+		oBtn.onclick=function () {
+			alert(str);
+			str=oText.value;
+		}
+	</script>
+</html>

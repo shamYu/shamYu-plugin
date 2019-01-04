@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>111</div>
+		<div>222</div>
+		<div>333</div>
+		<div>444</div>
+	</body>
+	<!--引入jq之后才能使用-->
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		$('div').css('background','red');
+		
+//		var aDiv=$('div');		
+//		aDiv.css('background','red');
+
+//-----------------------------------------------------------------------------------
+		
+//		DOM操作->获取元素,操作元素。
+		
+//		jq获取元素->在$()参数写选择器.选择器是字符串。
+//		$()->返回的一定是一个类数组。不管选择器匹配多少个元素。
+//		
+//		选择器匹配多少个元素,$()就会批量给所用的元素都修改样式。不需要写循环
+
+//		$('div').css('background','red');
+
+//		eq()过滤，选中集合里面的某一个，参数数下标
+		$('div').eq(2).css('background','red');
+		
+//		length表示匹配元素的个数
+//		console.log($('div').length);
+		
+//		function $ (selector){
+//			this.aEle=document.querySelectorAll(selector);
+//		}
+//		
+//		$.prototype.css=function(prop,val){
+//			for(var i=0;i<this.aEle.length;i++){
+//				this.aEle[i].style[prop]=val;
+//			}
+//		}
+
+//		new $('div').css('background','red');
+//-------------------------------------------------------------------------------------------------
+		
+	</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div>p{
+				float: left;
+				width: 50px;
+				height: 30px;
+				background: red;
+				margin-left: 1px;
+			}
+			div{
+				border:1px solid #000;
+				margin-top:1px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//以下循环只循环5次，而不是25次
+		for(var i=0;i<5;i++){			
+			for(var i=0;i<5;i++){
+				console.log(i);//0,1,2,3,4
+			}
+		}
+		
+		//嵌套循环，父循环和子循环不要用同一个循环变量i
+		for(var j=0;j<10;j++){
+			document.body.innerHTML+='<div id="div'+j+'"></div>';
+			var oDiv=document.getElementById("div"+j);
+			
+//			for(var i=0;i<=j;i++){
+//				oDiv.innerHTML+='<p>'+i+'</p>';
+//			}
+
+			for(var i=j;i<10;i++){
+				oDiv.innerHTML+='<p>'+i+'</p>';
+			}
+		}
+		
+		//嵌套循环
+//		for(var j=0;j<100;j++){
+//			document.body.innerHTML+='<div id="div'+j+'"></div>';
+//			var oDiv=document.getElementById("div"+j);			
+//			for(var i=0;i<100;i++){
+//				oDiv.innerHTML+='<p>'+i+'</p>';
+//			}
+//		}
+					
+//		document.body.innerHTML+='<div id="div1"></div>';
+//		var oDiv=document.getElementById("div1");
+//		
+//		for(var i=0;i<100;i++){
+//			oDiv.innerHTML+='<p>'+i+'</p>';
+//		}
+		
+		
+	</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 300px;
+				height: 100px;
+				border:1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id='text1' />
+		<div id='div2'></div>
+		<input type="button" id='btn' value='按钮' />
+		<div id='div1' abc='我是可爱的abc' edf='我是可爱的edf'>我是可爱的abc；我是可爱的edf</div>
+	</body>
+	<script type="text/javascript">
+//		点击按钮,把div1的自定义abc属性值显示在input里；把edf属性值显示在div2里
+		
+		var oDiv1=document.getElementById("div1");
+		var oDiv2=document.getElementById("div2");
+		
+		var oText=document.getElementById("text1");
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function () {
+			
+			var abc=oDiv1.getAttribute('abc');
+			oText.value=abc;
+			
+			var edf=oDiv1.getAttribute('edf');
+			oDiv2.innerText=edf;
+			
+		}
+		
+	</script>
+</html>

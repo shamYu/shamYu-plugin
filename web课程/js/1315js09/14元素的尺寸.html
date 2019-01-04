@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				/*height: 100px;*/
+				padding:50px;
+				background: red;
+				float: left;
+				border:10px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div'></div>
+	</body>
+	<script type="text/javascript">
+		
+//		盒子的容积,盒子的体积,盒子所占的空间.
+		
+		var oDiv=document.getElementById("div");
+		
+		//获取元素的宽，可以通过获取样式宽来求得(这是一个特例);
+//		var w=getComputedStyle(oDiv).width;//100px
+//		var h=getComputedStyle(oDiv).height;//100px
+		
+//		alert(w*h);
+//		alert(parseInt(w)*parseInt(h));
+
+		//offsetWidth->体积的宽。offsetHeight->体积的高。width+padding+border
+//		alert(oDiv.offsetWidth);
+		
+		//clientWidth -> 内部体积的宽  clientHeight -> 内部体积的高。width+padding
+//		alert(oDiv.clientWidth);
+		
+		//实际的内容的宽    -> 内容实际的宽+padding;
+//		alert(oDiv.scrollWidth);
+		
+		
+		
+		
+	</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>12</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+			<li>555</li>
+		</ul>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		var aLi=document.getElementsByTagName('li');
+//		
+//		for(var i=0;i<aLi.length;i++){
+//			aLi[i].onclick=function(){
+//				for(var i=0;i<aLi.length;i++){
+//					aLi[i].style.background='';
+//				}
+//				this.style.background='red';
+//			}
+//		}
+		
+		$('li').click(function(){
+			$('li').css('background','');			
+//			jq事件内的this是原生对象
+//			this.style.background='red';
+//			错误，原生对象没有css方法
+//			this.css('background','red');
+			
+			//将原生的this传入$(),可以转换成jq的this。
+			$(this).css('background','red');
+			
+		})
+		
+		
+	</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>Amazing</div>
+		<div>amazing</div>
+		<div>beauty</div>
+		<div>document</div>
+		<div>who</div>
+		<div>be</div>
+	</body>
+	<script type="text/javascript">
+		
+//		如果以上div的内容长度大于等于4,把内容的第四个字符与最后一个字符变大写
+
+		var aDiv=document.getElementsByTagName('div');
+		
+		for(var i=0;i<aDiv.length;i++){
+			
+			var content = aDiv[i].innerText;
+			
+			if(content.length>=4){	
+				
+				var str1=content.substr(0,3);
+				var str2=content.substr(3,1).toUpperCase();
+				var str3=content.slice(4,-1);
+				var str4=content.slice(-1).toUpperCase();
+				
+				aDiv[i].innerText=str1+str2+str3+str4;
+			}
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" value="我是之前的内容1" />
+		<input type="button" value="按钮1" />
+		<hr />
+		<input type="text" value="我是之前的内容2" />
+		<input type="button" value="按钮2" />
+		<hr />
+		<input type="text" value="我是之前的内容3" />
+		<input type="button" value="按钮3" />
+		<hr />
+		<input type="text" value="我是之前的内容4" />
+		<input type="button" value="按钮4" />
+		<hr />
+		<input type="text" value="我是之前的内容5" />
+		<input type="button" value="按钮5" />
+		<hr />
+	</body>
+	<script type="text/javascript">
+		
+//		在5个文本框内输入任意内容,然后点击按钮弹出相应文本框没输入之前的内容.(用闭包,不用全局变量);
+//		例如点击按钮1,弹出第一个text内输入之前的内容,以此类推
+		
+		var aInput=document.body.getElementsByTagName('input');
+				
+		for(let i=0;i<aInput.length;i+=2){
+			//每个按钮有一个自定义属性，这个自定义属性存的是它之前的文本框内的value。只不过是通过闭包来存。
+			aInput[i+1].content=show(i);
+			
+			aInput[i+1].addEventListener('click',function(){
+				alert(this.content);
+				//每次show调用，存一次当前的文本框的内容
+				this.content=show(i);
+			})
+		}
+				
+		function show(i){
+			var x=aInput[i].value;
+			return function(){
+				return x
+			}
+		}
+		
+//-------------------------------------------------------------------------------		
+//		var aInput=document.body.getElementsByTagName('input');
+//		
+//		var content=[];
+//		
+//		for(let i=0;i<aInput.length;i+=2){
+//			content.push(show(i));
+//			aInput[i+1].addEventListener('click',function(){
+//				alert(content[i/2]());
+//				content[i/2]=show(i);
+//			})
+//		}
+//				
+//		function show(i){
+//			var x=aInput[i].value;
+//			return function(){
+//				return x
+//			}
+//		}
+		
+		
+	</script>
+</html>

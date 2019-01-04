@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.float{
+				margin-left:1px;
+				background: red;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="button" id="btn1" value="随机设置宽高" />
+			<input type="button" id="btn2" value="变化宽高" disabled />
+		</div>
+		<div class='float'></div>
+		<div class='float'></div>
+		<div class='float'></div>
+		<div class='float'></div>
+		<div class='float'></div>
+		<div class='float'></div>
+		<div class='float'></div>
+		<div class='float'></div>
+		<div class='float'></div>
+		<div class='float'></div>
+	</body>
+	<script type="text/javascript">
+		
+//		要求1：点击btn1,给所有.float的div设置随机宽高,取值在50-100;
+//		要求2：点击btn2，随机选中一个.float的div,将其背景变绿。宽度变为它前一个的div的宽，高度变为它后一个div的高。
+//			    如果前后没有div或者不是.float的div,则它的宽高不需要改变.
+//		尝试将要求2封装成一个带参数的函数。
+		
+		var aDiv=document.getElementsByTagName('div');
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+		
+		oBtn1.onclick=setW_h;
+		oBtn2.onclick=turnGreen;
+		
+		//在任意元素集合里，随机选择一个，使其变任意颜色，宽变成前一个的宽，高变成后一个的高
+		
+		function turnGreen(){
+			changeEle('blue','float',1,aDiv);
+		}
+		
+		function changeEle(color,cName,s_index,ele){
+			var index=getRand(s_index,ele.length-1);
+			ele[index].style.background=color;
+			
+			//前面的元素存在，并且class是float
+			if(ele[index-1] && ele[index-1].className==cName){
+				ele[index].style.width=ele[index-1].style.width;
+			}
+			//如果后一个元素存在
+			if(ele[index+1]){
+				ele[index].style.height=ele[index+1].style.height;
+			}
+		}
+		
+		function setW_h(){
+			
+			for(var i=1;i<aDiv.length;i++){
+				
+				var w=getRand(100,50);
+				var h=getRand(100,50);
+				
+				aDiv[i].style.width=w+'px';
+				aDiv[i].style.height=h+'px';
+				
+			}
+			
+			oBtn2.disabled=false;
+		}
+		
+		function getRand(a,b){
+			return Math.floor(Math.random()*(a-b+1))+b;
+		}
+		
+	</script>
+</html>

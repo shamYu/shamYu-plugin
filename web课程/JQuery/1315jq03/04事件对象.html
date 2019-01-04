@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		jq的事件对象不需要做兼容
+		
+		//鼠标坐标
+		$(document).click(function(e){
+			alert(e.clientX+' '+e.clientY)
+		})
+		
+		//事件源
+		$(document).click(function(e){
+			alert(e.target.nodeName)
+		})
+		
+		//键盘码
+		$(document).keydown(function(e){
+//			alert(e.keyCode);
+			alert(e.which);
+		})
+		
+	</script>
+</html>

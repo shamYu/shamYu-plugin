@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		所有的函数默认拥有prototype属性,这个属性是一个对象,它是这个类所有公有属性的集合(类所有特征的集合);
+//		prototype对象默认拥有一个constructor属性->检测一个对象的构造函数是哪个
+		
+		function Beauty(){}
+		
+		Beauty.prototype.looks='沉鱼落雁';
+		
+		function Fn(){
+			this.name='杨幂'
+		}
+		
+		Fn.prototype=new Beauty();
+		
+		//继承父类的公有属性之后，实例constructor属性并不执行实例的构造函数，需要需要，可以重新设置构造函数的指向
+//		Fn.prototype.constructor=Fn;
+		
+		var oYm=new Fn();
+		
+		//默认情况下构造函数的原型的constructor属性会指向构造函数本身
+		console.log(oYm.constructor);//Beauty();
+		
+		
+	</script>
+</html>

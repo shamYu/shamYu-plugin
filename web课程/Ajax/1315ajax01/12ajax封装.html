@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul></ul>
+	</body>
+	<script type="text/javascript">
+		
+		var oUl=document.querySelector('ul');
+		
+//		ajax('GET','php/getList.php','',function(data){
+//			alert(data);
+//		});
+		
+		ajax('GET','php/getNews.php','',function(data){
+			var result=JSON.parse(data);			
+			result.forEach(function(items,i){
+				var oLi=document.createElement("li");
+				oUl.appendChild(oLi);
+				oLi.innerHTML='<a href="#">'+items.title+'</a>'+items.date;
+			})			
+		});
+		
+//		ajax('GET','php/1.get.php','username=Amazing&age=20',function(data){
+//			document.body.innerHTML+=data;		
+//		});
+		
+//		ajax('POST','php/1.post.php','username=Amazing&age=20',function(data){
+//			document.body.innerHTML+=data;		
+//		});
+		
+		function ajax(method,url,data,success){
+			
+			var xhr=null;
+			
+			try{
+				xhr=new XMLHttpRequest();			
+			}catch(e){
+				xhr=new ActiveXObject('Microsoft XMLHTTP');
+			}
+			
+			if(method=='GET'&&data){
+				url+='?'+data
+			}
+			
+			xhr.open(method,url,true);
+			
+			if(method=='POST'&&data){
+				xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+				xhr.send(data);
+			}else{
+				xhr.send();
+			}
+					
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200){
+//						将结果传出
+//						if(success){
+//							success(xhr.responseText);
+//						}
+						success && success(xhr.responseText);
+					}
+				}
+			}
+		}
+		
+	</script>
+</html>

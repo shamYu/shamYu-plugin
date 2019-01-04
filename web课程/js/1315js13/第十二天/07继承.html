@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		创建一个元素对象(所有的标签),所有的标签默认拥有id,class,style,title 4个全局属性
+//		创建一个表单对象(表单标签),所有的表单标签都拥有name和value属性.
+//		创建一个input标签,input标签单独拥有type属性.
+		
+		var ele={
+			id:true,
+			className:true,
+			style:true,
+			title:true
+		}
+		
+		var form={
+			name:true,
+			value:true,
+		}
+		
+		var input={
+			type:true
+		}
+		
+		input.__proto__=form;
+		form.__proto__=ele;
+		
+	</script>
+</html>

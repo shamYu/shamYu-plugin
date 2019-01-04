@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        /* @media screen (min-width:400px) and (max-width:768px) {
+            html{
+                font-size:20px
+            }
+        }
+
+        @media screen (min-width:768px) and (max-width:1000px) {
+            html{
+                font-size:30px
+            }
+        } */
+
+        html{
+            font-size:30px
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            font-size:30px 
+        }
+        p{
+            /* em->相对于父元素的字号大小 */
+            /* width:400px; */
+            /* width:20em; */
+
+            /* rem->相对于html元素的字号大小 */
+            /* 移动端的样式长度不用px，全都用rem */
+            width:20rem;
+            /* width:400px; */
+            height:400px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <p>哈哈哈</p>
+</body>
+<!-- 自动根据移动端设备的宽来动态调整html的字号大小 -->
+<script src="js/rem.js"></script>
+</html>

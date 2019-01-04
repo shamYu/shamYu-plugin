@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		
+//		1:原型链的属性检测判断
+//			对象.hasOwnProperty(属性名);->检测属性名是否是对象的私有属性.
+//			对象1.isPrototypeOf(对象2);->检测对象1是否在对象2的原型链上.
+//			
+//			属性名1 in 对象 ->检测属性名1是否在对象的原型链上.
+//			对象 instanceof 构造函数 ->检测构造函数的prototype是否在对象的原型链上.
+//		
+//		2:细节
+//			所有的函数都有prototype属性,这个属性是一个对象.函数的原型的默认上一级原型对象是Object.prototype;
+//			访问对象的原型链用是属性是__proto__不是prototype
+//			constructor属性是函数的prototype的私有属性,因此实例默认可以访问.这个属性默认指向构造函数本身.
+//			如果改变prototype的指向,再实例化对象,会改变实例默认的原型链.
+//			
+//		3:Object.getOwnPropertyDescriptor(对象,属性名);->返回这个对象的属性的4项基本描述.(一个json对象的四个属性);
+//		  Object.defineProperty(对象名,属性名,描述对象);
+//		
+//		4:Object.getPrototypeOf(对象);->访问对象的上一级原型对象.
+//		  Object.setPrototypeOf(对象1,对象2);->设置对象1的上一级原型对象为对象2.
+//		  
+//		5:拷贝继承->通过拷贝属性来进行继承
+//			浅拷贝:->只拷贝属性内的值.->引用类型的属性通过浅拷贝拷贝的是引用,不是对象本身,因此拷贝出来的新属性与原属性表示同一个对象
+//			深拷贝:->如果浅拷贝时遇到引用类型的属性,就对这个属性再进行一次浅拷贝(代码用递归实现);
+			
+	</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		正则表达式->规则->匹配字符串的规则
+		
+		//找到所有的1
+		//找到所有的数字
+		//找到若干个连着是数字
+		
+		var str='213h1,,3j81,3,1,1 1';
+		
+//		var re=new RegExp();
+		
+		//用正则来表示1字符
+//		var re=/1/g;
+//		var re=/[0-9]{1}/g;
+//		var re=/[0-9]{2}/g;
+		var re=/[0-9]{1,}/g;
+		
+		//根据正则规则来找字符串
+		var arr=str.match(re);
+		
+//		for(var i=0;i<str.length;i++){
+//			if(str.charAt(i)=='1'){
+//				arr.push(str.charAt(i));
+//			}
+//			if(str.charAt(i)>='0' && str.charAt(i)<='9'){
+//				arr.push(str.charAt(i));
+//			}
+//		}
+		
+		
+	</script>
+</html>

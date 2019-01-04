@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text" value="" />
+		<input type="button" id="btn" value="按钮" />
+	</body>
+	<script type="text/javascript">
+		
+		var oText=document.getElementById("text");
+		var oBtn=document.getElementById("btn");
+		
+		//数据类型->规定->事件赋值需要函数声明
+//		oBtn.onclick=function(){
+//			alert(x)
+//		};
+		
+		oBtn.onclick=window.show(10);
+		
+		function show(x){	
+			
+			console.log(this);//window
+			
+			return function(){				
+				console.log(this);//oBtn
+				alert(x);
+			}
+		}
+		
+	</script>
+</html>

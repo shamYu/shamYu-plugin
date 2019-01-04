@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    li{
+        display: none
+    }
+</style>
+<body>
+    <ul id="ul1">
+        你大爷的大爷
+        <li>44</li>
+        <li>533</li>
+        <li>34</li>
+        <li>3453</li>
+      
+        
+    </ul>
+    <ul>
+        你女马的
+        <li>545</li>
+        <li>543</li>
+        <li>5343</li>
+        <li>534</li>
+    </ul>
+</body>
+<script>
+    var oli =document.getElementsByTagName('li')
+    var oul = document.getElementById('ul1') 
+    
+    for(var i = 0 ;i<oul.length;i++){
+        
+        oul[i].onclick=function(){
+            var count=0;
+            if(count%2==0){
+                for(var j = 0;j<oli.length;j++){
+                    oli[j].style.display='block'
+                }
+            
+            }else{
+                for(var j = 0;j<oli.length;j++){
+                oli[j].style.display='none'
+                }
+            }
+            count++
+        }
+    }
+   
+   
+</script>
+</html>

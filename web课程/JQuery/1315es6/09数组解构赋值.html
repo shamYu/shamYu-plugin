@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		解构赋值的作用->更方便的给变量赋值->统一遵循'匹配模式'(对号入座)
+		
+//		解构赋值:
+//			1:数组的解构赋值
+//			2:对象的解构赋值.
+		
+//		var x=0,y=1,z=2,m=3;
+		
+//		var [x,y,z,m]=[0,1,2,3];
+		
+//		var [x,y,z,m]=[0,[1],2,3];//y==[1];
+				
+//		var [x,[y],z,m]=[0,[1],2,3];//y==1;		
+		//轮到y赋值时,相当于var [y]=[1]
+		
+//		var [x,[y],z,m]=[0,[[1]],2,3];//y==[1]
+
+//		var [x,[[y]],z,m]=[0,[1],2,3];//y==[1]
+		
+		//报错,因为相当于var [y]=1,1不是数组,没有元素赋值给y;
+		
+		var [x,y]=[1];//[1]没有第二个元素,也就相当于第二个元素是undefined,因此y==undefined
+//		var [x,y]=[1,undefined];
+		
+		var [x,y]=[]; //x与y都是undefined
+		
+		//解构赋值如果赋值的是undefined,就使用默认值10和5
+		var [x=10,y=5]=[];//x==10,y==5;
+		
+		//解构赋值如果不是赋值undefined,就无视默认值.
+		var [x=10,y=5]=[3,2];//x==3,y==2;
+		
+		var arr=[1,2,3,4];
+		var [x=10,y=5]=arr; //x==1,y==2
+		
+		//函数返回多个值。
+		function fn(){
+//			return 1,2,3
+			return [1,2,3]
+		}		
+		var num=fn();//3		
+		var [x,y,z]=fn();x==1,y==2,z==3;
+		
+		var arr=[1,2,3];
+//		var arr1=[...arr];
+
+//		解构赋值结合...运算符
+		var [...arr1]=arr;
+//		[arr1[0],arr1[1],arr1[2]]=[1,2,3];
+		
+	</script>
+</html>

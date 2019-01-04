@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        {{val}}
+        <!-- 给子组件添加自定义事件send -->
+        <!-- <div is='vDiv' @send='getData'></div> -->
+        <div is='vDiv'></div>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    //添加自定义事件的空vue实例.
+    //哪个组件需要数据.就在哪个组件内给bus添加自定义事件.触发的函数写成箭头函数.
+    //传递数据的组件,调用bus的自定义事件,并且将数据传入bus.
+    var bus=new Vue();
+    
+    //子元素获取父元素的数据->用props
+    //通过事件bus来共享数据.
+    //通过本地存储共享数据.
+    //vuex插件实现任意组件间的数据共享.
+    
+    const vDiv={
+        template:'<input type="text" v-model="msg1" />',
+        data(){
+            return {
+                msg:'hahah'
+            }
+        },
+        watch:{
+           msg(){
+               //每次msg变化,都触发bus的自定义事件send,并且将数据出入事件触发的函数fn
+               bus.$emit('send',this.msg);
+           }
+        }
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            val:[{msg1:0,msg2:1}]
+        },
+        created(){
+            //给bus对象添加自定义事件send
+            bus.$on('send',(val)=>{this.msg1=val})
+        },
+        components:{vDiv}
+    })
+
+</script>
+</html>

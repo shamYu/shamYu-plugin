@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text" value="我是之前的内容" />
+		<input type="button" id="btn" value="弹之前的内容" />
+	</body>
+	<script type="text/javascript">
+		
+//		在文本框内输入任意内容,然后点击按钮弹出没输入之前的内容.(用闭包,不用全局变量);
+		
+		var aInput=document.body.children;
+		
+		//存在全局作用域内
+//		var str=aInput[0].value;
+		
+		//存在局部作用域内
+		function show(){
+			var x=aInput[0].value;
+			return function(){
+				return x
+			}
+		}
+		
+		var fn=show();
+				
+		aInput[1].addEventListener('click',function(){			
+//			alert(str);
+			alert(fn());
+			fn=show();
+		});
+
+		
+	</script>
+</html>

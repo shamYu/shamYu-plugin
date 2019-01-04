@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			#wrap{
+				background: darkseagreen;
+			}
+			.fixed:after{
+				content:'';
+				display: block;
+				clear:both;
+			}
+			.fixed>li{
+				float: left;
+				height: 40px;
+				line-height:40px;
+				padding: 0 20px;
+				position: relative;
+				text-align: center;
+			}
+			.container{
+				width:1200px;
+				margin:0 auto;
+			}
+			.menu{
+				display: none;
+				/*background: red;*/
+				border:1px solid darkseagreen;
+				border-top:none;
+				position: absolute;
+				left:8px;
+			}
+			.menu>li{
+				padding:0 15px;
+				border-bottom:1px solid darkseagreen;
+			}
+			.fixed>li:hover>ul{
+				display: block;
+			}
+			a{
+				text-decoration: none;
+				color:#fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div class='container'>
+				<ul class='fixed'>
+					<li>
+						<a href="#">哈哈哈哈哈</a>
+						<ul class='menu'>
+							<li>111111</li>
+							<li>222222</li>
+							<li>3333333</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">哈哈哈哈哈</a>
+						<ul class='menu'>
+							<li>111111</li>
+							<li>222222</li>
+							<li>3333333</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">哈哈哈哈哈</a>
+						<ul class='menu'>
+							<li>111111</li>
+							<li>222222</li>
+							<li>3333333</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">哈哈哈哈哈</a>
+						<ul class='menu'>
+							<li>111111</li>
+							<li>222222</li>
+							<li>3333333</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">哈哈哈哈哈</a>
+						<ul class='menu'>
+							<li>111111</li>
+							<li>222222</li>
+							<li>3333333</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">哈哈哈哈哈</a>
+						<ul class='menu'>
+							<li>111111</li>
+							<li>222222</li>
+							<li>3333333</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">哈哈哈哈哈</a>
+						<ul class='menu'>
+							<li>111111</li>
+							<li>222222</li>
+							<li>3333333</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<textarea name="" rows="" cols=""></textarea>
+	</body>
+</html>

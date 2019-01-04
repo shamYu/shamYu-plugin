@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var oLh={
+			name:'王八宏',
+			age:43,
+			height:'150cm',
+			looks:'看上去很帅'
+		}
+		
+		//存的时候先转成字符串
+		var superman=JSON.stringify(oLh);
+		
+		window.localStorage.setItem('superman',superman);
+		
+		var data=window.localStorage.getItem('superman');
+		
+		//取时也应该把字符串转换成对象.
+		var qinshou=JSON.parse(data);
+		
+	</script>
+</html>

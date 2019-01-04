@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮1" />
+		<input type="button" id="btn1" value="触发按钮1点击事件" />
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		var oBtn=document.getElementById("btn");		
+//		oBtn.onclick=function(){
+//			alert(100)
+//		}		
+//		oBtn.click();
+		
+//		$('#btn').on('click',function(){
+//			alert(100)
+//		})
+//		//默认点击一下
+//		$('#btn').click();
+		
+		$('#btn').on('click.abc',function(){
+			alert(100)
+		});
+		
+		$('#btn').on('click.edf',function(){
+			alert(200)
+		});
+		
+		$('#btn1').on('click',function(){
+			//主动触发某个事件
+			$('#btn').trigger('click.abc');
+		})
+		
+		
+		
+	</script>
+</html>

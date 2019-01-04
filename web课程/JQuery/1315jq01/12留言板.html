@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul></ul>
+		<input type="text" name="text" id="text" value="" />
+		<input type="button" name="btn" id="btn" value="留言" />
+	</body>
+	<script src="js/jquery-1.11.1.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$('#btn').click(function(){
+			
+			var str=$('ul').html()+'<li>'+$('#text').val()+'</li>';
+			$('ul').html(str);
+			
+			//等号左边必须是原始表达式(必须是变量)。报错
+//			$('ul').html()+='<li>'+$('#text').val()+'</li>';
+			
+		})
+		
+	</script>
+</html>

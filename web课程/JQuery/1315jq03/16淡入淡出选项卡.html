@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 500px;
+				height: 300px;
+				border:1px solid #000;
+				display: none;
+				text-align: center;
+				line-height: 300px;
+				font-size: 50px;
+				color:#fff;
+				position: absolute;
+			}
+			div:nth-of-type(1){
+				background: red;
+			}
+			div:nth-of-type(2){
+				background: blue;
+			}
+			div:nth-of-type(3){
+				background: green;
+			}
+			div.active{
+				display: block;
+			}
+			input.active{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>		
+		<input type="button" class='active' value="111" />
+		<input type="button" value="222" />
+		<input type="button"  value="333" />
+		<div class='active'>1111</div>
+		<div>2222</div>
+		<div>3333</div>		
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$('input').click(function(){
+			$(this).addClass('active').siblings('input').removeClass('active');
+			$('div').eq($('input').index(this)).fadeIn(1000).siblings('div').fadeOut(1000);
+		})
+		
+	</script>
+</html>

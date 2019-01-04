@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+			}
+			*{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+				
+		oDiv.onmousedown=function(ev){			
+			var ev=ev||window.event;			
+			//鼠标距离div左边的距离
+			var disX=ev.clientX-this.offsetLeft;
+			//鼠标距离div上班的距离
+			var disY=ev.clientY-this.offsetTop;
+			
+			document.onmousemove=function(ev){
+				var ev=ev||window.event;
+				//每次移动鼠标，根据当前鼠标的坐标移动div
+				oDiv.style.left=ev.clientX-disX+'px';
+				oDiv.style.top=ev.clientY-disY+'px';
+			}
+			
+			document.onmouseup=function(){
+				document.onmousemove=null;
+			}
+		}
+		
+	</script>
+</html>

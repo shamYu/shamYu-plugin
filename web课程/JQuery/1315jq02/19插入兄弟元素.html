@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li id='li3'>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var $oP=$('<p>灌灌灌灌灌</p>');
+		
+//		插入到已知元素的前面
+//		$('#li3').before($oP);
+//		插入到已知元素的后面
+//		$('#li3').after($oP);
+		
+		//参数可以是jq对象,也可以是选择器
+//		$oP.insertBefore($('#li3'));
+//		$oP.insertBefore('#li3');
+		
+		$oP.insertAfter('#li3');
+		
+//		before(),after(),insertBefore(),insertAfter(),如果操作的是页面上已经存在的元素,实现剪切操作
+		
+		
+	</script>
+</html>

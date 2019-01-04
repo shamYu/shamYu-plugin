@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//如何子类继承父类的私有属性，使之变成子类的私有属性
+		function human(){
+			this.walk=true;
+			this.speak=true;
+		}
+		
+		var man=new human();
+		
+		/*function Man(name,age){
+			//在子类内部调用父类构造函数，并且用call或者apply改变调用调用父类的this，使之变成子类实例来调用
+			human.call(this);
+			this.name=name;
+			this.age=age;
+		}
+		
+		var superMan=new Man('超人',9000);*/
+		
+		
+		
+		
+	</script>
+</html>

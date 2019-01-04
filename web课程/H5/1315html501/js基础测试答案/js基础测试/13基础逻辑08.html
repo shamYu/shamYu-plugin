@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1'>0</div>
+		<input type="checkbox" value="3" />
+	</body>
+	<script type="text/javascript">
+//		给div1添加点击事件。每次点击其内部数字+1
+//		每次点击，如果当前的checkbox是被勾选的，并且当前点击的次数等于checkbox的value，设置checkbox的id为box并且弹出该id值
+		var oDiv=document.getElementById("div1");
+		var oInput=document.getElementsByTagName('input')[0];
+		oDiv.onclick=function () {
+			this.innerHTML++;
+			if(oInput.checked&&this.innerHTML==oInput.value){
+				oInput.id='box';
+				alert(oInput.id);
+			}
+		}
+		
+	</script>
+</html>

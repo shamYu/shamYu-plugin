@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        {{msg}}
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{msg:'哈哈哈'},
+        //vue的视图更新是异步的.(数据变化不会马上导致视图变化);
+        watch:{
+            msg(){
+                debugger;
+            }
+        },
+        //视图更新前触发beforeUpdate,数据已经变化,虚拟节点没变
+        beforeUpdate(){
+            debugger
+            console.log('视图更新前');
+        },
+        //视图更新后触发,数据已经变化,虚拟节点变化,真实视图也更新了
+        updated(){
+            debugger
+            console.log('视图更新后');
+        },
+    })
+</script>
+</html>

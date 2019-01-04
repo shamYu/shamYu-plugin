@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <a href="#home">首页</a>
+        <a href="#about">关于我们</a>
+
+        <!-- 路由视图也是动态组件,因此默认在路由切换时会重复的创建和销毁 -->
+        <!-- 如果希望路由视图不重复创建和销毁,需要给路由视图套一个自定义标签keep-alive -->
+        <keep-alive>
+            <!-- <router-view></router-view> -->
+            <!-- 组件内如果没有插槽 -->
+            <router-view />
+        </keep-alive>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+    const router = new VueRouter({
+        routes:[
+            {
+                path:'/home',
+                component:{
+                    template:'<div>11111111</div>',
+                    created(){
+                        console.log('home创建了');
+                    },
+                    mounted(){
+                        console.log('home挂载了');
+                    },
+                    activated(){
+                        console.log('home激活了');
+                    },
+                    deactivated(){
+                        console.log('home移除了');
+                    },
+                    destroyed(){
+                        console.log('home销毁了');
+                    },
+                }
+            },
+            {
+                path:'/about',
+                component:{
+                    template:'<div>222222222</div>'
+                }
+            },
+        ]
+    })
+
+    new Vue({
+        el:'#app',
+        router,
+    })
+
+</script>
+</html>

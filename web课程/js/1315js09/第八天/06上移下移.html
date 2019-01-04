@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1.<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		    <li>2.<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		    <li>3.<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		    <li>4.<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		    <li>5.<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		</ul>
+		
+		
+		<script>
+			
+			//点击上移按钮，把被点击按钮所在的li移动到其上一个li的上边。如果没有上一个li，把当前按钮所在的li插入到ul的最后面		
+			//点击下移按钮，把被点击按钮所在的li移动到其下一个li的下边。如果没有下一个li，把当前按钮所在的li插入到ul的最前面
+			
+			var aInput=document.getElementsByTagName('input');
+			var oUl=document.getElementsByTagName('ul')[0];
+			
+			for(var i=0;i<aInput.length;i++){
+				if(i%2==0){
+					aInput[i].onclick=moveUp;
+				}else{
+					aInput[i].onclick=moveDown;
+				}
+			}
+						
+			function moveUp(){			
+				var father=this.parentNode;
+				var uncle=father.previousElementSibling;
+				if(uncle){
+					oUl.insertBefore(father,uncle);
+				}else{
+					oUl.appendChild(father);
+				}														
+			}
+			
+			function moveDown(){
+				var father=this.parentNode;
+				var uncle=father.nextElementSibling;
+				if(uncle){
+					oUl.insertBefore(uncle,father);
+				}else{
+					oUl.insertBefore(father,aInput[0].parentNode);
+				}
+			}
+						
+//			for(var i=0;i<aInput.length;i++){
+//				aInput[i].onclick=moveLi;
+//			}
+//						
+//			function moveLi(){
+//				if(this.value=='上移'){
+//					var father=this.parentNode;
+//					var uncle=father.previousElementSibling;
+//					if(uncle){
+//						oUl.insertBefore(father,uncle);
+//					}else{
+//						oUl.appendChild(father);
+//					}														
+//				}else{
+//					var father=this.parentNode;
+//					var uncle=father.NextElementSibling;
+//					if(uncle){
+//						oUl.insertBefore(uncle,father);
+//					}else{
+//						oUl.insertBefore(father,aInput[0].parentNode);
+//					}
+//				}
+//			}
+			
+			
+		</script>
+		
+	</body>
+</html>

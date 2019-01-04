@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		封装函数实现:可以任意设置多个样式,根据内容,在元素内部插入相应个数的子元素
+//		按照以下调用形式,封装函数,在body内插入一个元素,元素的类型由tag属性决定.该元素拥有css属性的全部样式
+//		如果children属性存在,插入相应个数的子元素,子元素的类型以及内部子节点分别由children内的每一个元素的tab与str属性决定.
+//		children的兄弟属性str作为父元素的文本节点.
+
+		setEle({
+			tag:'div',
+			css:{
+				width:'200px',
+				height:'200px',
+				border:'10px solid #000',
+				background:'red',
+			},
+			children:[
+				{
+					tag:'p',
+					str:'子元素内容1'
+				},
+				{
+					tag:'span',
+					str:'子元素内容2'
+				},
+				{
+					tag:'p',
+					str:'子元素内容3'
+				},
+			],
+			str:'父元素内容'
+		});
+		
+		function setEle(obj){
+			
+			var oDiv=document.createElement(obj.tag);
+			document.body.appendChild(oDiv);
+			
+			//给插入的div修改样式
+			for(var prop in obj.css){
+				oDiv.style[prop]=obj.css[prop];
+			}
+			
+			//循环str插入相应的p元素
+			obj.children.forEach(function(items,i){
+				var oEle=document.createElement(items.tag);
+				oDiv.appendChild(oEle);
+				oEle.innerText=items.str;
+			});
+			//插入文本节点
+			var str=document.createTextNode(obj.str);
+			oDiv.appendChild(str);
+			
+		}
+
+		
+	</script>
+</html>

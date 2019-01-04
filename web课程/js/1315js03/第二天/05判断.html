@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+		<div id='div1'></div>
+	</body>
+	<script type="text/javascript">
+//		点击按钮做判断,div1内有p元素，给p添加样式背景红。如果没有，插入一个p到div1内，p的内容任意设置，id设置为p1
+		var oDiv=document.getElementById("div1");
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function (){
+			
+			var oP=document.getElementById("p1");
+			
+			if(oP){
+				oP.style.background='red';
+			}else{
+				oDiv.innerHTML='<p id="p1">asjdfsdfhjshf</p>';
+			}
+						
+		}
+	</script>
+</html>

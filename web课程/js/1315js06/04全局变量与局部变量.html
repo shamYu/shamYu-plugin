@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//全局变量不安全，不好控制，程序很容易改变全局变量，全局变量变化，有可能导致程序出错;
+		//布局相对安全，缺点不好访问。
+		
+		//尽量用局部变量，少用全局变量。
+		
+//		同一个作用域下,变量名不能冲突
+		var index=100;		
+		var index1=10;
+		
+//		function fn(index){
+//			var index;
+//			形参是局部变量
+//			alert(index);
+//		}
+		
+//		实参是全局变量		
+//		fn(index);
+//		fn(index);
+		
+		function fn(){
+			var index=100;
+			alert(index);
+		}
+		
+		//调用两次，就会产生两个局部作用域，每个局部作用域内有一个局部变量，就算名字一样，但是肯定是不同的变量。
+		//局部变量在函数调用结束之后，如果不会再被使用，就会被垃圾回收机制进行销毁。(为了节约内存);
+		fn();//广州，有间黑店
+		fn();//北京，有间黑店
+		
+//		var str='asfasjkdfhj';		
+//		var arr=str.split('');
+//		arr.reverse();
+//		str=arr.join('-');
+//		
+//		var str2='aaaaaaaahhhdsfgsfdas';		
+//		var arr2=str2.split('');
+//		arr2.reverse();
+//		str2=arr.join('*');
+//		
+//		var str3='wwwwwwwfffffff';		
+//		var arr3=str3.split('');
+//		arr3.reverse();
+//		str3=arr.join('&');
+		
+		fn('asfasjkdfhj','_');
+		fn('aaaaaaaahhhdsfgsfdas','');
+		fn('wwwwwwwfffffff','&');
+		
+		function fn (str,pram){	
+			var arr=str.split('');
+			arr.reverse();
+			str=arr.join(pram);
+		}
+		
+	</script>
+</html>

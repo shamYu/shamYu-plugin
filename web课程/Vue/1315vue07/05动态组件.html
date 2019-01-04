@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <input type="button" @click='change1()' value='英语盲1'>
+        <input type="button" @click='change2()' value='英语盲2'>
+        <!-- 通过给is绑定一个变量，通过改变变量的值来实现切换(组件)视图 -->
+        <div :is='com'></div>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    const div1={
+        template:'<div>111111</div>'
+    }  
+    const div2={
+        template:'<div>222222</div>'
+    }
+
+    new Vue({
+        el:'#app',
+        data:{com:'div1'},
+        components:{div1,div2},
+        methods:{
+            change1(){
+                this.com='div1'
+            },
+            change2(){
+                this.com='div2'
+            }
+        }
+    })
+</script>
+</html>

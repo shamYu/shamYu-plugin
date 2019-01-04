@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<!--<li></li>
+			<li class='box'></li>
+			<li></li>
+			<li class='box'></li>
+			<li></li>-->
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		var oUl=document.getElementsByTagName('ul')[0];
+		
+//		html5->新增的DOM方法,getElementsByClassName();->低版本IE不支持		
+		var aLi=document.getElementsByClassName('box');
+//
+		var aLi1=document.getElementsByTagName('li');
+		
+		var aLi2=oUl.children;
+		
+//		getElementsByTagName,children,getElementsByClassName->
+//		获取到的类数组对象的length会随着元素的增减而自动变化。
+
+	</script>
+</html>

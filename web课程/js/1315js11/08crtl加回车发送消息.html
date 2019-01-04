@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				height: 200px;
+				border:3px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="text" value="" />
+		<div id='div1'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oText=document.getElementById("text");
+		var oDiv1=document.getElementById("div1");
+		
+		//键盘按下事件.
+		oText.onkeydown=sendMsg;
+				
+		function sendMsg(ev){
+			
+			var ev=ev||window.event;
+			
+			//ev.ctrlKey->当ctrl键被按下时,会返回true
+			//ev.shiftKey->当shift键被按下时,会返回true
+			//ev.altKey->当alt键被按下时,会返回true
+			
+			if(ev.keyCode==13 && ev.ctrlKey){
+				oDiv1.innerHTML+='<p>'+oText.value+'</p>';
+			}			
+		}
+		
+//		function sendMsg(ev){
+//			var ev=ev||window.event;
+//			//ev.keyCode不可能同时等于13,又等于17
+//			if(ev.keyCode==13 && ev.keyCode==17){
+//				oDiv1.innerHTML+='<p>'+oText.value+'</p>';
+//			}			
+//		}
+		
+//		function sendMsg(ev){
+//			var ev=ev||window.event;
+//			if(ev.keyCode==13){
+//				oDiv1.innerHTML+='<p>'+oText.value+'</p>';
+//			}			
+//		}
+		
+	</script>
+</html>

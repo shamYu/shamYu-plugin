@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="button" id="btn1" value="哇,谁没女朋友" />
+		<input type="button" id="btn2" value="哇,谁的男朋友不是蒙司机" />
+	</body>
+	<script type="text/javascript">
+		var arr = [{
+				name: '班长大人',
+				age: 23,
+				sex: '男',
+				hasGf: true,
+				Gf: '唔,真漂亮'
+			},
+			{
+				name: '金刚欧巴',
+				age: 22,
+				sex: '男',
+				hasGf: true,
+				Gf: '唔,真漂亮'
+			},
+			{
+				name: '杨幂',
+				age: 32,
+				sex: '女',
+				hasBf: true,
+				Bf: '蒙司机'
+			},
+			{
+				name: '范冰冰',
+				age: 32,
+				sex: '女',
+				hasBf: true,
+				Bf: '大水牛禽兽'
+			},
+			{
+				name: '洋洋',
+				age: 22,
+				sex: '男',
+				handsome: '突破天际',
+				hasGf: true,
+				Gf: '唔,真漂亮'
+			},
+			{
+				name: '浩哥哥',
+				age: 22,
+				sex: '男',
+				handsome: '突破天际',
+				hasGf: false,
+				Gf: undefined
+			}
+		]
+
+		//点击btn1，找出上面数组内没有女朋友的欧巴。并弹出其姓名
+		//点击btn2，找出上面数组内男朋友不是蒙司机的欧巴桑。并弹出其姓名
+
+		var oBtn1 = document.getElementById("btn1");
+		var oBtn2 = document.getElementById("btn2");
+		oBtn1.onclick=function () {
+			for(var i=0;i<arr.length;i++){
+				if(arr[i].sex=='男'&&arr[i].hasGf==false){
+					alert(arr[i].name);
+				}
+			}
+		}
+		oBtn2.onclick=function () {
+			for(var i=0;i<arr.length;i++){
+				if(arr[i].sex=='女'&&arr[i].Bf!='蒙司机'){
+					alert(arr[i].name);
+				}
+			}
+		}
+
+	</script>
+
+</html>

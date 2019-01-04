@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <a href="#home">主页</a>
+        <a href="#about">关于我们</a>
+        <router-view :msg='msg'></router-view>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+    
+    const Home={
+        template:`<div>{{msg}}</div>`,
+        props:['msg']
+    }
+    const About={
+        template:`<div>{{msg}}</div>`,
+        props:['msg']
+    }
+
+    const router=new VueRouter({
+        routes:[
+            {
+                path:'/home',
+                component:Home,
+            },
+            {
+                path:'/about',
+                component:About,
+            },
+            {
+                path:'*',
+                redirect:'/home'
+            }
+        ]
+    })
+
+    new Vue({
+        el:'#app',
+        data:{msg:'hahaahahah'},
+        router
+    })
+
+</script>
+
+
+</html>

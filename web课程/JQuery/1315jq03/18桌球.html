@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				border-radius:50%;
+				position: absolute;
+			}
+			.red{
+				background: red;
+			}
+			.blue{
+				left:500px;
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="开球" />
+		<div class='red'></div>
+		<div class='blue'></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$('#btn').on('click',function(){
+			//红球结束运行之后，篮球开始运动
+			$('.red').animate({left:400},1000,'linear',function(){
+				$('.blue').animate({left:1000},1500);
+			}).animate({left:200},1500);
+		})
+		
+	</script>
+</html>

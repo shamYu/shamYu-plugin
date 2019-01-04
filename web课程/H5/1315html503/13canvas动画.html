@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background: #000;
+			}
+			#oC{
+				background: #fff;
+				margin-left:200px;
+				margin-top:50px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='oC' width="500" height="500">
+			您的浏览器不支持canvas绘图
+		</canvas>
+	</body>
+	<script type="text/javascript">
+		
+		var oC=document.getElementById("oC");
+		//oGc->绘图工具(画布)->通过canvas标签的getContext()就能获得一个绘图的工具.
+		var oGc=oC.getContext('2d');
+		
+		//1:圆运动的方向
+		//2:圆运动是速度
+		
+		var x=250;
+		var y=250;
+		
+		var difx=getRand(0,4)-1.5;
+		var difY=getRand(0,4)-1.5;
+		
+		//canvas动画是一帧一帧的执行。
+		//下一帧绘制前，需要上一帧的画布清除掉。
+		setInterval(function(){
+			
+			oGc.clearRect(0,0,500,500);
+			
+			x+=difx;
+			y+=difY;
+			
+			x=x>500?0:x
+			x=x<0?500:x
+			y=y>500?0:y
+			y=y<0?500:y
+
+			oGc.fillRect(x,y,100,100);
+		},10);
+		
+		function getRand (a,b){
+			return Math.floor(Math.random()*(a-b))+b;
+		}
+		
+	</script>
+</html>

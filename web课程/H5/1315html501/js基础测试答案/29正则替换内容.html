@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'>
+			{{lover}}
+			范冰冰
+			{{oYm.name}}
+			<span>我要不走</span>
+			{{msg}}
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var msg='王力宏';
+		var lover='华姐';
+		var oYm={name:'杨幂'};
+		
+		var oDiv=document.getElementById("div1");
+//		var re=/[a-zA-Z|$|_]{1}[\w|$]+/;\
+//		用来找的正则
+		var re=/{{[a-zA-Z|$|_]{1}(\.?[\w|$])*}}/g;
+//		用来替换的正则
+		var re1=/{{[a-zA-Z|$|_]{1}(\.?[\w|$])*}}/;
+		
+		//遍历所有子节点，判断如果文本节点含有{{标识符}}，就将之替换。
+		for(var i=0;i<oDiv.childNodes.length;i++){
+			//如果是文本节点
+			if(oDiv.childNodes[i].nodeType==3){
+				let arr=oDiv.childNodes[i].nodeValue.match(re);
+				//判断当前的文本节点是否含有{{标识符}}
+				if(arr.length!=0){
+					//如果有，则批量替换
+					for(var j=0;j<arr.length;j++){
+						let oldVal=oDiv.childNodes[i].nodeValue;
+						oDiv.childNodes[i].nodeValue=oldVal.replace(re1,eval(arr[j]));
+					}					
+				}
+			}
+		}
+			
+		
+	</script>
+</html>

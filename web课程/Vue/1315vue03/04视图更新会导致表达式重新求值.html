@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        {{show()}}
+        {{total()}}
+        <!-- {{all}} -->
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            num:100,
+        },
+        computed:{
+            all:{
+                //this.num发生变化时会重新触发all的getter
+                get(){
+                    console.log('get触发了');
+                    return this.num/2;
+                }
+            }
+        },
+        methods:{
+            //this.num变化导致视图变化，视图变化让视图内的表达式重新求值。
+            total(){
+                return this.num/2;
+            },
+            //视图发生变化都会让show重新调用
+            show(){
+                console.log('我又被调用了');
+            }
+        }
+    })
+
+</script>
+</html>

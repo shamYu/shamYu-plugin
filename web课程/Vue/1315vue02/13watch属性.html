@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div>div{
+            width: 200px;
+            height: 200px;
+        }
+        .red{
+            background: red
+        }
+        .green{
+            background:green;
+        }
+        /* vue还没调用时，样式隐藏视图，vue调用后会删除v-cloak指令，以显示视图 */
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div" v-cloak>
+        <input type="text" v-model='msg'>
+        {{msg}}
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            msg:''
+        },
+        //watch->监听某个数据，当这个数据发生变化时，可以出发一个回调函数。回调函数的名字与数据名一致
+        watch:{
+            // 'msg':function(){
+            //     // watch内的函数内this也指向vue实例
+            //     console.log('你变了');
+            //     if(this.msg>400){
+            //         alert('ddddd');
+            //     }
+            // }
+            msg(){
+                console.log('你变了');
+                if(this.msg>400){
+                    alert('ddddd');
+                }
+            }
+        }
+    });
+
+</script>
+</html>

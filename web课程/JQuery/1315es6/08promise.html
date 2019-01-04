@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		new Promise(function(success,err){
+			var abc='hahah';
+			setTimeout(function(){
+				success(abc);
+			},1000);
+		}).then(function(data){
+			console.log(data)
+		}).catch(function(){});
+
+//-------------------------------------------------------------------------
+		var obj=new Promise(function(success,err){
+			var abc='hahah';
+			setTimeout(function(){
+				success(abc);
+			},1000);
+		})
+		
+		obj.then(function(data){
+			console.log(data)
+		})
+		obj.catch(function(err){
+			console.log(err)
+		})
+		
+	</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="打开新窗口" />
+		<input type="button" id="btn2" value="关闭新窗口" />
+	</body>
+	<script type="text/javascript">
+		
+		var oBtn=document.getElementById("btn");
+		var oBtn2=document.getElementById("btn2");
+		
+		var new_Win=null;
+		
+		oBtn.onclick=function () {
+			//打开一个空页面
+//			window.open();
+			//打开百度页面.window.open()会返回新打开的窗口的窗口对象
+			new_Win=window.open('http://www.baidu.com');
+			//在当前页面打开百度页面
+//			window.open('http://www.baidu.com','_self');
+		}
+		
+		oBtn2.onclick=function(){
+			//关闭当前窗口
+//			window.close();
+			//关闭新窗口
+			new_Win.close();
+		}
+		
+	</script>
+</html>

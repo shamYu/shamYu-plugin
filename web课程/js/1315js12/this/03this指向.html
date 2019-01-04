@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		var fn=function () {
+//			console.log(this);
+//		}
+
+//		setInterval(fn,100);
+//		setInterval('fn(100)',100);
+//---------------------------------------------------------------------------------
+		var fn=function () {
+			console.log(this);
+			return function () {
+				console.log(this);
+			}
+		}		
+		
+//		setInterval(fn,1000);//第一个console.log()执行
+//		setInterval(fn(),1000);//传参时第一个console.log()执行，定时器每隔1秒让第二个console.log()执行
+
+//----------------------------------------------------------------------------------
+		var fn=function () {
+			console.log(this)
+			return function () {
+				console.log(this)
+			}
+		}		
+		setInterval(fn,1000);//第一个console.log()执行
+		setInterval(fn.call(document),1000);
+		//传参时第一个console.log()执行，打印document，定时器每隔1秒让第二个console.log()执行，打印window
+		
+	</script>
+</html>

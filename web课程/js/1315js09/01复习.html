@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body></body>
+	<script type="text/javascript">
+		
+		1:arguments->存储着实参的数组.实际传的实参全部存在arguments里.实参与形参的个数可以不一致.
+		2:this指向谁->谁调用它所在的函数,它就指向谁.
+			a:this在哪个函数里.
+			b:函数调用时,是哪个对象在调用这个函数.
+				函数调用时,前面有没有变量名,如果有,就是被这个对象调用.如果没有,this指向window.
+		3:用var 声明的全局变量会变成window的一个自定义属性.
+		
+		4:DOM操作
+			1:获取节点.
+			2:操作节点(增删改查);
+			
+			查:
+				子节点:父元素.childNodes,子元素数组获取:父元素.children,类似于:父元素.getElementsByTagName("*")
+				兄弟节点:
+					兄弟元素.previousSibling,上一个节点
+					兄弟元素.previousElementSibling,->上一个元素节点.
+					兄弟元素.nextSibling.下一个节点
+					兄弟元素.nextElementSibling,下一个元素节点
+				父节点:
+					子元素.parentNode
+			改:
+				NodeType,NodeValue,NodeName
+				textStr.nodeValue=newVal;
+				NodeName->判断一个元素节点是什么标签,返回一个全大写的标签名.
+				NodeType->判断一个节点是什么类型的节点.返回的是数字.
+				
+				元素节点的节点类型:1
+				属性节点的节点类型:2
+				文本节点的节点类型:3
+				注释节点的节点类型:8
+				document的节点类型:9
+				document.doctype的节点类型:10
+			
+			增:
+				步骤:
+					1:创建子节点
+						document.createElement(标签名);
+						document.createTextNode(文本值);
+						document.createComment(注释文本);
+					2:插入DOM树.
+						a:插入子节点
+							父元素.appendChild(子节点).子节点插入到父元素的最末尾.
+						b:插入兄弟节点
+							父元素.insertBefore(新节点,已经存在的节点);
+			
+			删:
+				父元素.removeChild(子节点);
+				
+	</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="找人" />
+		<input type="text" value="" />
+		<ul>
+			<li>关晓彤</li>
+			<li>杨幂</li>
+			<li>苍老师</li>
+			<li>林志玲</li>
+			<li>周冬雨</li>
+			<li>迪丽热巴</li>
+			<li>范冰冰</li>
+			<li>柳岩</li>
+			<li>刘诗诗</li>
+			<p>都是朕的</p>
+		</ul>
+	</body>
+	<script type="text/javascript">
+//		文本框内输入任意文字,再点击按钮,如果有li的内容与输入的内容一致,将这个li的背景变红,内容再加上'朕要了',如果没有,弹出'朕也要了';
+		
+		var aLi=document.getElementsByTagName('li');
+		var aInput=document.getElementsByTagName('input');
+		
+		aInput[0].onclick=findBeauty;
+		
+		function findBeauty(){
+			
+			//标记找的人在不在li里，false表示在
+			var find_nobody=false;
+			
+			for(var i=0;i<aLi.length;i++){
+				if(aLi[i].innerText==aInput[1].value){
+					aLi[i].style.background='red';
+					aLi[i].innerText+='朕要了';
+					//如果找到，标记为已经找到人。
+					find_nobody=true;
+					//找到人就不找了
+					break;
+				}
+			}
+			//如果找不到，就弹信息
+			if(!find_nobody){
+				alert(aInput[1].value+'朕也要了');
+			}
+		}
+		
+	</script>
+</html>

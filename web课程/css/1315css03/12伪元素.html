@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*当一个元素存在只是为了加样式,则可以使用伪元素来代替*/
+			/*伪元素可以是一个:,也可以是两个::*/
+			#wrap:before{
+				content:'p1p1';
+				display:block;
+			}
+			#wrap:after{
+				content:'p2p2';
+				display:block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<!--<p>p1p1</p>-->
+			<!--<p>p2p2</p>-->
+		</div>
+	</body>
+</html>

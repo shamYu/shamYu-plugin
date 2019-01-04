@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		new 是一个操作符		
+		var oYm=Beauty('杨幂',32,'168cm');
+		
+		Beauty.prototype.looks='闭月羞花';
+		
+		oYm.__proto__=Beauty.prototype;
+		
+		//工厂模式实例化对象->默认实例不能继承构造函数的原型。
+		function Beauty(name,age,height){
+			//原料
+			var obj=new Object();
+			//加工
+			obj.name=name;
+			obj.age=age;
+			obj.height=height;
+			//出厂
+			return obj;
+		}
+		
+//--------------------------------------------------------------------------------
+		function fn(){
+			console.log(this);
+		}
+		
+//		fn();//window
+		
+//		new fn();//不指向window
+		
+		var obj=new fn();//没有return，new操作的函数调用也不会返回undefined，返回一个对象(类的实例);
+		
+//		new 做的事情:
+//			1:构造函数内的this指向实例.(省略掉了工厂模式的原料阶段与出厂阶段);
+//			2:将实例返回.
+//			3:让构造函数的原型出现在实例原型链上(让实例默认继承构造函数的原型);
+		
+	</script>
+</html>

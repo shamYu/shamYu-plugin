@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			th{
+				width: 250px;
+			}
+			hr{
+				margin:30px 0;
+			}
+			td{
+				text-align: center;
+			}
+			tr{
+				line-height: 50px;
+			}
+			[v-cloak]{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='app' v-cloak>	
+			<h3>保存数据，显示数据</h3>
+			<input type="text" id="user" placeholder="用户名" v-model='name' /><br />
+			<input type="text" id="age" placeholder="年龄" v-model='age' /><br />
+			<input type="radio" name="sex" value="男" v-model='sex' checked />男
+			<input type="radio" name="sex" value="女" v-model='sex' />女<br />
+			<input type="button" id="btn" value="添加数据" @click="add()" />
+			<hr />
+			<table border="1">
+				<thead>
+					<th>序号</th>
+					<th>姓名</th>
+					<th>年龄</th>
+					<th>性别</th>
+					<th>操作</th>
+				</thead>
+				<tbody>
+					<tr v-for='(d,i) in arr'>
+						<td>{{i+1}}</td>
+						<td :contenteditable='d.flag'>{{d.name}}</td>
+						<td :contenteditable='d.flag'>{{d.age}}</td>
+						<td :contenteditable='d.flag'>{{d.sex}}</td>
+						<td>
+							<input type="button" value="删除" @click='del(i)'>
+							<input type="button" value="编辑" @click='edit(i)'>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<script src="../js/vue1.js"></script>
+	<script type="text/javascript">
+
+		var vm=new Vue({
+			el:'#app',
+			data:{
+				arr:[],
+				name:'',
+				age:0,
+				sex:'男',
+				flag:false
+			},
+			mounted(){
+				//视图渲染成功之后,获取本地存储的数据,替换当前vue实例的arr数组以更新视图
+				if(localStorage.getItem('tableData')){
+					this.arr=JSON.parse(localStorage.getItem('tableData'));
+				}				
+			},
+			methods:{
+				add(){
+					this.arr.push({
+						name:this.name,
+						age:this.age,
+						sex:this.sex,
+						flag:false,
+					});
+					//点击添加时，把数据存储到本地存储
+					localStorage.setItem('tableData',JSON.stringify(this.arr));
+				},
+				del(i){
+					this.arr.splice(i,1);
+					//删除数据时也要存储一次变化后的数据
+					localStorage.setItem('tableData',JSON.stringify(this.arr));
+				},
+				edit(i){
+					this.arr[i].flag=!this.arr[i].flag;
+				}
+			}
+		})
+	</script>
+</html>

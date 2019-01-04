@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<video poster="img/bb.jpg" controls>
+			<!--如果当前的浏览器不识别ogv格式的视频,则播放下一条source内的视频-->
+			<source src="Intermission-Walk-in.ogv"></source>
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+		</video>
+		<input type="button" value="播放" />
+		<input type="button" value="暂停" />
+		<input type="button" value="静音" />
+		<input type="button" value="音量调半" />
+		<input type="button" value="重播" />
+		<input type="button" value="全屏" />
+	</body>
+	<script type="text/javascript">
+		
+		var aInput=document.querySelectorAll('input');
+		var oV=document.querySelector('video');
+		
+		aInput[0].onclick=function(){
+			oV.play();
+		}
+		
+		aInput[1].onclick=function(){
+			oV.pause();
+		}
+		
+		aInput[2].onclick=function(){
+			oV.muted=!oV.muted;
+		}
+		
+		aInput[3].onclick=function(){
+			//oV.volume->音量,取值是0-1;
+			oV.volume=0.5;
+		}
+		
+		aInput[4].onclick=function(){
+			//当前的播放时间
+			console.log(oV.currentTime);
+			//设置oV.currentTime来控制播放进度.单位是秒
+			//oV.currentTime=0;
+			
+			//当前视频的总长
+			console.log(oV.duration);
+			//设置播放进度到一半
+			oV.currentTime=oV.duration/2;
+		}
+		
+		aInput[5].onclick=function(){
+			//标准请求全屏的方法
+//			oV.requestFullscreen();
+			if(oV.requestFullscreen){
+				oV.requestFullscreen();
+			}else if(oV.webkitRequestFullScreen){
+				oV.webkitRequestFullScreen();
+			}
+		}
+		
+//		火狐的私有前缀->moz
+//		谷歌私有前缀->webkit
+//		欧鹏私有前缀->o
+//		ie私有前缀-ms
+		
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div>
+				<div></div>
+			</div>
+			<p>{{msg}}</p>
+			<h3>{{abc}}</h3>
+		</div>
+	</body>
+	<script src="js/vue.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("wrap");
+		
+		var vm=new Vue({
+			el:'#wrap',
+			data:{
+				msg:'我是内容',
+				abc:'我是abc'
+			}
+		});
+		
+//		使用Vue不推荐进行DOM操作。
+		
+		//数据驱动更新真实DOM
+//		vm.$data.msg='我是安那那那';
+//		vm.$data.abc='发反反复复';
+		
+		//DOM操作更新真实DOM
+//		var oP=document.querySelector('p');
+//		oP.innerText='我是安那那那';
+//		var oh3=document.querySelector('h3');
+//		oh3.innerText='发反反复复';
+		
+	</script>
+</html>

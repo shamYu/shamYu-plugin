@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#oC{
+				border:3px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='oC' width="500" height='500'></canvas>
+	</body>
+	<script type="text/javascript">
+		
+		var oC=document.getElementById("oC");
+		var oGc=oC.getContext('2d');
+		
+		//异步操作的类
+		function Yibu(fn){
+			this.jianting=fn
+		}
+		
+		//实例化一个图片onload的异步对象
+//		var imgOnLoad=new Yibu(function(success){
+//			var oImg=new Image();		
+//			oImg.src='img/fourimg.gif';		
+//			oImg.onload=function(){
+//				success(oImg)
+//			}
+//		})
+//		
+//		imgOnLoad.jianting(function(img){
+//			oGc.drawImage(img,10,10,400,400);
+//		})
+//		
+//		imgOnLoad.jianting(function(img){
+//			oGc.drawImage(img,3,3,300,300);
+//			console.log('哈哈哈')
+//		})
+		
+		new Yibu(function(success){
+			var oImg=new Image();		
+			oImg.src='img/fourimg.gif';		
+			oImg.onload=function(){
+				success(oImg)
+			}
+		}).jianting(function(img){
+			oGc.drawImage(img,3,3,300,300);
+			console.log('哈哈哈')
+		})
+		
+//		function showImg(success){
+//			var oImg=new Image();		
+//			oImg.src='img/fourimg.gif';		
+//			oImg.onload=function(){
+//				success(oImg)
+//			}
+//		}
+//		
+//		showImg(function(img){
+//			oGc.drawImage(img,10,10,400,400);
+//		})
+//		
+//		showImg(function(img){
+//			oGc.drawImage(img,3,3,300,300);
+//			console.log('哈哈哈')
+//		})
+		
+	</script>
+</html>

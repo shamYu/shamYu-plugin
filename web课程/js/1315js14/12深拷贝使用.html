@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		function Block(){
+			this.css={
+				display:'block'
+			}
+		}
+				
+		function CustomEle(tag,oStyle,str){
+//			Block.call(this);
+			this.tag=tag;
+			this.css=oStyle;
+			this.innerText=str;
+		}
+		
+		var ele=new CustomEle('div',{
+			width:'100px',
+			height:'100px',
+			background:'red'
+		},'hahahahahah');
+		
+		var oBlock=new Block();
+		
+		//两个对象进行深拷贝合并(相当于用ele继承oBlock);
+		var ele_now=deepClone(ele,oBlock);
+		
+		createEle(ele_now);
+		
+		function createEle(ele){
+			
+			var oEle=document.createElement(ele.tag);
+			
+			document.body.appendChild(oEle);
+			
+			for(var prop in ele.css){
+				oEle.style[prop]=ele.css[prop];
+			}
+			
+			oEle.innerText=ele.innerText;
+		}
+		
+		//obj继承obj1的逻辑封装
+		function deepClone(obj,obj1){
+			for(var prop in obj1){
+				//如果循环到的属性值是object类型，那么再进行依次浅拷贝
+				if(typeof obj1[prop] != 'object'){
+					obj[prop]=obj1[prop];
+				}else{
+					obj[prop]=deepClone(obj[prop],obj1[prop]);
+				}
+			}
+			return obj;
+		}
+		
+		
+		
+	</script>
+</html>

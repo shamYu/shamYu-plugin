@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				background: red;
+				width:200px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div id='div1' style='background: red;'>232</div>-->
+		<div id='div1'>232</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+		
+//		console.log(document.getElementById("div1").style.background);
+		
+		console.log(getComputedStyle(oDiv).background)
+		console.log(getComputedStyle(oDiv).backgroundColor)
+		console.log(getComputedStyle(oDiv).width)
+		
+		console.log(getComputedStyle(oDiv)['width'])
+		
+		获取最终样式的公式:
+			getComputedStyle(元素).样式名		
+		只能获取,不能设置.
+			
+		IE获取最终样式:
+			oDiv.currentStyle.background;
+			oDiv.currentStyle.backgroundColor;
+			oDiv.currentStyle.width;
+		
+	</script>
+</html>

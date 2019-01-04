@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body style='width:100px'>
+		<input type="button"  value="" checked />
+	</body>
+	<script type="text/javascript">
+		
+		js->ES(ECMAScript),DOM,BOM; JScript(微软);
+		
+		js->变量,常量,数据类型,运算符,表达式(函数,对象),语句,控制结构.
+		
+		变量——>使用前必须先声明.var (let,const)用于声明变量.var x=100,y=200,z=300;
+		
+		标识符:1:可以是英文与数字;2:开头不能是数字;3:_和$;4:关键字保留字不能用. 标识符区分大小写;
+		
+		数据类型:number,string,boolean,undefined,null,object;
+		
+		算术运算符:操作数应该是数字.+,-,*,/,%,++,--.
+				 +的操作数,如果有一个是字符串,就会进行字符串拼接,而不是算术运算;
+		赋值运算符:右边的值赋值给左边的变量(=号左边必须是变量);=运算时,先计算右边的,在计算左边的;
+		
+		操作元素:
+			1:获取元素.
+			2:对号入座根据不同方法操作元素
+				a:修改获取样式
+				b:修改获取内容
+				c:修改获取属性
+			
+		a:修改样式
+			元素.style.样式名=样式值(样式名如果带-,需要转换成驼峰);
+			元素.style.cssText=style的行间样式值
+		b:修改内容
+			元素.innerText=字符串(不能实现插入元素)
+			元素.innerHTML=字符串(可以插入元素)
+		c:修改属性
+			元素.属性名=字符串(获取时不一定可以获取到行间的属性值);
+			.style,.checked,disabled
+		
+		事件:
+			元素.on事件名=function(){事件发生时要做的事情}
+		
+	</script>
+</html>

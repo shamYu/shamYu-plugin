@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var x;
+
+		//函数在哪里调用跟函数在哪里声明没任意关系
+		fn();//undefined,调用时还没赋值，所以是undefined
+		
+		x=100;
+		
+		function fn(){
+			alert(x);
+		}
+		
+	</script>
+</html>

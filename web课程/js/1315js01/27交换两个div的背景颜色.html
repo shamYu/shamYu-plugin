@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="改样式" />
+		<div id='div1' style='background: red;'>阿什顿发斯蒂芬</div>
+		<div id='div2' style='background: green;'>23141231231</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv1=document.getElementById("div1");
+		var oDiv2=document.getElementById("div2");		
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function () {
+//			oDiv1.style.background='green';
+//			oDiv2.style.background='red';
+			
+			//先用一个变量将div1的背景色存起来。
+			var color=oDiv1.style.background;
+			
+			//把div1的背景色变成div2的背景色
+			oDiv1.style.background=oDiv2.style.background;
+			//把div2的背景色变成div1没变之前的颜色
+			oDiv2.style.background=color;
+			
+//			oDiv1.style.background=oDiv2.style.background;
+//			oDiv2.style.background=oDiv1.style.background;
+			
+		}
+		
+//		两杯子,一个装油,一个装水.->拿第三个杯子,先把水倒进第三个杯子,然后把油倒进装水的杯子,然后把第三个杯子的水倒进装油的杯子
+		
+		
+	</script>
+</html>

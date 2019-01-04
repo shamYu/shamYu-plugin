@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			li{
+				float: left;
+				height: 50px;
+				padding: 0 30px;
+				background: red;
+				border-left:1px solid #fff;
+				text-align: center;
+				line-height: 50px;
+				color:#fff;
+			}
+			div{
+				position: absolute;
+				height: 3px;
+				background: black;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class='active'>好累的</li>
+			<li>好累的</li>
+			<li>好累的</li>
+			<li>好累的</li>
+			<li>好累的</li>
+		</ul>
+		<div></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var winW=0;
+		
+		var liW=$('li').outerWidth();
+		
+		//默认初始化div的样式，
+		initCss();
+		//窗口尺寸变化时，再改变一次div的样式
+		$(window).resize(initCss);
+		
+		$('li').click(function(){
+			$('li.active').removeClass('active');
+			$(this).addClass('active');
+			$('div').css({
+				left:$(this).offset().left+1
+			});
+		})
+			
+		function initCss(){
+			//窗口的可视区域宽
+			winW=$(window).width();
+			//第一个li的left
+			left=(winW-(liW*5))/2;
+			$('li').eq(0).css('marginLeft',left);
+			$('div').css({
+				width:liW-1,
+				top:$('li').outerHeight(true),
+				left:$('li.active').offset().left+1
+			})
+		}
+		
+	</script>
+</html>

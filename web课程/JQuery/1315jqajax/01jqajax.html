@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		ajax({
+//			method:'GET',
+//			url:'php/getList.php',
+//			dataType:'json',
+//			success:function(data){
+//				console.log(data);
+//			}
+//		});
+		
+		$.ajax({
+			type:'POST',
+			//是否异步。默认是true
+			async: false,
+			url:'php/1.POST1.php',
+//			data:'username=888&age=9000',
+			data:{
+				username:'888',
+				age:'9000'
+			},
+			success:function(data){
+				console.log(data);
+			},
+			error:function(err){
+				console.log(err.status)
+			}
+		});
+		
+		
+	</script>
+</html>

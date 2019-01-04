@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>0</div>
+	</body>
+	<script type="text/javascript">
+//		给div添加点击事件,每次点击,每次点击,其内部数字+1;
+//		当当前点击次数是2的整数倍或者3的整数倍时，弹出'我好累';
+		
+		var oDiv=document.getElementsByTagName('div')[0];
+		oDiv.onclick=function () {
+			this.innerHTML++;
+			var n=this.innerHTML;
+			if(n%2==0||n%3==0){
+				alert('我好累')
+			}
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="file" id="Fl" value="" />
+		<img alt="" />
+	</body>
+	<script type="text/javascript">
+		
+//		1:获取选中的文件.
+//		2:转换数据格式.
+		
+		var oInput=document.getElementById("Fl");
+		var oImg=document.getElementsByTagName('img')[0];
+		
+		oInput.addEventListener('change',showImg)
+		
+		function showImg(){
+			//获取选中的文件->通过文件列表file来获取
+			var fl=oInput.files[0];
+//			console.log(fl);
+			//files->选中的文件列表
+//			console.log(oInput.files);
+			
+			//获取文件读取工具
+			var fr=new FileReader();
+			//将文件数据转换为url个数，用以在src内使用			
+			fr.readAsDataURL(fl);
+			
+			//onload->fr读取完文件数据之后会自动触发。
+			fr.onload=function(){
+				//读取数据并转换完成之后，把img的src赋值这个结果。就可以看到图片
+				oImg.src=fr.result;
+			}
+			
+//			ev.DataTransfer.files
+		}
+		
+		
+	</script>
+</html>

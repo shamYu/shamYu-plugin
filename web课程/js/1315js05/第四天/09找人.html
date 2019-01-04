@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="找人" />
+		<input type="text" value="" />
+		<ul>
+			<li>关晓彤</li>
+			<li>杨幂</li>
+			<li>苍老师</li>
+			<li>林志玲</li>
+			<li>周冬雨</li>
+			<li>迪丽热巴</li>
+			<li>范冰冰</li>
+			<li>柳岩</li>
+			<li>刘诗诗</li>
+			<p>都是朕的</p>
+		</ul>
+	</body>
+	<script type="text/javascript">
+//		文本框内输入任意文字,再点击按钮,如果有li的内容与输入的内容一致,将这个li的背景变红,内容再加上'朕要了',如果没有,弹出'也是朕的';
+//		如果li全变红了,弹出'重温旧梦吧爱妃们',然后再把所有li变白色;然后把所有li的内容变成最初始的文字;
+		
+		var aLi=document.getElementsByTagName('li');
+		var aInput=document.getElementsByTagName('input');
+		
+		//存放初始的人名
+		var names=[];
+		
+		//将初识的人名都存入一个数组
+		for(var i=0;i<aLi.length;i++){
+			names[i]=aLi[i].innerText;
+		}
+		
+		aInput[0].onclick=findBeauty;
+		
+		function findBeauty(){
+			
+			//标记找的人在不在li里，false表示在
+			var find_nobody=false;
+			
+			for(var i=0;i<aLi.length;i++){
+				if(aLi[i].innerText==aInput[1].value){
+					aLi[i].style.background='red';
+					aLi[i].innerText+='朕要了';
+					//如果找到，标记为以及找到人。
+					find_nobody=true;
+					//找到人就不找了
+					break;
+				}
+			}
+			//如果找不到，就弹信息
+			if(!find_nobody){
+				alert(aInput[1].value+'朕也要了');
+			}
+			
+			//红色li的个数
+			var iCount=0;
+			
+			for(var i=0;i<aLi.length;i++){
+				if(aLi[i].style.background=='red'){
+					//找到了红色的li，个数+1
+					iCount++;
+				}else{
+					//但凡有一个li是白色的，那就直接终止循环
+					break;
+				}
+			}
+			
+			//红色li的个数刚好等于li的总个数,表明所有的li都是红的
+			if(iCount==aLi.length){
+				alert('爱妃们重温旧梦吧');
+				for(var i=0;i<aLi.length;i++){
+					aLi[i].style.background='';
+					//li的内容显示回最原始的值
+					aLi[i].innerText=names[i];
+				}
+			}
+			
+		}
+		
+	</script>
+</html>

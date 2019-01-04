@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>柳团手机客户端下载</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<style>
+.section { text-align: center; font-family:"Microsoft Yahei"; color: #fff;}
+.section p{ position:relative; left:10%; opacity:0}
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery-ui-1.10.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/jquery.rotate.min.js"></script>
+<script type='text/javascript' src='js/jquery.modal.min.js'></script>
+<script type='text/javascript' src='js/site.js'></script>
+<script type='text/javascript' src='js/jquery.transit.js'></script>
+<script>
+$(document).ready(function() {
+	var C4_time;
+	var i=0;
+	$.fn.fullpage({
+		slidesColor: ['#f90', '#a5c710', '#4bbfc3', '#c680e4'],
+		anchors: ['page1', 'page2', 'page3', 'page4'],
+		navigation: true,
+		loopBottom: true,
+		afterRender: function(){
+			$(".se1bg3").delay(500).animate({marginTop:"240px",opacity:"1"},600)
+			$(".se1cont").delay(500).animate({marginTop:"0px",opacity:"1"},600)
+			$(".se1bgs").animate({opacity:"0.6"},500);
+			$(".se1bgss").animate({opacity:"0.3"},500);
+			
+			$('.section1').find('p').animate({left: '0',opacity:"1"}, 500);
+			$('.section1').find('.img').animate({left: '0',opacity:"1"}, 500);
+			$('.section1').find('.button').animate({ bottom: '0',opacity:"1"}, 500);},
+		afterLoad: function(anchorLink, index){
+			if(index == 1){
+			$(".se1bg3").delay(500).animate({marginTop:"240px",opacity:"1"},600)
+			$(".se1cont").delay(500).animate({marginTop:"0px",opacity:"1"},600)
+			$(".se1bgs").animate({opacity:"0.4"},500);
+			$(".se1bgss").animate({opacity:"0.3"},500);
+			}
+			if(index == 2){
+				/*$('.phone').transition({ scale: 0, opacity:"1" },0,function(){$('.phone').transition({ scale: 1 },1000)});*/
+				$(".phone").animate({opacity:"1"},800);
+				$(".se2bgs").animate({opacity:"0.5"},500);
+				$(".se2bgss").animate({opacity:"1"},500);
+				$(".ktv").delay(800).animate({marginLeft:"0",marginTop:"70px",opacity:"1"},500);
+				$(".hotel").delay(1000).animate({marginLeft:"0",marginTop:"198px",opacity:"1"},500);
+				$(".woman").delay(1200).animate({marginLeft:"0",marginTop:"326px",opacity:"1"},500);
+				$(".xiuxian").delay(1400).animate({marginLeft:"360px",marginTop:"70px",opacity:"1"},500);
+				$(".movie").delay(1600).animate({marginLeft:"360px",marginTop:"198px",opacity:"1"},500);
+				$(".food").delay(1800).animate({marginLeft:"360px",marginTop:"326px",opacity:"1"},500);}
+			if(index == 3){
+				$(".load").delay(1200).animate({marginLeft:"62px",marginTop:"69px",opacity:"1"},700);
+				$(".lbiao").delay(2200).animate({opacity:"1"},500);
+				$(".ph4").delay(500).animate({marginLeft:"0px",opacity:"1"},700)
+				$(".se3bgs").animate({opacity:"0.4"},500);
+				$(".se3bgss").animate({opacity:"0.3"},500);
+			}
+			if(index == 4){
+      		    $(".ph1").delay(500).animate({opacity:"1"},700); 
+				$(".tm1").delay(1200).transition({ scale: 0.5},0).transition({ scale: 1,opacity:"1"},200).transition({ scale: 0.5,opacity:"0"},600).delay(2000).transition({ scale: 1,opacity:"1"},600)
+                $(".tm2").delay(1350).transition({ scale: 0.5},0).transition({ scale: 1,opacity:"1"},200).transition({ scale: 0.5,opacity:"0"},600).delay(1700).transition({ scale: 0.45,opacity:"1"},600) 
+				$(".tm3").delay(1500).transition({ scale: 0.5},0).transition({ scale: 1,opacity:"1"},200).transition({ scale: 0.5,opacity:"0"},600).delay(1400).transition({ scale: 0.6,opacity:"1"},600) 
+				$(".tm8").delay(1650).transition({ scale: 0.5},0).transition({ scale: 1,opacity:"1"},200).transition({ scale: 0.5,opacity:"0"},600).delay(1100).transition({ scale: 0.8,opacity:"1"},600) 
+				$(".tm5").delay(1800).transition({ scale: 0.5},0).transition({ scale: 1,opacity:"1"},200).transition({ scale: 0.5,opacity:"0"},600).delay(800).transition({ scale: 0.68,opacity:"1"},600) 
+				$(".tm7").delay(1950).transition({ scale: 0.5},0).transition({ scale: 1,opacity:"1"},200).transition({ scale: 0.5,opacity:"0"},600).delay(500).transition({ scale: 0.3,opacity:"1"},600) 
+				$(".tm6").delay(2100).transition({ scale: 0.5},0).transition({ scale: 1,opacity:"1"},200).transition({ scale: 0.5,opacity:"0"},600).delay(200).transition({ scale: 0.5,opacity:"1"},600)
+				$(".tm4").delay(4000).transition({ opacity:"0.5"},600).transition({ opacity:"0.6"},600)
+				
+				$(".se4bgs").animate({opacity:"0.4"},500);
+				$(".se4bgss").animate({opacity:"0.3"},500);
+			}
+			if(index == 1||index == 2||index == 3||index == 4){
+				$('.section').find('p').animate({left: '0',opacity:"1"}, 500);
+				$('.section').find('.img').animate({left: '0',opacity:"1"}, 500);
+				$('.section').find('.button').animate({bottom: '0',opacity:"1"}, 500);
+			}
+		},
+		onLeave: function(index, direction){
+			if(index == 1){
+			$(".se1bg3").animate({marginTop:"310px",opacity:"0"},600)
+			$(".se1cont").animate({marginTop:"-60px",opacity:"0"},600)
+			$(".se1bgs").animate({opacity:"0"},500);
+			$(".se1bgss").animate({opacity:"0"},500);
+			}
+			if(index == 2){
+				$(".se2bgs").stop(true,false).animate({opacity:"0"},500);
+				$(".se2bgss").stop(true,false).animate({opacity:"0"},500);
+				$('.phone').stop(true,false).animate({opacity:"0"}, 500);
+				$(".ktv").stop(true,false).animate({marginLeft:"190px",marginTop:"175px",opacity:"0"},500);
+				$(".hotel").delay(100).stop(true,false).animate({marginLeft:"190px",marginTop:"175px",opacity:"0"},500);
+				$(".woman").delay(200).stop(true,false).animate({marginLeft:"190px",marginTop:"175px",opacity:"0"},500);
+				$(".xiuxian").delay(300).stop(true,false).animate({marginLeft:"190px",marginTop:"175px",opacity:"0"},500);
+				$(".movie").delay(400).stop(true,false).animate({marginLeft:"190px",marginTop:"175px",opacity:"0"},500);
+				$(".food").delay(500).stop(true,false).animate({marginLeft:"190px",marginTop:"175px",opacity:"0"},500);
+			}
+			if(index == 3){
+				$(".load").stop(true,false).animate({marginLeft:"27px",marginTop:"98px",opacity:"0"},500);
+				$(".lbiao").stop(true,false).animate({opacity:"0"},500);
+				$(".ph4").stop(true,false).animate({marginLeft:"-70px",opacity:"0"},500)
+				$(".se3bgs").animate({opacity:"0"},500);
+				$(".se3bgss").animate({opacity:"0"},500);
+			}
+			if(index == 4){
+		        $(".ph1").animate({opacity:"0"},600); 
+				$(".tm4").transition({ opacity:"0"},600)
+				$(".tm1").transition({ scale: 1.3,opacity:"0"},600).transition({scale: 1},0)
+				$(".tm2").transition({ scale: 1,opacity:"0"},600)
+				$(".tm3").transition({ scale: 1,opacity:"0"},600)
+				$(".tm5").transition({ scale: 1,opacity:"0"},600)
+				$(".tm6").transition({ scale: 1,opacity:"0"},600)
+				$(".tm7").transition({ scale: 1,opacity:"0"},600)
+				$(".tm8").transition({ scale: 1,opacity:"0"},600)
+				
+				$(".se4bgs").animate({opacity:"0"},500);
+				$(".se4bgss").animate({opacity:"0"},500);
+			}
+			if(index == 1||index == 2||index == 3||index == 4){
+				$('.section').find('p').animate({left: '10%',opacity:"0"}, 500);
+			    $('.section').find('.img').animate({left: '-10%',opacity:"0"}, 500);
+				$('.section').find('.button').animate({ bottom: '-50px',opacity:"0"}, 500);
+			}
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+<div class="main">
+<div id="header">
+<div class="menu">
+<ul>
+<li><a class="modalLink" href="#modal1">Android</a></li>
+<li><a class="modalLink" href="#modal1">iPhone</a></li>
+<li><a class="modalLink" href="#modal1">ipad</a></li>
+</ul>
+</div>
+<div class="logo">柳团</div>
+</div>
+<div class="section section1">
+    <div class="inner">
+    <div class="tableCellleft">
+    <div class="se1cont"><img src="images/phoneindex.png"/></div>
+    <div class="se1bg3"><img src="images/toubu.png"/></div>
+    </div>
+    <div class="tableCellright">
+    <div class="righttop">
+	<p class="p1">柳州团购大全-随时随地找团购</p>
+	<p class="p2">每日为您精选各种特色商家，提供最全、最低折扣价的团购信息。随时随地享受最好玩、最新鲜的生活方式。</p>
+    </div>
+    <div class="rightdown">
+    <div class="img"><img src="images/ewm.gif"/><div>手机扫描二维码下载</div></div>
+    <div class="button"><a class="modalLink" href="#modal1"><img src="images/button1.png"/></a></div>
+    </div>
+    </div>
+    </div>
+</div>
+<div class="section section2">
+ <div class="inner">
+    <div class="tableCellleft">
+    <div class="phone"><img src="images/phone.png"/></div>
+    <div class="ktv"><img src="images/ktv.png"/></div>
+    <div class="movie"><img src="images/dianying.png"/></div>
+    <div class="hotel"><img src="images/jiudian.png"/></div>
+    <div class="xiuxian"><img src="images/xiuxian.png"/></div>
+    <div class="food"><img src="images/meishi.png"/></div>
+    <div class="woman"><img src="images/nvrenbang.png"/></div>
+    <div class="se2bgs"><img width="100%" id="img1" src="images/sbbbbj.png"/></div>
+    <div class="se2bgss"><img width="100%" id="img2" src="images/sbbbbj.png"/></div>
+    </div>
+    <div class="tableCellright">
+    <div class="righttop">
+	<p class="p1">更丰富的信息，更强大的功能</p>
+	<p class="p2">吃喝玩乐，一手掌握。吃货、影迷、麦霸必备神器！</p>
+    </div>
+    <div class="rightdown">
+    <div class="img"><img src="images/ewm3.gif"/><div>手机扫描二维码下载</div></div>
+    <div class="button"><a class="modalLink" href="#modal1"><img src="images/button.png"/></a></div>
+    </div>
+    </div>
+    </div>
+</div>
+<div class="section section3">
+ <div class="inner">
+    <div class="tableCellleft">
+    <div class="ph4"><img src="images/ph.gif"/></div>
+    <div class="load"><img src="images/ditu.png"/></div>
+    <div class="lbiao"><img src="images/lbiao.png"/></div>
+    <div class="se3bgs"><img id="img6" src="images/sbbbbbai.png"/></div>
+    <div class="se3bgss"><img id="img7" src="images/sbbbbbai.png"/></div>
+    </div>
+    <div class="tableCellright">
+    <div class="righttop">
+	<p class="p1">附近团购、商家信息，随时查看</p>
+	<p class="p2">方便快捷，走到哪都省时、省心、省钱。</p>
+    </div>
+    <div class="rightdown">
+    <div class="img"><img src="images/ewm1.gif"/><div>手机扫描二维码下载</div></div>
+    <div class="button"><a class="modalLink" href="#modal1"><img src="images/button3.png"/></a></div>
+    </div>
+    </div>
+    </div>
+</div>
+<div class="section section4">
+ <div class="inner">
+    <div class="tableCellleft">
+    <div class="ph1"><img src="images/phoneindex.png"/></div>
+    <div class="tm4"><img src="images/tm4.png"/></div>
+    <div class="tm1"><img src="images/tm1.png"/></div>
+    <div class="tm2"><img src="images/tm2.png"/></div>
+    <div class="tm3"><img src="images/tm3.png"/></div>
+    <div class="tm5"><img src="images/tm5.png"/></div>
+    <div class="tm6"><img src="images/tm6.png"/></div>
+    <div class="tm7"><img src="images/tm7.png"/></div>
+    <div class="tm8"><img src="images/tm8.png"/></div>
+    <div class="se4bgs"><img id="img8" width="100%" src="images/sbbbbbai.png"/></div>
+    <div class="se4bgss"><img id="img9" width="100%" src="images/sbbbbbai.png"/></div>
+    </div>
+    <div class="tableCellright">
+    <div class="righttop">
+	<p class="p1">柳团在手，畅玩柳州</p>
+	<p class="p2">更多精彩功能，更多优惠活动，尽在柳团。</p>
+    </div>
+    <div class="rightdown">
+    <div class="img"><img src="images/ewm4.gif"/><div>手机扫描二维码下载</div></div>
+    <div class="button"><a class="modalLink" href="#modal1"><img src="images/button2.png"/></a></div>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+<div class="overlay"></div>
+
+<div id="modal1" class="modal">
+<div class="closeBtn"></div>
+<div class="modalup">
+<ul>
+<li class="android"><a class="active"></a></li>
+<li class="iphone"><a></a></li>
+<li class="ipad" style="margin-right:0px"><a></a></li>
+</ul>
+</div>
+<div class="modaldown">
+<div class="erwm"><img src="images/ewm1.gif" />
+<p class="gray">手机扫描二维码下载</p>
+</div>
+<div class="downbtn">
+<div id="anddown"  class="downcont show">
+<p>电脑直接下载</p>
+<div class="btns">
+<a class="btn btn-android" href="">Android手机</a>
+</div>
+</div>
+<div id="iphdown" class="downcont">
+<p>访问App Store下载</p>
+<div class="btns">
+<a class="btn btn-iphone" href="">App Store下载</a>
+</div>
+</div>
+<div id="ipaddown" class="downcont">
+<p>访问App Store下载</p>
+<div class="btns">
+<a class="btn btn-ipad" href="">App Store下载</a>
+</div>
+</div>
+<div><p class="gray">手机浏览器直接访问：www.web.lztuan.com 可直接下载</p></div>
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>

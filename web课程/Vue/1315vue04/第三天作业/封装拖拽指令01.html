@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <title></title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            div>div{
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: absolute;
+            }
+        </style>
+	</head>
+	<body>
+	    <div id='app'>
+            <div v-move></div>
+        </div>
+    </body>
+    <script src="../js/vue1.js"></script>
+	<script type="text/javascript">
+		//用vue实现以下逻辑。
+        //给#app内的div添加一个自定义指令.使之可实现拖拽.
+
+        new Vue({
+            el:'#app',
+            directives:{
+                'move':function(el,binding){
+
+                    el.onmousedown=function(ev){			
+                        var ev=ev||window.event;
+                        var disX=ev.clientX-el.offsetLeft;
+                        var disY=ev.clientY-el.offsetTop;        
+                                       
+                        document.onmousemove=function(ev){
+                            var ev=ev||window.event;
+                            el.style.left=ev.clientX-disX+'px';
+                            el.style.top=ev.clientY-disY+'px';
+                        }
+                        document.onmouseup=function(){
+                            document.onmousemove=null;
+                            document.onmouseup=null;
+                        }
+                    }
+                }
+            }
+        })
+
+	</script>
+</html>

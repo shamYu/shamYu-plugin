@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		回调函数->作为实参的函数声明.
+
+		function show (fn){
+			fn();
+			fn.call(document);
+			setTimeout(fn,10000000);
+		}
+		
+		//作为实参的函数声明->回调函数->它的调用依赖于别的函数的调用->钩子函数
+		show(function(){
+			console.log(this)
+		})
+		
+	</script>
+</html>

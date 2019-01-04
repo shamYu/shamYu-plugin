@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<!-- 
+			action : 表单将要提交的地址
+			method : 表单的提交方式
+				get : 数据将会直接展示在URL地址栏
+				post : 数据不会展示在URL地址栏上.而是封装HTTP请求中
+			get和post的区别是什么?
+				0.get请求显示在URL地址栏上,而post不会
+				1.get请求快,post请求较快
+				2.get安全性低,post安全性较高
+				3.get请求数据大小有限制,post理论上无限制
+			type : 决定控件的形态,类型
+			name : 不仅对单选按钮/复选按钮分组.且更重要的是为数据的传输提供帮助
+			value : 对控件的内容进行控制和展示,以传输数据
+			id : 通常交给js玩,这边不补充
+			
+			action?name1=value1&name2=value2&name3=value3
+		-->
+		<!--
+        	placeholder : 文本框提示文字
+        	value在文本框和密码框会默认填充相应的内容
+        	readonly : 只读的(仍旧可以传输数据)
+        	disabled : 禁止的(连数据都被禁止传输了)
+        -->
+		<form action="login.action" method="get">
+			<fieldset id="">
+				<legend>用户注册</legend>
+				<div>
+					<label for="username">用户名 : </label>
+					<input type="text" name="username" id="username" placeholder="请输入用户名" value="zhangsan" minlength="8" />
+				</div>
+				<div>
+					<label for="pwd">密码 : </label>
+					<input type="password" name="pwd" id="pwd" value="123456" />
+				</div>
+				<div>
+					<label>性别 :</label>
+					<label for="male">男</label>
+					<input type="radio" name="sex" id="male" value="male">
+					<label for="female">女</label>
+					<input type="radio" name="sex" id="female" value="female" checked>
+				</div>
+				<div>
+					<label>爱好</label>
+					<label for="hobby1">唱歌</label>
+					<input type="checkbox" id="hobby1" name="hobby" value="0" />
+					<label for="hobby2">跳舞</label>
+					<input type="checkbox" id="hobby2" name="hobby" value="1" />
+					<label for="hobby3">打代码</label>
+					<input type="checkbox" id="hobby3" name="hobby" value="2" />
+				</div>
+				<div>
+					<label>籍贯</label>
+					<select name="province" size="5" multiple>
+						<option>--请选择--</option>
+						<option value="51" selected>广东</option>
+						<option value="52">广西</option>
+						<option value="53">胡建</option>
+						<option value="43">福南</option>
+					</select>
+				</div>
+				<div>
+					<label for="myself">自我介绍</label>
+					<textarea name="myself" id="myself"></textarea>
+				</div>
+				<div>
+					<label for="file">上传照片</label>
+					<input type="file" name="file" id="file" />
+				</div>
+				<div>
+					<input type="button" value="我只是一个普通的按钮" />
+					<!-- 提交按钮 -->
+					<input type="submit" value="提交" />
+					<!-- 图片提交按钮 -->
+					<input type="image" src="img/im.jpg" name="submit_btn" id="submit_btn" />
+					<!-- 重置按钮 : 将表单的状态回溯到默认状态 -->
+					<input type="reset" value="重置" />
+				</div>
+			</fieldset>
+		</form>
+		<!--<form action="aaa.action" method="post">
+			<input type="submit" value="11111"/>
+		</form>-->
+		
+	</body>
+
+</html>

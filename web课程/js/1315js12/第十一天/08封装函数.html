@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'></div>
+		<div id='div2'></div>
+		<div id='div3'></div>
+	</body>
+	<script type="text/javascript">
+		
+//		封装函数实现:可以任意设置多个样式,根据内容,在元素内部插入相应个数的子元素
+//		按照以下调用形式,封装函数,在任意已经存在的div内插入一个元素,元素的类型由tag属性决定.该元素拥有css属性的全部样式
+//		如果children属性存在,插入相应个数的子元素,
+//		子元素的类型以及内部子节点分别由children内的每一个元素的tab与str属性决定.
+//		子元素的样式由children内的每一个元素的css决定.
+//		子元素共同的样式由children的globalCss决定，如果eles内的元素还单独拥有css属性，则单独的css样式覆盖globalCss样式
+//		给所有li设置统一的事件，事件类型由globalEvent的type决定，事件触发时的函数由handle决定。
+//		children的兄弟属性str作为父元素的文本节点.
+
+		setEle({
+			parent:'div1',
+			tag:'div',
+			css:{
+				width:'500px',
+				height:'500px',
+				border:'10px solid #000',
+				background:'yellow',
+			},
+			children:{
+				globalCss:{
+					width:'50px',
+					height:'50px',
+					border:'1px solid #000',
+					background:'red',
+					float:'left'
+				},
+				globalEvent:{
+					type:'click',
+					handle:function(ev){
+						alert(ev.target.innerText);
+					}
+				},
+				eles:[
+					{
+						tag:'p',
+						str:'子元素内容1',
+					},
+					{
+						tag:'p',
+						str:'子元素内容2',
+					},
+					{
+						tag:'p',
+						str:'子元素内容3',
+						css:{
+							width:'100px',
+							height:'100px',
+							border:'10px solid green',
+						}
+					},
+				]
+			},
+			str:'父元素内容'
+		});
+
+		function setEle(obj){
+			var parent=document.getElementById(obj.parent);
+			var oDiv=document.createElement(obj.tag);
+			parent.appendChild(oDiv);
+			
+			var ev=obj.children.globalEvent;			
+			//委托
+			parent.addEventListener(ev.type,ev.handle);
+			
+			//给插入的div修改样式
+			for(var prop in obj.css){
+				oDiv.style[prop]=obj.css[prop];
+			}
+			
+			//循环str插入相应的p元素
+			obj.children.eles.forEach(function(items,i){
+				var oEle=document.createElement(items.tag);
+				oDiv.appendChild(oEle);
+				oEle.innerText=items.str;
+								
+				for(var prop in obj.children.globalCss){
+					oEle.style[prop]=obj.children.globalCss[prop];
+				}
+				//如果eles的某个元素拥有css属性，需要覆盖全局属性
+				if(items.css){
+					for(var prop in items.css){
+						oEle.style[prop]=items.css[prop];
+					}
+				}
+			});
+			//插入文本节点
+			var str=document.createTextNode(obj.str);
+			oDiv.appendChild(str);
+			
+		}
+		
+	</script>
+</html>

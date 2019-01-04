@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id='ul'>
+			<li>1</li>
+			<li>2</li>
+			<li id='li3'>3</li>
+			<li id='li4'>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+//		封装一个insertAfter,实现将一个元素插入到另一个元素之后
+//		要求这样调用：
+//			任意父元素.insertAfter(子元素1,子元素2);->把子元素1插入到子元素2后面
+//		提示:给所有元素添加公有方法.
+		
+		var oUl=document.getElementById("ul");
+		var oLi3=document.getElementById("li3");
+		var oLi4=document.getElementById("li4");
+		
+		function insertAfter(parent,ele1,ele2){
+			parent.insertBefore(ele1,ele2);
+			parent.insertBefore(ele2,ele1);
+		}
+		
+//		insertAfter(oUl,oLi3,oLi4);
+		
+		//给ul添加私有属性insertAfter
+//		oUl.insertAfter=function(ele1,ele2){
+//			this.insertBefore(ele1,ele2);
+//			this.insertBefore(ele2,ele1);
+//		}		
+//		oUl.insertAfter(oLi3,oLi4);
+		
+		//给所有对象添加insertAfter;(不合适)
+//		Object.prototype.insertAfter=function(ele1,ele2){
+//			this.insertBefore(ele1,ele2);
+//			this.insertBefore(ele2,ele1);
+//		}
+		
+		//给所有的元素添加公有方法
+		Element.prototype.insertAfter=function(ele1,ele2){
+			this.insertBefore(ele1,ele2);
+			this.insertBefore(ele2,ele1);
+		}
+		
+		oUl.insertAfter(oLi3,oLi4);
+		
+		var oP=document.createElement("p");
+		
+		oP.innerHTML='我是新来的';
+		
+		document.body.insertAfter(oP,oUl);
+		
+		
+	</script>
+</html>

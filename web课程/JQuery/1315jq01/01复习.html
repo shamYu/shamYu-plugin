@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		
+//		Promise作用->封装所有的异步操作.promise里面的fn就是要封装异步操作的异步监听
+//		fn有两个参数,第一个参数是异步操作成功时希望触发的回调,第二个参数是异步操作失败时触发的回调.
+//		then触发fn的第一个回调函数.catch触发第二个回调函数.
+//		1: new Promise(fn).then(success).catch(err);
+//		   var obj=new Promise(fn);obj.then(success);obj.catch(err);
+			
+//		 var oYm={
+//		 	name:'yangmui',
+//		 	fn:function(){
+//		 		console.log(this.name);
+//		 		return this;
+//		 	}
+//		 }
+//		
+//		 function fn(){
+//		 	return oYm
+//		 }
+//		 
+//		 //链式调用->每个函数都返回调用自身的对象(返回this).
+//		 fn().fn().fn().fn().fn().fn().fn().fn().fn().fn().fn().fn().fn().fn();
+		 
+//		 2:跨域->不同源的页面需要数据共享,就会涉及跨域.
+//		 		协议,ip,端口,域名->(两个url进行比较)任意一个不一致,都是不同源.
+//				后端跨域解决->1:代理;2:cors
+//				前端跨域->1:jsonp;2:domain;3:postMessage();
+//		 		jsonp:
+//		 			原理:利用src属性可以跨域访问页面的特性.
+//		 			利用script标签的src属性引入跨域文件.
+//		 			跨域页面调用请求页面的某个函数,并且将跨域数据传入.
+//				缺点:不支持post请求.只支持get请求.
+		 		
+	</script>
+</html>

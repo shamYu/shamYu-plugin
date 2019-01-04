@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text" value="" />
+	</body>
+	<script type="text/javascript">
+//		给文本框添加某个事件,实现:
+//			开始输入时,如果没有任何内容,弹出'祸从口出，小心被查水表';
+//			输入完成时,如果内容跟输入之前的内容不一致,弹出新输入的内容.如果一致,弹出'摸了一通，没有下文？'
+		var oText=document.getElementById('text');
+		//页面载入，将当期的value存在全局变量。
+		var str=oText.value;
+		oText.onfocus=function(){
+			if(this.value==''){
+				alert('小心查水表');
+			}
+		}
+		//用户输入完成，一定会让input失焦
+		oText.onblur=function(){
+			if(this.value==str){
+				alert('没有下文？')
+			}else if(this.value!=str){
+				alert(this.value)
+			}
+		}
+		//文本发送变化更新全局变量str
+		oText.onchange=function(){
+			str=this.value;
+		}
+		
+	</script>
+	
+</html>

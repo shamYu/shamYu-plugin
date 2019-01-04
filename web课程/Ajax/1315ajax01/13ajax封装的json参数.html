@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul></ul>
+	</body>
+	<script src="js/ajax.js" charset="utf-8"></script>
+	<script src="js/axios.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var oUl=document.querySelector('ul');
+//		promise对象。
+
+		axios({
+			method:'GET',
+			url:'php/getNews.php',
+		}).then(function(data){
+			console.log(data);
+			data.data.forEach(function(items,i){
+				var oLi=document.createElement("li");
+				oUl.appendChild(oLi);
+				oLi.innerHTML='<a href="#">'+items.title+'</a>'+items.date;
+			})
+		});
+		
+//		ajax({
+//			method:'GET',
+//			url:'php/1.get.php',
+//			data:'username=yangmi&age=32',
+//			success:function(data){
+//				alert(data);
+//			}
+//		});
+		
+//		ajax({
+//			method:'GET',
+//			url:'php/getNews.php',
+//			dataType:'json',
+//			success:function(data){		
+//				data.forEach(function(items,i){
+//					var oLi=document.createElement("li");
+//					oUl.appendChild(oLi);
+//					oLi.innerHTML='<a href="#">'+items.title+'</a>'+items.date;
+//				})
+//			}
+//		});
+		
+		
+	</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		for(var i=0;i<500;i++){
+			document.body.innerHTML+='<div>这是第0次点击</div>'
+		}
+		
+		var aDiv=document.getElementsByTagName('div');
+				
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].iCount=0;		
+			aDiv[i].onclick=function () {
+				this.iCount++;
+				this.innerText='这是第'+this.iCount+'次点击';
+			}
+		}
+		
+//		var iCount=0;
+//		点击次数,可以 不用变量来存,还可以用自定义属性。给不同的元素添加自定义属性还可以相互进行区分
+//		aDiv[0].iCount=0;		
+//		aDiv[0].onclick=function () {
+//			this.iCount++;
+//			this.innerText='这是第'+this.iCount+'次点击';
+//		}
+//		
+//		var iCount1=0;
+//		点击次数,可以 不用变量来存,还可以用自定义属性。给不同的元素添加自定义属性还可以相互进行区分		
+//		aDiv[1].iCount=0;		
+//		aDiv[1].onclick=function () {
+//			this.iCount++;
+//			this.innerText='这是第'+this.iCount+'次点击';
+//		}
+//		
+//		var iCount2=0;
+//		点击次数,可以 不用变量来存,还可以用自定义属性。给不同的元素添加自定义属性还可以相互进行区分
+//		aDiv[2].iCount=0;		
+//		aDiv[2].onclick=function () {
+//			this.iCount++;
+//			this.innerText='这是第'+this.iCount+'次点击';
+//		}
+		
+		
+	</script>
+</html>

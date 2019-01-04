@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 50px;
+				background: pink;
+				float: left;
+				margin:1px 0 0 1px;
+				line-height: 50px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		for(var i=0;i<500;i++){
+			document.body.innerHTML+='<div>第'+(i+1)+'个div</div>';
+		}
+		//给每个div添加点击事件，点击时弹出自己内容中的数字.
+		//给每个div添加移入移出事件，移入变成红色并且将内容设置为'别摸我，好痒'，移出变成粉红，并且内容设置为原来的内容.
+		
+		var aDiv=document.getElementsByTagName('div');
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].num=i+1;
+			aDiv[i].content=aDiv[i].innerText;
+			aDiv[i].onclick=function () {
+				alert(this.num);
+			}
+			aDiv[i].onmouseover=function () {
+				this.style.background='red';
+				this.innerText='别摸,好痒'
+			}
+			aDiv[i].onmouseleave=function () {
+				this.style.background='pink';
+				this.innerText=this.content;
+			}
+		}
+		
+	</script>
+</html>

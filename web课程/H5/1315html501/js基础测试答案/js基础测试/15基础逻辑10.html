@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 50px;
+				height: 50px;
+				background: red;
+				float: left;
+				margin:1px 0 0 1px;
+				cursor: pointer;
+				font-size: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		for(var i=0;i<500;i++){
+			document.body.innerHTML+='<div></div>'
+		}
+//		给以上500个div添加点击事件,每次点击,根据点击次数将被点击的div的内容文本设置为'第*次';
+		var aDiv=document.getElementsByTagName('div');
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].n=0;
+			aDiv[i].onclick=function () {
+				this.n++;
+				this.innerHTML='这是第'+this.n+'次点击'
+			}
+		}
+	</script>
+</html>

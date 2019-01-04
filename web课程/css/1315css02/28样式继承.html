@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#div1{
+				color:red;
+				border:1px solid #000;
+				line-height: 200px;
+				font-size: 60px;
+				text-decoration: line-through;
+			}
+			
+			/*子孙元素默认可以获得祖先元素的可继承样式*/
+			/*能继承的样式->color,text-开头的样式,font-开头的样式,line-开头的样式*/
+			
+			/*给html设置默认字号,则页面中所有的元素的字号也都默认继承14px*/
+			html{
+				font-size: 14px;
+			}			
+			/*p{
+				color:red
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id='div1'>
+			<p>哈哈哈哈哈2</p>
+		</div>
+	</body>
+	
+	<!--!important>行间>id>类,属性>标签>*>浏览器>继承-->
+	
+</html>

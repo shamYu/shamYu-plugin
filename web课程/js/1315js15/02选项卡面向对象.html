@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			div>div{
+				width: 200px;
+				height: 200px;
+				border:1px solid #000;
+				display: none;				
+			}
+			input.active{
+				background: red;
+			}
+			div.active{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap1'>
+			<input class='active' type="button" value="111" />
+			<input type="button" value="222" />
+			<input type="button" value="333" />
+			<div class='active'>1111</div>
+			<div>2222</div>
+			<div>3333</div>
+		</div>
+		<div id='wrap2'>
+			<input class='active' type="button" value="111" />
+			<input type="button" value="222" />
+			<input type="button" value="333" />
+			<div class='active'>1111</div>
+			<div>2222</div>
+			<div>3333</div>
+		</div>
+		<div id='wrap3'>
+			<input class='active' type="button" value="111" />
+			<input type="button" value="222" />
+			<input type="button" value="333" />
+			<input type="button" value="444" />
+			<div class='active'>1111</div>
+			<div>2222</div>
+			<div>3333</div>
+			<div>4444</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//创建一个选项卡的类，然后实例化一个选项卡对象
+				
+		function Tab(wrap){
+			this.wrap=document.getElementById(wrap);
+			this.divs=this.wrap.getElementsByTagName('div');
+			this.inputs=this.wrap.getElementsByTagName('input');
+			
+			for(let i=0;i<this.inputs.length;i++){
+				//给所有的input存下标
+				this.inputs[i].index=i;
+				//给所有的input属性加事件
+				this.inputs[i].addEventListener('click',this.toggleTab(this));
+			}
+		}
+		
+		//tab类的每个实例公有一个切换内容的逻辑
+		Tab.prototype.toggleTab=function(_this){
+			return function(){
+				for(let i=0;i<_this.inputs.length;i++){
+					_this.inputs[i].className='';
+					_this.divs[i].className='';
+				}
+				this.className='active';
+				_this.divs[this.index].className='active';
+			}			
+		}
+		
+		var tab1=new Tab('wrap1');
+		var tab2=new Tab('wrap2');
+		var tab3=new Tab('wrap3');
+		
+	</script>
+</html>

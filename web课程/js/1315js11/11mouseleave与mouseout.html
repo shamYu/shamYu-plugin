@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width:300px;
+				height: 300px;
+				background: red;
+			}
+			#div1{
+				width:200px;
+				height: 200px;
+				background: yellow;
+				/*visibility: hidden;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div id='div1'></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oWrap=document.getElementById("wrap");
+		var oDiv1=document.getElementById("div1");
+		
+//		事件流:事件传递.
+//			事件冒泡:事件从子元素一层一层的往祖先元素传递,传到顶层对象(document或者window);
+//				   子传父,父传祖父,祖父传曾祖父.......document
+			
+//		oWrap.addEventListener('click',showData);		
+//		function showData(){
+//			alert('我是红色');
+//		}
+		
+		//mouseleave没有事件冒泡，也就是子元素的事件不会传递到父元素。
+//		oWrap.addEventListener('mouseleave',function(ev){
+//			console.log(ev.bubbles); //false表示不冒泡
+//			this.style.background='green';
+//		});
+
+//		oWrap.addEventListener('mouseenter',function(ev){
+//			console.log(ev.bubbles); //false表示不冒泡
+//			this.style.background='green';
+//		});
+		
+		//mouseout没有事件冒泡，也就是子元素的事件会传递到父元素。
+//		oWrap.addEventListener('mouseout',function(ev){
+//			console.log(ev.bubbles); //ture表示不冒泡
+//			this.style.background='green';
+//		});
+//		
+//		oWrap.addEventListener('mouseover',function(ev){
+//			console.log(ev.bubbles); //ture表示不冒泡
+//			this.style.background='green';
+//		});
+		
+	</script>
+</html>

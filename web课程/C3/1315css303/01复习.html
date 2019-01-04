@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name='viewport' content='width=device-width' charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" media="screen and (max-width:900px) and ()"  href=""/>
+		<style type="text/css">
+			div{
+				/*弹性盒模型:
+					两方向->主轴(X轴水平方向),交叉轴(Y轴垂直方向);
+					容器->父元素.
+					项目->子元素.*/
+				ul{
+					display: flex;
+					/*display: box;*/
+					/*项目在交叉轴上排列*/
+					flex-direction:column;
+					/*当前的方向轴上排列在结束位置*/
+					justify-content:flex-end;
+					/*在另一条轴上的分布方式*/
+					align-items:center;
+					/*换行后另一条轴上的分布方式*/
+					align-content:space-between;
+					/*在当前的方向上换行*/ /*row->宽不够换行,column->高不够换行*/
+					flex-wrap:wrap;
+					
+					flex-flow:column wrap;
+				}
+				
+				li{
+					order:0;
+					/*0->不会变大(不会超出原始值);*/
+					/*设置非0之后,每个li都有一个额外的宽.*/
+					/*额外的宽=父元素剩余的宽*当前的grow/所有grow值的总和*/
+					flex-grow:1;
+					/*一般需要把原始的宽设为0;*/
+					width:0;
+					/*0表示不会缩小(不会小于初始的值)*/
+					flex-shrink:0;
+					/*用于代替宽*/
+					flex-basis:100px;
+					/*项目在另一个方向上的对齐方式*/
+					align-self:flex-start;
+					
+					/*先grow,后shrink,再basis*/
+					flex:1 0 100px;
+				}
+				
+				div{
+					-webkit-box-reflect:below;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div>div{
+            width: 200px;
+            height: 200px;
+            border:1px solid #000;
+            /* display: none; */
+        }
+        div.active{
+            display: block
+        }
+        input.active{
+            background:red
+        }
+    </style>
+</head>
+<body>
+    <div id='div'>
+        <input :class='i==index?"active":""' type="button" v-for='(d,i) in arr' :value="d" @click='tab(i)'>
+        <!-- 如果当前div的下标与当前被点击的input的下标相同,那么它就应该具有active类 -->
+        <!-- <div :class='i==index?"active":""' v-for='(d,i) in arr'>{{d}}</div> -->
+        <!-- <div :class='{active:i==index}' v-for='(d,i) in arr'>{{d}}</div> -->
+        <div v-show='i==index' v-for='(d,i) in arr'>{{d}}</div>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    //显示选项卡
+    var vm=new Vue({
+        el:'#div',
+        data:{
+            arr:['111','222','333'],
+            //被点击的li的下标
+            index:0
+        },
+        methods:{
+            tab(i){
+                //被点击的input的下标赋值给vm实例的index
+                this.index=i
+            }
+        }
+    })
+</script>
+</html>

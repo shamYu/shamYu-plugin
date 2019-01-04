@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.active{
+            display: none
+        }
+        /* vue还没调用时，样式隐藏视图，vue调用后会删除v-cloak指令，以显示视图 */
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div" v-cloak>
+        <input type="text" v-model='name'>
+        <div v-if='name=="杨幂"'>杨幂我要了</div>
+        <div v-else-if='name=="杨博"'>杨博我也要了</div>
+        <div v-else-if='name=="班长"'>班长等等我</div>
+        <div v-else-if='name=="斯蒂芬大晗"'>小学生一边去</div>
+        <div v-else-if='name=="胡歌"'>风琴郡主是我的了,嘻嘻</div>
+        <div v-else-if='name=="考辛斯鹏"'>没大脑</div>
+        <div v-else>可爱的人儿在哪里</div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            name:''
+        }
+    });
+
+</script>
+</html>

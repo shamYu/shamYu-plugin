@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">			
+			div{
+				width: 200px;
+				height:200px;
+				border:1px solid #000;
+				text-align: center;
+				line-height:200px;
+				margin-left: 10px;
+				font-size: 24px;
+				float: left;
+			}			
+		</style>
+	</head>
+	<body>
+		<input type="button" value="red" />
+		<input type="button" value="green" />
+		<input type="button" value="blue" />
+		<br />
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		
+		var aInput=document.getElementsByTagName('input');
+		var aDiv=document.getElementsByTagName('div');
+		
+		document.addEventListener('click',setColor);
+		
+		var color='';
+		
+		function setColor(ev){
+			var ev=ev||window.event;
+			var et=ev.target||ev.srcElement;
+			
+			if(et.nodeName=='INPUT'){
+				color=et.value;
+			}else if(et.nodeName=='DIV'){
+				et.style.background=color;
+				et.innerText=color;
+			}			
+		}
+		
+		
+//		for(var i=0;i<aDiv.length;i++){
+//			aInput[i].addEventListener('click',setColor);
+//		}
+				
+//		function setColor(){
+//			//构成了闭包，每次点击input都会产生一个闭包作用域，作用域内存着当前点击的input的value
+//			var color=this.value;
+//			for(var i=0;i<aDiv.length;i++){
+//				aDiv[i].addEventListener('click',function(){
+//					console.log(color);
+//					this.style.background=color;
+//					this.innerText=color;
+//				});
+//			}			
+//		}
+			
+//		for(var i=0;i<aDiv.length;i++){
+//			aInput[i].addEventListener('click',setColor);
+//		}
+//		
+//		var color='';
+//		
+//		function setColor(){
+//			color=this.value;
+//			for(var i=0;i<aDiv.length;i++){
+//				aDiv[i].addEventListener('click',changeCss);
+//			}			
+//		}
+//		
+//		function changeCss(){
+//			this.style.background=color;
+//			this.innerText=color;
+//		}
+		
+//		var color='';
+//		
+//		for(var i=0;i<aDiv.length;i++){
+//			aInput[i].onclick=function(){
+//				color=this.value;
+//			}			
+//			aDiv[i].onclick=function(){
+//				this.style.background=color;
+//				this.innerText=color;
+//			}
+//		}
+		
+		
+	</script>
+</html>

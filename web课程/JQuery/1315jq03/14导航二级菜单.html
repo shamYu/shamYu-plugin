@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			#wrap{
+				background: red;
+				height: 61px;
+			}
+			#wrap>ul{
+				width: 1200px;
+				margin: 0 auto;
+				/*float: left;*/
+			}
+			#wrap>ul>li{
+				padding: 20px 50px;
+				float: left;
+				border-left:1px solid #fff;
+				color: #fff;
+				cursor: pointer;
+				position: relative;
+			}
+			li ul{
+				position: absolute;
+				left:0;
+				width: 100%;
+				top:61px;
+				display: none;
+			}
+			li ul>li{
+				background: #999;
+				text-align: center;
+				padding: 20px 0;
+				border-top:1px solid #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<ul>
+				<li>11111
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+				</li>
+				<li>22222
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+				</li>
+				<li>33333
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+				</li>
+				<li>44444
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+				</li>
+				<li>55555
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+				</li>
+				<li>66666
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//			$('#wrap>ul>li').mouseover(function(){
+//				$(this).find('ul').slideDown();
+//			});
+//			
+//			$('#wrap>ul>li').mouseleave(function(){
+//				$(this).find('ul').slideUp();
+//			})
+			
+			$('#wrap>ul>li').hover(function(){
+				$(this).find('ul').stop().slideDown();
+			},function(){
+				$(this).find('ul').stop().slideUp();
+			})
+
+	</script>
+</html>

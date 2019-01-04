@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			div{
+				width: 50px;
+				height: 50px;
+				background: red;
+				border-radius:50%;
+				position: absolute;
+				text-align: center;
+				line-height: 50px;
+				cursor: pointer;
+				font-size: 14px;
+				color:#fff;
+			}
+			input{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="插入泡泡" />
+	</body>
+	<script type="text/javascript">
+		
+		//创建一个泡泡类，点击按钮时实例化泡泡对象
+		
+		var oBtn=document.getElementById("btn");		
+		var w=document.documentElement.clientWidth;
+		var h=document.documentElement.clientHeight;
+		
+		var names=['杨幂','范冰冰','林志玲','高圆圆','容么么','凤姐','热巴','周冬雨','古丽娜扎']
+		
+		oBtn.addEventListener('click',function(){
+			var paopao=new Paopao();
+			paopao.showPaopao();
+		});
+		
+		function Paopao(){
+			this.ele=document.createElement('div');
+			this.color='rgb('+getRand(0,256)+','+getRand(0,256)+','+getRand(0,256)+')';
+			this.x=getRand(0,w-50);
+			this.y=getRand(0,h-50);
+			this.content=names[getRand(0,names.length)];
+			this.timer=setInterval(this.dese(this),50);
+			this.ele.addEventListener('mouseover',this.overDiv(this));
+			this.ele.addEventListener('mouseleave',this.leaveDiv(this));
+			this.ele.addEventListener('mousedown',this.moveDiv(this));
+		}
+		
+		Paopao.prototype.moveDiv=function(_this){
+			return function(ev){
+				var ev=ev||window.event;
+				var disX=ev.clientX-_this.ele.offsetLeft;
+				var disY=ev.clientY-_this.ele.offsetTop;
+				document.onmousemove=function(ev){
+					var ev=ev||window.event;
+					_this.ele.style.left=ev.clientX-disX+'px';
+					_this.ele.style.top=ev.clientY-disY+'px';
+				}
+				document.onmouseup=function(){
+					this.onmousemove=null;
+					this.onmouseup=null;
+				}
+			}			
+		}
+		
+		Paopao.prototype.overDiv=function(_this){
+			return function(){
+				clearInterval(_this.timer);
+			}		
+		}
+		
+		Paopao.prototype.leaveDiv=function(_this){
+			return function(){
+				_this.timer=setInterval(_this.dese(_this),50);
+			}			
+		}
+
+		Paopao.prototype.showPaopao=function(){
+			document.body.appendChild(this.ele);
+			this.ele.style.background=this.color;
+			this.ele.innerText=this.content;
+			this.ele.style.left=this.x+'px';
+			this.ele.style.top=this.y+'px';
+		}
+		
+		Paopao.prototype.dese=function(_this){
+			return function(){
+				_this.ele.style.left=_this.ele.offsetLeft+getRand(-2,3)+'px';
+				_this.ele.style.top=_this.ele.offsetTop+getRand(-2,3)+'px';
+			}			
+		}
+		
+		function getRand(a,b){
+			return Math.floor(Math.random()*(a-b))+b;
+		}
+		
+	</script>
+</html>

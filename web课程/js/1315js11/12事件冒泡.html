@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'>
+			<input type="button" id="btn" value="点击" />
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+//		事件冒泡:从下往上传递
+//			oBtn -> oDiv -> body —>document
+		
+//		事件流:
+//			事件是一定会发生,事件发生时一定会传递,如果传递到的元素有事件句柄,就会触发事件句柄.
+		
+//		事件传递不传递跟事件有没有事件句柄是没关系
+		
+		var oDiv=document.getElementById("div1");
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.addEventListener('click',function(){
+			alert('这是btn');
+		});
+		
+		oDiv.addEventListener('click',function(){
+			alert('这是Div');
+		});
+		
+		document.body.addEventListener('click',function(){
+			alert('这是body');
+		});
+		
+		document.addEventListener('click',function(){
+			alert('这是document');
+		});
+		
+		
+	</script>
+</html>

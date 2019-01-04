@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<li>hh</li>-->
+		<ul>
+			<p>hhh</p>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		index()->用于找元素的下标->如果找不到，返回-1;
+//		1：找谁的下标。
+//		2：在哪个范围内的下标。
+		
+//		index()没参数时->默认返回当前对象在同辈元素内的下标
+//			       有参数->
+//				  a:参数是选择器
+//				  	返回前面的集合内的第一个元素在这个选择器内的下标.
+//				  b:参数是对象.
+//				  	返回后面的集合内的第一个元素在前面集合内的下标.
+		
+//		$('li').click(function(){
+			//返回当前被点击的li在兄弟元素内的下标
+			//alert($(this).index());
+			//返回当前被点击的li在所有li内的下标
+//			alert($(this).index('li'));
+			//反过来写
+//			alert($('li').index($(this)));
+//		})
+		
+//		index()当有多个元素时,默认返回这多个元素内第一个元素的下标.
+		
+		$('li').click(function(){
+			//所有li内第一个li在其兄弟元素内的下标
+//			alert($('li').index());
+			
+//			alert($('li').index('li'));
+
+			alert($(this).index($('li')));					
+		})
+		
+		//如果确定index的参数应该用选择器，还是应该用对象。
+		//前面的集合小，后面的集合大，那么参数应该用选择器。
+		//前面的集合大，后面的集合小，那么参数应该用对象(jq对象或者原生对象)。
+		
+		//前小后选,前大后象
+		
+		
+	</script>
+</html>

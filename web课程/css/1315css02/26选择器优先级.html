@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#div1 div.box{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+			
+			#div1>div.box{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1'>
+			<div id='div2' class='box'></div>
+		</div>
+	</body>
+	
+	<!--先比较id选择器的个数,谁多谁厉害.如果一样多,比较类或者属性选择器的个数,谁多谁厉害,如果又一样多,比较标签选择器的个数.
+	如果所有选择器(id,类,标签)的个数都一样,则写在后面的厉害-->
+	
+	<!--行间>id选择器个数>类，属性个数>标签个数>*>浏览器样式-->
+</html>

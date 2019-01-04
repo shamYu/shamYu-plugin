@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" value="" />
+		<input type="button" value="增" />
+		<input type="button" value="删" />
+		<input type="button" value="改" />
+		<input type="button" value="查" />
+	</body>
+	<script type="text/javascript">
+		
+		var oText=document.querySelector('input');
+		var aBtns=document.querySelectorAll('[type="button"]');
+		
+		aBtns[0].onclick=function(){
+			//存储一个永久的abc数据。
+			window.localStorage.setItem('abc',oText.value);
+			//存储一个临时的abc数据。关闭页面就被删除。刷新页面不会被删除。
+			window.sessionStorage.setItem('abc',oText.value);
+		}
+		
+		aBtns[1].onclick=function(){
+			//删除永久abc数据
+			window.localStorage.removeItem('abc');
+			//删除临时abc数据
+			window.sessionStorage.removeItem('abc');
+			
+			//清除所有的永久数据
+			window.localStorage.clear();
+			//清除所有的临时数据
+			window.sessionStorage.clear();
+		}
+		
+		aBtns[2].onclick=function(){
+			window.localStorage.setItem('abc','beixiugai');
+		}
+		
+		aBtns[3].onclick=function(){
+			var data=window.localStorage.getItem('abc');
+			console.log(data);
+		}
+		
+		
+		
+	</script>
+</html>

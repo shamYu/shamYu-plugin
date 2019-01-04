@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="今天是星期几" />
+	</body>
+	<script type="text/javascript">
+//		点击按钮,判断今天是星期几,如果是星期一,弹出今天是星期一,如果是星期二,弹出今天是星期二,以此类推
+		
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=whichDay;
+		
+		function whichDay(){
+			var md=new Date();
+			
+			var day=md.getDay();
+			
+			switch(day){
+				case 0:
+					alert('今天是星期天');
+					break;
+				case 1:
+					alert('今天是星期一');
+					break;
+				case 2:
+					alert('今天是星期二');
+					break;
+				case 3:
+					alert('今天是星期三');
+					break;
+				case 4:
+					alert('今天是星期四');
+					break;
+				case 5:
+					alert('今天是星期五');
+					break;
+				case 6:
+					alert('今天是星期六');
+					break;
+			}
+			
+//			if(day==0){
+//				alert('今天是星期天')
+//			}else if(day==1){
+//				alert('今天是星期一')
+//			}else if(day==2){
+//				alert('今天是星期二')
+//			}else if(day==3){
+//				alert('今天是星期三')
+//			}else if(day==4){
+//				alert('今天是星期四')
+//			}else if(day==5){
+//				alert('今天是星期五')
+//			}else if(day==6){
+//				alert('今天是星期六')
+//			}
+						
+		}
+		
+	</script>
+</html>

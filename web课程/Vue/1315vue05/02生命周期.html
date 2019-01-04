@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <ul>
+            {{show()}}
+            <li></li>
+            <li></li>
+            <li ref='li3'></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!-- <p :class='show()' :title='show()'>
+            {{msg}}
+            {{show()}}
+        </p> -->
+        <div id='app'>
+            {{msg}}
+            {{show()}}
+        </div>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    // vue实例重创建到生成经历的大概过程：
+
+    // 第一大步:给实例绑定数据,并且给数据设置setter和getter;(beforeCreate和created)
+        //1:初始化vm的生命周期函数和事件。完成之后触发beforeCreate钩子函数
+        //2:给实例添加数据绑定,然后给需要监听的数据添加setter和getter,完成之后会触发created钩子函数
+
+    // 第二大步:把模板转换为虚拟节点,然后生成真实节点,最后把el替换掉(beforeMount和mounted)
+        //3:判断参数是否传递了el选项,如果有,继续判断有没有template选项.
+            // a:如果有template选项,把template的html模板编译成虚拟节点.
+            // b:如果没有,把el表示的元素的html模板变成虚拟节点.
+            //以上步骤完成之后会触发beforeMount钩子函数.
+        //4:把虚拟节点转换为真实的节点,然后替换页面上的el,这个步骤完成之后触发mounted钩子函数
+
+    var vm=new Vue({
+        el:'#app',
+        // template:'<h3>哈哈哈哈</h3>',
+        data:{
+            msg:'哈哈哈'
+        },
+        beforeCreate(){
+            debugger;
+            console.log(this.msg)//undefined
+        },
+        created(){
+            debugger;
+            this.msg='呵呵呵';
+            console.log(this.msg)//'哈哈哈'
+        },
+        beforeMount(){
+            //真实节点还没有被虚拟节点替换,因此视图上还是没经过求值的表达式
+            debugger;
+        },
+        mounted(){
+            //真实节点已经被虚拟节点天黑,因此看到视图上显示了经过求值的表达式结果
+            debugger;
+        },
+        methods:{
+            show(){
+                debugger
+                console.log(100);
+            }
+        }
+
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				border:1px solid #000;
+			}
+			#wrap>.left{
+				float: left;
+			}
+			
+			#wrap>div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--浮动:float:left,right
+		
+		浮动会导致父元素高度塌陷.-->
+		
+		<!--1:直接设置高;
+		2:overflow:hidden;
+		3:父元素也浮动;
+		4:父元素最后插入空白块级元素,然后给这个块级元素添加:clear:both;
+		5:给父元素添加伪元素:after{display:block;content:'';clear:both};-->
+		
+		<div id='wrap'>
+			<div class='left'></div>
+			<div></div>
+		</div>
+		
+		<!--在同一行排列的元素,都需要浮动-->
+		
+		<!--祖先元素最好不设置高,保证由子元素撑开-->
+		
+		<!--块级元素,行内元素,行内块级,浮动元素->高都由子元素撑开-->
+		
+		<!--块级元素,行内元素,行内块级->子元素不全是浮动的-->
+		
+		<!--overflow:hidden,auto;-->
+		
+		<!--:hover->被鼠标移入的元素
+		
+		伪类必须是一个冒号
+		div:hover->所有div里被输入移入的那一个.是div,并且是被鼠标移入的-->
+		
+		<!--伪元素:可以两个可以一个冒号-->
+		<!--::before,::after,->必须有:content:'',-->
+		
+	</body>
+</html>

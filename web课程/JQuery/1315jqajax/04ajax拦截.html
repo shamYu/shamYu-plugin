@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		拦截->数据发送前和接收前的一些检查工作->一般用回调函数实现。(事件);
+				
+		//发送前的拦截
+		$(document).ajaxSend(function(evt,request,xhr){
+//			console.log(request.readyState);
+			console.log(xhr.data);			
+		});
+		
+		$.post('php/1.POST.php',{username:888,age:1000}).then(function(data){
+			console.log(data);
+		});
+		
+	</script>
+</html>

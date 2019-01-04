@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class='box'>1111</div>
+		<div class='box active fl sle dfad'>2222</div>
+	</body>
+	<script type="text/javascript">
+		
+		var aDiv=document.getElementsByClassName('box');
+		
+//		aDiv[0].className='box2';
+		//如果类有多个，那么需要修改其中一个，将会很困难。
+//		aDiv[1].className='box box2';
+		
+		//classList->类数组对象，length表示的是类的个数。
+		
+//		remove(类名)->删除某个类
+		aDiv[1].classList.remove('active');
+		
+//		add(类名)->加某个类
+		aDiv[1].classList.add('box2');
+//		添加多个类		
+		aDiv[1].classList.add('box2','box3');
+		
+		//toggle->如果有active就添加，没有就删除
+		aDiv[1].classList.toggle('active');
+		
+	</script>
+</html>

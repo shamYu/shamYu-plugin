@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="改样式" />
+		<div id='div1'>阿什顿发斯蒂芬</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+		
+		var oBtn=document.getElementById("btn");
+		
+//		oDiv.style.background='red';
+		
+//		onclick->当点击时.
+//		function(){}->函数->做一些事情(做的事情写在{}里);		
+//		当oBtn被点击时,修改oDiv的背景为红色.
+
+		oBtn.onclick=function () {
+			oDiv.style.background='red';
+		}
+		
+		
+	</script>
+</html>

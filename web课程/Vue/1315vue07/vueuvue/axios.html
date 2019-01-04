@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='app'></div>
+	</body>
+	<!--不依赖于vue,因此引入顺序不会被vue制约-->
+	<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue1.js" charset="utf-8"></script>	
+	<script type="text/javascript">
+		
+		new Vue({
+			el:'#app',
+			created(){
+				
+//				axios({
+//					type:'get',
+//					url:'1.get.php?username=900&age=777',
+//				}).then(function(data){
+//					console.log(data)
+//				})
+				
+//				axios.get('1.get.php',{params:{username:900,age:800}}).then(function(data){
+//					console.log(data);
+//				}).catch(function(err){
+//					console.log(err)
+//				})
+				
+				var oYm={'user_name':'uuu',age:999}
+				var arr=[];
+				for(var prop in oYm){
+					arr.push(prop+'='+oYm[prop])
+				}				
+				var str=arr.join('&');
+				console.log(str);
+				//'name=uuu&age=999'
+				
+				axios.post('1.post.php',str,{
+					headers:{'Content-type':'application/x-www-form-urlencoded'}
+				}).then((data)=>{
+					console.log(data);
+					this.msg=data.data
+				}).catch((err)=>{
+					console.log(err);
+					console.dir(err);
+					alert('你特么制杖'+err.response.status);
+				});
+								
+			}
+		})
+		
+	</script>
+</html>

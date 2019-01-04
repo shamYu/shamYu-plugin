@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="加数字" />
+		<div id='div1'>0</div>
+	</body>
+	<script type="text/javascript">
+//		点击按钮,根据点击次数,每点击一次,div内的数字递增1
+		var oDiv=document.getElementById("div1");
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function () {
+			
+//			oDiv.innerText++;
+
+//			oDiv.innerText=oDiv.innerText+1;
+			
+			//获取当前的div的内容
+			var str=oDiv.innerText;
+			//将这个获取的内容+1，然后再修改回去
+			oDiv.innerText=+str+1;
+			
+		}
+		
+	</script>
+</html>

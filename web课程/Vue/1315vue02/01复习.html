@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body></body>
+<script>
+
+    // 1:mvc和mvvm;vue是mvvm->m->Vue的参数{}.v-html(视图);vm->vue实例;
+
+    // 2:el:'div'->如果拼配多个元素，则数据挂载第一个。不能以body和html作为视图;
+
+    // 3:data:{msg}->声明数据,数据名随便.在视图内直接使用数据名.在methods内使用->this.数据名
+    //   data内的所有属性都会变成vm实例的属性.
+    //   data内的数据是一个数组或者是json对象.data:{arr:[],obj:{}},单纯修改元素或者属性，不会导致视图更新
+    // 
+    //4:methods:{fn1(){},fn2(){}}->声明函数,methods内的方法都会变成vue实例的属性;
+
+    // 5:v-on:事件名=函数名();@事件名();v-bind:属性名=表达式;简写:属性名=表达式;
+
+    // 6:v-model:用于双向数据绑定.->只能用于表单元素.
+    //   vue的默认功能是使数据变化导致视图变化.如果需要双向绑定,可以使用v-model.
+    
+    // 7:v-for,循环数组,d是元素,index是下标
+    //     v-for='d in arr' v-for='(d,index) in arr';
+    //     v-for,循环对象,val是属性值,prop是属性名,index是属性的序号(下标);
+
+</script>
+</html>

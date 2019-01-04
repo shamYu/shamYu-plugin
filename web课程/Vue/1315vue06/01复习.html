@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    // 1:生命周期->创建vue实例大概的过程.
+    //            创建数据(添加数据监听)->数据添加到虚拟节点->挂载到真实节点.
+    //            数据被设置时->watcher(判断是否要更新视图)->render函数->重新生成虚拟节点->更新视图
+    // 2:生命周期的钩子函数(回调函数):
+    //            数据创建时有两个钩子函数,beforeCreate()->数据创建前触发.
+    //            数据创建后(vue实例的数据有了setter)->created()->数据创建后
+    //            beforeMount()->虚拟节点挂载到真实节点前(视图还没更新);
+    //            mounted()->虚拟节点替换了真实节点之后.(视图更新了);
+    // 3:vue实例.$on('事件名',要触发的函数fn);vue实例.$emit('事件名',传递给函数fn的参数);
+    // 4:bus共享数据。->在想获得数据的组件里写$on,并且函数fn用箭头函数。传递数据的组件写$emit.
+    // 5:mixins:[对象名]。对象名->组件的公共部分.
+    // 6:动态组件.动态给is属性赋值.is='vDiv',:is='vDiv'->动态改变引入的组件，可以实现更新视图。
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<input type="button" onclick='alert(100)' id="btn" value="点击" />-->
+		<!--<input type="button" onclick='show()' id="btn" value="点击" />-->
+		<input type="button" id="btn" value="点击" />
+	</body>
+	<script type="text/javascript">
+		
+//		结构,表现,行为 -> 要分离
+		
+//		给一个元素加事件:
+//			1:在行间加onclick属性,属性值写js代码或者写一个函数的调用,需要引号引起(不推荐);
+//			2:给js的标签对象加onclick事件,后面赋值事件句柄,句柄一定要是函数.
+//			3:用绑定添加事件
+			
+//		function show(){
+//			alert(100);
+//		}
+		
+		var oBtn=document.getElementById("btn");
+		
+//		oYm.name='杨幂';
+//		oYm.name='范冰冰';
+		
+		//这种加事件的方式会后面替换前面的.
+		//团队开发.如果采用以下添加事件的方式,那么极有可能事件相互覆盖。(不安全);
+//		oBtn.onclick=function(){
+//			alert('杨幂')
+//		}		
+//		oBtn.onclick=function(){
+//			alert('范冰冰')
+//		}
+		
+		oBtn.addEventListener('click',function(){
+			alert('杨幂');
+		});
+		
+		oBtn.addEventListener('click',function(){
+			alert('范冰冰');
+		});
+		
+	</script>
+</html>

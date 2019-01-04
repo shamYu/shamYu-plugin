@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div>div{
+            width: 200px;
+            height: 200px;
+        }
+        .red{
+            background: red
+        }
+        .green{
+            background:green;
+        }
+        /* vue还没调用时，样式隐藏视图，vue调用后会删除v-cloak指令，以显示视图 */
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div" v-cloak>
+        <input type="text" v-model='str'>
+        <input type="text" v-model='abc'>
+        <input type="text" v-model='money'>
+        <!-- // |->管道符。前面的表达式使用后面的过滤逻辑来转换格式 -->
+       {{str | toUpper}}
+       {{abc | toUpper}}
+       {{money | cash}}
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+   
+//    全局过滤器注册
+
+//    val参数就是管道符前面表达式的返回值
+
+//    Vue.filter('toUpper',function(val){
+//          过滤之后显示的结果需要return出来
+//         return val.toUpperCase();
+//    })
+   
+   var vm = new Vue({
+        el:'#div',
+        data:{
+            str:'',
+            abc:'',
+            money:'',
+        },
+        //局部的过滤器注册
+        filters:{
+            toUpper(val){
+                return val.toUpperCase();
+            },
+            cash(val){
+                //货币格式的正则
+                var re=/\B(?=((\d){3})+\b)/g;
+                //返回的格式
+                return val?'$'+val.replace(re,','):'';
+            }
+        }
+        // watch:{
+        //     str(){
+        //         this.str=this.str.toUpperCase();
+        //     },
+        //     abc(){
+        //         this.abc=this.abc.toUpperCase();
+        //     }
+        // } 
+    });
+
+</script>
+</html>

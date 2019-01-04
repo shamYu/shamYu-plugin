@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div:nth-child(1){
+				background: red;
+			}
+			div:nth-child(2){
+				background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		1:获取
+//		console.log($('div').css('width'));
+		
+//		//属性值是字符串
+//		$('div').css('width','1000px');
+//		//属性值是数字(推荐)
+//		$('div').css('width',1000);
+//		//同时设置多个样式
+//		$('div').css({
+//			width:1000,
+//			height:200,
+//			background:'red'
+//		});
+		
+//		css()->一个参数是获取,两个参数是设置->获取比设置少一个参数。
+//		获取时获取的是最终样式，设置时设置的是行间样式。
+		
+		//获取的是复合样式字符串
+//		console.log($('div').css('background'));
+		//获取一个单一样式字符串。rgb(255,0,0)
+//		console.log($('div').css('backgroundColor'));
+
+//		如果选择器匹配多个元素，那么获取样式默认是第一个元素的样式
+//		console.log($('div').css('backgroundColor'));
+		
+	</script>
+</html>

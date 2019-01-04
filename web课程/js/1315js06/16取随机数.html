@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//取0-1直接的随机数，可以取到0，不能取到1(半开半闭);
+		//Math.random()->每调用一次,返回一个新的随机数.
+		var num=Math.random();
+		
+		//取0-10直接的数,不包括10
+		var num10=Math.random()*10;
+		
+		//取0-9的随机整数
+		
+		var num9=Math.floor(Math.random()*10);
+		
+		//取2-9的随机整数 ->选取0-7的随机整数;然后+2
+		
+		var num7=Math.floor(Math.random()*8)+2;
+		
+		//使用getRand来获取2-9直接的随机整数
+		var randNum=getRand(2,9);
+		//取任意两个数之间的随机整数的逻辑封装
+		
+		function getRand(a,b){
+			
+//			var num=Math.floor(Math.random()*(b-a+1))+a;			
+//			return num;
+			
+			return Math.floor(Math.random()*(b))+a;
+		};
+		
+	</script>
+</html>

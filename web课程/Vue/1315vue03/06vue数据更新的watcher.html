@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        {{show()}}
+        {{msg}}
+        {{abc}}
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            //如果msg的值从111变成111,实际上msg的值没有发生变化.那么视图时不会更新的.
+            //msg的值从111变成111,msg的setter一定会触发.
+            //视图是否更新,需要watcher来进行判断.
+            //watcher什么时候会进行判断,取决于数据的setter有没有触发.
+            //每个vue实例的watcher都有一定的依赖数目,这些依赖就是vue实例初始化时设置了setter和getter的数据.
+            msg:111,
+            abc:222,
+        },
+        methods:{
+            show(){
+                console.log('鬼东西');
+            }
+        }
+    })
+
+</script>
+</html>

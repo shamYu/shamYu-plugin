@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div>p{
+				float: left;
+				width: 100px;
+				height: 30px;
+				background: red;
+				margin-left: 1px;
+				line-height: 30px;
+			}
+			div{
+				border:1px solid #000;
+				margin-top:1px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		for(var j=1;j<10;j++){
+			document.body.innerHTML+='<div id="div'+j+'"></div>';
+			var oDiv=document.getElementById("div"+j);
+
+			for(var i=1;i<=j;i++){
+				oDiv.innerHTML+='<p>'+i+'*'+j+'='+i*j+'</p>';
+			}
+		}
+		
+
+		
+		
+	</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div{
+				width:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div style='width:100px'></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		
+//		1:原型->一个类的公有特征的集合.
+//			类.prototype->一个对象.
+//			给一个类添加公有的属性或者方法,实际上就是给类.prototype添加私有属性或者方法.
+//			类.prototype.属性名=属性值.
+//			这样属于这个类的对象都可以访问这个新增的公有方法.
+//			(原型的作用就是同时给多个对象添加属性或者方法).
+//			
+//		2:原型链->用于继承->有了继承之后->一个对象能访问什么属性才能确定.
+//			小孩有没有白化病基因->整个家族的族谱上查找有那一代有白化病病例.
+//			oYm.abc的abc属性需要在oYm的原型链(族谱)上查找.
+//			
+//			属性查找:沿着对象的原型链逐层往上查找该层是否有这个私有属性,如果查找到,就停止查找.
+//			如果一直到Object.prototype还没有找到,就返回undefined;
+//			
+//			原型链的一个层级都是一个对象(原型prototype).
+//			
+//			生物 ->     动物 -> 人类 ->   男人       -> 杨幂的前夫
+//			会呼吸	     会动的      会说话的     有喉结的        长得像禽兽
+//			有生命周期
+//			
+//			杨幂的前夫.变绿->undefined.
+		
+//		3:所有js对象原型链的顶端是null
+		
+	</script>
+</html>

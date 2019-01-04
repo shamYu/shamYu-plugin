@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var i=0;
+		
+		function fn(){
+			i++;
+			if(i>10){
+//				如果i大于10,就停止定时器
+				clearInterval(timer);
+			}else{
+				console.log(i);
+			}			
+		}
+		
+		//setInterval()返回的是当前定时器的id,用于停止定时器;		
+		var timer=setInterval(fn,1000);
+		
+//		setTimerout(fn,10000),fn只会被调用1次;
+//		setInterval(fn,10000),fn会每隔10秒就调用1次,并且重复无数次;
+		
+		clearTimerout(id1);//关闭id为id1的setTimerout定时器
+		clearInterval(id2);//关闭id为id2的setInterval定时器
+		
+//		fn();
+//		fn();
+//		fn();
+//		fn();
+//		fn();
+//		fn();
+//		fn();
+//		fn();
+//		fn();
+//		fn();
+		
+	</script>
+</html>

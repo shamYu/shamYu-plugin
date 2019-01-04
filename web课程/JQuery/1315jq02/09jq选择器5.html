@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="按钮" />
+		<input type="text" value="按钮" />
+		<input type="checkbox" value="按钮" checked />
+		<input type="checkbox" value="按钮" />
+		<input type="radio" value="按钮" disabled />
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		$(':button').css('background','red');
+//		$(':text').css('background','red');
+//		$(':checkbox').css('background','red');
+//		$(':radio').css('background','red');
+//		$(':file').css('background','red');
+		
+		//选中checked为true的表单元素
+//		$(':checked').css('background','red');
+		//选中checked为false的元素
+//		$(':checkbox:not(:checked)').css('background','red');
+		
+		//不可用的表单元素
+//		$(':disabled').css('background','red');
+		//可用的表单元素
+//		$(':enabled').css('background','red');
+		
+		//不可用的button
+		$(':button:disabled').css('background','red');
+		
+	</script>
+</html>

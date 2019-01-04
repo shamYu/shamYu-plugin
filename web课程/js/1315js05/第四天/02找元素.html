@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p title='box1'></p>
+		<div></div>
+		<div title='box'></div>
+		<div title='box'></div>
+		<p></p>
+		<div title="box2"></div>
+		<p></p>
+		<p title='box'></p>
+		<p></p>
+		<div title="box1"></div>
+		<p title='box'></p>
+		<div></div>
+		<p title='box'></p>
+	</body>
+	<script type="text/javascript">
+//		找出以上title属性值是box的元素,给它们添加任意内容并且背景变红.
+
+//		var aP=document.getElementsByTagName('p');
+//		var aDiv=document.getElementsByTagName('div');
+		
+		var aEle=document.body.getElementsByTagName('*');
+		
+		for(var i=0;i<aEle.length;i++){
+			var prop=aEle[i].title;
+			if(prop=='box'){
+				aEle[i].innerText='asdfasdfasdf';
+				aEle[i].style.background='red';
+			}
+		}
+		
+//		for(var i=0;i<aP.length;i++){
+//			var prop=aP[i].title;
+//			if(prop=='box'){
+//				aP[i].innerText='asdfasdfasdf';
+//				aP[i].style.background='red';
+//			}
+//		}
+//		
+//		for(var i=0;i<aDiv.length;i++){
+//			var prop=aDiv[i].title;
+//			if(prop=='box'){
+//				aDiv[i].innerText='asdfasdfasdf';
+//				aDiv[i].style.background='red';
+//			}
+//		}
+		
+
+		
+		
+	</script>
+</html>

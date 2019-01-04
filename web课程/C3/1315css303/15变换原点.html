@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body>div{
+				width:100%;
+				height: 400px;
+				box-sizing: border-box;
+				border:3px solid #000;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				-webkit-perspective: 300px;
+			}
+			div>div{
+				width:100px;
+				height:100px;
+				background: red;
+				margin-left:0;
+				transition:2s linear;
+				/*将变换原点设置为左上角*/
+				/*-webkit-transform-origin: 0 0;*/
+				/*-webkit-transform-origin: -100px -100px;*/
+				/*-webkit-transform-origin:left;*/
+			}
+			
+			/*2d变换->缩放,平移,旋转,倾斜*/
+			/*所有2d变换不会影响其他元素的位置(不会影响布局)*/
+			
+			body>div:hover>div{
+				/*默认沿着自己的中心点再旋转*/
+				-webkit-transform: rotateY(90deg);
+				/*-webkit-transform: skewY(90deg);*/
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			<div></div>
+		</div>
+	</body>
+</html>

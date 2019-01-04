@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div'>哈哈哈</div>
+	</body>
+	<script type="text/javascript">
+		
+		var obj={
+			width:'200px',
+			height:'200px',
+			padding:'20px',
+			border:'1px solid #000',
+			textAlign:'center',
+			lineHeight:'200px',
+		}
+		
+		var oDiv=document.getElementById("div");
+		
+//		oDiv.style.width='200px';
+//		oDiv.style.height='200px';
+//		oDiv.style.padding='20px';
+//		
+//		oDiv.style.width=obj.width;
+//		oDiv.style.height=obj.height;
+//		oDiv.style.padding=obj.padding;
+		
+		for(var prop in obj){
+			oDiv.style[prop]=obj[prop];
+			console.log(typeof prop);
+		}
+		
+		var width='name';
+		
+//		obj[width]  //obj.name
+//		obj.width   //obj.width
+//		obj.'width' //属性名是字符串
+		
+//		var obj={
+//			name:'杨幂',
+//		}
+		
+		var obj={
+			'name':'杨幂',
+		}
+		
+//		对象.属性名=属性值;//属性名在这里是字符串，是常量。
+//		对象[任意表达式]=属性值.//中括号内可以是任意表达式，表达式的返回值可以作为变量的属性名
+		
+		
+	</script>
+</html>

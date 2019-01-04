@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="反选" />
+		<input type="button" value="全选" />
+		<div id='div1'>
+			<input type="checkbox" value="" />
+			<input type="checkbox" value="" />
+			<input type="checkbox" value="" />
+			<input type="checkbox" value="" />
+			<input type="checkbox" value="" />
+			<input type="checkbox" value="" />
+			<input type="checkbox" value="" />
+			<input type="checkbox" value="" />
+			<input type="checkbox" value="" />
+			<input type="checkbox" value="" />
+		</div>		
+	</body>
+	<script type="text/javascript">
+//		点击全选,所有的checkbox的勾勾上,点击反选,勾上的checkbox变不勾,不勾的变勾;
+		
+		var aInput=document.getElementsByTagName('input');
+			
+		aInput[1].onclick=function () {
+			for(var i=2;i<aInput.length;i++){
+				aInput[i].checked=true;
+			}
+		}
+		
+		aInput[0].onclick=function () {
+			for(var i=2;i<aInput.length;i++){
+				aInput[i].checked=!aInput[i].checked;
+			}
+		}
+		
+		
+
+		
+	</script>
+</html>

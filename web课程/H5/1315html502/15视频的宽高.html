@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<video poster="img/bb.jpg" controls width="600">
+			<!--如果当前的浏览器不识别ogv格式的视频,则播放下一条source内的视频-->
+			<source src="Intermission-Walk-in.ogv"></source>
+			<source src="Intermission-Walk-in_512kb.mp4"></source>
+		</video>
+	</body>
+	<script type="text/javascript">
+		
+		window.onload=function(){
+			
+			var aInput=document.querySelectorAll('input');
+			var oV=document.querySelector('video');
+			
+	//		oV.width->video标签的width属性.
+			
+//			视频实际的宽高(与分辨率有关);
+			console.log(oV.videoWidth);
+			console.log(oV.videoHeight);
+		}
+				
+	</script>
+</html>

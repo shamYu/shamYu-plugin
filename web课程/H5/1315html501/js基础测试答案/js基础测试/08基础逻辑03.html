@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			p{
+				padding: 20px;
+				border:1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<p></p>
+	</body>
+	<script type="text/javascript">
+//		给div添加点击事件,每次点击,根据点击的次数,设置其内容为：'这是第*次点击'
+//		每次点击div，根据点击的次数，将p的内容设置为：'第*次'
+		
+		var oDiv=document.getElementsByTagName('div')[0];
+		var oP=document.getElementsByTagName('p')[0];
+		var n=0;
+		oDiv.onclick=function () {
+			n++;
+			this.innerHTML='这是第'+n+'次点击';
+			oP.innerHTML='第'+n+'次'
+		}
+		
+	</script>
+</html>

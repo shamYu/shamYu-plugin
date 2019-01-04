@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+		<div id='div1' style='background:red'>123123123</div>
+	</body>
+	<script type="text/javascript">
+//		点击按钮做判断,如果div的背景色是红的,弹出'这个div脸红了',然后把div背景色变绿.如果背景色是绿色,弹出'这个div绿了',然后把div背景色变红.
+		var oBtn=document.getElementById("btn");
+		var oDiv=document.getElementById("div1");
+		
+		oBtn.onclick=function () {
+			if(oDiv.style.background=='red'){
+				alert('这个div脸红了');
+				oDiv.style.background='green';
+			}else if(oDiv.style.background=='green'){
+				alert('这个div绿了');
+				oDiv.style.background='red';
+			}
+		}
+		
+	</script>
+</html>

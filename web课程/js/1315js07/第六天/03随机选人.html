@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="随机选人" />
+		<p id='p1'></p>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=['杨幂','范冰冰','林志玲','热巴','周冬雨','关晓彤','郭德纲','蒙司机','班长大人'];
+		
+//		点击按钮,随机从arr内选一个人名显示在p内
+		
+		var oBtn=document.getElementById("btn");
+		var oP=document.getElementById("p1");
+		
+		oBtn.onclick=getBeauty;
+		
+		function getBeauty(){
+			//取随机下标
+			var index=Math.floor(Math.random()*arr.length);
+			
+			oP.innerText+=arr[index]+'——';
+			
+		}
+		
+		
+	</script>
+</html>

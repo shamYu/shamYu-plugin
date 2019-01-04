@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text" value="" />
+		<input type="button" id="btn" value="按钮" />
+	</body>
+	<script type="text/javascript">
+		
+		var oBtn=document.getElementById("btn");
+		var oText=document.getElementById("text");
+				
+		oBtn.onclick=function(){
+			
+			var str=oText.value;
+			//提取:下标
+			var index=str.search(':');
+			//提取：之后以及最后一个}前面所有的字符
+			var damimi=str.slice(index+1,-1);
+			
+			alert(damimi);
+		}
+//------------------------------------------------------------------------		
+		var str='{"name":"杨幂"}';		
+		var obj=JSON.parse(str);		
+		alert(obj.name);
+		
+	</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			//window.onload是一个事件,在页面上所有的元素以及内容加载完毕之后会自动触发.
+			//加载标签，图片，视频等等，这些加载完成之后，自动触发
+//			window.onload=function(){
+//				var oDiv=document.getElementById("div1");
+//				oDiv.style.background='red';
+//			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			哈哈哈哈
+			<!--<img src="img/bb.jpg" alt="" />-->
+		</div>
+		<iframe src="07代码阻塞.html" id='iframe'></iframe>
+	</body>
+	<script type="text/javascript">
+		
+		var oIframe=document.getElementById("iframe");
+		
+		//iframe标签引入的外部文件加载完毕之后，自动触发onload事件
+		oIframe.onload=function(){
+			var newWin=oIframe.contentWindow;
+			var oBtn=newWin.document.getElementById('btn');		
+			oBtn.onclick=function(){
+				alert(100);
+			}
+		}
+		
+//		window.onload=function(){
+//			var oIframe=document.getElementById("iframe");
+//			var newWin=oIframe.contentWindow;
+//			var oBtn=newWin.document.getElementById('btn');		
+//			oBtn.onclick=function(){
+//				alert(100);
+//			}
+//		}
+		
+	</script>
+</html>

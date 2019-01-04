@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<!--<input type="text" required pattern="\d+" value="" />-->
+			<input type="email" value="" />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		
+//		var oText=document.querySelector('[type="text"]');
+		var oText=document.querySelector('[type="email"]');
+		var oBtn=document.querySelector('[type="submit"]');
+		
+//		invalid->当表单元素的value值不合法时,会触发
+		
+//		oText.addEventListener('invalid',function(){
+//			alert('输入错误');
+//		});
+		
+		oText.addEventListener('invalid',function(){
+			if(this.validity.valueMissing){
+				alert('输入点东西吧,骚年');
+			}			
+		});
+		
+		oText.addEventListener('invalid',function(){
+			if(this.validity.patternMismatch){
+				alert('请输入数字,骚年');
+			}			
+		});
+		
+		oText.addEventListener('invalid',function(){
+			if(this.validity.typeMismatch){
+				alert('请输入正确的邮箱格式');
+			}			
+		});
+		
+//		oText.addEventListener('invalid',function(){
+//			if(this.validity.valueMissing){
+//				alert('输入点东西吧,骚年');
+//			}else if(this.validity.patternMismatch){
+//				alert('请输入数字,骚年');
+//			}else if(this.validity.typeMismatch){
+//				alert('请输入正确的邮箱格式');
+//			}			
+//		});
+		
+	</script>
+</html>

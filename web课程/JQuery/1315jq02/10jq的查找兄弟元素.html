@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li id='li5'>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<p>ppp</p>
+			<p>ppp</p>
+		</ul>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//前一个兄弟元素
+		$('#li5').prev().css('background','red');
+		//后一个兄弟元素
+		$('#li5').next().css('background','red');
+		
+		//前面所有的兄弟们
+		$('#li5').prevAll().css('background','red');
+		//后面所有的兄弟们
+		$('#li5').nextAll().css('background','red');
+		//所有的兄弟们
+		$('#li5').siblings().css('background','red');
+		
+		//前面所有的li兄弟元素
+		$('#li5').prevAll('li').css('background','red');
+		//后面所有的li兄弟元素
+		$('#li5').nextAll('li').css('background','red');
+		//所有的li兄弟元素
+		$('#li5').siblings('li').css('background','red');
+		
+		
+	</script>
+</html>

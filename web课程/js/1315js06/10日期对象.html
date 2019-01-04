@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//传参获取未来日期
+//		var myDate=new Date('2019-01-02');
+		//传参毫秒数，获取1970年1月1日到参数毫秒之后的时间
+		var myDate=new Date(1823423428347);
+
+//--------------------------------------------------------------------------
+		//获取当前时间
+		var myDate=new Date();
+		//获取当前的毫秒数
+		var time=myDate.getTime();
+		//通过设置毫秒数来改变当前时间(变成一天以后);
+		myDate.setTime(time+24*60*60*1000);
+		
+	</script>
+</html>

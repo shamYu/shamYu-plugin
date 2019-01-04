@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='div' class='box'>
+        <p>ppp</p>
+        <span>spanspan</span>
+        yangmi
+    </div>
+</body>
+<script>
+
+    var oDiv=document.getElementById('div');
+
+    //生成虚拟节点
+    var vnode=createVnode(oDiv);
+    //根据虚拟节点生成真实DOM节点
+    render(vnode,document.body);
+
+    function render(vnode,parent){
+        var ele=document.createElement(vnode.tag);
+        //根据虚拟属性节点生成真实的属性节点
+        vnode.attributes.forEach(function(items,i){
+            for(var prop in items){
+                ele.setAttribute(prop,items[prop])
+            }
+        });
+        //根据虚拟子节点生成真实的DOM子节点
+        vnode.children.forEach(function(items,i){
+            //如果当前的虚拟节点表示元素，就递归插入相应的子元素
+            if(items.nodeType==1){
+                render(items,ele)
+            }else{
+                //如果当前的虚拟节点是文本节点,插入文本节点               
+                for(var prop in items){
+                    if(prop=='#text'){
+                        var node=document.createTextNode(items[prop]);
+                        ele.appendChild(node);
+                //如果当前的虚拟节点是注释节点,插入注释节点  
+                    }else if(prop=='#comment'){
+                        var node=document.createComment(items[prop]);
+                        ele.appendChild(node);
+                    }
+                }
+            }
+        })
+        parent.appendChild(ele);
+    }
+
+    function createVnode(ele){
+        var vnode={};
+        vnode.tag=ele.nodeName;
+        vnode.nodeType=ele.nodeType;
+        vnode.attributes=[];
+        vnode.children=[];
+        //生成属性虚拟节点
+        for(var i=0;i<ele.attributes.length;i++){
+            var attr={};
+            //当前循环到的属性节点的属性名
+            var prop=ele.attributes[i].name;
+            //当前循环到的属性节点的属性值
+            var val=ele.attributes[i].value;
+            attr[prop]=val;
+            vnode.attributes.push(attr);
+        }
+        //生成子节点的虚拟节点
+        for(var i=0;i<ele.childNodes.length;i++){
+            //如果当前的节点是元素节点，则进行递归
+            if(ele.childNodes[i].nodeType==1){
+                //根据当前循环到的子元素，生成相应的子元素虚拟节点，然后push到父元素的children内
+                vnode.children.push(createVnode(ele.childNodes[i]));
+            }else{
+                var obj={};
+                var prop=ele.childNodes[i].nodeName;
+                var val=ele.childNodes[i].nodeValue;
+                obj.nodeType=ele.childNodes[i].nodeType;
+                obj[prop]=val;
+                vnode.children.push(obj);
+            }
+        }  
+        return vnode;
+    }
+
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		var aLi=document.getElementsByTagName('li');
+		
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].onclick=function(){
+				//哪个元素被点击，this就表示哪个元素
+				this.style.background='red';
+				console.log(this);
+			}
+		}
+		
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].onclick=function(){
+//				点击时，循环已经结束，i变成了5，因此点击时是给aLi[5](即第六个li)改背景，第六个li不存在，因此报错。
+				aLi[i].style.background='red';
+			}
+		}
+		
+//		aLi[0].onclick=function () {
+//			aLi[0].style.background='red';
+//		}
+//		aLi[1].onclick=function () {
+//			aLi[1].style.background='red';
+//		}
+//		aLi[2].onclick=function () {
+//			aLi[2].style.background='red';
+//		}
+//		aLi[3].onclick=function () {
+//			aLi[3].style.background='red';
+//		}
+//		aLi[4].onclick=function () {
+//			aLi[4].style.background='red';
+//		}
+		
+		
+	</script>
+</html>

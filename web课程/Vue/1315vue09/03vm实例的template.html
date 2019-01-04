@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'></div>
+</body>
+<script src="js/vue1.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+
+    // const vDiv = {
+    //     template:'<div>1111111</div>'
+    // }
+
+    // new Vue({
+    //     el:'#app',
+    //     components:{vDiv},
+    //     template:'<h3>33333<div is="vDiv"></div></h3>'
+    // })
+
+    const vDiv = {
+        template:'<h3>33333<div>11111</div></h3>'
+    }
+
+    new Vue({
+        el:'#app',
+        components:{vDiv},
+        //通过template引入组件模板作为虚拟节点，最后替换真实DOM的是组件模板
+        template:'<vDiv />'
+    })
+
+
+</script>
+</html>

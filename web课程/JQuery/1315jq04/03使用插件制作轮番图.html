@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			#wrap{
+				width: 500px;
+				height: 300px;
+				border:1px solid #000;
+				margin: 100px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			ul,ol{
+				display: flex;
+			}
+			ol{
+				width: 100%;
+				top:250px;
+				position: absolute;
+				justify-content: center;
+			}
+			ol>li.active{
+				background: #000;
+				color: #fff;
+			}
+			ol>li{
+				background: #fff;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 30px;
+				font-size: 18px;
+				margin-left:10px;
+				cursor: pointer;
+			}
+			ul>li{
+				width: 500px;
+				height: 300px;
+				background: red;
+				flex-shrink: 0;
+				color:#fff;
+				font-size: 100px;
+				text-align: center;
+				line-height: 300px;
+			}
+			ul>li:nth-child(2){
+				background: blue;
+			}
+			ul>li:nth-child(3){
+				background: green;
+			}
+			ul>li:nth-child(4){
+				background: orange;
+			}
+			ul>li:nth-child(5){
+				background: orchid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<ul>
+				<li>11</li>
+				<li>22</li>
+				<li>33</li>
+				<li>44</li>
+				<li>55</li>
+			</ul>
+			<!--<ol>
+				<li class='active'>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>-->
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--引入jq后引入插件-->
+	<script src="js/unslider.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//插件的使用方法,元素调用一个插件方法,然后给插件方法传递参数.
+		$('#wrap').unslider({
+			speed:2000,
+			delay:2000,
+			dots:true,
+		});
+		
+	</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var mayun={
+			money:88888888
+		}
+		
+		var oYm={
+			name:'yangmi',
+		}
+		
+//		__proto__不是标准属性.->访问上一级原型对象->直接操作这个属性,性能不高
+		
+//		oYm.__proto___=mayun;
+		
+		//设置oYm的上一级原型对象变成mayun
+		Object.setPrototypeOf(oYm,mayun);
+		
+		//获取oYm的上一级原型对象
+		Object.getPrototypeOf(oYm);
+//		oYm.__proto___
+		
+//		访问对象的原型链的属性是prototype.//这话是错的,访问对象的原型链应该用__proto__
+		
+		
+	</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				border:1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div>快到碗里来</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.querySelector('div');
+		
+		oDiv.addEventListener('dragover',over);
+		oDiv.addEventListener('drop',drop);
+		
+		function over(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+		}
+		
+		function drop(ev){
+			var ev=ev||window.event;
+			//阻止默认事件，防止浏览器打开新标签
+			ev.preventDefault();
+			
+			var fs=ev.dataTransfer.files;
+			
+			for(var i=0;i<fs.length;i++){
+				
+				var fl=fs[i];
+				if(fl.type.indexOf('image')==-1){
+					//如果拖入的不是图片，就跳过当前文件读取，继续读取下一个文件
+					continue
+				}
+				var fr=new FileReader();
+			
+				fr.readAsDataURL(fl);
+				
+				fr.onload=function(){
+					var oImg=document.createElement("img");
+					oImg.src=this.result;
+					document.body.appendChild(oImg);
+				}
+			}			
+		}
+		
+		
+	</script>
+</html>

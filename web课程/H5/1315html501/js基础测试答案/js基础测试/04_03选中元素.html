@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+	<script type="text/javascript">
+//		给所有div添加样式100*100,红色背景,内容分别是'div1'和'div2'以及'div3'
+		function setEle(i){
+			var oDiv=document.getElementsByTagName('div')[i-1];		
+			oDiv.style.width='100px';
+			oDiv.style.height='100px';
+			oDiv.style.background='red';
+			oDiv.innerText='div'+i;
+		}
+		
+		setEle(1);
+		setEle(2);
+		setEle(3);
+	</script>
+</html>

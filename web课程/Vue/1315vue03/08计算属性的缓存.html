@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        {{total}}
+        {{total}}
+        {{total}}
+        {{add()}}
+        {{add()}}
+        {{add()}}
+        {{abc}}
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            num:100,
+            abc:1
+        },
+        methods:{
+            add(){
+                console.log('视图已更新');
+                //每次视图更新都会重复调用
+                return this.num*2;
+            }
+        },
+        computed:{
+            total:{
+                //取消计算属性的缓存功能
+                cache:false,
+                get(){
+                    console.log('已出发');
+                    //如果this.num没有变化,那么this.num*2的值会进行缓存.
+                    //当视图更新时,total的值不会去重复调用getter,而是取缓存内的值.
+                    //如果this.num真正变化,则会重新调用getter取新值.
+                    //但是多个计算属性也只触发一次getter
+                    return this.num*2;
+                }
+            }
+        }
+    })
+
+</script>
+</html>

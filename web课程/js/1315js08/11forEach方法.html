@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=['杨','幂','快','离','婚','嫁','给','我','吧'];
+		
+//		for(var i=0;i<arr.length;i++){
+//			console.log(arr[i]);
+//		}
+		
+		//items是当前循环到的元素，i是当前循环到的下标
+//		arr.forEach(function(items,i){
+//			console.log(items);
+//			console.log(i);
+//		});
+		
+//		arr.forEach(function(items,i){
+//			arr[i]=arr[i]+'1';
+//		});
+		
+		arr.forEach(function(items,i){
+			
+			//设置时，items与arr[i]有区别。
+//			items实际上是arr[i]的一个马甲。修改items并不会让arr变化
+//			items=items+'1';
+			
+			//如果不修改，只获取，以下两种方式没区别
+			console.log(arr[i]);
+			console.log(items);
+		});
+		
+		
+	</script>
+</html>

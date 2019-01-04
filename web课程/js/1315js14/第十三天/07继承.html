@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var oYm={
+			name:'杨幂',
+			age:32,
+			height:'168cm',
+			weight:'45kg',
+			sex:'女',
+		}
+		
+		var oFbb=clone(oYm);
+		
+		//浅拷贝
+		function clone(obj){
+			var obj1={};
+			for(var prop in obj){
+				obj1[prop]=obj[prop]
+			}
+			return obj1;
+		}
+				
+		//封装一个clone函数实现：
+//			按照oYm的私有属性,给oFbb添加对应的私有属性.(将oYm的属性全部复制给oFbb);
+//			提示:不要认干爹，不然oFbb没有私有属性。
+		
+	</script>
+</html>

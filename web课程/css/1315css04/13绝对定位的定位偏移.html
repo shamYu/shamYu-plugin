@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width: 400px;
+				height: 400px;
+				border:1px solid #000;
+				margin-left:100px;
+				/*position: relative;*/
+			}
+			#wrap>div{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background: red;
+				left:100px;
+				
+				/*绝对定位的定位偏移相对于最近的具有定位样式(一般是相对定位)的某个祖先元素,如果没有,就相对于视口*/
+				
+				/*绝对定位的元素给他的父元素加上相对定位*/
+				
+			}
+			#yeye{
+				width: 700px;
+				height: 500px;
+				margin-left:100px;
+				border:5px dashed red;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='yeye'>		
+			<div id='wrap'>
+				<div></div>
+			</div>
+		</div>
+	</body>
+</html>

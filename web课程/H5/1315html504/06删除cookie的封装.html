@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		delCookie('str');
+		
+		function delCookie(name){
+			var d=new Date();
+		
+			var nowTime=d.getTime();
+			
+			//把当前的时间变长过去的时间，这样间接删除数据
+			d.setTime(nowTime-1);
+		
+			document.cookie=name+'=;Expires='+d.toUTCString();
+		}
+		
+	</script>
+</html>

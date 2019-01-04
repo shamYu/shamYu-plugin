@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- 插值表达式->把js表达式插入html内,用{{}}来插入 -->
+        <!-- 插值表达式会把表达式的返回值作为视图结果 -->
+        <!-- 插值表达式内的变量名一定会是vue实例上某个属性或者孙子属性 -->
+        {{abc}}
+        {{1+1}}
+        <!-- 报错,因为vue实例没有fn这个属性 -->
+        <!-- {{fn()}} -->
+        <!-- undefined作为返回值不显示 -->
+        {{alert(100)}}
+        <!-- 显示一个函数体 -->
+        {{show}}
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+    var abc='ninininini';
+
+    var vm = new Vue({
+        el:'div',
+        data:{
+            abc:'我我哦我我我我我我'
+        },
+        //给当前的vue实例定义方法,需要通过methods来声明
+        methods:{
+            alert(num){
+                console.log(num);
+            },
+            show(){
+                console.log('的后端后代后端后代');
+            }
+        }
+    });
+
+</script>
+</html>

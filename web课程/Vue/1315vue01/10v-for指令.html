@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            background: red
+        }
+        .green{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <!-- <li>{{arr[0]}}</li>
+            <li>{{arr[1]}}</li>
+            <li>{{arr[2]}}</li>
+            <li>{{arr[3]}}</li>
+            <li>{{arr[4]}}</li> -->
+
+            <!-- v-for->根据数组的length动态插入相应个数的li -->
+            <!-- d是当前的循环的数组的元素 -->
+            <!-- <li v-for='d in arr'>{{d}}</li> -->
+            <!-- 第二个参数i是当前元素的下标 -->
+            <!-- <li v-for='(d,i) in arr'>{{i+':'+d}}</li> -->
+
+            <!-- d是当前循环到的属性值 -->
+            <!-- <li v-for='val in obj'>{{val}}</li> -->
+            <!-- prop是当前循环到的属性名 -->
+            <!-- <li v-for='(val,prop) in obj'>{{prop+':'+val}}</li> -->
+            <!-- index->当前属性的序号(下标) -->
+            <!-- <li v-for='(val,prop,index) in obj'>{{prop+':'+val+'--'+index}}</li> -->
+
+            <!-- <li v-for='d in 10'>{{d}}</li> -->
+            <!-- <li v-for='d in "Amazing"'>{{d}}</li> -->
+
+            <!-- 嵌套v-for -->
+            <!-- <li v-for='d in 10'>
+                <p v-for='w in 10'>{{d+':'+w}}</p>
+            </li> -->
+            
+            <!-- d和w是循环时的临时变量,不会变成vm实例的属性 -->
+            <!-- }} -->
+                <!-- <p v-for='w in d'>{{d}}</p> -->
+                <!-- <p v-for='w in d'>{{w}}</p> -->
+            <!-- </li> -->
+        </ul>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+    // ul里面放10个li,每个li又放置10个p
+
+    var vm=new Vue({
+        el:'div',
+        data:{
+            // arr:['琴哥','老王','华哥','超哥','大飞哥'],
+            // obj:{name:'琴哥',age:18,husband:'胡歌'},
+            // arr:[[1,2,3],[3,5,6,7],[3,4,5,6,9]]
+
+            //修改数组,只能通过push,pop等能够修改数组的方法来实现视图更新
+            //单纯只修改元素或者数组的length是没有用的
+            // arr:[1,2,3,4],
+        }
+    })
+
+</script>
+</html>

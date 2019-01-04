@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				background: blue;
+			}
+			.box{
+				background: green;
+			}
+			div{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--样式优先级：->行间样式>内部样式>外部样式-->
+		<!--选择器优先级->id>类>标签-->
+		<!--当选择器优先级相同是,写在后面的样式优先级高-->
+		
+		<!--当多个样式同时作用于一个元素时，最终只有一个样式生效，哪个样式生效，取决于选择器的优先级。-->
+		<div id='div1' class='box' style='background: pink;'>hahhahah</div>
+	</body>
+</html>

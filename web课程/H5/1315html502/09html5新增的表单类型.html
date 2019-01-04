@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!--<input type="button"  value="" />
+		<input type="text"  value="" />
+		<input type="radio"  value="" />
+		<input type="checkbox"  value="" />-->
+		
+		<!--<input type="color" id="btn" value="" />-->
+		<!--<div id='div1'>哈哈哈</div>-->
+		
+		<!--<input type="time" id="" value="" />
+		<input type="week" id="" value="" />
+		<input type="month" id="" value="" />
+		<input type="datetime-local" id="" value="" />-->
+		
+		<!--step 步进-->
+		<input type="number" min='2' max='10' step="2" value="" />
+		<input type="range" min='0' max='100' step="20" />
+		<form>
+			<input type="email" value="" />
+			<input type="submit" value="提交" />
+		</form>
+
+	</body>
+	<script type="text/javascript">
+		
+		var oBtn=document.getElementById("btn");
+		var oDiv=document.getElementById("div1");
+		
+		oBtn.onchange=function(){
+			oDiv.style.background=this.value;
+		}
+	</script>
+</html>

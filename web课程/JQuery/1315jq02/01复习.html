@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" value="" checked />
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var oInput=document.querySelector('input');
+		
+		//获取元素，操作元素->DOM操作.；
+		//jq选择器支持css2和css3的选择器.返回的永远是一个类数组.给数组内所有元素进行操作,不需要循环.
+		$('div'),$('.div'),$('#div'),$('[abc="efg"]'),$('div,p,body'),$('div>p a');
+		
+		//样式:
+//			设置时,设置的是行间样式.
+			$('div').css('background','red');
+			$('div').css({
+				background:'red',
+				width:100,
+			});
+		//	获取时是最终样式
+//			console.log($('div').css('backgroundColor'));
+		
+		//内容:
+//			设置
+			$('div').html('<p>hhh</p>');
+			$('div').text('hhh');
+//			获取
+//			console.log($('div').text());
+		//属性：
+			//js对象私有属性
+			$('div').prop('checked',true);
+			//标签的行间属性
+			$('div').attr('type','button');
+			
+//			console.log($('input').prop('checked'));
+//			console.log($('input').attr('checked'));
+//			
+//			console.log(oInput.checked);
+//			console.log(oInput.getAttribute('checked'));
+			
+			$('div').addClass('box');
+			$('div').removeClass('box');
+			$('div').toggleClass('box');
+			
+			$('input').val();
+			$('input').val('hhhhh');
+			
+			$('div').removeProp('class');
+			$('div').removeAttr('abc');
+		
+		//尺寸
+			$('div').width();//width
+			$('div').innerWidth()//width+padding
+			
+			$('div').outerWidth()//width+padding+border
+			$('div').outerWidth(true)//width+padding+border+margin；
+			
+			$('div').width(200);
+		
+		//偏移->只能获取,不能设置
+			$('div').offset().left //->相对于页面的左边距
+			$('div').position().left //->子元素相对于父元素的左边距。不识别margin。
+			
+		//jq与原生的互换.
+//			原生转jq->$(原生对象)->$(document),$(window),$(document.body),$('body'),$(this),$(ev.target);
+//			jq转原生->$('div').get(0).style.background='red';
+			
+			
+		
+	</script>
+</html>

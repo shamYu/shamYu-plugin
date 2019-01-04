@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				-webkit-perspective: 400px;
+				display: flex;
+				justify-content: center;
+				align-items:center;
+			}
+			body>div{
+				border:3px solid #000;
+				width: 300px;
+				height: 300px;
+				transition: 2s;
+			}
+			div>div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			body>div:hover{
+				-webkit-transform: translateZ(200px);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div></div>
+		</div>
+	</body>
+</html>

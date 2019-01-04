@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				position: fixed;
+				right:30px;
+				bottom:30px;
+				width: 50px;
+				height: 50px;
+				background: red;
+				cursor: pointer;
+			}
+			body{
+				height: 2000px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>这里是页面顶部</p>
+		<div id='fixed'>回到顶部</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementsByTagName('div')[0];
+		
+		//可以设置也可以获取
+		//document.documentElement.scrollTop
+		
+//		offsetLeft,clientWidth->尺寸,偏移相关的属性不能设置,只能获取
+		
+		oDiv.onclick=function(){
+			//点击回到顶部，设置滚动偏移为0,(相当于回到页面最顶部)
+			document.documentElement.scrollTop=0;
+		}
+		
+		
+	</script>
+</html>

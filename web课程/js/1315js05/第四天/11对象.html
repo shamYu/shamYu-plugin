@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>杨幂</h3>
+		<div id='div1'>
+			<input type="text" id="oYm_n" placeholder="杨幂的名字" value="" />
+			<input type="text" id="oYm_c" placeholder="杨幂的身高" value="" />
+			<input type="text" id="oYm_a" placeholder="杨幂的年龄" value="" />
+			<input type="text" id="oYm_h" placeholder="杨幂的老公" value="" />
+		</div>		
+		<input type="button" id="oYm" value="生成杨幂资料" />
+		<h3>范冰冰</h3>
+		<div id='div2'>
+			<input type="text" id="oFbb_n" placeholder="范冰冰的名字" value="" />
+			<input type="text" id="oFbb_c" placeholder="范冰冰的身高" value="" />
+			<input type="text" id="oFbb_a" placeholder="范冰冰的年龄" value="" />
+			<input type="text" id="oFbb_h" placeholder="范冰冰的老公" value="" />
+		</div>
+		<input type="button" id="oFbb" value="生成范冰冰资料" /><br /><br />
+		<hr /><br />
+		<input type="button" id="btn" value="比较两人" />
+	</body>
+	<script type="text/javascript">
+		
+//		点击oYm按钮,根据之前输入的内容,生成oYm对象.
+//		点击oFbb按钮,根据之前输入的内容,生成oFbb对象.
+		
+//		点击btn,对两人进行比较,
+//		弹出:'年龄最小的人的老公是:'+年龄最小的人的老公,弹出:'年龄最大的是:'+年龄最大的人的名字;
+//		弹出:'身高最矮的人的名字:'+身高最矮的人的名字,弹出:'身高最高的人的名字:'+身高最高的人的名字;
+		
+		var oYm={};
+		var oFbb={};
+		
+		var oBtn_y=document.getElementById("oYm");
+		var oBtn_f=document.getElementById("oFbb");
+		
+		var oBtn=document.getElementById("btn");
+		
+		var oDiv1=document.getElementById("div1");
+		var oDiv2=document.getElementById("div2");
+		
+		var aInput_y=oDiv1.getElementsByTagName('input');
+		var aInput_f=oDiv2.getElementsByTagName('input');
+		
+		oBtn_y.onclick=createYm;
+		oBtn_f.onclick=createFbb;
+		oBtn.onclick=beauty_pk;
+		
+		function beauty_pk(){			
+			if(parseInt(oYm.age)<parseInt(oFbb.age)){
+				alert('年龄最小的人的老公是:'+oYm.husband);
+				alert('年龄最大的是:'+oFbb.name);
+			}else{
+				alert('年龄最小的人的老公是:'+oFbb.husband);
+				alert('年龄最大的是:'+oYm.name);
+			}
+			
+			if(parseInt(oYm.height)<parseInt(oFbb.height)){
+				alert('身高最矮的人的名字:'+oYm.name);
+				alert('身高最高的人的名字:'+oFbb.name);
+			}else{
+				alert('身高最矮的人的名字:'+oFbb.name);
+				alert('身高最高的人的名字:'+oYm.name);
+			}
+		}
+		
+		function createYm(){
+			oYm.name=aInput_y[0].value;
+			oYm.age=aInput_y[2].value;
+			oYm.height=aInput_y[1].value;
+			oYm.husband=aInput_y[3].value;
+		}
+		
+		function createFbb(){
+			oFbb.name=aInput_f[0].value;
+			oFbb.age=aInput_f[2].value;
+			oFbb.height=aInput_f[1].value;
+			oFbb.husband=aInput_f[3].value;
+		}
+		
+			
+	</script>
+</html>

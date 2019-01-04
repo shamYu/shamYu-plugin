@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=['班长大人','金刚欧巴','杨幂','洋洋','毛姐姐','唐姐姐','慧妹妹','浩哥哥'];
+		
+//		弹出数组的第一个元素和最后一个元素
+//		数组最前面插入"梁老师"，最后面插入'蒙老师'
+//		删除最前面的'梁老师'和最后面的'蒙老师'；
+//		删除'杨幂'，替换为'范冰冰'
+//		删除'范冰冰',在相应位置插入'刘亦菲'和'林志玲';
+//		将数组倒序
+//		将'慧妹妹'到'金刚欧巴'的所有元素提取存为arr2;
+		
+		alert(arr[0]+'和'+arr[arr.length-1]);
+		arr.unshift('梁老师');
+		arr.push('蒙老师');
+		arr.shift();
+		arr.pop();
+		arr.splice(2,1,'范冰冰');
+		arr.splice(2,1,'刘亦菲','林志玲');
+		arr.reverse();
+		var arr2=arr.splice(1,arr.length-2);
+		
+	</script>
+</html>

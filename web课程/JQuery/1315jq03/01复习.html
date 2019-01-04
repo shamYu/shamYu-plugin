@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		
+		1:筛选
+			a:查找
+				查找兄弟元素
+					兄弟元素.prev()
+					兄弟元素.prevAll('div')
+					兄弟元素.next()
+					兄弟元素.nextAll('div')
+					兄弟元素.siblings('div')
+				查找子元素
+					父元素.children('div')->找子元素
+					父元素.find('div')->找所有后代元素
+				查找父元素
+					子元素.parent();
+					子元素.parents('div');
+					子元素.closest('div');
+			b:过滤
+				集合.first();
+				集合.last();
+				集合.has('div');
+				集合.not('div');
+				集合.eq(1);
+				集合.slice(1,3);
+				集合.filter('div');
+				
+				判断:集合.is('div')
+					集合.hasClass('box')
+		
+		2:DOM操作
+			插入子元素:
+				父元素.append(子元素);
+				子元素.appendTo(父元素);
+				
+				父元素.prepend(子元素);
+				子元素.prependTo(父元素);
+			
+			插入兄弟元素
+				兄弟元素1.before(兄弟元素2);
+				兄弟元素2.insertBefore(兄弟元素1);
+								
+				兄弟元素1.after(兄弟元素2);
+				兄弟元素2.insertAfter(兄弟元素1);
+				
+			插入父元素
+				子元素.wrap(父元素)
+				删除父元素:子元素.unwrap();
+			
+			删除:
+				要删的元素.remove();
+				清空所有子元素:父元素.empty();
+				
+			替换:
+				被替换的元素.replaceWith(替换的元素)
+				替换的元素.replaceAll(被替换的元素)
+				
+		3:特有选择器
+			$('div:eq(3)')->$('div:first'),$('div:last')
+			$('div:gt(3)')
+			$('div:lt(3)')
+			$('div:even')
+			$('div:odd')
+			
+			$('div:has(p)')
+			$('div:contains(zifu)')
+			$('div:empty')
+			$('div:parent')
+			
+			$('div:visible')
+			$('div:hidden')
+			
+			$(':text')
+			$(':button')
+			$(':checkbox')
+			
+			$(':checked')
+			$(':disabled')
+			$(':enable')
+		
+		4:index();
+			前面的集合.index()
+				前面的集合内的第一个元素在其兄弟元素内的下标.
+			前面的集合.index(后面的集合);
+				后面的集合如果是选择器
+					返回前面的集合内的第一个元素在后面的集合内的下标
+				后面的集合如果是对象(原生对象或者jq对象)
+					返回后面的集合内的第一个元素在前面的集合内的下标
+				
+			
+	</script>
+</html>

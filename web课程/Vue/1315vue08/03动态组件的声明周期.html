@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <input type="button" value='按钮1' @click='com="div1"'>
+        <input type="button" value='按钮2' @click='com="div2"'>
+
+        <!-- 让动态组件在切换时，不重复创建新的组件，而复用当前已经创建的组件 -->
+        <keep-alive>
+            <div :is='com'></div>
+        </keep-alive>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+    //动态组件，在切换的时候，默认是重复创建和挂载不同的组件。
+    const div1={
+        template:'<input type="text" placeholder="组件1">',
+        created(){
+            console.log('div1创建了');
+        },
+        mounted(){
+            console.log('div1挂载了');
+        },
+        //对于keep-alive的动态组件,切换到当前组件时,会触发activated生命周期钩子函数.
+        activated(){
+            console.log('div1激活了');
+        },
+        //当前组件被隐藏时,触发deactivated钩子函数
+        deactivated(){
+            console.log('div1移出了');
+        },
+        destroyed(){
+            console.log('div1销毁了');
+        }
+    }
+
+    const div2={
+        template:'<input type="text" placeholder="组件2">'
+    }
+
+    new Vue({
+        el:'#app',
+        data:{
+            com:'div1'
+        },
+        components:{div1,div2}
+    })
+
+</script>
+</html>

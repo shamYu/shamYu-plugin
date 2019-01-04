@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class='active'>div</div>
+		<p class='active'>pp</p>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li class='active'>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		$('div.active').css('background','red');
+		//filter->交集选择器
+//		$('.active').filter('div').css('background','red');
+		
+		$('li').click(function(){
+			$('li').css('background','');
+			$(this).css('background','red');
+			//就算匹配不了元素，jq也不报错。很好容错机制。
+			$(this).filter('.active').css('background','green');
+		})
+		
+	</script>
+</html>

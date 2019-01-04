@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <div is='vDiv1'></div>
+        <div is='vDiv2'></div>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<!-- vuex是一个vue的插件.依赖于vue,因此需要先引入vue,再引入vuex -->
+<script src="js/vuex.js"></script>
+<script>
+
+    var store=new Vuex.Store({
+        //state->引入了store属性的vue实例内的所有组件都默认都可以访问state内的所有数据.
+        state:{
+            msg:'11'
+        }
+    })
+  
+    const mx={
+        template:`<div>{{msg}}<input type="text" v-model='msg'></div>`,
+        data(){
+            return {
+                //子组件也可以通过this.$store.state.msg获取共享数据。
+                msg:this.$store.state.msg
+            }
+        },
+    }
+
+    const vDiv1={
+        mixins:[mx]
+    }
+    const vDiv2={
+        mixins:[mx]
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        components:{vDiv1,vDiv2},
+        //将vue实例与vuex的数据对象挂钩。
+        //不需要给子组件添加该属性。
+        store,
+    })
+
+    // var bus=new Vue();
+
+    // const mx={
+    //     template:`<div>{{msg}}<input type="text" v-model='msg'></div>`,
+    //     data(){
+    //         return {
+    //             msg:'11'
+    //         }
+    //     },
+    //     watch:{
+    //         msg(){
+    //             bus.$emit('bus',this.msg);
+    //         }
+    //     },
+    //     created(){
+    //         bus.$on('bus',(val)=>{this.msg=val});
+    //     }
+    // }
+
+    // const vDiv1={
+    //     mixins:[mx]
+    // }
+    // const vDiv2={
+    //     mixins:[mx]
+    // }
+
+    // var vm=new Vue({
+    //     el:'#app',
+    //     components:{vDiv1,vDiv2}
+    // })
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    
+    // 1:数据的setter触发->watcher->是否更新视图->render->更新虚拟节点->
+    //                                        ->重新生成watcher的依赖
+
+    // 2:vue参数的data里面的所有属性都有setter,后续给data添加的对象属性也都有setter
+    // 修改动态添加的对象属性,也会更新视图.(因为视图更新会更新虚拟节点,虚拟节点有新的依赖);
+
+    // 3:如果有些数据没有setter,不会更新视图,那么可以通过Vue.set(数据名,'属性名',修改值)来强制更新
+    // 4:ref='hh'->视图内添加了以上属性的标签,可以通过vue实例的$refs.hh来获取.hh来获取
+    // 获取到的是同一个原生DOM标签. this.$refs.hh.style.background='red';
+    // 5:mounted()->vue实例把虚拟节点替换成真实节点之后触发的回调函数(钩子函数);
+
+</script>                                  
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.active{
+            display: none
+        }
+        /* vue还没调用时，样式隐藏视图，vue调用后会删除v-cloak指令，以显示视图 */
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <p v-cloak>{{msg+msg+msg}}</p>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            msg:'11'
+        }
+    });
+
+</script>
+</html>

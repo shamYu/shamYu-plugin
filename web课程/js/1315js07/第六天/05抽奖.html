@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin:1px 0 0 1px;
+				text-align: center;
+				line-height: 100px;
+				float: left;
+			}
+			ul{
+				overflow: hidden;
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="button" id="btn1" value="插入li" />
+			<input type="button" id="btn2" value="开始抽奖" disabled />
+			<input type="button" id="btn3" value="停止" />
+		</div>
+		<ul id='ul1'>
+			
+		</ul>
+		<p id='p1'>恭喜你抽到了：</p>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=['杨幂','范冰冰','林志玲','热巴','周冬雨','关晓彤','郭德纲','蒙司机','班长大人'];
+		
+//		点击btn1,生成随机数，根据随机数在ul内插入相应个数的li，随机数取值(9-20),li类为box,内容为以上数组内的任意人名;
+//		点击btn2,开启定时器，从第一个li开始背景变绿，每隔0.5秒，下一个li变绿，上一个变红。依次类推。如果没有下一个li，让第一个li变绿;
+//		点击btn3，停止定时器，p的内容加上定时器停止时变绿的div的内容。
+		
+		var aInput=document.getElementsByTagName('input');
+		
+		var oUl=document.getElementById("ul1");
+		var oP=document.getElementById("p1");
+		
+		aInput[0].onclick=insertLi;
+		aInput[1].onclick=turnGreen;
+		aInput[2].onclick=stopGreen;
+		
+		//从第一个商品开始抽奖
+		var index=0;
+		var timer=null;
+		
+		function stopGreen(){
+			//停止定时器
+			clearInterval(timer);
+			var aLi=document.getElementsByTagName('li');
+			for(var i=0;i<aLi.length;i++){
+				if(aLi[i].style.background=='green'){
+					oP.innerText+=aLi[i].innerText;
+					//找到后跳出循环
+					break;
+				}				
+			}
+		}
+		
+		function turnGreen(){
+			timer=setInterval(function(){
+				var aLi=document.getElementsByTagName('li');
+				for(var i=0;i<aLi.length;i++){
+					aLi[i].style.background='red';
+				}
+				aLi[index].style.background='green';
+				
+				index = (index==aLi.length-1 ? 0 : ++index);
+				
+			},50);
+		}
+		
+		function insertLi(){
+			
+			//取随机数，确定循环次数
+			var num=getRand(20,9);
+			
+			for(var i=0;i<num;i++){
+				//随机下标
+				var index=getRand(arr.length-1,0);
+				
+				oUl.innerHTML+='<li class="box">'+arr[index]+'</li>'
+			}
+			
+			aInput[1].disabled=false;
+		}
+		
+		function getRand(a,b){
+			return Math.floor(Math.random()*(a-b+1))+b;
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--后端:php,java,.net,node.js-->
+		<!--前端--后端(java,php)--数据库-->
+		<!--<div></div>-->
+		<input type="text" id="user" value="" />
+		<input type="text" id="age" value="" />
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.querySelector('div');
+		var oUser=document.getElementById("user");
+		var oAge=document.getElementById("age");
+		
+		var xhr=null;
+		
+		try{
+			xhr=new XMLHttpRequest();			
+		}catch(e){
+			xhr=new ActiveXObject('Microsoft XMLHTTP');
+		}
+				
+		xhr.open('GET','php/getList.php',true);
+		xhr.send();
+		
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4){
+				if(xhr.status==200){				
+					//打印服务器返回的结果,以确定数据结果.
+					console.log(xhr.responseText);
+					//服务器返回的结果默认就是字符串.
+					console.log(typeof xhr.responseText);					
+					//将服务器返回的字符串转换为json对象,方便处理.
+					var data=JSON.parse(xhr.responseText);					
+					console.log(data);					
+					oUser.value=data.username;
+					oAge.value=data.age;					
+				}else{
+					alert(xhr.status);
+				}
+			}
+		}
+		
+	</script>
+</html>

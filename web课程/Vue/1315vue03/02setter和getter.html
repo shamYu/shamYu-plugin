@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    var obj={
+        name:'英语32级的大神'
+    }
+
+    //属性求值(访问)就会触发getter
+    //属性被修改(设置)就会触发setter
+
+    //保存obj的name属性原来的值,以便设置getter后还有默认值.
+    var val=obj.name;
+
+    Object.defineProperty(obj,'name',{
+        get(){
+            console.log('有人在求name的值');
+            return val
+        },
+        set(newVal){
+            //把修改的值赋值给val，让getter  return,使属性值真正变化
+            console.log('有人在设置name的值');
+            val=newVal;
+        }
+    })
+
+</script>
+</html>

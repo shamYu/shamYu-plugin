@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		function fn(){
+//			alert(100)
+//		}
+		
+		function fn(){
+			alert(100);
+			//这里的2000是fn内的setTimeout调用之后的2秒
+//			setTimeout(function(){
+//				alert(200);
+//			},2000);
+		}
+		
+//		fn();//立即调用
+		
+		//第一个参数是函数声明，第二个参数是毫秒数
+		//setTimeout()调用之后的1秒钟接着调用fn函数。
+		//这里的1000是全局环境下setTimeout()调用之后的1秒。
+		var timer1=setTimeout(fn,10000);//延迟1秒调用
+		var timer2=setTimeout(fn,10000);//延迟1秒调用
+		var timer3=setTimeout(fn,10000);//延迟1秒调用
+		
+//		setTimeout()返回值,返回的是一个id,这个id用于标识区分不同的定时器,一般用在停止定时器.
+//		setTimeout()每次调用内存里都有一个相应的定时器，每个定时器都有一个id
+		
+		//通过setTimeout()返回的id值来关闭相应的定时器
+		clearTimeout(timer1);
+		
+	</script>
+</html>

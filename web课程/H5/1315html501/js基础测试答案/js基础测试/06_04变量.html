@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'></div>
+		<div id='div2'></div>
+		<input type="button" value="交换内容" />
+	</body>
+	<script type="text/javascript">
+		document.getElementById('div1').innerHTML=Math.random();
+		document.getElementById('div2').innerHTML=Math.random();
+//		点击按钮交换两个div的内容
+		var oDiv1=document.getElementById("div1");
+		var oDiv2=document.getElementById("div2");
+		
+		var content=oDiv1.innerHTML;		
+		document.getElementsByTagName('input')[0].onclick=function () {
+			oDiv1.innerHTML=oDiv2.innerHTML;
+			oDiv2.innerHTML=content;
+		}
+		
+	</script>
+</html>

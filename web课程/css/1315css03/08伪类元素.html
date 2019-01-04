@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body>div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				margin-top:10px;
+			}
+			div>div{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+			/*:hover->伪类->被鼠标移入的元素*/
+			body>div:hover{
+				background: green;
+			}
+			
+			/*鼠标移入的div的子元素*/
+			body>div:hover>div{
+				background: yellow;
+			}
+			/*+紧挨着下一个兄弟元素  css3的选择器*/
+			body>div:hover+div+div{
+				background: pink;
+			}
+			
+			body>div:hover+div{
+				background: pink;
+			}
+						
+		</style>
+	</head>
+	<body>
+		<div>
+			<div></div>
+		</div>
+		<div id='div1'></div>
+		<div id='div2'>
+			<div></div>
+		</div>
+	</body>
+</html>

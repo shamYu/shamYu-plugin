@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'></div>
+	</body>
+	
+	<script type="text/javascript">
+		
+		var oDiv1=document.getElementById("div1");		
+//		var msg='哈哈哈';		
+//		oDiv1.innerText=msg;
+		
+		var obj={
+			msg:'哈哈哈'
+		}
+		
+		//对obj的msg属性进行监听
+		//msg属性被set和get监听后,msg的值只能通过getter函数返回;
+		
+		//中间变量
+		var val=obj.msg;
+		
+		Object.defineProperty(obj,'msg',{
+			//msg被访问的时候就会触发get
+			get(){
+				console.log(this);
+				console.log('我被访问了');
+				return val;
+			},
+			//msg的值被修改的时候，就会触发set
+			set(newVal){
+//				newVal->每次msg被修改的值
+//				console.log('我被修改了');
+//				console.log(newVal);
+//				把newVal存为一个中间变量，以便getter里面return			
+				val=newVal;
+				//操作真实DOM，vue实际上是在操作虚拟DOM。
+				oDiv1.innerText=newVal;
+			}
+		})
+		//页面载入时先修改一次数据，让setter触发更DOM。
+		obj.msg=val;
+		
+	</script>
+	
+</html>

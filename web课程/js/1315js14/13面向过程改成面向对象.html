@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//声明两个变量，弹出它们的和		
+//		var x=1;
+//		var y=1;
+//		alert(x+y);
+//		
+//		var x=2;
+//		var y=3;
+//		alert(x+y);
+
+//		封装一个功能，实现任意时刻弹出两个数的和
+//		function show(x,y){
+//			alert(x+y)
+//		}
+//		
+//		show(1,1);
+//		show(2,3);
+//		show(5,6);
+		
+//		我家有一堆人工智能机器人,它们非常的聪明,每个机器人交流时都会告诉你它的两条腿加起来有多长
+		
+		function Robot(x,y){
+			this.leftLeg=x;
+			this.rightLeg=y;
+		}
+		
+		Robot.prototype.showLeg=function(){
+			alert(this.leftLeg+this.rightLeg)
+		}
+		
+		var robot1=new Robot(2,3);
+		var robot2=new Robot(10,3);
+		var robot3=new Robot(22,50);
+		
+		robot1.showLeg();
+		robot2.showLeg();
+		robot3.showLeg();
+		
+	</script>
+</html>

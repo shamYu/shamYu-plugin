@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div>div{
+            width: 200px;
+            height: 200px;
+        }
+        .red{
+            background: red
+        }
+        .green{
+            background:green;
+        }
+        /* vue还没调用时，样式隐藏视图，vue调用后会删除v-cloak指令，以显示视图 */
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div" v-cloak>
+        <input type="text" placeholder="数量" v-model='count'>
+        <input type="text" placeholder='单价' v-model='price'>
+        <input type="text" placeholder='abc' v-model='abc'>
+
+        <!-- 使用时不要把计算属性当函数来调用 -->
+        <!-- {{total()}}->报错 -->
+       {{total}}
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            count:0,
+            price:100,
+            abc:0
+        },
+        // 计算属性->某个数据的结果依赖于别的数据的计算结果,都可以使用计算属性来声明这个数据
+        //计算属性内使用的数据发生变化时,都会触发计算属性的函数
+        //计算属性实际是一个函数,它的结果需要函数有return值.
+        computed:{
+            total(){
+                //计算属性内的this也指向vue实例.
+                //this.abc发生变化时也会触发total,最好不要放在别的无关的数据在计算属性内
+                //console.log('abc',this.abc);
+               return this.count*this.price;
+            }
+       }
+    });
+
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 2000px;
+			}
+			/*div{
+				width: 200px;
+				height: 500px;
+				background: red;
+			}*/
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.fixed{
+				position: fixed;
+				width: 100%;
+				height: 50px;
+				background: green;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div></div>-->
+		<div class='fixed'></div>
+	</body>
+	<script type="text/javascript">
+		
+		//scrollTop->页面向上卷去的距离(页面看不见的部分的高度).滚动条往下移动的距离.
+//		var sTop=document.documentElement.scrollTop;
+
+		var oDiv=document.getElementsByTagName('div')[0];
+		
+		//onscroll->页面滚动条发生滚动事件
+		window.onscroll=showDiv;
+		
+		function showDiv(){
+			console.log('hhh');
+			var sTop=document.documentElement.scrollTop;
+			if(sTop>300){
+				oDiv.style.display='block';
+			}else{
+				oDiv.style.display='none';
+			}
+		}
+		
+		
+	</script>
+</html>

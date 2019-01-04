@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <!-- <div is='div1'></div> -->
+        <iframe src="nav.html" frameborder="0"></iframe>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<!-- 引入div1.js->导入div1组件 -->
+<script src="js/div1.js"></script>
+<!-- import div1 from js/div1.js -->
+<script>
+    new Vue({
+        el:'#app',
+        components:{div1}
+    })
+</script>
+</html>

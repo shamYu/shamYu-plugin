@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			th{
+				width: 250px;
+			}
+			hr{
+				margin:30px 0;
+			}
+			td{
+				text-align: center;
+			}
+			tr{
+				line-height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>保存数据，显示数据</h3>
+		<input type="text" id="user" placeholder="用户名" value="" /><br />
+		<input type="text" id="age" placeholder="年龄" /><br />
+		<input type="radio" name="sex" value="男" checked />男
+		<input type="radio" name="sex" value="女" />女<br />
+		<input type="button" id="btn" value="添加数据" />
+		<hr />
+		<table border="1">
+			<thead>
+				<th>序号</th>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>操作</th>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</body>
+	<script type="text/javascript">
+		
+		window.onload=function(){
+					
+			var oUser=document.getElementById("user");
+			var oAge=document.getElementById("age");
+			var oBtn=document.getElementById("btn");
+			var aRadio=document.querySelectorAll("[type=radio]");
+			var oTbody=document.querySelector('tbody');
+			var aTr=oTbody.getElementsByTagName('tr');
+			
+			//存储所有的用户讯息
+			var userInfo=[];
+			
+	//		1:DOM操作,给toby里插tr,tr里面插td,td里面放置input的value
+	//		2:数据操作->
+	//			利用面向对象创建一个数组,数组的每个元素是一个对象.这个对象从每一个插入的tr抽象而来.
+	//			页面关闭时本地存储这个数组.
+	//			页面载入时,获取这个数组,循环将所有的数据再插入tbody
+			
+			oBtn.addEventListener('click',insertTr);
+			oTbody.addEventListener('click',deleteTr);
+			
+			//获取本地存储内的数据
+			var dataStr=window.localStorage.getItem('data');
+			var dataArr=JSON.parse(dataStr);
+			
+			for(var i=0;i<dataArr.length;i++){
+				showTr(dataArr[i].name,dataArr[i].age,dataArr[i].sex);
+			}
+			
+			window.addEventListener('unload',saveData);
+			
+			function saveData(){
+				//页面关闭时，将表格内的数据全部存到本地存储
+				for(var i=0;i<aTr.length;i++){
+					userInfo.push(new User(aTr[i]));
+				}
+				//把数组变成json字符串再存起来。
+				var str=JSON.stringify(userInfo);
+				window.localStorage.setItem('data',str);
+			}
+			
+			//创建用户信息的构造函数
+			function User(ele){
+				this.name=ele.children[1].innerText;
+				this.age=ele.children[2].innerText;
+				this.sex=ele.children[3].innerText;
+			}
+					
+			function deleteTr(ev){
+				
+				var ev=ev||window.event;
+				var et=ev.target||ev.srcElement;
+				
+				if(et.nodeName=='INPUT'){
+					this.removeChild(et.parentNode.parentNode);
+					//删除后再排序号
+					sortTr();
+				}
+				
+			}
+			
+			function insertTr(){				
+				for(var i=0;i<aRadio.length;i++){
+					if(aRadio[i].checked){
+						var sex=aRadio[i].value;
+					}
+				}
+				showTr(oUser.value,oAge.value,sex);		
+			}
+			
+			function showTr(name,age,sex){
+				var oTr=document.createElement("tr");
+				oTbody.appendChild(oTr);
+				oTr.innerHTML=
+				'<td></td><td>'+name+'</td><td>'+age+'</td><td>'+sex+'</td><td><input type="button" value="删除"></td>';				
+				//给tr加序号
+				sortTr();
+			}
+			
+			function sortTr(){
+				for(var i=0;i<aTr.length;i++){
+					aTr[i].children[0].innerText=i+1;
+				}
+			}
+		}
+		
+	</script>
+</html>

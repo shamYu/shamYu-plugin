@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		封装函数实现:可以任意设置多个样式,根据内容,在元素内部插入相应个数的子元素
+//		按照以下调用形式,封装函数,在body内插入一个元素,元素的类型由tag属性决定.该元素拥有css属性的全部样式
+//		如果children属性存在,插入相应个数的子元素,类型是children的属性值.
+//		插入的个数由str决定,需要将str内的所有元素都分别显示在单独的子元素内.
+
+		setEle({
+			tag:'div',
+			css:{
+				width:'200px',
+				height:'200px',
+				border:'10px solid #000',
+				background:'red',
+			},
+			children:'p',
+			str:['内容1','内容2','内容3','内容4'],
+		});
+		
+		function setEle(obj){
+			
+			var oDiv=document.createElement(obj.tag);
+			document.body.appendChild(oDiv);
+			
+			//给插入的div修改样式
+			for(var prop in obj.css){
+				oDiv.style[prop]=obj.css[prop];
+			}
+			
+			//循环str插入相应的p元素
+			obj.str.forEach(function(items,i){
+				var oEle=document.createElement(obj.children);
+				oDiv.appendChild(oEle);
+				oEle.innerText=items;
+			});
+			
+		}
+
+
+		
+	</script>
+</html>

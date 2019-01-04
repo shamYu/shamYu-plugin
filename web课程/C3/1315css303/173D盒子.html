@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#wrap{
+				width: 500px;
+				height: 500px;
+				border:3px solid #000;
+				margin:70px auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				-webkit-perspective: 500px;
+			}
+			#wrap>div{
+				width: 200px;
+				height: 200px;
+				position: relative;
+				transition: 2s;
+				-webkit-transform-style:preserve-3d;
+			}
+			#wrap>div>div{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				background: red;
+				text-align: center;
+				line-height: 200px;
+				font-size:40px;
+				color:#fff;
+			}
+			#wrap>div>div:nth-child(1){
+				left:-200px;
+				-webkit-transform-origin: right;
+				-webkit-transform: rotateY(-90deg);
+			}
+			#wrap>div>div:nth-child(2){
+				top:-200px;
+				background: blue;
+				-webkit-transform-origin: bottom;
+				-webkit-transform: rotateX(90deg);
+			}
+			#wrap>div>div:nth-child(3){
+				left:200px;
+				background: green;
+				-webkit-transform-origin: left;
+				-webkit-transform: rotateY(90deg);
+			}
+			#wrap>div>div:nth-child(4){
+				top:200px;
+				background: orange;
+				-webkit-transform-origin: top;
+				-webkit-transform: rotateX(-90deg);
+			}
+			#wrap>div>div:nth-child(5){
+				background: deeppink;
+				-webkit-transform: translateZ(-200px);
+			}
+			#wrap>div>div:nth-child(6){
+				background: saddlebrown;				
+			}
+			#wrap:hover>div{
+				-webkit-transform: rotateX(180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div>
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+			</div>			
+		</div>
+	</body>
+</html>

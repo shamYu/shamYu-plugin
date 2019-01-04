@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id='text1' value='' />
+		<input type="button" id='btn' value='按钮' />
+	</body>
+	<script type="text/javascript">
+//		点击按钮,判断input内输入的文字,如果大于10,弹出'这个数大于10',如果不大于10,弹出这个数小于等于10,如果不是数字,弹出'这个数不是数字'
+		
+		var oText=document.getElementById("text1");
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function(){
+			if(oText.value>10){
+				alert('这是数大于10');
+			}else if(oText.value<=10){
+				alert('这个数小于等于10');
+			}else if(+oText.value!=+oText.value){
+				alert('这个不是数字');
+			}
+		}
+		
+	</script>
+</html>

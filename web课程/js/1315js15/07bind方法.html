@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var oYm={
+			name:'杨幂'
+		}
+		
+		function show (){
+			console.log(this);
+		}
+		
+//		call和apply会调用show
+//		show.call(oYm);//this指向杨幂;
+		
+		//bind不会调用show,返回show的一个副本，让这个副本在调用时，永远是通过bind的第一个参数来调用的。
+		var fn=show.bind(oYm);
+		fn();//oYm
+		fn.call(document);//oYm
+		
+		show.call(document)//document
+		
+	</script>
+</html>

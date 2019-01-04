@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <show></show>       
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+
+<!-- type需要换成x-template -->
+<script type='x-template' id='template'>
+    <div>
+        <p>
+            <a href="#"><span>哈哈哈</span></a>
+        </p>
+    </div>
+</script>
+<script>
+    const show={
+
+        //用字符串模板来写组件模板
+        // template:
+        // `<div>
+        //     <p>
+        //         <a href="#"><span>哈哈哈</span></a>
+        //     </p>
+        // </div>`,
+
+        //通过script选择器,引入script标签生成的组件模板
+        template:'#template',
+        data(){
+            return {
+                msg:'子组件的数据'
+            }
+        }
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            str:''
+        },
+        components:{
+            show
+        }
+    })
+</script>
+</html>

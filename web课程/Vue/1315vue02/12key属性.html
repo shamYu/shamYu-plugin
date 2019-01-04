@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div>div{
+            width: 200px;
+            height: 200px;
+        }
+        .red{
+            background: red
+        }
+        .green{
+            background:green;
+        }
+        /* vue还没调用时，样式隐藏视图，vue调用后会删除v-cloak指令，以显示视图 */
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div" v-cloak>
+        <input type="button" @click='flag=!flag' value='切换'>
+
+        <!-- vue在显示隐藏时,总是最大限度的复用能够复用的标签 -->
+        <!-- 在以下例子内,实际上只是修改了div的class,input和p从头到尾都是同一个标签 -->
+
+        <!-- 如果希望标签不被复用,则添加key属性,并且赋不同的值.值可以任意属性 -->
+        <div v-if='flag' class='red'>
+            <input type="text" key='aaa'>
+            <p>哈哈哈</p>
+        </div>
+        <div v-else class='green'>
+            <input type="text" key='bbb'>
+            <p>哈哈哈</p>
+        </div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            flag:true
+        }
+    });
+
+</script>
+</html>

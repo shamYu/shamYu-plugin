@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width: 900px;
+				/*height: 400px;*/
+				border:1px solid #000;
+			}
+			
+			#wrap>div{
+				width: 100px;
+				height: 100px;
+				margin-left:1px;
+			}
+			
+			.div1{
+				/*绝对定位->可以让元素脱离标准文档流,而不影响别的元素的位置*/
+				position: absolute;
+				/*float:left;*/
+				background: red;
+			}
+			.div2{
+				background: blue;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<!--浮动->脱标->脱离标准文档流(半脱标)-->
+		<!--浮动之后的位置跟浮动之前相关-->
+		<!--浮动位置跟标准文档流的位置相关-->
+		
+		<div id='wrap'>
+			<div class='div1'></div>
+			<div class='div1'></div>
+			<div class='div1'></div>
+			<div class='div1'></div>
+			<div class='div1'></div>
+			<div class='div1'></div>
+			<div class='div1'></div>
+			<div class='div1'></div>
+			<div class='div2'></div>			
+			<div class='div2'></div>
+		</div>
+		
+		
+	</body>
+</html>

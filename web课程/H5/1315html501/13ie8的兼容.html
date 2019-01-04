@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*创建自定义标签之后,还需要设置默认样式*/
+			header,nav,footer,article,aside,section{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			头部内容
+			导航
+			<nav>
+				<ul>
+					<li></li>
+				</ul>
+			</nav>
+		</header>
+		<senction>
+			<aside>侧边栏</aside>
+			<article>主体内容</article>
+		</senction>
+		<footer>
+			底部内容
+		</footer>
+	</body>
+	<script type="text/javascript">
+		
+//		ie8及其以下版本不识别html5新标签.
+		
+//		ie8通过创建自定义标签来实现兼容新标签
+		document.createElement("header");
+		document.createElement("footer");
+		
+	</script>
+</html>

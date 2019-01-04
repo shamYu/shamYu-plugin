@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1.<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		    <li>2.<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		    <li>3.<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		    <li>4.<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		    <li>5.<input type="button" value="上移" /><input type="button" value="下移" /></li>
+		</ul>
+		
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			
+			$('input').click(function(){
+				if($(this).is('[value*=上]')){
+					if($(this).parent().prev().length!=0){
+						$(this).parent().insertBefore($(this).parent().prev())
+					}else{
+						$('ul').append($(this).parent());
+					}
+				}else{
+					if($(this).parent().next().length!=0){
+						$(this).parent().insertAfter($(this).parent().next())
+					}else{
+						$('ul').prepend($(this).parent());
+					}
+				}
+			})
+			
+		</script>
+		
+	</body>
+</html>

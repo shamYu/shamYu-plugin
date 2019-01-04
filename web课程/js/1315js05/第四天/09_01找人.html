@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="找人" />
+		<input type="text" value="" />
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<p>都是朕的</p>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=['关晓彤','杨幂','苍老师','林志玲','周冬雨','迪丽热巴','范冰冰','柳岩','刘诗诗'];
+		
+		//把以上数组里面的每一个元素显示到相应的li里。例如，第一个li显示关晓彤，第二个li显示杨幂。
+		
+		var aLi=document.getElementsByTagName('li');
+		
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].innerText=arr[i];
+		}
+		
+		
+	</script>
+</html>

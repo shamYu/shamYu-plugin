@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>22222</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		$('div').css('background','red');
+//		$('div').html('就将计就计');
+//		$('div').addClass('active');
+		
+		//链式操作，每个设置方法都会返回当前的jq对象.(返回this)
+		$('div').css('background','red').html('就将计就计').addClass('active');
+		
+		//获取时后面不能链式调用,因为获取时方法不返回当前的jq对象
+//		$(div).css('width').html('哈哈哈哈');
+		
+	</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		箭头函数代替匿名函数
+		
+//		var fn=()=>{
+//			alert(100);
+//		}
+		
+//		等同于以下写法
+//		var fn=function(){
+//			alert(100);
+//		}
+		
+		var fn=(a,b)=>{
+			alert(a+b);
+		}
+		
+		//当形参只有一个,省略()
+		var fn=a=>{
+			alert(a);
+		}
+		
+		//当函数内只有一个return 语句,那么省略{}与return
+		
+		var fn=a=>{return a+1};
+		//简写
+		var fn=a=>a+1;
+		
+		//自执行箭头函数，num的值就是a+1的值。a是10，所以num是11
+		var num=(a=>a+1)(10);
+		
+		//箭头函数内没有this,因此写在箭头函数内的this指向箭头函数所在的函数被调用时的对象。
+		
+		function fn1(){
+//			console.log(this)
+//			箭头函数内的this就是箭头函数所在函数的this
+//			这里的this是fn1内的this。fn1内的this指向谁，箭头函数的this就指向谁
+
+			var show=()=>{console.log(this)};
+			
+//			var show=function(){
+//				console.log(this)
+//			};
+
+			show();//document
+		}
+		
+		fn1.call(document);
+		
+		
+	</script>
+</html>

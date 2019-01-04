@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="button" value='改变msg' @click='change'>
+        {{msg}}
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'div',
+        //vm的属性用data来声明
+        data:{
+            //data对象内的属性都会变成vue实例本身的属性,并且还是通过set和get监听的
+            msg:'我我哦我我我我我我',     
+        },
+        //vm的方法用methods来声明
+        methods:{
+            change(){
+                //methods里面申明的函数内的this都指向vue实例
+                this.msg='后端后代后端后代的';
+            }
+        }
+    });
+
+
+</script>
+</html>

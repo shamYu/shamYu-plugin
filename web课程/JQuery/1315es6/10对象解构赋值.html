@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		对象的解构赋值,需要按名字对号入座(与位置无关)(json对象是一种无序的数据列表);
+		
+		//以下两种写法没有区别
+//		var {abc:x,edf:y}={abc:10,edf:20} x==10，y==20
+//		var {abc:x,edf:y}={edf:20,abc:10} x==10，y==20
+		
+//		var {x,y}={x:20,y:10};
+//		等同于以下写法
+//		var {x:x,y:y}={x:20,y:10};
+
+//		var {x,y}={x:{x:20},y:{y:10}}
+
+//		var {x:{x},y:{y}}={x:{x:20},y:{y:10}}//x==20，y==10	
+
+//		var {x,y:{y}}={x:{x:20},y:{y:10}}//x=={x:20}，y==10
+		
+		var {x,y}={};//x==undefined y==undefined
+		
+		//默认值
+//		var {x=10,y=20}={} //x==10;y==20;
+		
+		var {x=10,y=20}={x:30} //x==30;y==20;
+		
+		var {x=10,y=20}={x:30,y:40} //x==30;y==40;
+		
+	</script>
+</html>

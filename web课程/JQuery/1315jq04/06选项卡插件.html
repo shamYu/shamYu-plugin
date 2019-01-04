@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.wrap{
+				height:300px;
+			}
+			.wrap>div{
+				width: 200px;
+				height: 200px;
+				border:1px solid #000;
+				display: none;
+				position: absolute;
+			}
+			.wrap>div.active{
+				display: block;
+			}
+			input.active{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap' class='wrap'>
+			<input type="button" class='active btn' value="111" />
+			<input type="button" class='btn' value="222" />
+			<input type="button" class='btn' value="333" />
+			<div class='active box'>1111</div>
+			<div class='box'>2222</div>
+			<div class='box'>3333</div>
+		</div>
+		<div id='wrap1' class='wrap'>
+			<input type="button" class='active btn' value="111" />
+			<input type="button" class='btn' value="222" />
+			<input type="button" class='btn' value="333" />
+			<div class='active box'>1111</div>
+			<div class='box'>2222</div>
+			<div class='box'>3333</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//插件->代码逻辑，适用性逻辑
+		
+		$.fn.tabs=function(obj){
+			
+			//默认参数
+			var prama={
+				fade:false,
+				duration:'normal',
+			};
+			//默认参数继承形参，使实参的自定义属性生效。
+			if($.isPlainObject(obj)){
+				$.extend(prama,obj);
+			}else{
+				//jq错误对象
+				$.error('你特码的制杖');
+			}
+						
+			//当前的jq对象
+			var _this=this;
+			//this.selector->返回当前jq对象的选择器。
+			var seltor=this.selector+'>.btn';
+			
+			if(prama.fade){
+				this.find('.btn').on('click',function(){
+				$(this).addClass('active').siblings('.btn').removeClass('active');
+					_this.find('.box').eq($(this).index(seltor)).fadeIn(prama.duration).siblings('.box').fadeOut(prama.duration);
+				})
+			}else{
+				this.find('.btn').on('click',function(){
+				$(this).addClass('active').siblings('.btn').removeClass('active');
+					_this.find('.box').eq($(this).index(seltor)).show().siblings('.box').hide();
+				})
+			}
+		}
+		
+		//如何获取一个jq对象的选择器字符串
+		$('#wrap').tabs({
+			fade:true,
+			duration:800,
+		});
+		$('#wrap1').tabs();
+		
+	</script>
+</html>

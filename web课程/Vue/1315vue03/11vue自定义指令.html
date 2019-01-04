@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <!-- v-red->自定义指令->添加了这个自定义指令的标签背景变红 -->
+        <!-- 自定义指令是用于封装DOM操作 -->
+        <!-- <p v-red-boo>我要红遍大江南北</p> -->
+        <p v-red-boo='val'>我要红遍大江南北</p>
+        
+        <!-- 指定有指令如果在视图内使用,必须先经过注册 -->
+        <!-- <p v-red>我要红遍大江南北</p>
+        <p v-red>我要红遍大江南北</p>
+        <p v-red>我要红遍大江南北</p> -->
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    // directive()有两个参数,第一个就是自定义指令名.v-后面的部分是指令名
+    //如果自定义指令的命名还有多个-,那么要转成驼峰命名。v-red-boo，可以是RedBoo，也可以是redBoo
+
+    //全局的自定义指令注册
+    // Vue.directive('redBoo',{
+    //     bind(el,binding){
+    //         el.style.background='red';
+    //     }
+    // });    
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            val:'red'
+        },
+        //局部指令注册.
+        //每个指令名变成一个函数名.函数的参数与全局注册的bind参数一致
+        directives:{
+            redBoo(el,binding){
+                //bindind是一个自定指令的配置对象
+                // console.log(binding);
+                //binding.value就是获取自定义指令被赋予的表达式的值.
+                console.log(binding.value);
+                el.style.background='red';
+            }
+        }
+    })
+
+</script>
+</html>

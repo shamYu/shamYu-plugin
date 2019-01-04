@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: #000;
+			}
+			div{
+				width: 6px;
+				height:6px;
+				border-radius: 50%;
+				background: #fff;
+				margin-left:200px;
+				position: relative;
+				margin-top:300px;
+				/*-webkit-transform: rotate(-45deg);*/
+				-webkit-transform: rotate(315deg);
+			}
+			div:nth-child(2){
+				margin-left:400px;
+				margin-top:0
+			}
+			div:nth-child(3){
+				margin-left:600px;
+				margin-top:0
+			}
+			div:nth-child(4){
+				margin-left:800px;
+				margin-top:0
+			}
+			div:after{
+				content: '';
+				position: absolute;
+				width: 300px;
+				height: 2px;
+				background: -webkit-linear-gradient(left,rgba(255,255,255,1),rgba(255,255,255,0));
+				top:2px;
+				left:4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

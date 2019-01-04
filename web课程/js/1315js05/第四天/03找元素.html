@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>77</li>
+			<li>杨幂</li>
+			<li>1111</li>
+			<li>杨幂爱你</li>
+			<li>214</li>
+			<li>1314</li>
+			<li>杨幂我爱你</li>
+			<li>520</li>
+			<li>杨幂我真的爱你</li>
+			<li>杨幂我死活都爱你</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+//		找到内容不是数字的li,变背景红，找到内容是520发哈技术发的li，字号设置为20px，加粗，颜色绿，内容改为oYm5201314;
+		var aLi=document.getElementsByTagName('li');
+		
+		for(var i=0;i<aLi.length;i++){
+			var content=aLi[i].innerText;
+			if(+content!=+content){
+				aLi[i].style.background='red';
+			}
+			if(content=='520'){
+				aLi[i].style.fontSize='20px';
+				aLi[i].style.fontWeight='bold';
+				aLi[i].style.color='green';
+				aLi[i].innerText='oYm5201314'
+			}
+		}
+		
+	</script>
+</html>

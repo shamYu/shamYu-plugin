@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="按钮1" />
+		<input type="button" value="按钮2" />
+		<input type="button" value="按钮3" />
+		<input type="button" value="按钮4" />
+	</body>
+	<script type="text/javascript">
+		
+		var aInput=document.getElementsByTagName('input');
+		
+//		aInput[0].onclick=show100;
+//		aInput[1].onclick=show100;
+//		aInput[2].onclick=show100;
+//		aInput[3].onclick=show100;
+		
+		for(var i=0;i<aInput.length;i++){
+			aInput[i].onclick=show100;
+		}
+		
+		//做一个计划，任意时间都可以执行这个计划。还可以反复执行。
+		function show100 (){
+			alert(i)
+		}
+		
+		//函数调用 -> 函数名() ->执行做好的计划
+		show100();
+		
+		
+	</script>
+</html>

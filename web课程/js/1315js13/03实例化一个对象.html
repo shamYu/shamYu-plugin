@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//创建一个自定义的类,通过这个类实例化属于这个类的多个对象
+		
+//		var arr1=new Array();
+//		var arr2=new Array();
+//		var arr3=new Array();
+		
+		//男人的类(通过构造函数来实现的)
+//		function Man(){
+//			this.name='班长';
+//			this.age=18;
+//			this.weight='80kg';
+//			this.height='180cm';
+//		}
+//		
+//		var banz=new Man();
+//---------------------------------------------------------
+
+//		构造函数给实例添加私有属性
+		function Man(name,age,weight,height){
+			this.name=name;
+			this.age=age;
+			this.weight=weight;
+			this.height=height;
+		}
+		
+		//利用prototype原型给所有属于Man类的对象添加公有属性
+		Man.prototype.houjie=true;
+		Man.prototype.sex='男的';
+		
+		var banz=new Man('班长',18,'80kg','180cm');
+		var bixian=new Man('笔仙',9000,'0kg','160cm');
+		
+//		面向对象三大特性:封装,继承,多态.
+//		
+//		龙生龙,凤生凤,老鼠生而儿会打洞  -> 继承 ->公有属性体现继承.
+//		龙生九子,各有各样. -> 多态  -> 私有属性体现多态.
+		
+		var oYm=new Object();		
+//		oYm.__proto__==Object.prototype; //默认是true
+		
+//		实例化一个对象:
+//			1:通过new来操作一个函数.
+//			2:函数内利用this来给实例添加私有属性.(this指向实例);
+//		
+//		实例化的对象:
+//			1:实例化的对象一定属于构造函数表示的类.(构造函数实例化的所有对象,都属于构造函数表示的类);
+//			2:实例化的对象默认继承构造函数的原型.(实例.__proto__==类.prototype)(实例的上一级原型对象,默认是类的原型);
+		
+//		传统的面向对象,实例一定继承自类.
+//		js里实例一定继承另一个对象.
+//		实例默认继承构造函数的原型，不是实例继承构造函数。
+		
+		//构造函数的私有属性，实例不能继承.
+//		Man.abc='嗯哼哼';
+//		banz.abc //undefined banz->Man.prototype->Object.prototype,banz的原型链上没有Man
+		
+	</script>
+</html>

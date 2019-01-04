@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="开始" />
+		<div></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$('#btn1').on('click',function(){
+			$('div').animate({width:500},2000).animate({height:500},2000);
+		})
+		
+		$('#btn2').on('click',function(){
+//			没有参数相当于有两个参数都是false
+//			第一个参数：是否停止动画队列。
+//			第二个参数：是否立即完成当前动画。
+//			不论参数如何配置，当前动画一定停止。
+//			$('div').stop(false,false);
+			//不停止动画队列，立即完成当前动画
+//			$('div').stop(false,true);
+			//停止动画队列，立即完成当前动画
+//			$('div').stop(true,true);
+//			停止动画队列，不立即完成当前动画
+			$('div').stop(true,false);
+		})
+		
+	</script>
+</html>

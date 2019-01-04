@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap.min.css" />
+    <!--<script src="js/jquery-1.11.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>-->
+    <style>
+        ul li {
+            list-style: none;
+            width: 900px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul class=" list-group">
+            <li class="text-center">
+                <p>购物车</p>
+            </li>
+            <li is='goods' v-for='(d,i) in goods' :index='i' :arr='goods' :item='d'></li>
+            <li class="list-group-item text-center">
+                全选：<input type="checkbox" v-model='flag'>
+                <span>总数量:{{t_c}}</span>
+                <strong>总价:{{t_p}}</strong>
+                <button type="button" class="btn btn-danger"  @click='delAll()'>删除所有</button>
+                <button type="button" class="btn btn-success" @click='add()'>新增</button>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script type='text/x-template' id='goods'>
+    <li class="text-center list-group-item">
+        <input type="checkbox" v-model='item.canDel'>
+        <strong>商品名称:{{item.name}}</strong>
+        <span>￥单价:{{item.price}}</span>
+        <button class="btn btn-danger" @click='reduce()'>-</button>
+        <input type="text" style="width:40px" v-model='item.count'>
+        <button class="btn btn-success" @click='add()'>+</button>
+        <strong>总价:{{total}}</strong>&nbsp;&nbsp;&nbsp;
+        <input type="button" value="删除" class="btn btn-danger" @click='del(index)' >
+    </li>
+</script>
+<script>
+
+    const goods={
+        template:'#goods',
+        props:['item','arr','index'],
+        computed:{
+            total(){
+                return this.item.count*this.item.price
+            }
+        },
+        methods:{
+            del(i){
+                if(this.item.canDel)this.arr.splice(i,1);
+            },
+            add(){
+                this.item.count++;
+            },
+            reduce(){
+                if(this.item.count>0)this.item.count--;
+                
+            }
+        }
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            goods:[
+                {name:'杨幂',count:1,price:10,canDel:false},
+                {name:'范冰冰',count:1,price:20,canDel:false},
+                {name:'胡歌',count:1,price:1,canDel:false}
+            ]
+        },
+        components:{goods},
+        methods:{
+            delAll(){
+                this.goods.forEach((item,i)=>{
+                    if(item.canDel)this.goods.splice(i,1);
+                })
+            },
+            add(){
+                this.goods.push({name:'胡歌',count:1,price:1,canDel:false});
+            }
+        },
+        computed:{
+            flag:{
+                get(){
+                    var flag=1;
+                    this.goods.forEach((item,i)=>{
+                        flag*=item.canDel;
+                    });
+                    return !!flag;
+                },
+                set(val){
+                    this.goods.forEach((item,i)=>{
+                        if(val){
+                            item.canDel=true;
+                        }else{
+                            item.canDel=false;
+                        }
+                    });
+                }               
+            },
+            t_c(){
+                var total=0;
+                this.goods.forEach((item,i) => {
+                    if(item.canDel)total+=item.count*1;
+                  
+                });
+                return total
+            },
+            t_p(){
+                var total=0;
+                this.goods.forEach((item,i) => {
+                    if(item.canDel)total+=item.count*item.price*1;
+                  
+                });
+                return total
+            }
+        }
+    })
+
+</script>
+</html>

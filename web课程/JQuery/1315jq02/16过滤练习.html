@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				border:1px solid #000;
+				float: left;
+				margin-left:10px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>trunGreen</p>
+		</div>
+		<div>
+			<p>变红</p>
+		</div>
+		<div>
+			<p>又黄又暴力</p>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+				
+//		$('div').click(function(){
+//			if($(this).is(':nth-child(1)')){
+//				$(this).find('p').css('background','green')
+//			}else if($(this).is(':nth-child(2)')){
+//				$(this).find('p').css('background','red')
+//			}else{
+//				$(this).find('p').css('background','yellow')
+//			}
+//		})
+		
+		$('div').click(function(){
+			$(this).filter(':nth-child(1)').find('p').css('background','green');
+			$(this).filter(':nth-child(2)').find('p').css('background','red');
+			$(this).filter(':nth-child(3)').find('p').css('background','yellow');			
+		});
+		
+	</script>
+</html>

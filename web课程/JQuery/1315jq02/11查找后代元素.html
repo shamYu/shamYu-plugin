@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<p>
+				<a href="#">
+					<span>哈哈哈哈</span>
+				</a>
+			</p>
+			<h3>
+				<a href="#">
+					<span>呵呵呵</span>
+				</a>
+			</h3>
+			<span>我是爸爸</span>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//查找所有子元素
+//		$('div').children().css('background','red');
+		
+		//子元素里面的span
+//		$('div').children('span').css('background','red');
+		
+		//div里面的h3里面的a里面的span
+//		$('div').children('h3').children('a').children('span').css('background','red');
+		
+//		在div内查找复合选择器'h3 span'的元素
+		$('div').find('h3 span').css('background','red');
+		
+//		div>div>h3 span -> 页面上没有这个选择器匹配的元素
+//		$('div').find('div>h3 span').css('background','red');
+		
+	</script>
+</html>

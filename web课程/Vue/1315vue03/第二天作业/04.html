@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div id="div" v-cloak>
+            <div v-for='d in arr'>
+                <input type="radio" :value='d' v-model='name'><span>{{d}}</span>
+            </div>         
+            <div v-if='name=="杨幂"'>杨幂我要了</div>
+            <div v-else-if='name=="杨博"'>杨博我也要了</div>
+            <div v-else-if='name=="班长"'>班长等等我</div>
+            <div v-else-if='name=="斯蒂芬大晗"'>小学生一边去</div>
+            <div v-else-if='name=="胡歌"'>风琴郡主是我的了,嘻嘻</div>
+            <div v-else-if='name=="考辛斯鹏"'>没大脑</div>
+            <div v-else>可爱的人儿在哪里</div>
+        </div>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script>
+    //把if-else例子内的输入框填写名字改为单选框选中名字.其他效果一致.用v-for配合
+    new Vue({
+        el:'#app',
+        data:{
+            arr:['杨幂','杨博','班长','斯蒂芬大晗','胡歌','考辛斯鹏'],
+            name:'',
+        }
+    })
+</script>
+</html>

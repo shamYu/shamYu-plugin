@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+body{ margin:0; padding:0; background: url(../images/beijing.jpg); background-repeat:repeat-x;}
+div,ul,li,img,form,dl,dt,dd,span,p{ margin:0px; padding:0px; border:none;}
+ul{list-style-type:none;margin:0px;padding:0px;}
+li{list-style-type:none; list-style-position:outside;}
+
+a{ position:relative; color:#FFF;text-decoration:none;}
+a:link {color: rgb(255, 255, 255); text-decoration: none;}
+a:visited {color: rgb(255, 255, 255); text-decoration: none;}
+a:hover {color: rgb(255, 255, 255); text-decoration: underline;}
+a:active {color: rgb(255, 255, 255);}
+
+#beijing{height:850px; width:1000px; margin:auto;}
+#head{ height:46px; width:1000px; background:url(../images/logo.jpg) no-repeat; float:left;}
+#head ul{margin-left:680px; float:left; display:inline;}
+#head ul li{ padding-left:15px; float:left; width:132px; height:46px;}
+
+#content{height:616px; width:1000px; margin:0px auto; background:url(../images/content.png) no-repeat; _background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/content.png"); float:left;_margin-top:-4px;}
+#divDonw{ width:592px; height:616px; float:left; position:relative;}
+#divDonw #Biaoti { position:absolute; left:-150px;top:0px;float:left; width:594px; height:201px; opacity:0;}
+#divDonw #Biaoti .ulBiaoti{width:594px; height:201px; background:url(../images/biaoti.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/biaoti.png");}
+#divDonw #Kmubiao{ position:absolute; left:-200px; top:201px; float:left; width:594px; height:232px;opacity:0;}
+#divDonw #Kmubiao .ulKmubiao{width:594px; height:232px; background:url(../images/kemubiao.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/kemubiao.png");}
+#divDonw .ul1{ position:relative;margin-top:447px; width:592px; height:57px; float:left;}
+#divDonw .ul1 .divP1{ position:absolute; width:204px; height:57px; left:-304px;opacity:0}
+#divDonw .ul1 .divP2{ position:absolute; width:184px; height:57px; left:-94px;opacity:0}
+#divDonw .ul1 .divP3{ position:absolute; width:164px; height:57px; left:96px;opacity:0}
+#divDonw .ul2{ position:relative; margin-top:16px; display:inline; width:163px; height:34px; float:left;}
+#divDonw .ul2 .limenu{float:left;width:163px; height:34px; text-align:center; background:url(../images/jiaocheng.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/jiaocheng.png");}
+#divDonw .ul2 .limenu a{ display:block; font-family:"微软雅黑"; font-size:16px; line-height:34px; text-decoration: none;}
+#divDonw .ul2 .limenu ul{ display:inline; display:none; overflow:hidden; float:left; width:163px; height:60px; background:url(../images/xiala.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/xiala.png");}
+#divDonw .ul2 .limenu ul li{ width:163px; height:29px;text-align:center;}
+#divDonw .ul2 .limenu ul li a{ display:block; width:163px; height:29px;font-family:"微软雅黑"; font-size:14px; line-height:29px;}
+#divDonw .ul2 .limenu ul li a:hover{text-decoration: underline;}
+#divDonw .ul1 li{float:left; display:block;}
+#divDonw .ul1 li a{ display:block; _display:inline-block; position:relative; float:left;}
+#divDonw .ul1 .liAND2 a{ width:204px; height:57px; display:block;}
+#divDonw .ul1 .liIOS2 a{ width:184px; height:57px; display:block;}
+#divDonw .ul1 .liLixian2 a{ width:164px; height:57px; display:block;}
+#divDonw .ul1 .liAND1{ width:204px; height:57px; background:url(../images/Androiddown1.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/Androiddown1.png");}
+#divDonw .ul1 .liIOS1{ width:184px; height:57px; background:url(../images/IOSdown1.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/IOSdown1.png");}
+#divDonw .ul1 .liLixian1{ width:164px; height:57px; background:url(../images/lixianbaodown1.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/lixianbaodown1.png");}
+#divDonw .ul1 .liAND2{ width:204px; height:57px; background:url(../images/Androiddown2.png) no-repeat; cursor:pointer; _background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/Androiddown2.png");}
+#divDonw .ul1 .liIOS2{ width:184px; height:57px;background:url(../images/IOSdown2.png) no-repeat;cursor:pointer;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/IOSdown2.png");}
+#divDonw .ul1 .liLixian2{ width:164px; height:57px;display:block;background:url(../images/lixianbaodown2.png) no-repeat;cursor:pointer;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/lixianbaodown2.png");}
+
+#divpics{ width:408px; position:relative; height:616px; float:left;}
+#divpics #phone{ height:616px; width:304px; float:left;}
+#divpics #phone #Iphone{ position:absolute; top:0px; left:0px; height:616px; width:304px; float:left; display:none;opacity:0;}
+#divpics #phone #Iphone .ulIphone{height:616px; width:304px; background:url(../images/Iphone.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/Iphone.png");}
+#divpics #phone #Fpics{ position:absolute;left:28px; top:98px; width:250px; height:437px; overflow:hidden;float:left;display:inline;}
+#divpics #phone #light{ position:absolute; display:inline; float:left; left:13px; top:57px; width:273px; height:476px; overflow:hidden; z-index:100; background: url(../images/light.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/light.png");}
+#divpics #phone #Fpics #ul1{ left:-250px; width:750px; height:437px; float:left; display:inline; position:absolute;}
+#divpics #phone #Fpics #ul1 li{ width:250px; height:436px;left:250px; top:0px; position:absolute; float:left; display:none;}
+#divpics #phone #Fpics #ul1 .li_This{display:block;}
+#divpics #phone #Fpics #ul1 .li_Next{left:500px; display:block;}
+#divpics #Ficon{ position:relative; width:104px; height:616px; float:left; display:inline;}
+#divpics #Ficon #ul2{ position:absolute; top:90px; left:11px; width:95px; height:460px; float:left; display:inline; z-index:10;}
+#divpics #Ficon #ul2 div{position:absolute; width:95px; height:115px;opacity:0}
+#divpics #Ficon #ul2 .divI1{top:-150px;}
+#divpics #Ficon #ul2 .divI2{top:-55px;}
+#divpics #Ficon #ul2 .divI3{top:40px;}
+#divpics #Ficon #ul2 .divI4{top:135px;}
+#divpics #Ficon #ul2 li{ width:95px; height:115px; float:left; display:none}
+#divpics #Ficon #ul3{ position:absolute; top:-150px;left:11px; width:95px; opacity:0; float:left; display:inline; z-index:0;}
+#divpics #Ficon #ul3 li{ position:absolute;left:0px; width:95px; display:block; height:115px; background:url(../images/xuanzhong.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/xuanzhong.png"); }
+#divpics #Ficon #ul2 .limnkc{ background:url(../images/mnkcI.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/mnkcI.png");}
+#divpics #Ficon #ul2 .lizjlx{ background:url(../images/zjlxI.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/zjlxI.png");}
+#divpics #Ficon #ul2 .lictcz{ background:url(../images/ctczI.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ctczI.png");}
+#divpics #Ficon #ul2 .litjfx{ background:url(../images/tjfxI.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/tjfxI.png");}
+#divpics #Ficon #ul2 .limnkc2{ background:url(../images/mnkcI2.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/mnkcI2.png");cursor:pointer;display:block;}
+#divpics #Ficon #ul2 .lizjlx2{ background:url(../images/zjlxI2.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/zjlxI2.png");cursor:pointer;display:block;}
+#divpics #Ficon #ul2 .lictcz2{ background:url(../images/ctczI2.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ctczI2.png");cursor:pointer;display:block;}
+#divpics #Ficon #ul2 .litjfx2{ background:url(../images/tjfxI2.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/tjfxI2.png");cursor:pointer;display:block;}
+
+#foot{height:188px; width:1000px; float:left; background:url(../images/foot.png) no-repeat;}
+#foot .ul1{ width:900px; margin-left:100px; margin-top:80px; float:left; display:inline; overflow:hidden}
+#foot .ul1 li{ width:189px; margin-left:32px; float:left; display:inline; }
+#foot .ul1 li a{ display:block;text-align:left;font-family:"微软雅黑"; font-size:14px; color:#525252; line-height:20px; letter-spacing:1px; text-decoration:none;}
+#foot .ul1 li a:hover{ color:#09F;}
+#foot .ul2{ width:1000px; margin-top:70px; float:left;}
+#foot .ul2 li{ font-size:12px; color:#7c7c7c; text-align:center; height:21px;}

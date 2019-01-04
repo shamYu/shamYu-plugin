@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="按钮1" />
+		<input type="button" id="btn2" value="给按钮1加事件" />
+		<input type="button" id="btn3" value="清除按钮1的事件" />
+	</body>
+	<script type="text/javascript">
+		
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+		var oBtn3=document.getElementById("btn3");
+				
+		oBtn2.onclick=function () {
+			
+			oBtn1.onclick=function(){
+				alert('按钮1被点击');
+			};
+			
+			oBtn3.onclick=function(){
+				//清除事件
+				oBtn1.onclick=null;
+			}
+			
+			alert('加事件成功');
+		}
+		
+		//清除事件
+		
+		
+		
+	</script>
+</html>

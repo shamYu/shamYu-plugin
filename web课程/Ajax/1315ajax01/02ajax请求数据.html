@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<p></p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oP=document.querySelector('p');
+		
+//		oP.innerText=str;
+		
+		//进行ajax数据请求的工具。
+		var xhr=new XMLHttpRequest();
+		
+		//第一个参数就是请求的方式，一个是GET(拿)，另一个是POST(给);
+		//第二个参数就是服务器的文件地址。
+		//第三个参数表示请求是否采用异步的方式。true表示异步。默认是true。
+		//2005年之前(没有ajax)，哪个时候的数据请求都是同步的。数据更新都不是局部更新。
+		
+		//open->请求前的配置。
+		xhr.open('GET','http://localhost:8080/1315ajax01/data.txt',true);
+		//将请求发送出去。
+		xhr.send();
+		
+		//等待服务器进行相应。
+		//readyState->本次通信的状态，取值是0-4。
+		xhr.onreadystatechange=function(){
+			//请求完成。
+			if(xhr.readyState==4){
+				//请求成功。
+				if(xhr.status==200){
+//					xhr.responseText->服务器返回的结果
+					oP.innerText=xhr.responseText;
+				}
+			}
+		}
+			
+	</script>
+</html>

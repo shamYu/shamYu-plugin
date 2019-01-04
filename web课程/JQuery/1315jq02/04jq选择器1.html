@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li:nth-child(even){}
+			li:nth-child(odd){}
+		</style>
+	</head>
+	<body>
+		<li></li>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//是li并且又是第一个子元素
+//		$('li:nth-child(1)').css('background','red');
+//		$('li:first-child').css('background','red');
+
+		//所有li里面的第一个，可以不同时兄弟元素
+//		$('li:first').css('background','red');
+		//所有li里面的最后一个，可以不同时兄弟元素
+//		$('li:last').css('background','red');
+		
+		//所有li里下标为1的那个li
+//		$('li:eq(1)').css('background','red');
+		
+		//所有li里下标大于3的li
+//		$('li:gt(3)').css('background','red');
+		//所有li里下标小于3的li
+//		$('li:lt(3)').css('background','red');
+		
+		//所有li里下标为偶数的li
+//		$('li:even').css('background','red');
+		//所有li里下标为奇数的li
+		$('li:odd').css('background','red');
+		
+	</script>
+</html>

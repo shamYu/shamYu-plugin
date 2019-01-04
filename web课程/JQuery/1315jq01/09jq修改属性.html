@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" value="" />
+	</body>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		oInput.value='';
+//		oInput.setAttribute('value','123123');
+		
+		//prop修改的不一定是行间属性。property
+//		$('input').prop('value','哈哈哈哈');
+		//attr修改的一定是行间属性
+//		$('input').attr('value','哈哈哈哈');
+		
+//		oInput.checked=true;
+		$('input').prop('checked',true);
+		
+//		oInput.setAttribute('abc','哈哈哈哈哈');
+		$('input').attr('abc','就哈哈哈哈');				
+		$('input').prop('style').width='3000px';
+		
+//		oInput.style->返回样式对象
+//		$('input').prop('style')->返回style对象
+		$('input').prop('style').cssText='width:800px;height:300px';
+		
+		$('input').attr('style','width:3000px');
+		
+	</script>
+</html>

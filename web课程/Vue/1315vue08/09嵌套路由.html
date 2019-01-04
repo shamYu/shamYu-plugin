@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .router-link-active{
+            background: red
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+
+        <router-link to='/home'>首页</router-link>
+        <router-link to='/about'>关于我们</router-link>
+
+        <keep-alive>
+            <router-view />
+        </keep-alive>
+    </div>
+</body>
+
+<script src="js/vue1.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+
+    const about={
+        template:
+        `<div>
+            <div>关于我们</div>
+            <router-link to='/about/aboutUs'>关于我们</router-link>
+            <router-link to='/about/contactUs'>联系我们</router-link>
+            <router-view />
+        </div>`
+    }
+
+    //1:在某个路由视图的组件内添加新的routerlink和routerview
+    //2:在相应的路由选项上添加children属性,当做子路由选项来填写参数
+
+    const router = new VueRouter({
+        //路由选项
+        routes:[
+            {
+                path:'/home',
+                name:'home',
+                component:{
+                    template:'<div>11111111</div>',
+                }
+            },
+            {
+                path:'/about',
+                name:'about',
+                component:about,
+                //在当前的路由选项上配置子路由选项。
+                children:[
+                    {
+                        // path:'/about/aboutUs',
+                        path:'aboutUs',
+                        component:{template:'<div>关于我们，我们是强壮的葫芦娃</div>'}
+                    },
+                    {
+                        // path:'/about/contactUs',
+                        path:'contactUs',
+                        component:{template:'<div>联系我们，we are Amazing</div>'}
+                    },
+                    {
+                        path:'/',
+                        redirect:'aboutUs'
+                    }
+                ]
+            },
+        ]
+    })
+
+    new Vue({
+        el:'#app',
+        router,
+    })
+
+</script>
+</html>

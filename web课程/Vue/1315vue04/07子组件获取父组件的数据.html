@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <input type="text" v-model='msg'>
+        <!-- 自定义标签上书写一个与子组件数据名相同的属性名,然后赋值共享数据 -->
+        <show :str='msg' :abc='msg'></show>
+        <!-- <show></show> -->
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    const show={
+
+        template:'<div><p>str:{{str}}</p><p>abc:{{abc}}</p></div>',
+        // template:'<input type="text" v-model="str">',
+
+        //data的数据没办法获得父组件的数据
+        // data(){
+        //     return {
+        //         str:'哈哈哈'
+        //     }
+        // }
+        
+        //如果希望子组件的数据从父组件获取,那么这个数据就必须用props来声明.
+        //数据名str在这里必须要有引号.
+        //props声明的数据,只能通过父元素获取,不能通过v-model绑定.
+
+        //声明子组件共享数据的简写形式
+        props:['str','abc'],
+
+        //声明子组件共享数据的全写形式
+        // props:{
+        //     'str':{
+        //         default:'str的默认值'
+        //     },
+        //     'abc':{
+        //         default:'abc的默认值'
+        //     }
+        // }
+    }
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'父元素的数据'
+        },
+        components:{
+            show
+        }
+    })
+</script>
+</html>

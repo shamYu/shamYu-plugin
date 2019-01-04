@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			/*#div1:hover{
+				background: green;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div id='div1'></div>
+		<input type="text" id="text1" value="" />
+		<input type="text" id="text2" value="" />
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+		
+		//鼠标移入事件
+//		oDiv.onmouseover=function () {
+//			this.style.background='green'
+//		}
+		//鼠标移出事件
+//		oDiv.onmouseout=function () {
+//			this.style.background='red'
+//		}
+		
+		//鼠标移入事件
+//		oDiv.onmouseenter=function () {
+//			this.style.background='green'
+//		}
+		//鼠标移出事件
+//		oDiv.onmouseleave=function () {
+//			this.style.background='red'
+//		}
+
+//------------------------------------------------------------------------------------
+		var oText1=document.getElementById("text1");
+		
+		//表单元素获得焦点事件;
+//		oText1.onfocus=show100;
+		//表单元素失去焦点事件;
+//		oText1.onblur=show100;
+		
+		//表单元素的value属性发生变化的事件
+//		oText1.onchange=change;
+		
+		//匿名函数
+//		oText1.onfocus=function(){
+//			console.log(100);
+//		};
+				
+//		function show100(){
+//			console.log(100);
+//		}
+//		
+//		function change(){
+//			console.log(this.value);
+//		}
+//----------------------------------------------------------------------------------------		
+		//鼠标按下事件
+//		oDiv.onmousedown=function(){
+//			console.log('鼠标按下了');
+//		}
+		//鼠标松开事件
+//		oDiv.onmouseup=function(){
+//			console.log('鼠标松开了');
+//		}
+		//鼠标移动事件
+//		oDiv.onmousemove=function(){
+//			console.log('鼠标移动了');
+//		}
+		//鼠标双击事件
+		oDiv.ondblclick=function(){
+			console.log('鼠标双击');
+		}
+		
+	</script>
+</html>

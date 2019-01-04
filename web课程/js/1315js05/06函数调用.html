@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="弹吧，别等了" />
+	</body>
+	<script type="text/javascript">
+		
+//		alert(100);
+		
+		var x;
+		
+		//做计划
+		function show100(){
+			alert(x);
+		}
+		
+		//页面运行马上执行计划。显式调用
+//		show100();//undefined
+		
+		var oBtn=document.getElementById("btn");
+		
+		//按钮被点击就执行计划，按钮不被点击永远不执行。隐式调用
+		oBtn.onclick=show100;//200 点击肯定在赋值之后，因此显示200
+		
+//		手动调用点击事件:oBtn.click();
+		
+		//定时器5秒后执行计划; show100回调函数。
+//		setTimeout(show100,5000);//200 5秒之后已经赋值，因此也显示200
+		
+		x=200;
+		
+		
+	</script>
+</html>

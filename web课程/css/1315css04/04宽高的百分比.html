@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width: 500px;
+				height: 500px;
+				border:1px solid #000;
+			}
+			#wrap>div{
+				float: left;
+				height: 200px;
+				background: red;
+				margin-left:1px;
+			}
+			.div1{
+				
+				/*宽高设百分比->以父元素作为参照*/
+				/*width: 50%;*/
+				
+				/*calc->css3样式值,动态计算,运算符前后要有空格*/
+				width: calc(50% - 1px);
+			}
+			.div2{
+				/*width: 50%;*/
+				width: calc(50% - 1px);
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div class='div1'>1</div>
+			<div class='div2'>2</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='wrap'>
+        <p>总价:{{total}}</p>
+        <input type="button" value='添加商品' @click='add()'>
+        <ul>
+            <li is='vLi' v-for='(d,i) in goods' :items='d'></li>
+        </ul>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script>
+    //将ul变成组件
+    //点击按钮在组件内显示一条商品信息,包括商品名字与商品单价与商品数量.
+    //商品数量可编辑.名称随意,单价每个商品一致.
+    //每次修改商品单价,计算购买所有的商品所需的总价格,显示在p内.
+
+    const vLi={
+        template:
+        `<li>
+            <span>{{items.name}}</span>
+            <input type="text" v-model='items.price'>
+            <input type="text" v-model='items.count'>
+        </li>`,
+        props:['items']
+    }
+
+    var vm=new Vue({
+        el:'#wrap',
+        data:{
+            goods:[]
+        },
+        methods:{
+            add(){
+                this.goods.push({name:'小鲜肉',count:1,price:10});
+            }
+        },
+        // [{count:1,price:10},{count:2,price:10}]
+        computed:{
+            total(){
+                var total=0;
+                for(var i=0;i<this.goods.length;i++){
+                    total+=this.goods[i].count*this.goods[i].price;
+                }
+                return total
+            }
+        },
+        components:{vLi}
+    })
+</script>
+</html>

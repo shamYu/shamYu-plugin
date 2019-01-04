@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <router-view></router-view>
+</body>
+<script>
+
+    // 1:获取数据。
+    //     a:vue插件->resource->引入时必须在vue引入之后引入。
+    //     Vue.http({
+    //         method:'get',
+    //         url:'url',
+    //         body:'username=900&age=800',
+    //         headers:{
+    //             'Content-type':'application/x-www-form-urlencoded'
+    //         }
+    //     }).then(function(data){
+    //         console.log(data)
+    //     }).catch(function(err){
+    //         console.log(err)
+    //     })
+        
+    //     Vue.http.get('url',{params:{username:900,age:900}}).then(function(data){})
+    //     Vue.http.post('url',{username:900,age:800},{emulateJSON:true}).then(function(data){})
+        
+    //     b:axios->不是vue插件->引入时没有顺序的要求.
+        
+    //     axios({
+    //         type:'get',
+    //         url:'url',
+    //         data:'username=900&age=800',
+    //         headers:{
+    //             'Content-type':'application/x-www-form-urlencoded'
+    //         }
+    //     }).then(function(data){
+    //         console.log(data)
+    //     }).catch(function(err){
+    //         console.log(err)
+    //     })
+        
+    //     axios.get('url',{params:{username:900,age:900}}).then(function(data){});
+    //     axios.post('url','username=9000&age=8000').then(function(data){});
+
+    // 2:路由,->动态组件.->实现单页应用SPA.->url变化不会导致页面重复请求服务器.    
+    //   路由->哈希模式->会根据哈希值的变化来切换不同的视图.
+      
+    //   路由插件->依赖于vue->先引入vue
+
+    //   const router =new VueRouter({
+    //       routes:[
+    //           {
+    //               path:'/home',
+    //               component:vDiv1
+    //           },
+    //           {
+    //               path:'/aboute',
+    //               component:vDiv2
+    //           },
+    //       ]
+    //   })
+      
+    //   new Vue({
+    //       el:'#app',
+    //       router
+    //   })
+
+
+</script>
+</html>

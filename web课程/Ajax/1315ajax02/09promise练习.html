@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//1:随机取随机数,0-10000;
+		//2:根据随机数设置定时器.定时器触发时,如果随机小于5000,则算成功.然后弹出'成功了'+时间.否则算失败,失败时弹出'失败了'+时间
+		
+		new Promise(function(success,err){
+			var timer=Math.floor(Math.random()*10001);
+			setTimeout(function(){
+				if(timer<5000){
+					success(timer)
+				}else{
+					err(timer)
+				}
+			},timer)
+			
+		}).then(function(timer){
+			alert('成功了'+timer)
+		}).catch(function(timer){
+			alert('失败了'+timer)
+		});
+		
+	</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body>div{
+				width:100%;
+				height: 106px;
+				box-sizing: border-box;
+				border:3px solid #000;
+			}
+			div>div,body>div+div{
+				width:100px;
+				height:100px;
+				background: red;
+				margin-left:0;
+				/*任何的样式发生了变化,都有动画，都持续2秒*/
+				/*transition:2s all;*/
+				/*width变化的时候,持续2秒*/
+				transition:4s width;
+				
+				/*第一个数字时过渡数据,第二个数字时延迟时间*/
+				/*transition:1s 3s width;*/
+				/*动画延迟执行*/
+				/*transition-delay:3s;*/
+				/*持续时间*/
+				/*transition-duration:1s;*/
+				
+				/*2个过渡,第二个过渡的延迟时间是2s*/
+				/*transition:2s width , 3s 2s height;*/
+				
+			}
+			body>div:hover>div{
+				width:500px;
+				/*height:200px;*/
+			}
+			body>div:hover+div{
+				width:500px;
+			}
+			body>div+div{
+				/*动画设置成匀速的，默认是缓冲(汽车发动)*/
+				transition:4s linear;
+				border:none;
+				margin-left:3px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--做DOM动画需要关注的3个事情-->
+		<!--1:开始样样式。
+			2:结束样式。
+			3:持续时间.-->
+		<div>
+			<div></div>
+		</div>
+		<div></div>
+	</body>
+</html>

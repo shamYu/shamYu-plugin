@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//		嵌套循环->用循环1来重复执行循环2
+//		在body内插入100个div,每个div内又插入100个p;p的内容从1-10000;
+		
+		//p的个数
+		var iCount=0;
+		
+		for(var i=0;i<100;i++){
+			
+			document.body.innerHTML+='<div></div>';
+			var oDiv=document.getElementsByTagName('div')[i];
+			
+			for(var j=0;j<100;j++){
+				//最内部的循环循环10000次，因此在这里递增，可以让0递增到10000
+				iCount++;
+				oDiv.innerHTML+='<p>'+iCount+'</p>';
+			}			
+		}
+		
+		
+	</script>
+</html>

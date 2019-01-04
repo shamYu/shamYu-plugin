@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			li{
+				float: left;
+				background: red;
+				float: left;
+				margin:1px 0 0 1px;
+			}
+			ul{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="插入元素" />
+		<input type="button" id="btn2" value="ul的宽" />
+		<ul></ul>
+	</body>
+	<script type="text/javascript">
+//		每次点击按钮btn1,在ul内插入1个li,宽随机取50-100,高随机取50-100,padding随机取1-10;
+//		点击按钮btn2,弹出当前ul面积的宽.
+		
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+		
+		var oUl=document.getElementsByTagName('ul')[0];
+		
+		oBtn1.onclick=insertLi;
+		
+		function insertLi(){
+			
+			var oLi=document.createElement("li");
+			oUl.appendChild(oLi);
+			
+			var w=getRand(50,101);
+			var h=getRand(50,101);
+			var pad=getRand(1,11);
+			
+			oLi.style.width=w+'px';
+			oLi.style.height=h+'px';
+			oLi.style.padding=pad+'px';
+			
+			alert(oUl.offsetWidth);
+		}
+		
+		function getRand(a,b){
+			return Math.floor(Math.random()*(a-b))+b;
+		}
+		
+	</script>
+</html>

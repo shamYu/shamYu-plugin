@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		在body内插入一个div,div内容随意.
+//		在插入的div前插入一个p,p的内容随意.
+//		在p内部插入一个span,span内容随意.
+//		在p前面插入一个h3标签,h3标签的内容随意.
+//		h3前面插入另一个div,div的内容插入一个标签并显示图片.
+//		最后,把显示在body最上面的div放到最下面的div的前面。
+		
+		var oDiv=document.createElement("div");
+		document.body.appendChild(oDiv);
+		oDiv.innerText='我是下面的div';
+		
+		var oP=document.createElement("p");
+		document.body.insertBefore(oP,oDiv);
+		oP.innerText='我是div上面的p';
+		
+		var oSpan=document.createElement("span");
+		oP.appendChild(oSpan);
+		oSpan.innerText='我是p里面的内容';
+		
+		var oH3=document.createElement("h3");
+		document.body.insertBefore(oH3,oP);
+		oH3.innerText='我是p前面的h3';
+		
+		var oDiv2=document.createElement("div");
+		document.body.insertBefore(oDiv2,oH3);
+		
+		var oImg=document.createElement("img");
+		oDiv2.appendChild(oImg);
+		oImg.src='../img/bb.jpg';
+		oImg.width='200';
+		
+		document.body.insertBefore(oDiv2,oDiv);
+		
+	</script>
+</html>

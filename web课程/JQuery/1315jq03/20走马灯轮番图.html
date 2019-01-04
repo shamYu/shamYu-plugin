@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				float: left;
+				line-height: 300px;
+				width: 100px;
+				height: 300px;
+				text-align: center;
+				list-style: none;
+				font-size: 30px;
+			}
+			ul{
+				width: 2500px;
+			}
+			#wrap{
+				width: 500px;
+				height: 300px;
+				overflow: hidden;
+				margin: 100px auto;
+				border:1px solid #000;
+				position: relative;
+			}
+			.red{
+				background: red;
+			}
+			.blue{
+				background: blue;
+			}
+			.orange{
+				background: orange;
+			}
+			.green{
+				background: green;
+			}
+			.pink{
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<ul>
+				<li class='red'>1</li>
+				<li class='blue'>2</li>
+				<li class='orange'>3</li>
+				<li class='green'>4</li>
+				<li class='pink'>5</li>
+				<li class='red'>1</li>
+				<li class='blue'>2</li>
+				<li class='orange'>3</li>
+				<li class='green'>4</li>
+				<li class='pink'>5</li>
+			</ul>
+		</div>		
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var liW=$('li').outerWidth();
+		var ulW=liW*$('li').length;
+		
+		var timer=setInterval(move,2000);
+		
+		$('#wrap').hover(function(){
+			//鼠标移入停止当前动画
+			$('ul').stop();
+			clearInterval(timer);
+		},function(){
+			//鼠标移出默认移动一次
+			move();
+			timer=setInterval(move,2000);
+		})
+		
+		function move(){			
+			$('ul').animate({marginLeft:-ulW/2},2000,'linear',function(){
+				$('ul').css('marginLeft',0)
+			});			
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//用var声明的全局变量就相当于给window添加一个a属性
+//		var a=10;
+//		
+//		function show(){
+//			alert(a);//10
+//			alert(window.a);//10
+//			alert(this.a);//10
+//		}
+//		
+//		show();
+		
+		var a=10;
+//		let a=10;//打印NaN
+		
+		(function(a){
+			console.log(this.a+a);//40
+		})(
+			(function(a){
+				return this.a=this.a+a;
+			})(10)
+		)
+		
+	</script>
+</html>

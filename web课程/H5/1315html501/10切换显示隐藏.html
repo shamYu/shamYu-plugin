@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				display: none;
+			}
+			.active{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="切换" />
+		<div class='active'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oBtn=document.getElementById("btn");
+		var oDiv=document.querySelector('div');
+		
+		oBtn.onclick=function(){
+			oDiv.classList.toggle('active');
+		}
+		
+//		var flag=true;		
+//		oBtn.onclick=function(){
+//			if(flag){
+//				oDiv.style.display='none'
+//			}else{
+//				oDiv.style.display='block'
+//			}
+//			flag=!flag;
+//		}
+				
+	</script>
+</html>

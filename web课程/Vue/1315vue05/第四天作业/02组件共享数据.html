@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <input type="button" value='插入p' @click='count++'>
+        <div is='vDiv' :count='count'></div>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script>
+    
+    //把app内的div变成子组件,每点击一次按钮,在组件内插入一个p,p的内容随意.
+
+    const vDiv={
+        template:
+        `<div>
+            <p v-for='d in count'>dddddddd</p>
+        </div>`,
+        props:['count']
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            count:0
+        },
+        components:{vDiv}
+    })
+</script>
+</html>

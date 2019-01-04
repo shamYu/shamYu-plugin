@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1' abc='哈哈哈哈11' edf='哈哈哈哈111' style='杨幂我爱你'>dfasdf</div>
+		<input type="checkbox" id='check' value="" />
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+		var oCheck=document.getElementById("check");
+		
+//		console.log(oDiv.abc);
+//		console.log(oDiv.id);
+		
+//		Attribute->标签的行间属性。可以获取固有属性和自定义属性
+		var val=oDiv.getAttribute('abc');
+		var val1=oDiv.getAttribute('edf');
+		var id=oDiv.getAttribute('id');
+		
+		//就算是特殊属性，也一定获取的是行间的属性值
+		var sSt=oDiv.getAttribute('style');
+		var schecked=oCheck.getAttribute('checked');
+		
+//		console.log(val);
+//		console.log(val1);
+//		console.log(id);
+		console.log(sSt);
+		console.log(oDiv.style);		
+		console.log(schecked);
+		
+		//设置。第一个参数是要设置的属性名，第二个参数是设置的属性值
+		oDiv.setAttribute('abc','hahahhahahah');
+		//设置style属性，使之添加样式
+		oDiv.setAttribute('style','background: red;');
+		
+		//删除edf属性
+		oDiv.removeAttribute('edf');
+		
+	</script>
+</html>

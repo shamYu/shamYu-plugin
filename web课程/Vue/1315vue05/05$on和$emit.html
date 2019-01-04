@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        {{msg}}
+        <!-- 给子组件添加自定义事件send -->
+        <!-- <div is='vDiv' @send='getData'></div> -->
+        <div is='vDiv' :fn='getData'></div>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    //给子组件添加一个自定义事件send，当send事件发生时，触发一个函数，让这个函数改变父组件的数据
+    const vDiv={
+        template:'<input type="text" v-model="msg" />',
+        data(){
+            return {
+                msg:'hahah'
+            }
+        },
+        props:['fn'],
+        created(){
+            //给当前的子组件添加一个自定义事件send，当send事件发生时，触发fn函数.
+            //第一个参数是事件名,(不要用驼峰),第二个参数是事件发生时要触发的函数.
+            this.$on('send',this.fn);
+            //默认让父组件的msg与当前子组件的msg相同.
+            this.$emit('send',this.msg);            
+        },
+        watch:{
+           msg(){
+               //每次msg变化,都触发组件的自定义事件send,并且将数据出入事件触发的函数fn
+               this.$emit('send',this.msg);
+           }
+        }
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            msg:''
+        },
+        methods:{
+            getData(val){
+                this.msg=val;
+            }
+        },
+        components:{vDiv}
+    })
+</script>
+</html>

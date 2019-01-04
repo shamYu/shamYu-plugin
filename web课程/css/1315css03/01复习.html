@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				border:1px solid #000;
+			}
+			span{
+				margin-top:50px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		
+		块级元素与行内元素:
+			块级元素:默认占一行(宽与父元素的宽一致),高被内容撑开.可以设置宽高.垂直方向的margin会重叠.
+				解除margin重叠:给父元素加,padding-top,border-top,overflow:hidden;
+			行内元素:不占一行,从左往右排列.宽高都被内容撑开.不可以设置宽高(input和img例外).垂直方向的margin和padding设置后无效.
+			
+			行内块级:不占一行,从左往右排列.宽高都被内容撑开.可以设置宽高.<!--垂直方向的margin与padding正常.-->
+				       行内块级元素之间默认就会有一定的空白间隙.
+				       解决方法->1:确保前一个元素的闭标签与后一个元素的开标签之间没有空格;2:父元素设置字号为0;
+			
+			盒模型:
+				盒子的容积:width和height
+				盒子的体积:width+padding+border(肉眼看到的盒子大小);
+				盒子的所占空间:width+padding+border+margin(父元素能放多少子元素,取决于子元素的所占空间和);
+				
+			选择器的优先级:
+				!important>行间>id>类,属性>标签>*>浏览器样式>继承;				
+				如果有多个选择器:先看id个数,然后类,属性的个数,最后标签的个数,如果都一样,谁写在后面谁厉害;
+			
+			<!--background-repeat:no-repeat.
+			background-repeat-x:no-repeat.
+			background-repeat-y:no-repeat.-->
+			
+			background-position:60px 60px;
+			background-position-x:60px;
+			background-position-y:60px;
+				
+		<div>
+			<span>hhh</span>
+		</div>
+	</body>
+</html>

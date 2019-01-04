@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#oC{
+				border:3px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='oC' width="500" height='500'></canvas>
+	</body>
+	<script type="text/javascript">
+		
+		//Promise->封装异步操作
+		
+		var oC=document.getElementById("oC");
+		var oGc=oC.getContext('2d');
+				
+//		var oImg=new Image();		
+//		oImg.src='img/fourimg.gif';		
+//		oImg.onload=function(){
+//			oGc.drawImage(oImg,10,10,400,400);
+//		}
+//		
+//		var oImg=new Image();		
+//		oImg.src='img/fourimg.gif';		
+//		oImg.onload=function(){
+//			oGc.drawImage(oImg,3,3,300,300);
+//			console.log('哈哈哈')
+//		}
+		
+		//经过封装的img.onload
+		
+		function showImg(success){
+			var oImg=new Image();		
+			oImg.src='img/fourimg.gif';		
+			oImg.onload=function(){
+				success(oImg)
+			}
+		}
+		
+		showImg(function(img){
+			oGc.drawImage(img,10,10,400,400);
+		})
+		
+		showImg(function(img){
+			oGc.drawImage(img,3,3,300,300);
+			console.log('哈哈哈')
+		})
+				
+	</script>
+</html>

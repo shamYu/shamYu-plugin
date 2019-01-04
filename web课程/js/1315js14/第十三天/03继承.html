@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		通过构造函数创建一个类,用于表示1315班级的女生.(可以实例化任何一个1315的女生);
+//		通过构造函数创建一个少女类,少女类应该拥有的特质随意定义。
+//		让1315的女生类继承少女类，使实例化的任何一个女生都能拥有少女类的特质。
+		
+		function Girl(){
+			this.sex='女';
+			this.merryed=false;
+		}
+		
+		Girl.prototype.fov=function(){
+			console.log('喜欢逛街');
+		}
+		
+		function Girl_1315(name,age){
+			Girl.call(this);
+			this.name=name;
+			this.age=age;
+		}
+		
+		Girl_1315.prototype=new Girl();
+		
+		var fengjin=new Girl_1315('风琴',22);
+		
+	
+		
+		
+	</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*>子选择器*/
+			/*选择器1>选择器2->选中选择器1匹配的元素里面选择器2选中的元素*/
+			/*子选择器选不中孙子元素*/
+			/*子选择器 >  ->body里面所有的子元素*/
+			body>*{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='box'>222</div>
+		<p class='box'>
+			<span>span</span>
+		</p>
+	</body>
+</html>

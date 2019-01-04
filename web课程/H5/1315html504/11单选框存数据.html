@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="radio" name="superman" value="王八宏" />王八宏
+		<input type="radio" name="superman" value="张文茂" />张文茂
+	</body>
+	<script type="text/javascript">
+		
+		//窗口关闭会触发unload事件(刷新也会触发)
+		window.onunload=function(){
+			
+			var aInput=document.querySelectorAll('input');			
+			for(var i=0;i<aInput.length;i++){
+				if(aInput[i].checked){
+					window.localStorage.setItem('superman',aInput[i].value)
+				}
+			}
+		}
+		
+	</script>
+</html>

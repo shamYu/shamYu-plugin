@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<div onclick='show()' id='div1' title='我是一个可爱的div' style='width:100px;height:100px;background:red' class="box">一般人我不告诉他</div>-->
+	</body>
+	<script type="text/javascript">
+		
+//		创建一个div对象.思路与书写一个div标签是一样的,可以以上面的模板作为参考
+		
+		var oDiv={
+			tag:'div',
+			id:'div1',
+			title:'我是一个可爱的div',
+			css:{
+				width:'100px',
+				height:'100px',
+				background:'red'
+			},
+			className:'box',
+			innerText:'一般人我不告诉他',
+			click:show,
+		}
+		
+		function show(){
+			alert(100);
+		}
+		
+		CreateEle(oDiv);
+		
+		function CreateEle(obj){
+			var oDiv=document.createElement(obj.tag)
+			document.body.appendChild(oDiv);
+			oDiv.id='div1';
+			oDiv.title='我是一个div';
+			oDiv.className='box';
+			for(var prop in obj.css){
+				oDiv.style[prop]=obj.css[prop];
+			}
+			oDiv.innerText=obj.innerText;
+			oDiv.addEventListener('click',obj.click);
+		}
+		
+	</script>
+</html>

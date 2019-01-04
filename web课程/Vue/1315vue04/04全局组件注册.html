@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+        <!-- 可以通过一个自定义标签来插入子组件，插入后这个自定义标签会被删除 -->
+        <!-- <sonvm></sonvm> -->
+        <!-- 如果自定义标签的名字带-,可以使用驼峰命名 -->
+        <v-sonvm></v-sonvm>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+    //全局组件注册.第一个参数是组件名,第二个参数就是vue实例的参数对象
+    Vue.component('vSonvm',{
+        template:'<p @click="show()">{{msg}}</p>',
+        data(){
+            return {
+                msg:'我是子组件'
+            }
+        },
+        methods:{
+            show(){
+                alert('我是子组件的p');
+            }
+        }
+    })
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            msg:'老娘是父组件'
+        }
+    })
+</script>
+</html>

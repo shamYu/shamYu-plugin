@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background: #000;
+			}
+			#oC{
+				background: #fff;
+				margin-left:200px;
+				margin-top:50px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='oC' width="500" height="500">
+			您的浏览器不支持canvas绘图
+		</canvas>
+	</body>
+	<script type="text/javascript">
+		
+		var oC=document.getElementById("oC");
+		//oGc->绘图工具(画布)->通过canvas标签的getContext()就能获得一个绘图的工具.
+		var oGc=oC.getContext('2d');
+		
+//		路径->给轮廓分组,不管是fill()和stroke(),都会对最近的一个路径进行着色
+		
+//		oGc.fillRect(100,100,100,100);
+		
+		var num=0;
+		//canvas动画是一帧一帧的执行。
+		//下一帧绘制前，需要上一帧的画布清除掉。
+		setInterval(function(){
+			oGc.clearRect(0,0,500,500);
+			num++;
+			oGc.fillRect(num,100,100,100);
+		},10);
+		
+	</script>
+</html>

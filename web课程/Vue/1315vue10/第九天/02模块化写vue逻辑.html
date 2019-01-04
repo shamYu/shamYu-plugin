@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            display: flex;
+            list-style: none
+        }
+        a{
+            color:#fff;
+            text-decoration: none
+        }
+        li{
+            padding: 20px 50px;
+            background: #999;
+            margin:1px 0 0 1px
+        }
+        #app{
+            widows: 1200px;
+            position: relative;
+        }
+        #main{
+            height:300px;
+            display: flex
+        }
+        #main>div{
+            height:300px;
+            flex-grow: 1;
+            margin-left: 1px;
+            background: #f5f5f5;
+        }
+        body{
+            display: flex;
+            justify-content: center
+        }
+        #login{
+            display:block;
+            position: absolute;
+            background: #fff;
+            border:3px solid #000;
+            box-shadow: 0 0 10px #000;
+            left:100px;
+            top:100px;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <input type="button" value='登录'>
+        <div id='login'>
+            <input type="text">
+            <input type="button" value='login'>
+        </div>
+        <div id='div1'>
+            <ul>
+                <li><a href='#'>首页</a></li>
+                <li><a href='#'>活动</a></li>
+                <li><a href='#'>咨询</a></li>
+                <li><a href='#'>攻略</a></li>
+                <li><a href='#'>联系我们</a></li>
+                <input type="text">
+            </ul>
+        </div>
+        <div id='main'>
+            <div id='aside'>
+                <input type='text' />
+                <p>左侧内容</p>
+            </div>
+            <div id='article'>
+                <input type='text' />
+                <p>右侧内容</p>
+            </div>
+        </div>
+        <div id='footer'>
+            <ul>
+                <li>友情链接1</li>
+                <li>友情链接1</li>
+                <li>友情链接1</li>
+                <li>友情链接1</li>
+                <li>友情链接1</li>
+            </ul>
+            <ul>
+                <li>友情链接2</li>
+                <li>友情链接2</li>
+                <li>友情链接2</li>
+                <li>友情链接2</li>
+                <li>友情链接2</li>
+            </ul>
+            <ul>
+                <li>友情链接3</li>
+                <li>友情链接3</li>
+                <li>友情链接3</li>
+                <li>友情链接3</li>
+                <li>友情链接3</li>
+            </ul>
+            <input type="text">
+        </div>
+    </div>
+</body>
+<script>
+    //利用脚手架,实现如上页面。把除app之外所有有id的div都做成单文件组件。
+    //点击登录按钮，弹出登录窗login。
+    //在login内文本框输入文本信息，点击logo按钮。将所有文本框内输入的信息显示在页面其他input上。
+</script>
+</html>

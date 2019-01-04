@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		function fn(time,str){
+//			setTimeout(function(){
+//				console.log(str);
+//			},time);
+//		}
+		
+//		fn(1000,'哈哈哈哈哈');		
+//		fn('哈哈哈哈');//undefined,因为定时器没有时间
+		
+//		function fn (obj){
+//			//默认参数
+//			var data={
+//				time:1000,
+//				str:'默认内容'
+//			}
+//			
+			//实参合并默认参数
+//			if(obj){
+//				$.extend(data,obj)
+//			}
+//			
+//			setTimeout(function(){
+//				console.log(data.str);
+//			},data.time);
+//		}
+		
+//		fn({str:'哈哈哈'});
+//		fn();
+
+//--------------------------------------------------------------------------------------------------
+		//默认不传参数，因此time和str使用默认值
+//		function fn({time=1000,str='默认内容'}={}){
+//			console.log(time);
+//			console.log(str);
+//			setTimeout(function(){
+//				console.log(str);
+//			},time);
+		}
+		
+//		fn({str:'哈哈哈'}); 1000, 哈哈哈
+//		fn({str:'哈哈哈',time:2000}); 2000 哈哈哈
+//		fn(); 1000 默认内容
+		
+		//默认传1000和'默认内容',如果传递别的数据，就会覆盖
+//		function fn({time,str}={time:1000,str:'默认内容'}){
+//			console.log(time);
+//			console.log(str);
+//			setTimeout(function(){
+//				console.log(str);
+//			},time);
+//		}
+		
+//		fn({str:'哈哈哈'});//undefined，哈哈哈
+//		fn({str:'哈哈哈',time:2000});// 2000,哈哈哈
+//		fn();//1000  默认内容
+		
+	</script>
+</html>

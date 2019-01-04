@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+        <!-- 可以通过一个自定义标签来插入子组件，插入后这个自定义标签会被删除 -->
+        <!-- <sonvm></sonvm> -->
+        <!-- 如果自定义标签的名字带-,可以使用驼峰命名 -->
+        <v-sonvm></v-sonvm>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            msg:'老娘是父组件'
+        },
+        //局部组件
+        //子组件也同时是一个vue实例。
+        components:{
+            'vSonvm':{
+                //template子组件的html部分。是一个字符串。
+                template:'<p @click="show()">{{msg}}</p>',
+                //子组件的data必须是函数，然后return一个数据对象
+                data(){
+                    return {
+                        msg:'我是子组件'
+                    }
+                },
+                methods:{
+                    show(){
+                        alert('我是子组件的p');
+                    }
+                }
+            }
+        }
+    })
+</script>
+</html>

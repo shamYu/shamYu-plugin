@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*#div1里面的div并且又是box*/
+			#div1>div.box{
+				background: red;
+			}
+			#div2>div.box{
+				background: green;
+			}
+			
+			/*#div>div*/
+			/*body里面id为div的元素*/
+			/*body [id='div']*/
+			
+			/*body里面的div并且id又是box的元素*/
+			/*body div[id='box']*/
+			
+			/*body里面的div并且属性abc为box的元素里面的子元素p*/
+			/*body div[abc='box']>p*/
+			
+			/*body里面的div并且属性abc为box的元素里面的子元素p里面的所有span并且类又是box的元素
+			body div[abc='box']>p span.box
+			
+		</style>
+	</head>
+	<body>
+		<div>1</div>
+		<p>p</p>
+		<div class='box'>1</div>
+		<p class='box'>p</p>
+		<div id='div1'>
+			<div class='box'>1</div>//加红色背景
+			<div>ddd</div>
+			<p class='box'>p</p>
+		</div>
+		<div id='div2'>
+			<div class='box'>1</div>//加绿色背景
+			<p class='box'>p</p>
+		</div>
+	</body>
+	先写html(标签)->写样式
+				->写选择器->对号入座写样式
+						  ->1:写布局样式.
+						  ->2:写修饰样式.
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin-left:1px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div id='div1'>这是第0次点击</div>
+		<div id='div2'>这是第0次点击</div>-->
+<!--		<div>这是第0次点击</div>-->
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+		var oDiv1=document.getElementById("div2");
+		
+		var iCount=0;		
+		oDiv.onclick=function () {
+			iCount++;
+			oDiv.innerText='这是第'+iCount+'次点击';
+		}
+		
+		var iCount1=0;		
+		oDiv1.onclick=function () {
+			iCount1++;
+			oDiv1.innerText='这是第'+iCount1+'次点击';
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		var xhr=abc();
+		//前面的程序报错，导致后面的代码不执行。
+//		console.log('请求到数据了');
+		
+//		try{
+			//有可能出错，有可能异常的代码
+//			var xhr=abc();
+//		}catch(e){
+			//如果发生了错误，就可以在这里捕获到异常的信息(原因);
+			//e->默认的错误信息
+//			console.log(e);
+//		}
+		
+//		console.log('请求到数据了');
+		
+		
+//		try{
+			//手动抛错
+//			throw new Error('我FFFFF，佛慈悲');
+//		}catch(e){
+			//e->手动抛错时,显示自定义错误信息.
+//			console.log(e);
+//		}		
+//		console.log('请求到数据了');
+		
+
+		try{
+			if(!XMLHttpRequest){
+				throw new Error('你的浏览器不支持XMLHttpRequest');
+			}			
+		}catch(e){
+			//e->手动抛错时,显示自定义错误信息.
+			console.log(e);
+		}
+		
+		
+	</script>
+</html>

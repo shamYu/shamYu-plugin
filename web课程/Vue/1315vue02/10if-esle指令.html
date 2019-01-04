@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.active{
+            display: none
+        }
+        /* vue还没调用时，样式隐藏视图，vue调用后会删除v-cloak指令，以显示视图 */
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div" v-cloak>
+        <!-- v-if->用于显示隐藏,表达式的值是true就显示,false就隐藏,-->
+        <!-- <div v-if='false'>{{msg}}</div> -->
+        <!-- <div v-if='flag'>{{msg}}</div> -->
+
+        <!-- v-show是通过修改样式来实现显示隐藏.display:none隐藏 -->
+        <!-- <div v-show='flag'>{{msg}}</div> -->
+
+        <!-- 只显示第一个div,因为第一个条件是真,隐藏不会进行后续判断 -->
+        <div v-if='false'>11111</div>
+        <div v-else-if='true'>22222</div>
+        <div v-else-if='true'>23423424</div>
+        <div v-else-if='true'>34234234</div>
+        <div v-else-if='true'>3434343</div>
+        <div v-else-if='true'>22222</div>
+        <div v-else>33333</div>
+
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            msg:'11111111111',
+            flag:true,
+        }
+    });
+
+</script>
+</html>

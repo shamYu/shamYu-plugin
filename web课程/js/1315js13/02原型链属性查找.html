@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		var a={
+//			name:'a'
+//		}
+//		
+//		var b={
+//			name:'b'
+//		}
+//		
+//		var c={};
+//		
+//		c.__proto__=b;
+//		b.__proto__=a;
+//		
+//		console.log(c.name);//打印b  c->b->a->Object.prototype
+//		
+//		Object.prototype.name='皇帝';
+//		c.__proto__=Object.prototype;
+//		console.log(c.name);//打印皇帝
+
+//---------------------------------------------------------------------------------------		
+		
+		var a={name:'a'};
+		var b={age:32};
+		
+		b.__proto__=a;
+		
+		console.log(b.name);//a            // b->a->Object.prototype
+		console.log(a.age);	//undefined    //a->Object.prototype
+		
+		
+		
+	</script>
+</html>

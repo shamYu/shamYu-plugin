@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var parent={
+			money:800000
+		}
+		
+		var son={
+			name:'123',
+			age:'88'
+		}
+		
+		son.__proto__=parent;
+		
+		//只有自定义属性是可以forin检测到的。
+		
+		//for in 循环不只循环对象的私有属性，循环对象整个原型链上的可枚举属性。
+		for(var prop in son){
+			console.log(prop);
+		}
+		
+	</script>
+</html>

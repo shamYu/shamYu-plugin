@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+				list-style: none;
+			}
+			
+			ul{
+				height: 800px;
+				/*弹性盒模型声明，要给容器添加这个样式。2012年的新语法*/
+				display:flex;
+				
+				/*justify-content->确定项目在当前的方向轴上的分布方式*/
+		
+				/*确定当前的排列在Y轴*/
+				flex-direction:column;
+				/*X轴的开始位置在左边.Y轴的开始位置在上边*/
+				
+				/*默认值，设置项目在当前轴的开始位置对齐(左边)*/
+				justify-content:flex-start;
+				justify-content:flex-end;
+				/*设置项目在当前轴的中间位置对齐*/
+				justify-content:center;
+				
+				/*每个项目的左右间距必定相等*/
+				/*justify-content:space-around;*/
+				/*项目与项目之间的距离必定相等*/
+				/*justify-content:space-between;*/
+				
+			}
+			li{
+				width: 200px;
+				height: 100px;
+				background: red;
+				margin-left:1px;
+				margin-top:1px;
+				text-align: center;
+				line-height: 100px;
+				color:#fff;
+				font-size:24px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//object,arr,function->都是引用类型
+		
+		var arr=[1,2,3,4,5,6];
+		
+		//因为数组是引用类型，因此不能直接赋值来进行缓存
+//		var arr2=arr;
+
+//		创建新数组
+		var arr2=[];
+//		循环复制所有的元素		
+		for(var i=0;i<arr.length;i++){
+			arr2.push(arr[i]);
+		}
+		
+		for(var i=0;i<6;i++){
+			arr2.pop();
+		}
+		
+		function fn(){}; 
+		fn.abc='哈哈哈';
+		
+		//同一个对象的两个引用
+		var fn2=fn;		
+		fn2.abc='呵呵呵'
+		
+		
+	</script>
+</html>

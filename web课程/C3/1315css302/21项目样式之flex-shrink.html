@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+				list-style: none;
+			}
+			html,body{
+				height:100%
+			}
+			
+			ul{
+				height: 100%;
+				/*弹性盒模型声明，要给容器添加这个样式。2012年的新语法*/
+				display:flex;	
+			}
+			li{
+				/*flex-shrink->控制项目是否缩小(是否能小于初始的宽)，0表示不缩小*/
+				flex-shrink:1;
+				height: 100px;
+				/*为了让父元素剩余的宽和父元素的宽一致,将所有子元素默认的宽设为0*/
+				width: 200px;
+				background: red;
+				margin-left:1px;
+				margin-top:1px;
+				text-align: center;
+				line-height: 100px;
+				color:#fff;
+				font-size:24px;
+			}
+			li:nth-child(1){
+				/*通过设置某一个元素的flex-shrink来实现某一侧定宽其他自适应的布局*/
+				flex-shrink:0;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id='div' v-cloak>
+        <input type="button" value="显示和" @click='add()'>
+        {{num1+num2}}
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    // 运行页面时,取两个随机整数,取值1-10;然后再div内显示这两数的和.
+    //点击按钮时再随机取两个随机数,div内显示新随机数的和.
+    new Vue({
+        el:'#div',
+        data:{
+            num1:Math.floor(Math.random()*10)+1,
+            num2:Math.floor(Math.random()*10)+1,
+        },
+        methods:{
+            add(){
+                this.num1=Math.floor(Math.random()*10)+1;
+                this.num2=Math.floor(Math.random()*10)+1;
+            }
+        }
+    })
+</script>
+</html>

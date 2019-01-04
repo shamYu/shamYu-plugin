@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+			}
+			#div1{
+				background: red;
+			}
+			#div2{
+				background: green;
+				margin-left:300px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--要能拖，需要设置draggable="true"-->
+		<div id='div1' draggable="true">被拖的元素</div>
+		<div id='div2'>目标元素</div>
+	</body>
+	<script type="text/javascript">
+		
+//		被拖的元素有3个事件.		
+//		ondragstart->拖放开始事件.
+//		ondrag->拖放过程中的事件.(连续触发事件);
+//		ondragend->拖放结束数据.
+		
+//		目标元素有4个事件.	
+		
+//		ondragenter->被拖元素进入目标元素事件.
+//		ondragover->被拖元素在目标元素内都会触发.(连续触发)
+//		ondragleave->被拖元素离开目标元素事件.
+//		ondrop->被拖元素在目标元素内放开鼠标事件.
+//			这个事件默认不触发,需要在ondragover事件内阻止默认事件才能触发。
+//			ondrop事件在ondragend事件之前触发
+		
+//		1:拖放开始时,被拖元素背景变蓝,内容变为,正在拖.
+//		2:进入目标元素时,把目标元素背景变黄,目标元素的内容设置为'可以松开鼠标'了;
+//		3:离开目标元素时,目标元素背景和内容都变成原来的背景和内容.
+//		4:鼠标松开后,目标元素背景变成被拖元素的背景,内容变成'我变了';
+
+	</script>
+</html>

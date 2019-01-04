@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <input type='button' value='首页' @click='changePath("/home")' />
+        <input type='button' value='联系我们' @click='changePath("/about")' />
+        <router-view></router-view>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+
+    const router=new VueRouter({
+        //模式设置为历史记录模式，url上就不会显示#,默认是hash模式
+        mode:'history',
+        routes:[
+            {
+                path:'/home',
+                component:{template:'<div>主页</div>'}
+            },
+            {
+                path:'/about',
+                component:{template:'<div>联系我们</div>'}
+            }
+        ]
+    });
+
+    var vm=new Vue({
+        el:'#app',
+        router,
+        methods:{
+            changePath(str){
+                //通过$router.push(路径)->改变url的#后面的路径部分
+                this.$router.push(str);
+                this.$router.replace(str);
+            }
+        }
+    })
+
+</script>
+</html>

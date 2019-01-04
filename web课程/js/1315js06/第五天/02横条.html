@@ -1,0 +1,85 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>   
+</ul>
+<script>
+//	要求：每个li的背景是红蓝黄相间。
+//	      鼠标移入每个li，把被移入的li变成绿色，移出时变成原来的颜色（不能用样式:hover）
+//	      点击每个li，被点击的li变黑色，再次点击，变为原来的颜色。
+//	      如果li是黑色的，移入移出时li的颜色不会发生变化（还是黑的）
+	
+	var aLi=document.getElementsByTagName('li');
+	
+	for(var i=0;i<aLi.length;i+=3){
+		
+		aLi[i].style.background='red';
+		//每个li来一个自定义属性存自己的背景色
+		aLi[i].color='red';
+		
+		aLi[i+1].style.background='blue';
+		aLi[i+1].color='blue';
+		
+		aLi[i+2].style.background='yellow';
+		aLi[i+2].color='yellow';
+	}
+	
+//	var flag=true;
+	
+	for(var i=0;i<aLi.length;i++){
+		//每个li有一个自己的标志位，不能与别人的重复
+		//true表示不是黑色
+		aLi[i].flag=true;
+		aLi[i].onmouseover=turnGreen;
+		aLi[i].onmouseleave=turnBack;
+		aLi[i].onclick=turnBlack;
+	}
+	
+	function turnGreen(){
+//		if(this.style.background!='black'){
+//			this.style.background='green';
+//		}		
+		if(this.flag){
+			this.style.background='green';
+		}	
+	}
+	
+	function turnBlack(){
+//		this.style.background='black';
+		if(this.flag){
+			this.style.background='black';
+		}else{
+			this.style.background=this.color;
+		}
+		this.flag=!this.flag;
+	}
+	
+	function turnBack(){
+		//鼠标移出时背景变成自己的背景色
+//		if(this.style.background!='black'){
+//			this.style.background=this.color;
+//		}
+		if(this.flag){
+			this.style.background=this.color;
+		}		
+	}
+	
+	
+	
+</script>
+</body>
+</html>

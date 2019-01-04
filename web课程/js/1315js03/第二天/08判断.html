@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id='text1' value='' />
+		<input type="button" id='btn' value='按钮' />
+	</body>
+	<script type="text/javascript">
+//		点击按钮,判断input内输入的文字,如果输入的是数字，弹出这个数字，如果不是数字，弹出'这不是数字'
+//		要求：分别使用if else 和条件运算符写。
+		
+		var oText=document.getElementById("text1");
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function(){
+			
+//			if(+oText.value==+oText.value){
+//				alert(oText.value);
+//			}else{
+//				alert('这不是数字');
+//			}
+			
+			+oText.value==+oText.value ? alert(oText.value) : alert('这不是数字')
+			
+		}
+		
+	</script>
+</html>

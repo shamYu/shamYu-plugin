@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            background: red
+        }
+        .green{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- v-model->用于实现双向数据绑定 -->
+        <!-- 双向数据绑定->数据变化会导致视图更新,视图更新也会导致数据跟新 -->
+        <!-- v-model->只能用于表单元素,把一个vue实例的数据与value属性绑定 -->
+       <input type="text" v-model='msg'>
+       <!-- 单向的数据绑定 -->
+       <!-- <input type="text" :value="msg"> -->
+
+       <!-- v-model导致msg变化，msg变化又导致p视图的变化 -->
+       <p>{{msg}}</p>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'div',
+        data:{
+            msg:'上车',
+        }
+    })
+
+</script>
+</html>

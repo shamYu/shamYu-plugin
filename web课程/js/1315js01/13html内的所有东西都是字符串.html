@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div' style='width:100px;height:100px;background: red;'>案件司法金凤凰</div>
+	</body>
+	<script type="text/javascript">
+		
+//		width:100px;height:100px;background: red; ->字符串
+		
+//		标签的内容,属性值,样式值,在js里全部是字符串(文字);
+		
+		//属性值是字符串，div是id的属性值
+		var oDiv=document.getElementById("div");
+		//样式值是字符串
+		oDiv.style.color='red';
+		//内容是字符串
+		alert('案件司法金凤凰');
+		
+		//如果不加引号，则变成了变量名
+//		alert(alsdjhfjklsdfhkajsdhfjsdhfjkadfh);
+		
+	</script>
+</html>

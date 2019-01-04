@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<iframe src="http://www.baidu.com" width="1000" height="500"></iframe>-->
+		<iframe id='iframe' src="实验页面.html" width="1000" height="500"></iframe>
+	</body>
+	<script type="text/javascript">
+		
+		window.onload=function(){
+			
+	//		var oBtn=document.getElementById("btn");
+		
+			//iframe引入的页面是另一个页面,构成另一个窗口对象.
+			//在当前窗口内的文档里找到id为btn的元素
+	//		var oBtn=window.document.getElementById("btn");
+			
+			//在新窗口对象内的文档里找id为btn的元素,再添加事件;
+			
+			var oFrame=document.getElementById("iframe");
+			
+			//iframe引入的页面的窗口对象.
+//			var new_win=oFrame.contentWindow;		
+//			var oBtn=new_win.document.getElementById('btn');
+			
+			//iframe引入的页面的文档(document)对象.
+			var new_Doc=oFrame.contentDocument;
+			var oBtn=new_Doc.getElementById('btn');
+					
+			oBtn.onclick=function(){
+				alert('出来吧');
+			}
+		}
+		
+
+	</script>
+</html>

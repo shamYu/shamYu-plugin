@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="找人" />
+		<input type="text" value="" />
+	</body>
+	<script type="text/javascript">
+		
+		var arr=['班长大人','金刚欧巴','杨幂','洋洋','毛姐姐','唐姐姐','慧妹妹','浩哥哥'];
+		
+		//给input添加点击事件，查找文本框内输入的名字是否存在于数组中。
+		//如果存在，弹出其下标，并且将其从数组中删除。如果不存在，弹出'查无此人'
+		
+		var aInput=document.getElementsByTagName('input');
+		
+		aInput[0].onclick=function () {
+			var index=null;
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]==aInput[1].value){
+					index=i;
+				}
+			}
+			if(typeof index=='number'){
+				alert(index);
+				arr.splice(index,1);
+			}else{
+				alert('查无此人')
+			}
+		}
+
+		
+	</script>
+</html>

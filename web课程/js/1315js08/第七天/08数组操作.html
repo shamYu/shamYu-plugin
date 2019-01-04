@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>班长大人,金刚欧巴,杨幂,洋洋,毛姐姐,唐姐姐,慧妹妹,浩哥哥</div>
+		<input type="button" value="找人" />
+		<input type="text" value="" />
+		<p>你找到了:</p>
+	</body>
+	<script type="text/javascript">
+		
+	//给input添加点击事件，查找文本框内输入的名字是否存在于div中。
+	//如果存在，将找到的名字拼接到p元素的内容之中()并且删除div内相应的名字，如果没找到，弹出'查无此人';
+	//如果div内没有了名字，按照p内显示的名字顺序再将所有名字显示回div内，并且用&符号连接。
+	
+	var aInput=document.getElementsByTagName('input');
+	var oP=document.getElementsByTagName('p')[0];
+	var oDiv=document.getElementsByTagName('div')[0];
+	
+	aInput[0].onclick=findPeople;
+	
+	//将div内的人名转换为数组,然后操作数组
+	var arr=oDiv.innerText.split(',');
+	
+	var str=oP.innerText;
+	//把所有找到的人放入一个数组，方便用逗号连接
+	var people=[];
+	
+	function findPeople(){
+		var index=arr.indexOf(aInput[1].value);
+		if(index!=-1){
+			people.push(aInput[1].value);
+			oP.innerText=str+people.join(',');
+			//找到人名后删除原数组内的元素，然后再转换为字符串，显示在div内
+			arr.splice(index,1);
+			oDiv.innerText=arr.join(',');
+		}else{
+			alert('查无此人')
+		}
+		
+		if(arr.length==0){
+			
+			var i=oP.innerText.indexOf(':');
+			var names=oP.innerText.slice(i+1);
+			
+			arr=names.split(',');			
+			oDiv.innerText=arr.join(',');
+		}		
+	}
+	
+	</script>
+</html>

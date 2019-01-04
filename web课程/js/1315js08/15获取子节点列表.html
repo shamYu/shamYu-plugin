@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'>
+			<p>pppp</p>
+			的发生
+			<h3>h3</h3>
+			杨幂
+			<p>ppppp2</p>
+			<p>ppppp2</p>
+			<p>ppppp2</p>
+			<!--冰冰-->
+			<div>div</div>
+			<!--冰冰-->
+			<br />
+			<br />
+			<br />
+			<br />
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+//		获取子节点数组的中文公式:
+//			元素节点.childNodes;
+		
+		var nodes=document.getElementById("div1").childNodes;
+		
+		//循环所有子节点，判断当前的节点是不是p元素，如果是，就变红。
+//		for(var i=0;i<nodes.length;i++){
+//			if(nodes[i].nodeName=='P'){
+//				nodes[i].style.background='red';
+//			}
+//		}
+		
+		//非BR的元素的个数
+		var iCount=0;
+		
+		//自动计算div内非BR的元素个数
+		for(var i=0;i<nodes.length;i++){
+			if(nodes[i].nodeType==1){
+				if(nodes[i].nodeName!='BR'){
+					iCount++;
+				}				
+			}
+		}
+		
+		
+			
+	</script>
+</html>

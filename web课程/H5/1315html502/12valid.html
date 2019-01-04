@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<input type="text" required pattern="\d+" value="" />
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		
+		var oText=document.querySelector('[type="text"]');
+		var oBtn=document.querySelector('[type="submit"]');
+		
+//		valid->当输入的内容没有任何错误,就是true,但凡有任何一个错误,都说不是true.
+//		oText.validity->所有属性,但凡有任何一个属性的值是true,valid的属性就是false.
+//		需要所有的属性都是false,它才会变成true;
+		
+		oBtn.onclick=function(){
+			if(oText.validity.valid){
+				alert('输入正常');
+			}
+		}
+		
+	</script>
+</html>

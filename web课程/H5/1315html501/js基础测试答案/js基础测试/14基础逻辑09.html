@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin-top:1px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1'></div>
+		<div id='div2'></div>
+		<div id='div3'></div>
+	</body>
+	<script type="text/javascript">
+//		给div1添加点击事件,每次点击,根据点击次数将div1内容文本设置为'这是第*次点击';
+//		给div2添加点击事件,每次点击,根据点击次数将div2内容文本设置为'这是第*次点击';
+//		给div3添加点击事件,每次点击,根据点击次数将div3内容文本设置为'这是第*次点击';
+		
+		var aDiv=document.getElementsByTagName('div');
+		
+		var n1=0;
+		var n2=0;
+		var n3=0;
+		
+		aDiv[0].onclick=function () {
+			n1++;
+			aDiv[0].innerHTML='这是第'+n1+'次点击'
+		}
+		
+		aDiv[1].onclick=function () {
+			n2++;
+			aDiv[1].innerHTML='这是第'+n2+'次点击'
+		}
+		
+		aDiv[2].onclick=function () {
+			n3++;
+			aDiv[2].innerHTML='这是第'+n3+'次点击'
+		}
+		
+	</script>
+</html>

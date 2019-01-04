@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		for(var i=0;i<10;i++){
+			
+			//当i==5时，终止整个循环。后续的循环不执行。
+			//break之后的语句也没有机会执行(包括本次循环的i++);
+			
+//			console.log(i);
+
+//			if(i==5){
+				//终止循环
+//				break;
+//			}			
+//		}
+		
+//		console.log(i);//5
+		
+		for(var i=0;i<10;i++){
+			if(i==5){
+				//跳过当前循环，继续后面的循环
+				//使本次循环continue之后的代码不执行
+				continue;
+			}
+			console.log(i);
+		}
+		
+	</script>
+</html>

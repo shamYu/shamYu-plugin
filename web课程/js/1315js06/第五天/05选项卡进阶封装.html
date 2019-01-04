@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{ width:200px; position:relative;}
+			#div1 span{
+				position:absolute;
+				top:100px;
+				display:none;
+				cursor: pointer;
+			}
+			#div1 span:first-of-type{left:0;}
+			#div1 span:last-of-type{ right:0;}
+			#div1 div{ width:200px; height:200px; border:1px #000 solid; display:none;}
+			#div1 input.active{ background:red;}
+			#div2 div{ width:200px; height:200px; border:1px #000 solid; display:none;}
+			#div2 input.active{ background:red;}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<input class="active" type="button" value="1">
+		    <input type="button" value="2">
+		    <input type="button" value="3">
+		    
+		    <div style="display:block">11111111</div>
+		    <div>22222222</div>
+		    <div>33333333</div>
+		    
+		    <span>←</span>
+		    <span>→</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var aInput=document.getElementsByTagName('input');
+		var oDiv=document.getElementById("div1");
+		var aDiv=oDiv.getElementsByTagName('div');
+		
+		var aSpan=oDiv.getElementsByTagName('span');
+		
+		//当前显示的div的下标;
+		var index=0;
+		
+		for(var i=0;i<aInput.length;i++){
+			//每个li存一个下标
+			aInput[i].index=i;
+			aInput[i].onclick=changeTab;
+		}
+				
+		aSpan[1].onclick=showNext;		
+		aSpan[0].onclick=showPrev;		
+		oDiv.onmouseover=showArrow;
+		oDiv.onmouseleave=hideArrow;
+		
+		function showPrev(){
+			index = (index==0 ? aDiv.length-1 : --index);
+			tab(index);
+		}
+		
+		function showNext(){
+			index = (index==aDiv.length-1 ? 0 : ++index);
+			tab(index);
+		}
+		
+		function showArrow(){
+			for(var i=0;i<aSpan.length;i++){
+				aSpan[i].style.display='block';
+			}
+		}
+		
+		function hideArrow(){
+			for(var i=0;i<aSpan.length;i++){
+				aSpan[i].style.display='none';
+			}
+		}
+		
+		function changeTab(){
+			tab(this.index);
+			//被点击的li的下标变成当前显示的div的下标
+			index=this.index;
+		}
+		
+		function tab(index){
+			for(var i=0;i<aInput.length;i++){
+				aInput[i].className='';
+				aDiv[i].style.display='none';
+			}
+			aInput[index].className='active';
+			aDiv[index].style.display='block';
+		}
+		
+	</script>
+</html>

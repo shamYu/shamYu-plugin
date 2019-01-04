@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" id="checkbox" value="" />
+	</body>
+	<script type="text/javascript">
+		
+		var oChek=document.getElementById("checkbox");
+		
+		window.onload=function(){
+			//本地存储,cookie存储的都是字符串,获取也只能获取到字符串.
+			var bol=window.localStorage.getItem('checked');
+			//checked需要布尔值.不是字符串.
+			oChek.checked=eval(bol);
+		}
+//		
+		window.onunload=function(){
+			window.localStorage.setItem('checked',oChek.checked);
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var str='amazing1';
+		
+//		substr(start,length)->第一个参数是开始提取的位置,第二个参数是提取字符串的长度
+//		var str1=str.substr(0,1);//a
+		
+//		var str1=str.substr(1,str.length-1);//mazing
+		
+		//如果省略掉第二个参数，那么会从开始下标开始获取所有的字符
+//		var str1=str.substr(1);//mazing
+		
+//		第一个a变大写
+//		str=str.charAt(0).toUpperCase()+str.substr(1);
+		
+//		第二个a变大写
+//		str=str.substr(0,2)+str.charAt(2).toUpperCase()+str.substr(3);
+		
+//		substring(start,end)->参数是两个下标,开始提取的下标和结束提取的下标.包头不包尾
+
+//		var str1=str.substring(0,4);//amaz
+		
+		//如果省略掉第二个参数，那么会从开始下标开始获取所有的字符
+//		var str1=str.substring(1);//第二字符之后所有的字符
+		
+//		slice(start,end)->参数是两个下标,开始提取的下标和结束提取的下标.包头不包尾
+//		此方法字符串与数组公有
+//		var str1=str.slice(0,1);//a
+		
+		//获取最后一个字符
+//		var str1=str.slice(str.length-1);
+		
+		//slice与substr的参数是负数，那么要与字符串的长度进行相加，转换为正数之后再计算
+//		var str1=str.slice(-1);
+//		var str1=str.substr(-1);
+		
+		//substring的参数如果是负数，就把所有的负数变为0
+		var str1=str.substring(-1);
+		
+//		var arr=[1,2,3,4,5,6];
+//		
+//		arr.slice(0,2);
+		
+	</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=[1,2,3,4,5,6,7];
+//		var arr=[0:1,1:2,2:3,3:4,4:5,5:6,6:7];
+//		
+//		for(var i=0;i<arr.length;i++){
+//			console.log(arr[i]);
+//		}
+
+		for(var i in arr){
+//			console.log(arr[i]);
+			console.log(i);
+		}
+		
+		var oYm={
+			name:'杨幂',
+			age:'32',
+			sex:'female',
+			exhusband:'刘禽兽',
+			height:168
+		}
+		
+//		for(var i=0;i<5;i++){
+//			console.log(oYm[prop]);
+//		}
+		
+//		for in循环,会根据对象的属性个数自定循环相应的次数.
+//		每次循环的prop就是当前循环到的属性的属性名
+		
+		for(var prop in oYm){
+//			console.log(oYm[prop]);
+			console.log(prop);
+		}
+		
+//		{
+//			var prop='name';
+//			console.log(oYm['name']);
+//			console.log(oYm.name]);
+//		}
+//		
+//		{
+//			var prop='age';
+//			console.log(oYm['age']);
+//			console.log(oYm.age]);
+//		}
+//		
+//		{
+//			var prop='sex';
+//			console.log(oYm['sex']);
+//			console.log(oYm.sex]);
+//		}
+		
+	</script>
+</html>

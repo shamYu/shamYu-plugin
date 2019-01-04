@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- v-on:事件名->指令->添加事件 -->
+        <!-- @事件名->v-on的简写 -->
+        <!-- <input type="button" value="按钮" v-on:click='change'> -->
+        
+        <!-- 隐式调用->点击时系统自动调用 -->
+        <!-- <input type="button" value="按钮" @click='change'> -->
+
+        <!-- 显示调用->点击时手动调用change(不是系统调用) -->
+        <!-- <input type="button" value="按钮" @click='change()'> -->
+
+        <!-- 传参数 -->
+        <!-- <input type="button" value="按钮" @click='change(100)'> -->
+
+        <!-- $event->手动传递事件对象作为实参的固定写法 -->
+        <input type="button" value="按钮" @click='change($event,100)'>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'div',
+        methods:{
+            change(ev,num){
+                alert(num);
+                console.log(ev);
+            }
+        }
+    })
+
+</script>
+</html>

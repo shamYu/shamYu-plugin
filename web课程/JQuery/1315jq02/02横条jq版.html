@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.red{
+				background: red;
+			}
+			.yellow{
+				background: yellow;
+			}
+			.blue{
+				background: blue;
+			}
+			.green{
+				background: green;
+			}
+			.black{
+				background: black;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		for(var i=0;i<$('li').length;i+=3){
+			$('li').eq(i).addClass('red');
+			$('li').eq(i+1).addClass('yellow');
+			$('li').eq(i+2).addClass('blue');
+		}
+		
+		$('li').mouseover(function(){
+			$(this).addClass('green');
+		});
+		
+		$('li').mouseleave(function(){
+			$(this).removeClass('green');
+		});
+		
+		$('li').click(function(){
+			$(this).toggleClass('black');
+		});
+		
+		
+		
+	</script>
+</html>

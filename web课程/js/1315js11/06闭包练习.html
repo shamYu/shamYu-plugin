@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var i=5;
+		
+//		5 什么都没做    4 把3存在第一个定时器里. 3 什么都不做   2->把1存在第二个定时器里. 1 什么都不做.
+		
+		while(i--){  
+			if(i%2){
+				show(i);
+			}
+		}
+		
+		function show(index){
+			setTimeout(function(){
+				console.log(index);//3,1
+			},500);
+		}
+		
+		
+//		var oYm={
+//			name:'杨幂',
+//			age:32,
+//			sex:'female',
+//			height:168
+//		}
+//		
+//		for(var prop in oYm){
+//			show(prop);
+//		}
+//		
+//		function show(i){
+//			setTimeout(function(){
+//				console.log(i);
+//			},500);
+//		}
+		
+//		for(var i=0;i<5;i++){
+//			show(i);
+//		}
+//		
+//		function show(i){
+//			setTimeout(function(){
+//				console.log(i);//0,1,2,3,4
+//			},500);
+//		}
+		
+//		var arr=[];
+//		
+//		for(var i=0;i<5;i++){
+//			arr.push(log(i));
+//		}
+//		
+//		function log (i){
+//			return function(){
+//				console.log(i);
+//			}
+//		}
+//		
+//		for(var j=0;j<5;j++){
+//			arr[j]();//0,1,2,3,4
+//		}
+		
+	</script>
+</html>

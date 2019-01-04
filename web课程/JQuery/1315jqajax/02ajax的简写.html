@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		
+//		$.get('php/getList.php',function(data){
+//			console.log(data);
+//		});
+		
+		//无法处理失败时的事情，如果需要处理失败的逻辑，需要使用$.ajax();
+//		$.get('php/getList.php').then(function(data){
+//			console.log(data);
+//		});
+		
+//		$.post('php/1.POST.php','username=888&age=9000').then(function(data){
+//			console.log(data);
+//		});
+		
+		$.post('php/1.POST.php',{username:888,age:1000}).then(function(data){
+			console.log(data);
+		});
+		
+
+		
+		
+	</script>
+</html>

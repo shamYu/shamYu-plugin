@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<img src="jQuerylbt/images/silder-play.png" alt="" />
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//页面上所有的资源加载完毕之后触发。
+		window.onload=function(){
+			console.log('我是onload');
+		};
+		
+		//页面上的DOM树加载完成之后就触发。
+		$(document).ready(function(){
+			console.log('我是ready');
+		});
+		
+//		$(document).ready()的简写。
+//		$(function(){
+//			$('div').css('background','red');
+//		})
+		
+	</script>
+</html>

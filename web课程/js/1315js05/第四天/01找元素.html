@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p abc='box'></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p abc='box1'></p>
+		<p abc='box'></p>
+		<p abc='box'></p>
+		<p abc='box2'></p>
+		<p abc='box'></p>
+		<p></p>
+		<p abc='box'></p>
+		<p abc='box3'></p>
+	</body>
+	<script type="text/javascript">
+//		找出以上abc属性值是box的p元素,给它们添加任意内容并且背景变红.
+
+		var aP=document.getElementsByTagName('p');
+		
+		for(var i=0;i<aP.length;i++){
+			var attr=aP[i].getAttribute('abc');
+			if(attr=='box'){
+				aP[i].innerText='asdfasdfasdf';
+				aP[i].style.background='red';
+			}
+		}
+		
+//		谁 -> 明天早上谁迟到谁就倒立.
+//		函数在未来的时间内发生.只有函数触发时，才能确定函数this表示什么东西。
+		
+	</script>
+</html>

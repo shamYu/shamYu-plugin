@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" placeholder="宽" value="" />
+		<input type="text" placeholder="高" value="" />
+		<input type="text" placeholder="内边距" value="" />
+		<input type="text" placeholder="边框" value="" />
+		<input type="button" id="btn" value="生成元素" />
+	</body>
+	<script type="text/javascript">
+		
+//		点击按钮在body内插入一个div,宽高内边距和边框的大小从文本框获取,边框颜色随意,背景红色.
+//		然后弹出这个div的可视宽高,面积宽高例如'这个div的可视宽高是300*300,面积宽高是100*100.....';
+		
+		var aInput=document.getElementsByTagName('input');
+		
+		aInput[4].onclick=insertEle;
+		
+		function insertEle(){
+			
+			var oDiv=document.createElement('div');			
+			document.body.appendChild(oDiv);
+			oDiv.style.background='red';
+			oDiv.style.width=aInput[0].value+'px';
+			oDiv.style.height=aInput[1].value+'px';
+			oDiv.style.padding=aInput[2].value+'px';
+			oDiv.style.border=aInput[3].value+'px solid #000';
+			
+			var o_w=oDiv.offsetWidth;
+			var o_h=oDiv.offsetHeight;
+			
+			var c_w=oDiv.clientWidth;
+			var c_h=oDiv.clientHeight;
+			
+			alert('这个div的可视宽高是'+o_w+'*'+o_h+',面积宽高是'+c_w+'*'+c_h);
+		}
+		
+		
+	</script>
+</html>

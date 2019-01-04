@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		for(var i=0;i<$('li').length;i++){
+//			$('li').eq(i).text(i+1);
+//		}
+		
+//		$('li').each(function(i,ele){
+			//this指向当前循环到的元素
+//			$(this).text(i+1);
+//			this.innerText=i+1;
+//		})
+		
+		//each()->用于循环元素集合
+		//i是当前循环到的li在所有li内的下标，ele是一个当前的jq对象对应的原生对象
+//		$('li').each(function(i,ele){
+//			ele.innerText=i+1;
+//			$(ele).text(i+1);
+//		})
+		
+//		forEach的第一个参数是当前循环到的元素,第二个是下标,jq的each方法正好相反
+//		arr.forEach(function(items,i){});
+		
+		var arr=[1,2,3,4,5];
+		
+//		arr.forEach(function(items,i){
+//			arr[i]++;
+//			items++;
+//		})
+		
+		//万能循环方法
+//		$.each(arr,function(i,items){
+//			arr[i]++;
+//		})
+		
+		$.each($('li'),function(i,items){
+//			items.innerText=i+1;
+			this.innerText=i+1;
+		})
+		
+	</script>
+</html>

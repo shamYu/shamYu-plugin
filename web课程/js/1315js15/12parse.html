@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//JSON.parse()能转换的字符串个数必须是严格的json对象的格式
+		
+		//严格的json格式
+//			1:属性名和属性值必须用双引号.不能单引号,不能没引号.如果属性值是数字,可以没有引号
+//			2:最后的属性后面不能有逗号,
+		
+//		JSON.parse()可以返回json对象也可以返回数组.
+		
+//		var str='{name:"杨幂"}';
+		var str='[{"name":"杨幂"}]';
+		
+		var obj=JSON.parse(str);	
+		
+		alert(obj[0].name);
+		
+		
+	</script>
+</html>

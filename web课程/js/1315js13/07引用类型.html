@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var a=100;
+		var b=a;
+		b=200;//a==100
+		
+		//基本类型->除了object之外的其他数据类型,基本类型是按值访问.
+		//基本类型经过赋值之后，还是两个变量.
+		
+		var oYm={
+			name:'杨幂'
+		}
+		
+		//引用类型赋值之后，两个标识符都指向同一个对象。(两个引用指向同一块内存地址);
+		var oFbb=oYm;
+		
+		oFbb.name='范冰冰';
+		
+		console.log(oYm.name);
+		
+		//oYm指向另一个对象，这时候oFbb还是指向杨幂
+		oYm={
+			name:'郭德纲'
+		}
+		
+		
+	</script>
+</html>

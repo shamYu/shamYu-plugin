@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点击" />
+	</body>
+	<script type="text/javascript">
+		
+//		两种事件流->
+//			微软提出->事件冒泡->事件从下往上传递
+//			网景提出->事件捕获->事件从上往下传递->IE浏览器内没有捕获阶段。
+
+//			事件委托使用事件冒泡或者事件捕获其实没有区别。但是事件捕获有兼容性问题，因此我们习惯用事件冒泡来实现事件委托。
+//			mouseleave，mouseenter->不支持事件冒泡，因此不能用来做事件委托
+//			如何知道一个事件支不支持冒泡，在这个事件的事件对象里，访问ev.bubbles,true表示支持，false表示不支持
+		
+		var oBtn=document.getElementById("btn");
+		
+		//addEventListener的第三个参数，表示事件在何种事件流触发。默认是flase，false表示在冒泡阶段触发，true表示在捕获阶段触发
+		//让点击时的show，在捕获阶段触发
+		oBtn.addEventListener('click',show,true);
+		document.addEventListener('click',show1,true);
+		
+		function show(){
+			alert('按钮')
+		}
+		
+		function show1(){
+			alert('文档')
+		}
+		
+		//这种添加事件的方式，事件句柄默认在冒泡阶段触发
+		oBtn.onclick=function(){}
+		
+		
+	</script>
+</html>

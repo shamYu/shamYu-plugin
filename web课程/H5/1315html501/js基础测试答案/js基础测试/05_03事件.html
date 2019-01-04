@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="按钮1" />
+		<input type="button" id="btn2" value="按钮2" />
+		<input type="button" id="btn3" value="按钮3" />
+	</body>
+	<script type="text/javascript">
+		//给每个按钮添加点击事件，点击时弹出自己的value属性值
+		
+//		var oBtn1=document.getElementById("btn1");		
+//		oBtn1.onclick=function () {
+//			alert(oBtn1.value);
+//		}
+
+//		var oBtn2=document.getElementById("btn2");		
+//		oBtn2.onclick=function () {
+//			alert(oBtn2.value);
+//		}
+
+//		var oBtn3=document.getElementById("btn3");		
+//		oBtn3.onclick=function () {
+//			alert(oBtn3.value);
+//		}
+		
+		function addClick (id) {
+			var oBtn=document.getElementById(id);		
+			oBtn.onclick=function () {
+				alert(oBtn.value);
+			}
+		}		
+		addClick('btn1');
+		addClick('btn2');
+		addClick('btn3');
+		
+//		思考以下做法是不行的,为什么
+//		for(var i=1;i<=3;i++){
+//			var oBtn=document.getElementById('btn'+i);		
+//			oBtn.onclick=function () {
+//				alert(oBtn.value);
+//			}
+//		}
+		
+	</script>
+</html>

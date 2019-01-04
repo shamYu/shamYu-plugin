@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		
+//		对象 -> 看得见摸得着的东西 -> 用户体验 -> 取决于题体验的印象 -> 这个对象有什么属性.
+		
+//		json对象->
+//		单独的{}表示json对象,在大括号里属性json对象的属性.每个属性间用逗号分开.
+//		属性名与属性值之间用:分开。
+
+//		属性名:属性值 -> 一个数值有一个名字 -> 键值对 -> key : value
+		
+//		{属性名1:属性值1,属性名2:属性值2},不要在json对象内属性其他代码;
+
+		var oYm={
+			name:'杨幂',
+			age:32,
+//			console.log(90),
+			sex:'女',
+			size:90,
+			looks:'美若天仙',
+			height:'168cm'	
+		}
+		
+//		对象属性值的访问:对象名.属性名
+//		修改属性值的访问:对象名.属性名=修改值
+//		添加属性值:对象名.新增属性名=新增属性值
+
+		//打印杨幂的年龄
+//		console.log(oYm.age);
+		
+//		js万物皆对象.-> 面向对象 
+//		oDiv -> 任何元素其实都是对象 -> 类型都是object
+		
+		var oYm={
+			name:'杨幂',
+			age:32,
+			sex:'女',
+			size:90,
+			looks:'美若天仙',
+			height:'168cm',
+			exhusband:{
+				name:'禽兽',
+				age:40,
+				looks:'禽兽一样',
+				height:'150cm'
+			}
+		}
+		
+		console.log(oYm.exhusband.age);
+		
+//		当一个对象的属性是函数时,这个属性就叫这个对象的方法
+		var oYm={
+			name:'杨幂',
+			age:32,
+			sex:'女',
+			size:90,
+			looks:'惨不忍睹',
+			height:'168cm',
+			exhusband:{
+				name:'禽兽',
+				age:40,
+				looks:'禽兽一样',
+				height:'150cm'
+			},
+			beBeauty:function(){
+//				oYm.looks='美若天仙'
+				this.looks='美若天仙';
+				console.log(this);
+			}
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#progress{
+				margin-top:20px;
+				width: 400px;
+				height: 40px;
+				background: #999;
+			}
+			#volume{
+				margin-top:20px;
+				width: 400px;
+				height: 20px;
+				background: #999;
+			}
+			body>div{
+				margin-left:100px;
+			}
+			#volume>div{
+				width: 50px;
+				height: 20px;
+				background: red;
+				cursor: move;
+				margin-left:350px;
+			}
+			#progress>div{
+				width: 50px;
+				height: 40px;
+				background: red;
+				cursor: move;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="">
+			<video controls>
+				<source src="Intermission-Walk-in_512kb.mp4" type="video/mp4"></source>
+				当前浏览器不支持 video直接播放，点击这里下载视频： <a href="myvideo.webm">下载视频</a>
+			</video>
+		</div>		
+		<div id='btn'>
+			<span id='duration'></span>
+			<span id='current'></span>
+			<input type="button" value="播放" />
+			<input type="button" value="暂停" />
+			<input type="button" value="静音" />
+			<input type="button" value="重播" />
+			<input type="button" value="全屏" />
+		</div>
+		<div id='progress'>
+			<div></div>
+		</div>
+		<div id='volume'>
+			<div></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+//		函数封装:一样的留下了,不一样的作为参数.
+//			  如果是变量不一样,那么把变量变成一个变量参数.
+//			   如果有多行代码不一样.那么应该把多行代码打包作为回调函数.
+		
+		window.onload=function(){
+			
+			var aInput=document.querySelectorAll('input');
+			var oV=document.querySelector('video');
+			var oDu=document.getElementById("duration");
+			var oCu=document.getElementById("current");
+			
+			var oVolume=document.querySelector('#volume>div');
+			var oProg=document.querySelector('#progress>div');
+			
+			var timer=null;
+			
+			//视频总时长
+			const duT=oV.duration;
+									
+			oDu.innerText = showTime(duT);									
+			oCu.innerText = showTime(oV.currentTime);
+						
+			oVolume.onmousedown=moveDiv(function(){
+				var scale=parseInt(oVolume.style.marginLeft)/350;
+				//设置音量
+				oV.volume=scale;
+			});
+			
+			oProg.onmousedown=moveDiv(function(){
+				var scale=parseInt(oProg.style.marginLeft)/350;
+				//根据拖动的距离设置视频进度
+				oV.currentTime=scale*duT;
+				//每次拖动进度条，根据当前的视频进度设置当前时间
+				oCu.innerText = showTime(oV.currentTime);
+			});
+			
+			aInput[0].onclick=function(){
+				oV.play();
+				//播放时开启定时器更新当前时间。设置滑块的偏移
+				timer=setInterval(function(){
+					oCu.innerText = showTime(oV.currentTime);
+					oProg.style.marginLeft=oV.currentTime/duT*350+'px';
+				},1000);
+			}
+			
+			aInput[1].onclick=function(){
+				oV.pause();
+				clearInterval(timer);
+			}
+			
+			aInput[2].onclick=function(){
+				if(oV.muted){
+					this.value='静音';
+				}else{
+					this.value='放声';
+				}
+				oV.muted=!oV.muted;
+			}
+			aInput[3].onclick=function(){
+				oV.currentTime=0;
+			}
+			aInput[4].onclick=function(){
+				oV.webkitRequestFullScreen();
+			}
+			
+			function showTime(time){
+				var h=Math.floor(time/3600);
+				var m=Math.floor(time/60);
+				var s=Math.floor(time%60);				
+				h= h<10 ? '0'+h : h;
+				m= m<10 ? '0'+m : m;
+				s= s<10 ? '0'+s : s;				
+				return h+':'+m+':'+s
+			}
+			
+			function moveDiv(fn){
+				return function(ev){
+					var ev=ev||window.event;
+					var disX=ev.clientX-this.offsetLeft;					
+					var _this=this;					
+					document.onmousemove=function(ev){
+						var ev=ev||window.event;
+						if(ev.clientX<=disX+100){
+							_this.style.marginLeft=0;
+						}else if(ev.clientX>=400-50+disX+100){
+							_this.style.marginLeft='350px';
+						}else{
+							_this.style.marginLeft=ev.clientX-disX-100+'px';
+						}
+						//每次拖动时，根据传入的回调函数，来确定是设置音量还是设置视频进度。
+						fn();
+					}
+					document.onmouseup=function(){
+						this.onmousemove=null;
+						this.onmouseup=null;
+					}
+				}				
+			}
+			
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'></div>
+	</body>
+	<script type="text/javascript">
+		
+//		给div1插入一个元素p,元素p的内容是'杨幂',id属性是:'p1';
+		
+		var oYm='杨幂';
+		var id='p1';
+		
+		var oDiv=document.getElementById("div1");		
+//		oDiv.innerHTML='<p id="p1">杨幂</p>';
+//		oDiv.innerHTML='<p id="id">oYm</p>';
+
+//		oDiv.innerHTML='<p id="id">'+oYm+'</p>';
+//		oDiv.innerHTML='<p id="'+id+'">'+oYm+'</p>';
+		
+//		oDiv.innerHTML='<p id="p1">'+oYm+'</p>';
+//		oDiv.innerHTML='<p id="'+id+'">'+oYm+'</p>';
+		
+		oDiv.innerHTML="<p id='p1'>杨幂</p>";		
+		oDiv.innerHTML="<p id='"+id+"'>"+oYm+"</p>";
+		
+//		1:删掉常量
+//		2:加引号
+//		3:在引号中间写两个+
+//		4:两个+中间写变量名
+		
+	</script>
+</html>

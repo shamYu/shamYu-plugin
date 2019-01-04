@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		预解析:
+//			程序运行之前,会将所有的声明提升到本作用域的顶端。注意:只提升声明，不提升赋值。(一定是在代码运行之前)
+		
+//		show();
+		
+		//运行之前，先把show放到全局作用域的顶端(show是在全局作用域内声明的)
+//		function show(){
+//			alert(100)
+//		}
+
+//------------------------------------------------
+//		alert(x);
+		
+		//把x的声明提升到全局作用域的顶端，赋值不提升
+//		var x=100;
+		
+//		相当于:
+//		var x;		
+//		alert(x);		
+//		x=100;
+//---------------------------------------------------	
+		
+		alert(x);//undefined,var x被提升了，虽然程序运行时x不会被赋值。
+		
+		if(false){
+			var x=100;
+		}
+		
+		
+	</script>
+</html>

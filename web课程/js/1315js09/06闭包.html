@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="按钮1" />
+		<input type="button" value="按钮2" />
+		<input type="button" value="按钮3" />
+		<input type="button" value="按钮4" />
+		<input type="button" value="按钮5" />
+		<input type="button" value="按钮6" />
+		<input type="button" value="按钮7" />
+		<input type="button" value="按钮8" />
+		<input type="button" value="按钮9" />
+		<input type="button" value="按钮10" />
+	</body>
+	<script type="text/javascript">
+		
+		var aInput=document.getElementsByTagName('input');
+		
+		for(var i=0;i<10;i++){
+			//循环10次，调用10次匿名函数，构成10个局部作用域，每个局部作用域内有一个不同的index
+			//点击相应的按钮，顺着相应的作用域链，找到相应的index的值。
+			(function(){
+				var index=i;
+				aInput[i].onclick=function(){
+					alert(index);
+				}
+			})();			
+		}
+		
+//		(function(){
+//			var index=0;
+//			aInput[0].onclick=function(){
+//				alert(index); //index->点击1的函数->第一个匿名函数->全局环境
+//			}
+//		})();
+//		
+//		(function(){
+//			var index=1;
+//			aInput[i].onclick=function(){
+//				alert(index); //index->点击2的函数->第二个匿名函数->全局环境
+//			}
+//		})();
+//		
+//		(function(){
+//			var index=2;
+//			aInput[i].onclick=function(){
+//				alert(index); //->点击3的函数->第三个匿名函数->全局环境
+//			}
+//		})();
+		
+		
+		
+	</script>
+</html>

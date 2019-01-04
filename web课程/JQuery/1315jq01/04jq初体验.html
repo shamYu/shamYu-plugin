@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin:0; padding:0;}
+			#div1{width:500px; height:500px; border:10px solid #000; margin:20px auto; position:relative;}
+			#div2{width:100px; height:100px; background:red; position:absolute; left:0; top:0;}
+		</style>
+	</head>
+	<body>
+		<div>发反反复复</div>
+		<div id="div1">
+			<div id="div2"></div>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//改单一样式.
+//		$('div').css('background','red');
+
+		//修改多个样式.
+		$('body>div:nth-child(1)').css({
+			background:"red",
+			width:'100px',
+			height:'100px'
+		});
+		
+		setInterval(function(){
+			$('#div2')
+			.animate({left:400},1000,'linear')
+			.animate({top:400},1000,'linear')
+			.animate({left:0},1000,'linear')
+			.animate({top:0},1000,'linear')
+		},4000);
+		
+	</script>
+</html>

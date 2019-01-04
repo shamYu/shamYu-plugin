@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+		<div id='div1' style='background:red'>大幅度</div>
+	</body>
+	<script type="text/javascript">
+//		点击按钮做判断,如果div的背景色是红色并且div有内容，则把div的内容清空，背景变成绿色；
+//					如果div的背景色不是红色或者div没有内容,则给div设置任意内容,并且把div背景变成红色
+		
+		var oDiv=document.getElementById("div1");
+		
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function () {
+			if(oDiv.style.background=='red' && oDiv.innerText!=''){
+				oDiv.innerText='';
+				oDiv.style.background='green';
+			}else if(oDiv.style.background!='red' || oDiv.innerText==''){
+				oDiv.innerText='朕要看美女';
+				oDiv.style.background='red';
+			}
+		}
+		
+	</script>
+</html>

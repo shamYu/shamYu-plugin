@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>0</div>
+	</body>
+	<script type="text/javascript">
+//		给div添加点击事件,每次点击,每次点击,其内部数字+1;
+//		当当前点击次数为偶数次时,弹出'这是偶数',否则弹出"这是奇数"；
+		var oDiv=document.getElementsByTagName('div')[0];
+		oDiv.onclick=function () {
+			this.innerHTML++;
+			var n=this.innerHTML;
+			if(n%2){
+				alert('这是偶数')
+			}else{
+				alert('这是奇数')
+			}
+		}
+	</script>
+</html>

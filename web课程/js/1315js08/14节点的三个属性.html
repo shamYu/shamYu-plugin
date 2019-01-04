@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'><!--杨幂-->范冰冰<span>hhh</span></div>
+	</body>
+	<script type="text/javascript">
+
+//		nodeType->节点类型
+//		nodeValue->节点的值
+//		nodeName->节点的名字
+
+//		document.doctype的nodeType是:10
+//		document的nodeType是9
+//		注释节点的nodeType是8
+//		文本节点的nodeType是3
+//		属性节点的nodeType是2
+//		元素节点的nodeType是1
+		
+//		nodeValue->一般只是文本节点和注释节点有nodeValue,元素节点的nodeValue一般是null
+//		nodeValue->元素节点用得最多 ->用于表示当前的元素节点是什么标签。
+		
+//		oDiv.nodeName -> "DIV" (全大写)
+//		document.body.nodeName ->"BODY"(全大写)
+//		
+//		oDiv.childNodes[0].nodeName "#comment"(注释节点的nodeName);
+//		oDiv.childNodes[1].nodeName "#text"(文本节点的nodeName);
+		
+		var oDiv=document.getElementById("div1");
+		
+		for(var i=0;i<oDiv.childNodes.length;i++){
+			console.log(oDiv.childNodes[i].nodeType);
+		}
+		
+	</script>
+</html>

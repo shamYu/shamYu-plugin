@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>   
+        <a href="#home">都是人才1</a>
+        <a href="#about">都是人才2</a>
+        <!-- <div id='div1'>肖振东,大晗,勒布朗源</div>
+        <div id='div2'>杨幂,范冰冰,胡歌</div> -->
+        
+        <!-- 路由视图,固定的标签名用router-view -->
+        <router-view></router-view>
+        <!-- <div is='router-view'></div> -->
+
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+
+    //单页应用->single page application->SPA->一个网站(项目)就一个页面.
+    //减少服务器请求.
+    //路由用来实现单页应用,url跳转是通过修改哈希值来实现的.(通过哈希值来切换视图)
+    // console.log(window.location.hash)-哈希值->#以及其后的部分->哈希值变化不会导致服务器重新请求
+
+    const div1={
+        template:`<div id='div1'>肖振东,大晗,勒布朗源</div>`
+    }
+
+    const div2={
+        template:`<div id='div2'>杨幂,范冰冰,胡歌</div>`
+    }
+
+    //创建一个路由
+    const router=new VueRouter({
+        //路由选项
+        routes:[
+            {
+                //当哈希值改变时，如果改变的部分是home，那么显示div1组件。
+                path:'/home',
+                //一个路由选项配置对应一个组件。
+                component:div1
+            },
+            {
+                //当哈希值改变时，如果改变的部分是about，那么显示div1组件。
+                path:'/about',
+                component:div2
+            }
+        ]
+    })
+
+    new Vue({
+        el:'#app',
+        //挂载路由
+        router,
+    })
+
+</script>
+</html>

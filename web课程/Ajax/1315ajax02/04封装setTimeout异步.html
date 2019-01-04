@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+		
+//		setTimeout(function(){
+//			document.body.style.background='red';
+//			console.log(2);
+//		},1000);
+//		
+//		setTimeout(function(){
+//			oDiv.style.background='green';
+//			alert(100);
+//		},1000);
+		
+		showTime(function(){
+			document.body.style.background='red';
+			console.log(2);
+		})
+		
+		showTime(function(){
+			oDiv.style.background='green';
+			alert(100);
+		})
+		
+		function showTime(success){
+			setTimeout(function(){
+				success()
+			},1000);
+		}
+		
+	</script>
+</html>

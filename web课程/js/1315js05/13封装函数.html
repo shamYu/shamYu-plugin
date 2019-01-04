@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p title='box1'></p>
+		<div></div>
+		<div title='box'></div>
+		<div title='box'></div>
+		<p></p>
+		<div title="box2"></div>
+		<p></p>
+		<p title='box'></p>
+		<p></p>
+		<div title="box1"></div>
+		<p title='box'></p>
+		<div></div>
+		<p title='box'></p>
+	</body>
+	<script type="text/javascript">
+
+//		在所有p里面如果有p的title属性是box，则把这个p的内容变成pppp，背景变红
+//		在所有div里面如果有div的title属性是box，则把这个div的内容变成ddddd，背景变红
+
+		var aP=document.getElementsByTagName('p');
+		var aDiv=document.getElementsByTagName('div');
+		
+		getEle(aP,'pppp');
+		getEle(aDiv,'dddd');
+		
+		function getEle(arr,str){
+			for(var i=0;i<arr.length;i++){
+				var prop=arr[i].title;
+				if(prop=='box'){
+					arr[i].innerText=str;
+					arr[i].style.background='red';
+				}
+			}
+		}
+		
+		//循环不同的数组，检测数组内的每一个元素，如果检测到的元素的title属性是box，那么把这个元素的内容改成任意内容，背景变红
+		
+		//封装函数：相同的东西留下了，不同的东西变成参数
+		
+//		for(var i=0;i<aP.length;i++){
+//			var prop=aP[i].title;
+//			if(prop=='box'){
+//				aP[i].innerText='pppp';
+//				aP[i].style.background='red';
+//			}
+//		}
+//		
+//		for(var i=0;i<aDiv.length;i++){
+//			var prop=aDiv[i].title;
+//			if(prop=='box'){
+//				aDiv[i].innerText='ddddd';
+//				aDiv[i].style.background='red';
+//			}
+//		}
+		
+
+		
+		
+	</script>
+</html>

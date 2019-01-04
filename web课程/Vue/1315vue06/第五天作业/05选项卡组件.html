@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input.active{
+            background: red
+        }
+        #app>div>div{
+            width: 200px;
+            height: 200px;
+            border:1px solid #000;
+            display: none;
+        }
+        #app>div>div.active{
+            display: block
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <tab :arr=data.news1></tab>
+        <tab :arr=data.news2></tab>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script>
+
+    //通过以下data数据实现两个选项卡.每个选项卡是一个组件.(tab1用news1,tab2用new2)
+    //选项卡的按钮数依据news的length决定.
+    var data={
+        news1:[
+            {
+                btn:'新闻',
+                content:'杨幂离婚了卧槽'
+            },
+            {
+                btn:'号外',
+                content:'范冰冰分手了卧槽'
+            },
+            {
+                btn:'未解之谜',
+                content:'什么时候脱衣服'
+            },
+            
+        ],
+        news2:[
+            {
+                btn:'新闻',
+                content:'杨幂离婚了卧槽'
+            },
+            {
+                btn:'号外',
+                content:'范冰冰分手了卧槽'
+            },
+            {
+                btn:'未解之谜',
+                content:'什么时候脱衣服'
+            },
+            {
+                btn:'世界性难题',
+                content:'工资达到800元'
+            },
+            {
+                btn:'傻傻分不清',
+                content:'先穿裤子还是先穿鞋子'
+            },
+        ],
+    }
+
+    var tab={
+        template:
+        `<div>
+            <input :class='{active:i==index}' type='button' v-for='(d,i) in arr' :value='d.btn' @click='saveIndex(i)' />
+            <div :class='{active:i==index}' v-for='(d,i) in arr'>{{d.content}}</div>
+        </div>`,
+        data(){
+            return {
+                index:0
+            }
+        },
+        props:['arr'],
+        methods:{
+            saveIndex(i){
+                this.index=i;
+            }
+        }
+    }
+
+    var vm =new Vue({
+        el:'#app',
+        data:{data},
+        components:{tab}
+    })
+</script>
+</html>

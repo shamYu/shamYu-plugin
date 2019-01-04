@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		//点击li，被点击的li变红，其他li变成白色。上一次点击的li变绿。一个li连点两次，应该变红
+		
+		var aLi=document.getElementsByTagName('li');
+		
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].onclick=show
+		}
+		
+		function show(){
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].style.background='';
+				//判断当前li是不是被点击过的
+				if(aLi[i].clicked){
+					aLi[i].style.background='green';
+					aLi[i].clicked=false;
+				}
+			}
+			this.style.background='red';
+			//把当前点击的元素标记为被点击过的
+			this.clicked=true;
+		}
+		
+	</script>
+</html>

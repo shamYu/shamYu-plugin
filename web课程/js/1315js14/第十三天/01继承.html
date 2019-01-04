@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//		创建一个动物类,动物类实例化的实例没有公有属性.私有属性随意定义.
+//		创建一个禽兽类,禽兽类可继承所有动物类的私有属性.
+		
+		function Animal(){
+			this.move=true;
+		}
+		
+		function Qinshou(){
+			Animal.call(this);
+			this.canEat=true;
+		}
+		
+		var liukw=new Qinshou();
+		
+		
+	</script>
+</html>

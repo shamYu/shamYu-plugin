@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var oBq_after={
+			name:'宝宝',
+			age:32,
+			exwife:{
+				name:'马蓉',
+				age:32,
+			}
+		}
+		
+		
+		var oBq_before={
+			name:'宝强',
+			age:25,
+			sex:'男',
+			exwife:{
+				name:'马蓉',
+				age:25,
+				lover:'宋某',
+			}
+		}
+				
+		var oBq_now = deepClone(oBq_before,oBq_after);
+		
+		function deepClone(obj,obj1){
+			for(var prop in obj1){
+				//如果循环到的属性值是object类型，那么再进行依次浅拷贝
+				if(typeof obj1[prop] != 'object'){
+					obj[prop]=obj1[prop];
+				}else{
+					obj[prop]=deepClone(obj[prop],obj1[prop]);
+				}
+			}
+			return obj;
+		}
+		
+		//封装一个函数，实现输出的oBq_now拥有以下属性
+		//提示：可百度下什么叫深拷贝
+//		oBq_now={
+//			name:'宝宝',
+//			age:32,
+//			sex:'男',
+//			exwife:{
+//				name:'马蓉',
+//				age:32,
+//				lover:'宋某',
+//			}
+//		}
+		
+		
+	</script>
+</html>

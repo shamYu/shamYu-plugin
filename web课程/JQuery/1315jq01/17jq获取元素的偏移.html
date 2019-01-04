@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body>div{
+				width:300px;
+				height: 300px;
+				border:3px solid #000;
+				margin-left:100px;
+				position: relative;
+			}
+			div>div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin-left:50px;
+				float: left;
+			}
+			*{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var oWrap=document.querySelector('body>div');
+		var oDiv=document.querySelector('div>div');
+		//获取的是最近的具有定位属性的祖先元素的左边距
+//		console.log(oDiv.offsetLeft);
+		
+//		offset().left->获取的永远是相对于页面的左边距
+//		console.log($('div>div').offset().left);
+
+//		只能获取,不能设置.
+		$('div>div').offset().left=500;
+		
+//		console.log($('body>div').offset().left-$('div>div').offset().left);
+		
+//		position().left->子元素距离父元素的左边距.不识别自己的margin
+	/*	console.log($('div>div').eq(0).position().left);
+		console.log($('div>div').eq(1).position().left);*/
+		
+	</script>
+</html>

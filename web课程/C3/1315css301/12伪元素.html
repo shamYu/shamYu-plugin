@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*伪元素必须有content样式*/
+			/*两个冒号或者一个冒号都可以*/
+			
+			div:after{
+				content: '后面的';
+				display: block;
+				color:red
+			}
+			div:before{
+				content: '前面的';
+				display: block;
+				color:green
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			hhhh
+		</div>
+	</body>
+</html>

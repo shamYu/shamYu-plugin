@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			#wrap{
+				width: 1200px;
+				margin:0 auto;
+			}
+			.left{
+				float: left;
+			}
+			.right{
+				float: right;
+			}
+			#header li{
+				text-align: center;
+				line-height: 40px;
+				/*width: 100px;*/
+				padding:0 30px;
+				height: 40px;
+				border-right:1px solid #fff;
+				cursor: pointer;
+			}
+			#header li:hover{
+				background: darkorange;
+			}
+			.left>li{
+				float: left;
+			}
+			.right>li{
+				float: right;
+			}
+			#nav{
+				height: 40px;
+				background: darkseagreen;
+			}
+			#logo{
+				color: #008000;
+				text-align: center;
+				font-size:40px;
+				border-top:10px solid darkseagreen;
+				line-height: 100px;
+			}
+			#content:after{
+				content:'';
+				display: block;
+				clear:both;
+			}
+			#content>div{
+				float: left;
+				margin-top:10px;
+			}
+			#aside{
+				width: 250px;
+				background: darkseagreen;
+			}
+			#aside li{
+				height:50px;
+				border-bottom:1px solid #fff;
+				padding-left:30px;
+				line-height: 50px;
+			}
+			#middle{
+				width: 250px;
+				margin-left:10px;
+			}
+			#middle>div{
+				height:250px;
+				background: darkseagreen;
+			}
+			#middle>.bottom{
+				margin-top:10px;
+			}
+			#right{
+				width: 680px;
+				margin-left:10px;
+			}
+			#right>.top{
+				height:250px;
+				background: darkseagreen;
+				margin-bottom:10px;
+			}
+			#right>.bottom>div{
+				float: left;
+				width: 335px;
+				height: 250px;
+				background: darkseagreen;
+			}
+			#right>.bottom>div.right{
+				margin-left:10px;
+			}
+			#footer{
+				height: 50px;
+				background: darkseagreen;
+				margin-top:10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div id='header'>
+				<div id='logo'>天道愁情</div>
+				<div id='nav'>
+					<ul class='left'>
+						<li>首尔</li>
+						<li>随便</li>
+						<li>再随便</li>
+						<li>没法随便</li>
+						<li>随便的不是人</li>
+					</ul>
+					<ul class='right'>
+						<li>登录</li>
+						<li>注册</li>
+					</ul>
+				</div>
+			</div>
+			<div id='content'>
+				<div id='aside'>
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+						<li>6</li>
+						<li>7</li>
+						<li>8</li>
+						<li>9</li>
+						<li>10</li>
+					</ul>
+				</div>
+				<div id='middle'>
+					<div></div>
+					<div class='bottom'></div>
+				</div>
+				<div id='right'>
+					<div class='top'></div>
+					<div class='bottom'>
+						<div></div>
+						<div class='right'></div>
+					</div>
+				</div>
+			</div>
+			<div id='footer'></div>
+		</div>
+	</body>
+</html>

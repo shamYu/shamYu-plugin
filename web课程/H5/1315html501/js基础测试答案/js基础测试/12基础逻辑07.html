@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1'>0</div>
+		<div id='div2'>5</div>
+	</body>
+	<script type="text/javascript">
+//		给div1添加点击事件。每次点击,其内部数字+1；
+//		每次点击，根据点击的次数，当当前的点击次数等于div2内的数字时。弹出div2内的数字，否则弹出'还不够'
+		var oDiv1=document.getElementsByTagName('div')[0];
+		var oDiv2=document.getElementsByTagName('div')[1];
+		oDiv1.onclick=function () {
+			this.innerHTML++;
+			var n=this.innerHTML;
+			if(n==oDiv2.innerText){
+				alert(oDiv2.innerText)
+			}else{
+				alert('还不够')
+			}
+		}
+	</script>
+</html>

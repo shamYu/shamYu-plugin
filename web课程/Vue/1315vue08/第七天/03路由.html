@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            background: red
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <a :href="d.href" @click='index=i' :class='{active:index==i}' v-for='(d,i) in arr'>{{d.content}}</a>
+        <router-view></router-view>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script src="../js/vue-router.js"></script>
+<script>
+    //用路由实现->
+    //点击相应的a只显示相应的div内容
+    const div1={
+        template:` <div>
+            <h3>首页</h3>
+            <input type='text' v-model='msg' />
+            <p>{{msg}}</p>
+        </div>`,
+        data(){return {msg:''}}
+    }
+    const div2={
+        template:`
+        <div>
+            <h3>大杨幂</h3>
+            <input type='text' v-model='msg' />
+            <p>{{msg}}</p>
+        </div>`,
+        data(){return {msg:''}}
+    }
+    const div3={
+        template:`
+        <div>
+            <h3>小冰冰</h3>
+            <input type='text' v-model='msg' />
+            <p>{{msg}}</p>
+        </div>`,
+        data(){return {msg:''}}
+    }
+    const div4={
+        template:`
+        <div>
+            <h3>帅王八</h3>
+            <input type='text' v-model='msg' />
+            <p>{{msg}}</p>
+        </div>`,
+        data(){return {msg:''}}
+    }
+    const router=new VueRouter({
+        routes:[
+            {
+                path:'/one',
+                component:div1
+            },
+            {
+                path:'/two',
+                component:div2
+            },
+            {
+                path:'/three',
+                component:div3
+            },
+            {
+                path:'/four',
+                component:div4
+            },
+            {
+                path:'*',
+                redirect:'/one'
+            }
+        ]
+    })
+
+    new Vue({
+        el:'#app',
+        data:{
+            arr:[
+                {content:'主页',href:'#one'},
+                {content:'大杨幂',href:'#two'},
+                {content:'小冰冰',href:'#three'},
+                {content:'大王八',href:'#four'}
+            ],
+            index:0
+        },
+        router
+    })
+</script>
+</html>

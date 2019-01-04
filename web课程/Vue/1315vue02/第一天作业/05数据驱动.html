@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='div'>
+        <input type="button" value="插入li" @click='add()'>
+        <ul>
+            <li v-for='d in arr'>{{d}}</li>
+        </ul>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    //每点击一次按钮,给ul插入一个新的li.li的内容随机取1-10的随机整数
+    new Vue({
+        el:'#div',
+        data:{
+            //li的个数
+            arr:[],
+        },
+        methods:{
+            add(){
+                this.arr.push(Math.floor(Math.random()*10)+1);
+            }
+        }
+    })
+</script>
+</html>

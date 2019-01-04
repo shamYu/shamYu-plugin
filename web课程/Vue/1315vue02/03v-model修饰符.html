@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.active{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        
+        <!-- <input type="text" v-model.lazy='msg'> -->
+
+        <!-- v-model的全写 -->
+        <!-- <input type="text" :value='msg' @input='msg=$event.target.value'> -->
+
+        <!-- 修饰符lazy只是把修改数据的事件从input事件变成blur事件 -->
+        <!-- <input type="text" :value='msg' @blur='msg=$event.target.value'> -->
+
+        <!-- number修饰符,与paresInt类似,之前前面的数字能识别,如果前面的字符是非数字,那么整个字符都算非数字 -->
+        <!-- 如果转换不成数字,那么会显示原字符 -->
+        <input type="text" v-model.number='msg'>
+        {{msg}}
+
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            msg:'',
+        }
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <a href="#home">{{news.home.title}}</a>
+        <a href="#news">{{news.news.title}}</a>
+        <a href="#guides">{{news.guides.title}}</a>
+        <router-view :news='news'></router-view>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script src="../js/vuex.js"></script>
+<script src="../js/axios.min.js"></script>
+<script src="../js/vue-router.js"></script>
+<script>
+    //使用动态路由实现以上效果。
+    //路由内组件的数据通过data.json获取   
+    const com = {
+        template:
+        ` <div>
+            <h3>{{title}}</h3>
+            <p>{{content}}<span>{{date}}</span></p>
+        </div>`,
+        props:['news'],
+        computed:{
+            title(){
+                for(var prop in this.news){
+                    if(prop==this.$route.params.hash){
+                        return this.news[prop].title
+                    }
+                }
+            },
+            content(){
+                for(var prop in this.news){
+                    if(prop==this.$route.params.hash){
+                        return this.news[prop].content
+                    }
+                }
+            },
+            date(){
+                for(var prop in this.news){
+                    if(prop==this.$route.params.hash){
+                        return this.news[prop].date
+                    }
+                }
+            },
+        }
+    }
+
+    const router = new VueRouter({
+        routes:[
+            {
+                path:'/:hash',
+                component:com
+            },{
+                path:'*',
+                redirect:'/home'
+            }
+        ]
+    })
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            news:{}
+        },
+        router,
+        created(){
+            axios.get('data.json').then(res => {
+                // console.log(res)
+                this.news=res.data
+            })
+        }
+    })
+
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		parse->转换
+		
+//		parseInt(1.1);->把一个变量转换为数字，并且向下取整； int->整数
+
+//		parseFloat('1.1');->把一个变量转换为数字，并且向下取整 float->浮点数->小数
+		
+		var a='杨幂';
+//		var a=123.3333;
+		
+//		NaN与自身不相等(js中唯一);
+//		NaN与任何其他值进行计算,都会返回NaN
+		
+		//先确保a是非NaN的数字
+		if(+a==+a){
+			if(parseInt(a)!=a){
+				alert('这是一个小数');
+			}else{
+				alert('这是一个整数');
+			}
+		}else{
+			alert('a不是纯数字');
+		}
+		
+		
+		
+	</script>
+</html>

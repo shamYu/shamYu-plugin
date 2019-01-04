@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>666</li>
+			<li>666</li>
+			<li>666</li>
+			<li class='active box'>666</li>
+			<li>666</li>
+			<li>666</li>
+		</ul>
+	</body>
+	<script src="js/jquery-1.11.1.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$('li').click(function(){
+			$('li').css('background','');
+			
+//			if($(this).attr('class')=='active'){
+//				$(this).css('background','green')
+//			}else{
+//				$(this).css('background','red')
+//			}
+
+//			hasClass('active')->有active返回true,没有返回false
+			if($(this).hasClass('active')){
+				$(this).css('background','green')
+			}else{
+				$(this).css('background','red')
+			}
+		})
+	</script>
+</html>

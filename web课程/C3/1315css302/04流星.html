@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: #000;
+			}
+			div{
+				width: 6px;
+				height:6px;
+				border-radius: 50%;
+				background: #fff;
+				margin-left:400px;
+				position: relative;
+				margin-top:500px;
+			}
+			div:after{
+				content: '';
+				position: absolute;
+				width: 300px;
+				height: 2px;
+				background: -webkit-linear-gradient(left,rgba(255,255,255,1),rgba(255,255,255,0));
+				top:2px;
+				left:4px;
+			}
+			div:before{
+				content: '';
+				position: absolute;
+				width: 2px;
+				height: 300px;
+				background: -webkit-linear-gradient(top,rgba(255,255,255,0),rgba(255,255,255,1));
+				top:-300px;
+				left:2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

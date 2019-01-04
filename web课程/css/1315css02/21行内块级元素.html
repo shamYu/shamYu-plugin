@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				/*display: inline;*/
+				
+				/*行内块级元素->同时拥有行内与块级元素的特点->从左往右排列,又可以设置宽高*/
+				/*宽高默认就是内容的宽高(宽高由内容撑开)*/
+				
+				/*缺点:元素之间默认有4像素的空白间隔.->保证前面的元素与后面的元素之间没有空白就可以去除*/
+				display: inline-block;
+				width:100px;
+				height:100px;
+				background: red;
+				font-size: 16px;
+			}
+			body{
+				/*将空白字符字号设置为0,使之不显示*/
+				font-size: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div>111</div
+		><div>222</div
+		><div>333</div>-->
+		
+		<div>111</div>
+		<div>222</div>
+		<div>333</div>
+		
+	</body>
+</html>

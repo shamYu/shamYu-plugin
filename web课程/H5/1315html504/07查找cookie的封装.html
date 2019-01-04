@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var val=getCookie('str');
+		
+		function getCookie(name){			
+			var arr=document.cookie.split('; ');
+			var val='';
+			arr.forEach(function(items,i){
+				if(items.indexOf(name)!=-1){					
+					var data=items.split('=');
+					val=data[1];
+				}
+			});
+			return val;
+		}
+		
+	</script>
+</html>

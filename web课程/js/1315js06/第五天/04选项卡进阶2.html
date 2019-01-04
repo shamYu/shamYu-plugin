@@ -1,0 +1,116 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+#div1{ width:200px; position:relative;}
+#div1 span{
+	position:absolute;
+	top:100px;
+	display:none;
+	cursor: pointer;
+}
+#div1 span:first-of-type{left:0;}
+#div1 span:last-of-type{ right:0;}
+#div1 div{ width:200px; height:200px; border:1px #000 solid; display:none;}
+#div1 input.active{ background:red;}
+#div2 div{ width:200px; height:200px; border:1px #000 solid; display:none;}
+#div2 input.active{ background:red;}
+</style>
+</head>
+
+<body>
+<div id="div1">
+	<input class="active" type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    
+    <div style="display:block">11111111</div>
+    <div>22222222</div>
+    <div>33333333</div>
+    
+    <span>←</span>
+    <span>→</span>
+</div>
+<script>
+//	输入移入div1时，显示两个span，移出时隐藏两个span
+//	点击左箭头，显示上一张选项卡内容，点击右箭头，显示下一张选项卡内容
+//	如果是最后一张选项卡内容，点击右箭头，显示第一张选项卡内容。
+//	如果是第一张选项卡，点击左箭头，显示最后一张选项内容。
+	
+	var aInput=document.getElementsByTagName('input');
+	var oDiv=document.getElementById("div1");
+	var aDiv=oDiv.getElementsByTagName('div');
+	
+	var aSpan=oDiv.getElementsByTagName('span');
+	
+	//当前显示的div的下标;
+	var index=0;
+	
+	for(var i=0;i<aInput.length;i++){
+		//每个li存一个下标
+		aInput[i].index=i;
+		aInput[i].onclick=changeTab;
+	}
+	
+	
+	aSpan[1].onclick=function () {
+		//上一个，下标得-1;
+		index++;
+		//如果index小于0，则变成最大下标(显示最后一个)
+		if(index==aDiv.length){
+			index=0;
+		}
+		for(var i=0;i<aInput.length;i++){
+			aInput[i].className='';
+			aDiv[i].style.display='none';
+		}
+		aInput[index].className='active';
+		aDiv[index].style.display='block';
+	}
+	
+	aSpan[0].onclick=function () {
+		//上一个，下标得-1;
+		index--;
+		//如果index小于0，则变成最大下标(显示最后一个)
+		if(index==-1){
+			index=aDiv.length-1;
+		}
+		for(var i=0;i<aInput.length;i++){
+			aInput[i].className='';
+			aDiv[i].style.display='none';
+		}
+		aInput[index].className='active';
+		aDiv[index].style.display='block';
+	}
+	
+	oDiv.onmouseover=showArrow;
+	oDiv.onmouseleave=hideArrow;
+	
+	function showArrow(){
+		for(var i=0;i<aSpan.length;i++){
+			aSpan[i].style.display='block';
+		}
+	}
+	
+	function hideArrow(){
+		for(var i=0;i<aSpan.length;i++){
+			aSpan[i].style.display='none';
+		}
+	}
+	
+	function changeTab(){
+		for(var i=0;i<aInput.length;i++){
+			aInput[i].className='';
+			aDiv[i].style.display='none';
+		}
+		this.className='active';
+		//显示跟当前li下标相等的div
+		aDiv[this.index].style.display='block';
+		//把当前显示的div的下标赋值给index,方便上一张，下一张逻辑使用
+		index=this.index;
+	}
+	
+	
+</script>

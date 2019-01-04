@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="button" id="btn" value="切换" />
+		</div>		
+		<div id='div'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div");
+		var oBtn=document.getElementById("btn");
+		
+		//true表示在左边，false表示右边;
+		var flag=true;
+		
+		oBtn.onclick=function () {
+			if(flag){
+				oDiv.style.float='right';
+			}else{
+				oDiv.style.float='left';
+			}
+			flag=!flag;
+		}
+
+		
+	</script>
+</html>

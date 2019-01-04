@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="快滚" />
+		<div></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		animate比其他特效方法多了一个结束样式的参数,需要配置成json对象
+		
+//		$('#btn').on('click',function(){
+//			$('div').animate({marginLeft:500},1000,'linear',function(){
+//				alert('我不滚了');
+//			});
+//		})
+		
+		$('#btn').on('click',function(){
+			$('div').animate({marginLeft:500,marginTop:500},1000,'linear',function(){
+				alert('我不滚了');
+			});
+		})
+		
+	</script>
+</html>

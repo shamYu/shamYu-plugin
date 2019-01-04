@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		var arr={};
+//		var arr=[];
+//		var arr=100;
+//		var arr=undefined;
+//		var arr=null;
+//		var arr=true;
+		var arr=function(){};
+		
+		//检测一个变量是不是数组
+		function isArray(arr){
+			//因为数组的原型链上有两个toString，只有Object.prototype.toString可以返回[object Array]
+			//因此需要使用call来跳过属性查找的就近原则
+			return Object.prototype.toString.call(arr)=='[object Array]';
+		}
+		
+		function deepClone(obj){
+			
+			//判断实参是不是数组。如果是我们创建一个新数组，如果不是，我们创建一个新对象。
+			if(isArray(obj)){
+				var obj1=[];
+			}else if(typeof obj == 'object'){
+				var obj1={};
+			}
+			
+			for(var prop in obj){
+				//如果循环到的属性值是object类型，那么再进行依次浅拷贝
+				if(typeof obj[prop] != 'object'){
+					obj1[prop]=obj[prop];
+				}else{
+					obj1[prop]=deepClone(obj[prop]);
+				}
+			}
+			return obj1;
+		}
+		
+		var oYm={
+			name:'杨幂',
+			age:32,
+			height:'168cm',
+			weight:'45kg',
+			sex:'女',
+			husband:{
+				name:'畜生'
+			}
+		}
+		
+		var oFbb=deepClone(oYm);
+		
+	</script>
+</html>

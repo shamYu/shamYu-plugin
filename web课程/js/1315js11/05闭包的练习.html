@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+				
+		function show(){
+			var x=10;
+			function abc (){
+				x++;
+				console.log(x);
+			}
+			return abc;
+		}
+		
+		var fn=show();
+		
+		fn();//11  -> 第一次调用的fn内的x的作用域链，fn第一次调用的作用域->show第一次调用的作用域->全局
+		fn();//12  -> 第二次调用的fn内的x的作用域链，fn第一次调用的作用域->show第一次调用的作用域->全局
+		
+		var fn=show();
+		
+		fn();//11  -> 第一次调用的fn内的x的作用域链，fn第一次调用的作用域->show第二次调用的作用域->全局
+		fn();//12  -> 第二次调用的fn内的x的作用域链，fn第一次调用的作用域->show第二次调用的作用域->全局
+		
+	</script>
+</html>

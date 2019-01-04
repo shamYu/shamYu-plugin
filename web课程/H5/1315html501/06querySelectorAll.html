@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				
+			}
+			ul>li{
+				
+			}
+			[class='box']{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="ul">
+			<li></li>
+			<li class='box'></li>
+			<li></li>
+			<li class='box'></li>
+			<li></li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+//		querySelectorAll->通过选择器来选中元素。参数是选择器。获取的一定是一个集合(类数组)
+//		获取到的类数组对象的length不会随着元素的增删而改变。
+//		值取决于获取的时机。
+		
+		var oUl=document.getElementById("ul");
+		
+		var oUl=document.querySelectorAll("#ul")[0];
+		
+		var aLi=document.querySelectorAll('ul>li');
+
+//		可以通过别的元素调用
+//		var aLi=oUl.querySelectorAll('ul>li');
+		
+//		var aBox=document.querySelectorAll("[class='box']");
+		
+	</script>
+</html>

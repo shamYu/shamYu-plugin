@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--后端:php,java,.net,node.js-->
+		<!--前端--后端(java,php)--数据库-->
+		<input type="text" id="user" placeholder="账号" value="" />
+		<input type="text" id="age" placeholder="年龄" value="" />
+		<input type="button" id="btn" value="发送数据" />
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.querySelector('div');
+		var oBtn=document.getElementById("btn");
+		
+		var oUser=document.getElementById("user");
+		var oAge=document.getElementById("age");
+		
+		oBtn.onclick=function(){
+			var xhr=null;
+		
+			try{
+				xhr=new XMLHttpRequest();			
+			}catch(e){
+				xhr=new ActiveXObject('Microsoft XMLHTTP');
+			}
+			
+			//用get发送数据,需要将序列化字符串拼在url后面,并且用?连接.
+			//用get发生数据,最多可以发生2000个字符(url的长度限制在了2000),post发生数据没有限制.
+			//用get发送数据是不安全的,因为暴露在了url里.
+			
+//			xhr.open('GET','php/1.get.php?username=Amazing&age=9000',true);
+
+			xhr.open('GET','php/1.get.php?username='+oUser.value+'&age='+oAge.value,true);
+			xhr.send();
+			
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200){
+						oDiv.innerText=xhr.responseText;
+					}else{
+						alert('出错了：'+xhr.status);
+					}
+				}
+			}
+		}
+		
+		
+		
+	</script>
+</html>

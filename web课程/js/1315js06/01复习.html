@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		1312hhh
+	</body>
+	<script type="text/javascript">
+		
+//		函数:调用时机(函数声明内的代码,何时执行,只需要看函数在哪里调用,与声明写在哪里无关),作用域(作用域链),参数,返回值,不定参(arguments)
+//		参数->函数声明()变量名叫形参.有形参的函数,相当于在函数内部声明了一个与形参名字一样的变量.
+//			 函数调用时()内的表达式叫实参,函数调用的过程中,实参会给形参赋值.实参的位置要与形参的位置一致.
+//			函数的实参可以是任意表达式.实际实参的值,是表达式的返回值.
+
+//		getComputedStyle(document.body).width; -> 非IE的最终样式.
+//		document.body.currentStyle. -> width;IE的最终样式.
+
+//		parseInt(document.body.innerText);//1312
+//		Number(document.body.innerText);//NaN
+//		fn(1),fn(a),fn(a+1),fn(document.body.innerText%2==NaN);
+//		fn(i++),fn(--i);
+		
+
+		var x=100;
+		
+		function fn(y){
+			alert(y);
+		}
+		
+		fn(--x);//undefined,alert(x)->在调用时执行
+		
+//		x=100;
+		
+//		function fn(a,b,c){
+//			alert(x);
+//		}
+//		fn(10,20,30);//100
+		
+		
+	</script>
+</html>

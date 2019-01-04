@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--后端:php,java,.net,node.js-->
+		<!--前端--后端(java,php)--数据库-->
+		<input type="text" id="user" placeholder="账号" value="" />
+		<input type="text" id="age" placeholder="年龄" value="" />
+		<input type="button" id="btn" value="发送数据" />
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.querySelector('div');
+		var oBtn=document.getElementById("btn");
+		
+		var oUser=document.getElementById("user");
+		var oAge=document.getElementById("age");
+		
+		oBtn.onclick=function(){
+			
+			var xhr=null;
+		
+			try{
+				xhr=new XMLHttpRequest();			
+			}catch(e){
+				xhr=new ActiveXObject('Microsoft XMLHTTP');
+			}
+					
+			xhr.open('POST','php/1.post.php',true);
+			
+//			如果使用post发送数据,需要在open与send的中间设置xhr.setRequestHeader,间数据转换为表单的格式
+			xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+			
+//			'username=Amazing&age=9000'->发生数据只能发送序列化数据(格式).
+//			需要发送的数据,需要给这个数据起名字(发送键值对),数据名必须前后端一致.
+//			多个数据(多个键值对)需要用&连接
+			xhr.send('username='+oUser.value+'&age='+oAge.value);
+			
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200){
+						oDiv.innerText=xhr.responseText;
+					}else{
+						alert('出错了：'+xhr.status);
+					}
+				}
+			}
+		}
+		
+		
+		
+	</script>
+</html>

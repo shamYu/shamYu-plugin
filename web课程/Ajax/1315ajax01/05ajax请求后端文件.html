@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--后端:php,java,.net,node.js-->
+		<!--前端--后端(java,php)--数据库-->
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.querySelector('div');
+		
+		var xhr=null;
+		
+		try{
+			xhr=new XMLHttpRequest();			
+		}catch(e){
+			xhr=new ActiveXObject('Microsoft XMLHTTP');
+		}
+				
+		xhr.open('GET','php/getList.php',true);
+		xhr.send();
+		
+		//每当xhr.readyState值发生变化时，都会触发onreadystatechange;
+		xhr.onreadystatechange=function(){
+			if(xhr.readyState==4){
+				if(xhr.status==200){
+					oDiv.innerText=xhr.responseText;
+				}else{
+//					alert('i am so Amazing, u will miss me!');
+//					alert(xhr.status);
+					if(xhr.status==404){
+						alert('不好意思，查无此人');
+					}else if(xhr.status==500){
+						alert('不好意思，系统维护');
+					}
+				}
+			}
+		}
+		
+	</script>
+</html>

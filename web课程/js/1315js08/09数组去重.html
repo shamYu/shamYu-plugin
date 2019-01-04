@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		
+//		var arr=[1,2,3,4,4,2,3,4,5,7,1];
+//		
+//		var wan=[];
+//		
+//		for(var i=0;i<arr.length;i++){
+//			//判断wan里有没有当前循环到的元素，如果有，就处理，没有就放入wan里。这样wan里肯定是不重复的。
+//			if(wan.indexOf(arr[i])==-1){
+//				wan.push(arr[i]);
+//			}
+//		}
+		
+		var arr1=fn([1,2,3,4,4,2,3,4,5,7,1]);
+		
+		function fn (arr){
+			var wan=[];
+			for(var i=0;i<arr.length;i++){
+				if(wan.indexOf(arr[i])==-1){
+					wan.push(arr[i]);
+				}
+			}
+			return wan;
+		}
+		
+	</script>
+</html>

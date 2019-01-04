@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=[];
+		
+		var data=[];
+		
+		//先把可能随机到的所有数据全部放入一个data数组
+		for(var i=0;i<100;i++){
+			data.push(i);
+		}
+		
+		//每次随机从data里选取一个元素，选取之后把它从data里删除，防止下次再次选中这个元素
+		for(var i=0;i<100;i++){
+			//通过随机下标选择data内的元素
+			var index=Math.floor(Math.random()*data.length);
+			arr.push(data[index]);
+			//删除选中的元素
+			data.splice(index,1);			
+		}
+		
+//--------------------------------------------------------------------------		
+//		var arr=[];
+//		
+//		var data=[0,1,2,3,4,5,6,7,8,9];
+//		
+//		for(var i=0;i<10;i++){
+//			var index=Math.floor(Math.random()*data.length);
+//			arr.push(data[index]);			
+//			data.splice(index,1);			
+//		}
+		
+	</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+		
+		document.onmousemove=moveDiv;
+		
+		function moveDiv(ev){
+			
+			var ev=ev||window.event;
+			
+			//鼠标横纵坐标
+			var l=ev.clientX;
+			var t=ev.clientY;
+			
+			//根据横纵坐标来设置div的样式
+			oDiv.style.marginLeft=l+'px';
+			oDiv.style.marginTop=t+'px';			
+		}
+		
+	</script>
+</html>

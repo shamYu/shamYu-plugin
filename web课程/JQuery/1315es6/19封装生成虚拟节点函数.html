@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div id='div' class='box'>
+			<p class='active'>我是一个内容</p>
+		</div>
+		
+		<div id='div1' class='box'>
+			<p class='active'>我是一个内容</p>
+			<span>的发的份上</span>
+		</div>
+		
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div");
+		var oDiv1=document.getElementById("div1");
+		
+		var vnode=CreateVnode(oDiv);
+/*//		CreateVnode(oDiv1);*/
+
+		function CreateVnode(ele){
+			var obj={};
+			obj.tag=ele.nodeName;
+			return obj;
+		}
+		
+//		{
+//			tag:'div',
+//			attributes:[{id:'div'},{className:'box'}],
+//			children:[
+//				{
+//					tag:'p',
+//					attributes:[{className:'active'}]
+//					children:['我是一个内容']
+//				}
+//			]
+//		}
+//		
+//		{
+//			tag:'div',
+//			attributes:[{id:'div1'},{className:'box'}],
+//			children:[
+//				{
+//					tag:'p',
+//					attributes:[{className:'active'}]
+//					children:['我是一个内容']
+//				},
+//				{
+//					tag:'span',
+//					attributes:[],
+//					children:['的发的份上']
+//				}
+//			]
+//		}
+		
+		//根据虚拟节点生成真实节点
+		/*render(vnode);*/
+		
+	</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=[];
+		
+//		取1-10的10个随机整数放入arr内，然后按降序排列
+		
+		for(var i=0;i<10;i++){
+			arr.push(getRand(11,1));
+		};
+		
+		arr.sort(function(a,b){
+			return b-a;
+		});
+		
+		function getRand(a,b){
+			return Math.floor(Math.random()*(a-b))+b;
+		}
+				
+	</script>
+</html>

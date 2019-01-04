@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		function fn (a,b){
+//			console.log(a+b);
+//		}
+//		
+//		fn(2,3);//5		
+//		fn();//NaN
+		
+//		function fn (obj){
+//			//默认参数
+//			var data={
+//				a:10,
+//				b:20,
+//			}			
+//			//如果有参数，合并默认参数与形参。
+//			if(obj){
+//				$.extend(data,obj);
+//			}		
+//			console.log(data.a+data.b);			
+//		}
+//		
+//		fn({a:2,b:3});//5		
+//		fn();//30
+		
+		//es的形参默认参数，如果没有实参，以默认值为准。
+		function fn (a=10,b=20){
+			console.log(a+b)
+		}
+		
+		fn(2,3);//5
+		fn();//10
+		
+		
+		
+	</script>
+</html>

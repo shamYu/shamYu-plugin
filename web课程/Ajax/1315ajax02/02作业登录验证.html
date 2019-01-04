@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="user" value="" />
+		<input type="text" id="psd" value="" />
+		<input type="button" id="btn" value="登录" /><br />
+		<input type="checkbox" id="checkbox" value="" />下次自动登录
+		<p></p>
+		<p></p>
+		<p></p>
+	</body>
+	<script src="js/ajax.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var oUser=document.getElementById("user");
+		var oPsd=document.getElementById("psd");
+		var oBtn=document.getElementById("btn");
+		var oCheck=document.getElementById("checkbox");
+		
+		var aP=document.querySelectorAll('p');
+		
+		var uName=window.localStorage.getItem('username');
+		var pWd=window.localStorage.getItem('password');
+		var checked=window.localStorage.getItem('checked');
+		
+		//页面关闭时，存储当前的复选框状态，方便在下次打开页面时判断是否需要显示账号和密码。
+		window.onunload=function(){
+			window.localStorage.setItem('checked',oCheck.checked);
+//			页面关闭时,如果复选框是勾上的，并且最近一次登录成功。就存账号密码。
+			if(oCheck.checked&&flag){
+				window.localStorage.setItem('username',oUser.value);
+				window.localStorage.setItem('password',oPsd.value);				
+			}
+		}
+		
+		//登录状态
+		var flag=false
+		
+		oBtn.onclick=function(){
+			ajax({
+				method:'POST',
+				url:'http://192.168.5.128:8080/1311AJAX01/php/login1.php',
+//				data:'username='+oUser.value+'&password='+oPsd.value,
+				data:{
+					username:oUser.value,
+					password:oPsd.value
+				},
+				dataType:'json',
+				success:function(data){
+					if(data.canLogin==2){						
+						aP[0].innerText='登录成功';
+						aP[1].innerText=data.nickName;
+						aP[2].innerText=data.userSex;
+						flag=true;
+					}else{
+						aP[0].innerText='登录失败，密码或用户名不正确';
+						aP[1].innerText='';
+						aP[2].innerText='';
+						//如果登录失败，移出本地数据，防止下次还自动登录。
+						window.localStorage.removeItem('username');
+						window.localStorage.removeItem('password');	
+						
+						flag=false;
+					}
+				}
+			})
+		}
+		
+		//如果上次页面关闭时复选框是勾选的
+		if(checked=='true'){
+			oCheck.checked=true;
+			oUser.value=uName;
+			oPsd.value=pWd;
+			oBtn.click();
+		}
+		
+	</script>
+</html>

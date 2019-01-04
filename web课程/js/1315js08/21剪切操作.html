@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id='p'>pppp</p>
+		<div id='div1'>
+			<span id='span'>span</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oP=document.getElementById("p");
+		var oDiv=document.getElementById("div1");
+		var oSpan=document.getElementById("span");
+		
+//		appendChild,insertBefore这两个方法,如果操作的是已经存在于页面上的元素,那么实现一种剪切操作.
+//		oDiv.appendChild(oP);
+		
+		oDiv.insertBefore(oP,oSpan);
+		
+	</script>
+</html>

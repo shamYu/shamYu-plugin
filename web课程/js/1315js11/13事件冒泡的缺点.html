@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				background: red;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="切换" />
+		<div id='div1'></div>
+	</body>
+	<script type="text/javascript">
+		var oBtn=document.getElementById("btn");
+		var oDiv=document.getElementById("div1");
+		
+		var flag=true;
+		
+		oBtn.addEventListener('click',function(ev){
+			
+			var ev=ev||window.event;
+			//阻止事件冒泡，不让子元素的事件往上传递。
+//			ev.stopPropagation();
+//			//阻止事件冒泡，不让子元素的事件往上传递。设置为true表示阻止，false表示恢复
+			ev.cancelBubble=true;
+			
+			if(flag){
+				oDiv.style.display='none'
+			}else{
+				oDiv.style.display='block'
+			}
+			flag=!flag;
+		});
+		
+		document.addEventListener('click',function(){
+			oDiv.style.display='none';
+			flag=false;
+		})
+		
+	</script>
+</html>

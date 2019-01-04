@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#wrap{
+				width: 400px;
+				height: 400px;
+				border:1px solid #000;
+				margin-left:200px;
+			}
+			#wrap>div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				/*float: right;*/
+				/*margin-left优先级比margin-right更高*/
+				/*margin-right:0;
+				margin-bottom:0;*/
+				
+				/*margin-top:500px;
+				margin-left:1000px;*/
+				
+				/*固定定位->可以让元素固定在网页窗口(视口)的某个地方*/
+				position: fixed;
+				/*定位偏移->只有设置了定位样式的元素才起效果*/
+				right:0;
+				bottom:0;
+				/*left:100px;
+				top:100px;*/
+				
+				/*固定定位的定位偏移永远是相对于视口*/
+			}
+			body{
+				height: 2000px;
+			}
+			#show{
+				width: 100px;
+				height: 100px;
+				background: blue;
+				margin:-100px 0 0 -100px;
+				display: none;
+			}
+			#fixed:hover>div{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div id='fixed'>
+				<div id='show'></div>
+			</div>
+		</div>		
+	</body>
+</html>

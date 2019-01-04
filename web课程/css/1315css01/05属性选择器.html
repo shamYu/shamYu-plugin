@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*属性选择器->[属性]*/
+			/*属性选择器的优先级与类选择器优先级相同*/
+						
+			/*#div1{
+				background:green
+			}*/
+			
+			.box{
+				background:blue
+			}
+			[abc='hhh']{
+				background: red;
+			}			
+			/*div{
+				background:green
+			}*/
+			
+			/*[style='width:100px']{
+				background: blue;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div abc='hhh' id='div1' class='box'>11</div>
+		<!--<div style='width:100px'>22</div>-->
+	</body>
+</html>

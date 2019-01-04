@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=[1,2,3,4,5,6];		
+//		console.log(arr);
+		
+		//...数组的展开运算符,一般用于函数调用传不定参
+//		console.log(...arr);
+	
+//		console.log(1,2,3,4,5,6);
+		
+//		var min=Math.min(arr);//NaN
+
+//		var min=Math.min.apply(Math,arr);
+//		var max=Math.max.apply(Math,arr);
+		
+		//传递所有数组的元素到函数内
+//		var min=Math.min(...arr);
+//		var max=Math.max(...arr);
+		
+//		var aDiv=document.getElementsByTagName('div');
+		
+//		var arr=[...aDiv];
+//		var arr=[aDiv[0],aDiv[1],aDiv[2],aDiv[3]];
+		
+//		[...aDiv].forEach(function(items,i){
+//			items.innerText=i+1;
+//		});
+//------------------------------------------------------------------------------------------		
+//		var arr=[1,2,3,4,5];
+		
+		//数组缓存。
+//		var arr1=[...arr];
+		
+//		arr.forEach(function(items,i){
+//			arr1.push(items);
+//		})
+		
+//		for(var i=4;i>=0;i--){
+//			arr.pop(arr[i]);
+//		}
+//-------------------------------------------------------------------------------------------		
+		
+//		数组拼接		
+		var arr=[1,2];
+		var arr1=[3,4];
+		
+//		var arr3=arr.concat(arr1);
+//		var arr3=arr1.concat(arr);
+		
+		var arr3=[...arr,...arr1];
+		var arr3=[...arr1,...arr];
+		
+		
+	</script>
+</html>

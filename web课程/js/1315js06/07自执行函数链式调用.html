@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		(function(x){
+//			alert(x);//100
+			return function(x){
+//				alert(x)//10;
+				return function(x){
+					alert(x);
+				}
+			}
+		//第一个括号调用第一个函数,第二个()调用第二个函数,第三个()调用第三个函数.
+		})(100)(10)(5);
+		
+//		function(x){
+//			alert(x)
+//		}()
+		
+	</script>
+</html>

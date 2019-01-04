@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<!--冰冰-->
+			'杨幂'
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+//		DOM->document object model -> 把文档抽象成一个对象 -> 把文档内的所有节点抽象成一颗树 ->描述节点与节点的关系
+		
+		var oDiv=document.getElementsByTagName('div')[0];
+		
+		//包含3个标签的数组
+//		aSpan=oDiv.getElementsByTagName('span');
+		
+		//oDiv.childNodes包含oDiv内的所有节点的数组
+		aNodes=oDiv.childNodes;
+		
+		aNodes[2].nodeValue='范冰冰';
+		
+	</script>
+</html>

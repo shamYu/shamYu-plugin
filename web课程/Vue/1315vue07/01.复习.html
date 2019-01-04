@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // 1:beforeUpdate()->视图更新前.updated()->视图更新后.
+    // beforeDestroy()->销毁前,destroyed()->销毁后。->数据与视图解绑。
+    // vm.$nextTick(fn)-本次视图更新后触发fn。
+    // $mount()->如果没有一开始传递el属性，可以在后续通过$mount(选择器)来挂载虚拟节点.
+
+    // 2:vuex的数据共享.
+
+    // var store=new Vuex.Store({
+    //     //严格模式.
+    //     strict:true,
+    //     state:{msg:'100'},
+    //     //严格模式下,所有修改msg的逻辑都必须写成mutations内的函数.devTools
+    //     mutations:{fn1,fn2,fn3},
+    //     actions:{commitFn1,commitFn2,commitFn3}
+    // })
+
+    // new Vue({
+    //     el:'#app',
+    //     //把store挂载到当前实例上.
+    //     //vue实例内的所有组件，都可以通过:this.$store.state.msg访问到100
+    //     store,
+    //     methods:{
+    //         add(){
+    //             // this.$store.commit('fn1',200);
+    //             this.$store.dispatch('commitFn1',200);
+    //         }
+    //     },
+    //     //store数据要做成计算属性才能在store数据变化时更新组件的视图。
+    //     computed:{
+    //         msg(){
+    //             return this.$store.state.msg
+    //         }
+    //     }
+    // })
+
+    // 组件->actions->mutations->修改state->计算属性变化->视图变化(组件跟新);
+
+</script>
+</html>

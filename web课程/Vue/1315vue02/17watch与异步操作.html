@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div>div{
+            width: 200px;
+            height: 200px;
+        }
+        .red{
+            background: red
+        }
+        .green{
+            background:green;
+        }
+        /* vue还没调用时，样式隐藏视图，vue调用后会删除v-cloak指令，以显示视图 */
+        [v-cloak]{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div" v-cloak>
+        <input type="text" placeholder="数量" v-model='count'>
+        <input type="text" placeholder='单价' v-model='price'>
+
+        <!-- 使用时不要把计算属性当函数来调用 -->
+        <!-- {{total()}}->报错 -->
+       {{total}}
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            count:0,
+            price:100,
+            total:0,
+        },
+        watch:{
+            count(){
+
+                // var _this=this;
+                // setTimeout(function(){
+                //     _this.total=_this.count*_this.price;
+                // },1000)
+                
+                //watch可以支持异步操作
+                //箭头函数内的this指向箭头函数所在函数的this
+                setTimeout(()=>{
+                    this.total=this.count*this.price;
+                },1000)
+            }
+        } 
+    });
+
+</script>
+</html>

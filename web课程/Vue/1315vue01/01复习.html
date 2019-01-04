@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 复试当前行到上一行：alt+shift+up -->   
+    <!-- 复试当前行到下一行：alt+shift+down -->   
+    <div></div>
+    <div></div>
+</body>
+<script>
+
+    // 1:对象扩展
+    //     属性名与属性值的变量名相同时可以合并书写。var obj={name}；
+    //     如果属性是一个方法，可以省略function和：var obj={show(){}};
+    // 2:字符串扩展
+    //     字符串模板:`sdjfasdjhfkasdjfh${变量名}`;
+    // 3:数组扩展
+    //     ...展开运算符->把一个数组或者类数组的所有元素作为返回值.
+    //     Math.min(...arr);
+    //     var arr=[...arr1];
+    //     var arr=[...'Amazing']->直接把一个字符串变成一个数组.相当于'Amazing'.split('');
+    // 4:函数扩展
+    //     函数默认值
+    //     function show(a=10,b=20){};
+    // 5:解构赋值
+    //     a:数组的解构赋值(按位置匹配)
+    //         var [x,y]=[1,2];
+    //         var [x=10,y=20]=[];
+    //     b:对象的结构赋值(按属性名匹配);
+    //         声明两个变量b和c,值是20和30
+    //         var {x:b,y:c}={y:30,x:20};
+    //         声明两个变量b和c,值是20和30
+    //         var {x,y}={y:30,x:20};
+    //         var {x=10,y=20}={y:30,x:20};//x==20;y==30
+    //         var {x=10,y=20}={y:30};//x==10;y==30
+
+    //         //函数有两个形参x和y,默认值是undefined
+    //         function fn({x,y}={});
+    //         //默认参数是一个json对象，有两个属性x和y，默认值是10和20
+    //         function fn({x=10,y=20}={});
+    //         //默认参数是一个json对象,有两个属性x和y,默认传递20和30的值。
+    //         function fn({x,y}={x=20,y=30});
+    // 6:继承
+    //     class Person{constructor(name){} fn(){} fn2()}
+    //     var obj=new Person('yangmi');
+    //     // super()调用父类的构造函数。父类的公有方法，子类的实例默认可以继承
+    //     class Man extends Person {constructor(){super()} show(){} show2()}
+    //     var man=new Man();
+</script>
+</html>

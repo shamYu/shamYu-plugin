@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id='ul'>
+			<li>11</li>
+			<li class='box'>22</li>
+			<li>33</li>
+			<li class='box'>44</li>
+			<li>55</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		var oUl=document.getElementById("ul");
+		
+		var aLi=document.getElementsByTagName('li');
+		var aBox=document.getElementsByClassName('box');
+		var aLi1=oUl.children;
+		
+		console.log(aLi instanceof Array);//false
+		console.log(aBox instanceof Array);//false
+		console.log(aLi1 instanceof Array);//false
+		
+		function show(){
+			console.log(arguments instanceof Array);//false
+		}
+		
+		show();
+		
+//		类数组对象->可以使用下标,有length访问个数,但是都不是真正的数组,意味着数组的原型链上的方法无法访问.例如push,forEach
+		
+	</script>
+</html>

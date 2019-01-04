@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text1" placeholder="元素" value="" />
+		<input type="text" id="text2" placeholder="内容" value=''/>
+		<input type="button" id="btn" value="插入元素" />
+		<div id='div'></div>
+	</body>
+	<script type="text/javascript">
+		
+//		点击插入元素按钮,根据两个文本框内输入的数据插入相应的元素到div内
+		
+		var oDiv=document.getElementById("div");
+		var aInput=document.getElementsByTagName('input');
+		
+		aInput[2].onclick=insertEle;
+		
+		function insertEle(){
+			
+			if(aInput[0].value=='' || aInput[1].value==''){
+				alert('内容不能为空');
+				return
+			}else if(+aInput[0].value==aInput[0].value && aInput[1].value!=''){
+				alert('标签名不能是纯数字');
+				return
+			}
+			
+			var ele=document.createElement(aInput[0].value);			
+			oDiv.appendChild(ele);
+			ele.innerText=aInput[1].value;
+		}
+		
+	</script>
+</html>

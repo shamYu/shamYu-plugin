@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		通过构造函数创建一个块级元素类.
+//		通过构造函数创建一个自定义元素类.
+//		让自定义元素类继承块级元素类.
+		
+		function Block(){
+			this.globalCss={
+				display:'block',
+			}
+		}
+		
+		function CustomEle(tag,oStyle,str){
+			Block.call(this);
+			this.tag=tag;
+			this.css=oStyle;
+			this.innerText=str;
+		}
+		
+		var oEle=new CustomEle('div',{width:'100px',height:'100px',background:'red'},'hahahahahah');
+		
+		
+	</script>
+</html>

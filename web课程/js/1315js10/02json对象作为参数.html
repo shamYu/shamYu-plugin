@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'></div>
+		<div id='div2'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv1=document.getElementById("div1");
+		var oDiv2=document.getElementById("div2");
+		
+//		元素.style.样式名=样式值;
+		
+//		css(oDiv1,'background','red');
+//		css(oDiv1,'width','100px');
+//		css(oDiv1,'height','100px');
+//		
+//		css(oDiv2,'background','green');
+//		css(oDiv2,'width','200px');
+//		css(oDiv2,'height','200px');
+//		
+//		function css(ele,prop,val){
+//			ele.style[prop]=val;
+//		}
+
+//---------------------------------------------------------------------------------------
+
+//		css(oDiv1,'background','red','width','100px','height','100px');
+//		css(oDiv1,'background','red','width','100px');
+		
+//		css(oDiv1,{
+//			background:'red',
+//			width:'100px',
+//			height:'100px',
+//			border:'10px solid #000'
+//		});
+		
+//		css(oDiv1,{
+//			background:'red',
+//			width:'100px',
+//		});
+
+//		function css(ele,obj){
+//			for(var prop in obj){
+//				ele.style[prop]=obj[prop];
+//			}
+//		}
+//--------------------------------------------------------------------------------------
+
+		css({
+			ele:oDiv1,
+			style:{
+				background:'red',
+				width:'100px',
+				height:'100px',
+				border:'10px solid #000'
+			},
+			innerText:'哈哈哈哈'
+		});
+		
+		function css(obj){
+			for(var prop in obj.style){
+				obj.ele.style[prop]=obj.style[prop];
+			}
+			obj.ele.innerText=obj.innerText;
+		}
+		
+	</script>
+</html>

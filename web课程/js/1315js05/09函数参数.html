@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//公式，
+		//函数声明()的变量名，叫形参->形式参数
+		//函数声明有形参，则相当于在函数内部声明了一个变量，变量名与形参的名字相同。
+		function getPerimeter(r){
+			//r永远是10，无法做到调用时传入什么半径将什么半径进行计算
+//			var r=10;
+			var l=2*3.14*r;
+			console.log(l);
+		}
+		//函数调用()内的值,叫实参->实际参数
+		getPerimeter(10);
+		//根据周长公式:l=2πr,将r=5，带入公式计算得
+		getPerimeter(5);
+		
+//		函数调用时:实参会给形参赋值. 形参=实参;
+		
+//		l=2πr -> r->形参. 真正使用公式时,r的值是实参;
+
+	</script>
+</html>

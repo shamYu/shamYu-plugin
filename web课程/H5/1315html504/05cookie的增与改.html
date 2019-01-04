@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id='text' value="" />
+		<input type="button" id='btn' value="按钮" />
+	</body>
+	<script type="text/javascript">
+		
+		setCookie('str','abcdef',2);
+		
+		//改与增cookie的函数封装
+		function setCookie(name,val,day){
+			
+			var d=new Date();
+		
+			var nowTime=d.getTime();
+		
+			d.setTime(nowTime+24*60*60*1000*day);
+		
+			document.cookie=name+'='+val+'; expires='+d.toUTCString();
+		}
+		
+		function getCookie(name){			
+			var arr=document.cookie.split('; ');
+			var val='';
+			arr.forEach(function(items,i){
+				if(items.indexOf(name)!=-1){					
+					var data=items.split('=');
+					val=data[1];
+				}
+			});
+			return val;
+		}
+		
+//		增,删,改,查.
+		
+	</script>
+</html>

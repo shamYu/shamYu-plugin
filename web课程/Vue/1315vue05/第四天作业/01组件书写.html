@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        li{
+            float: left;
+            list-style: none;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height:50px;
+            background: red;
+            margin-left:1px;
+        }
+        a{
+            text-decoration: none;
+            color:#fff
+        }
+        #main>div{
+            float: left;
+            width: 500px;
+            height: 500px;
+            border:1px solid #000;
+        }
+        #wrap{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id='wrap'>
+        <div is='vHeader'></div>
+        <div is='vMain'></div>
+        <div is='vFooter'></div>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script>
+    //在wrap内书写5个组件,分别代表header,main,footer,aside,article,保证层级关系和样式.
+
+    const vHeader={
+        template:
+        `<div id='header'>
+            <ul>
+                <li><a href="#">fff</a></li>
+                <li><a href="#">哈哈哈</a></li>
+                <li><a href="#">得到的</a></li>
+                <li><a href="#">dddd</a></li>
+                <li><a href="#">得到的</a></li>
+            </ul>
+        </div>`
+    }
+
+    const vAside={
+        template:
+        `<div id='aside'>
+            <p>我是侧边栏</p>
+        </div>`,
+    }
+    const vArticle={
+        template:
+        `<div id='article'>
+            <p>我是内容区域</p>
+        </div>`,
+    }
+
+    const vMain={
+        template:
+        `<div id='main'>
+            <div is='vAside'></div>
+            <div is='vArticle'></div>
+        </div>`,
+        components:{vAside,vArticle}
+    }
+
+    const vFooter={
+        template:
+        `<div id='footer'>
+            <ul>
+                <li>11</li>
+                <li>22</li>
+                <li>33</li>
+            </ul>
+        </div>`
+    }
+
+    var vm=new Vue({
+        el:'#wrap',
+        components:{vHeader,vMain,vFooter}
+    })
+
+</script>
+</html>

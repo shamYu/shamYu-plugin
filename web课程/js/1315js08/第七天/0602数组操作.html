@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--班0*金1*杨2*……-->
+	</body>
+	<script type="text/javascript">
+		
+		var arr=['班长大人','金刚欧巴','杨幂','洋洋','毛姐姐','唐姐姐','慧妹妹','浩哥哥'];
+		
+		//将数组内的所有元素的第一个字符和相应元素的下标拼接，再用*号连接，并显示在body内。
+		
+		for(var i=0;i<arr.length;i++){
+			arr[i]=arr[i].slice(0,1)+i;
+		}
+		
+		document.body.innerText=arr.join('*');
+		
+	
+		
+	</script>
+</html>

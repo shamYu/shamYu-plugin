@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            background: red;
+        }
+        .green{
+            background: green
+        }
+    </style>
+</head>
+<body>
+    <div id='div'>
+        <input type="button" value="插入li" @click='add()'>
+        <ul>
+            <!-- <li :class='i%2==0?"green":"red"' v-for='(d,i) in arr'>{{d}}</li> -->
+            <li :class='{red:i%2!=0,green:i%2==0}' v-for='(d,i) in arr'>{{d}}</li>
+        </ul>
+    </div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    //每点击一次按钮,给ul插入一个新的li.li的内容随机取1-10的随机整数
+    //奇数li背景红,偶数li背脊绿(可以配合样式类)
+    new Vue({
+        el:'#div',
+        data:{
+            //li的个数
+            arr:[],
+        },
+        methods:{
+            add(){
+                this.arr.push(Math.floor(Math.random()*10)+1);
+            }
+        }
+    })
+</script>
+</html>

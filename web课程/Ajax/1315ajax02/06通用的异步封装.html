@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#oC{
+				border:3px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='oC' width="500" height='500'></canvas>
+	</body>
+	<script type="text/javascript">
+		
+		var oC=document.getElementById("oC");
+		var oGc=oC.getContext('2d');
+		
+		//异步操作的类
+		function Yibu(fn){
+			this.jianting=fn
+		}
+		
+		var setTime=new Yibu(function(success){
+			setTimeout(function(){
+				success()
+			},1000);
+		});
+		
+		setTime.jianting(function(){
+			document.body.style.background='red';
+			console.log(2);
+		})
+		
+		setTime.jianting(function(){
+			oDiv.style.background='green';
+			alert(100);
+		})
+		
+		new Yibu(function(success){
+			setTimeout(function(){
+				success()
+			},1000);
+		}).jianting(function(){
+			document.body.style.background='red';
+			console.log(2);
+		})
+		
+//		function showTime(success){
+//			setTimeout(function(){
+//				success()
+//			},1000);
+//		}
+//		
+//		showTime(function(){
+//			document.body.style.background='red';
+//			console.log(2);
+//		})
+//		
+//		showTime(function(){
+//			oDiv.style.background='green';
+//			alert(100);
+//		})
+		
+
+		
+	</script>
+</html>

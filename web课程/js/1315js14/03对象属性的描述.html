@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var oYm={
+			name:'杨幂'
+		}
+		
+		//构造函数的静态属性(静态方法)
+		//获取一个对象的某个属性的4项基本描述
+		//参数有2个，第一个对象名，第二个属性名
+//		var descriptor=Object.getOwnPropertyDescriptor(oYm,'name');
+		
+//		configurable:true(是否可删除);
+//		enumerable:(是否可枚举,是否可forin检测);
+//		value:(属性的值);
+//		writable:(值是否可以修改);
+		
+//		var descriptor=Object.getOwnPropertyDescriptor(Object.prototype,'toString');//enumerable:false
+		
+		//修改某个对象的某个属性的4项基本描述，第一个参数是对象名，第二个属性名，第三个参数是json对象，属性是4项基本描述
+		Object.defineProperty(oYm,'name',{
+			enumerable:false,
+			value:'范冰冰'
+		});
+		
+	</script>
+</html>

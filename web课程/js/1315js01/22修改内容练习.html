@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'></div>
+	</body>
+	<script type="text/javascript">
+		
+//		给div1插入一个元素p,元素p的内容是'杨幂',id属性是:'p1';
+		
+		var oDiv=document.getElementById("div1");		
+//		oDiv.innerHTML='<p id='    p1     '>杨幂</p>'; //Unexpected identifier ->意外的标识符
+		oDiv.innerHTML='<p id="p1">杨幂</p>'; //Unexpected identifier ->意外的标识符
+		
+		//通过新插入的p元素的id来获取p
+//		var oP=document.getElementById("p1");	
+		//修改p的内容
+//		oP.innerText='范冰冰';
+		
+	</script>
+</html>

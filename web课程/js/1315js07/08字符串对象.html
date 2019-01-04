@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//字符串对象使用->直接赋值
+		var str='amazing';
+		
+//		如果把str看成一个数组['A','m','a','z','i','n','g'];
+		
+//		charAt(index)->通过字符的下标来访问字符.类似于数组的中括号;
+//		alert(str.charAt(0));
+		
+		//字符串对象的length返回字符串的字符个数.
+//		alert(str.length);
+		
+		//最后一个字符
+//		alert(str.charAt(str.length-1));
+		
+//		字符串的search(),检测字符串内有没有特定的字符,如果有,返回第一次出现的这个字符的下标,如果没有返回-1;
+		
+//		if(str.search('w')!=-1){
+//			alert('这里有w')
+//		}else{
+//			alert('这里没有w')
+//		}
+		
+//		字符串的indexOf(),检测字符串内有没有特定的字符,如果有,返回第一次出现的这个字符的下标,如果没有返回-1		
+//		字符串的lastIndexOf(),检测字符串内有没有特定的字符,如果有,返回最后一次出现的这个字符的下标,如果没有返回-1
+//		indexOf这个方法字符串对象和数组对象公有。search只有字符串可以用。
+		
+//		if(str.indexOf('w')!=-1){
+//			alert('这里有w')
+//		}else{
+//			alert('这里没有w')
+//		}
+//		
+//		if(str.lastIndexOf('w')!=-1){
+//			alert('这里有w')
+//		}else{
+//			alert('这里没有w')
+//		}
+		
+		var arr=[1,2,3,4,5,6,7];
+		
+//		检测一个数组有没有某个元素
+		if(arr.indexOf(100)!=-1){
+			alert('这里有100')
+		}else{
+			alert('这里没有100')
+		}
+		
+	</script>
+</html>

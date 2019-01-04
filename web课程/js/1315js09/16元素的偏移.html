@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+			}
+			div div{
+				background: red;
+				width: 200px;
+				height: 200px;
+				float:left;
+				margin-left:1px
+			}
+			/*#div1{
+				margin-left:400px;
+			}*/
+			#wrap{
+				position: relative;
+				margin-left:400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id='div1'><p id='p1'>pp</p></div>
+			<div id='div2'><p id='p2'>pp</p></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oP2=document.getElementById("p2");		
+		var oDiv1=document.getElementById("div1");
+		
+		//样式的margin-left与offsetLeft是两个完全不同的概念，如果值相等，那是巧合。
+		//获取样式，不管是行间还是内部样式，都是返回字符串。
+		var l=getComputedStyle(oDiv1).marginLeft;
+		
+		//offsetLeft->获取的是当前元素距离最近的，具有定位属性的某个祖先元素的左边距。一定是返回number
+		console.log(oP2.offsetLeft);
+		
+		//offsetTop->获取的是当前元素距离最近的，具有定位属性的某个祖先元素的上边距。一定是返回number
+//		console.log(oP2.offsetTop);
+		
+	</script>
+</html>

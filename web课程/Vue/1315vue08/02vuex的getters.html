@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <p>{{count}}</p>
+        <p>{{price}}</p>
+        <p>{{total}}</p>
+        <p>{{abc}}</p>
+        <p>{{obj.name}}</p>
+        <div is='vDiv'></div>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script src="js/vuex.js"></script>
+<script>
+
+    const store=new Vuex.Store({
+        // strict:true,
+        state:{
+            price:10,
+            count:2,
+            total:20,
+            abc:0
+        },
+        //当price与count变化时，重新计算一次total的值。
+        //total相当于state的计算属性。
+        getters:{
+            total(state){
+                return state.price*state.count
+            }
+        }
+    });
+
+    const vDiv={
+        template:
+        `<div>
+            <p>{{count}}</p>
+            <p>{{price}}</p>
+            <p>{{total}}</p>
+        </div>`,
+        computed:{
+            price(){
+                return this.$store.state.price
+            },
+            total(){
+                return this.count*this.price
+            },
+            count(){
+                return this.$store.state.count
+            }
+        }
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        //obj有setter，但是obj.name没有setter
+        data:{obj:{}},
+        //除非一开始初始化vue时就填写name属性
+        // data:{obj:{name:''}},
+        store,
+        components:{vDiv},
+        computed:{
+            price(){
+                //与state的一半属性price绑定。
+                return this.$store.state.price
+            },
+            total(){
+                //与state的计算属性total绑定
+                return this.$store.getters.total
+            },
+            count(){
+                return this.$store.state.count
+            },
+            abc(){
+                //store对象的state属性没有abc的setter,
+                //因此state的abc变化并不会导致this.$store.state.abc也跟着变化,因此视图不会更新
+                return this.$store.state.abc
+            },
+        }
+    })
+
+</script>
+</html>

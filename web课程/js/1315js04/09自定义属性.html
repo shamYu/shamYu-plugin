@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text1" value="哈哈哈哈哈111" />
+		<input type="text" id="text2" value="哈哈哈哈哈222" />
+	</body>
+	<script type="text/javascript">
+		
+		var oText1=document.getElementById("text1");
+		var oText2=document.getElementById("text2");
+		
+		//oText1.value。value->系统默认拥有的属性->可以让我们获取oText1的行间value属性值.
+		//console.log(oText1.value);
+		//oText2.value。value->系统默认拥有的属性->可以让我们获取oText2的行间value属性值.
+		//console.log(oText2.value);
+		
+		//属性自定义属性,可以存任何我们想存的值.设自定义属性时,不要前面加var
+		oText1.abc='123';		
+		oText2.abc='456';
+		
+		var abc='123';
+		var abc1='456';
+		
+	</script>
+</html>

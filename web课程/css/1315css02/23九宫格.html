@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width: 310px;
+				/*height: 310px;*/
+				border:5px solid red;
+				/*默认空白去除*/
+				font-size: 0;
+			}
+			div>div{
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				margin-left:5px;
+				margin-top:5px;
+				background: green;
+			}
+			div>.box{
+				margin-left:0;
+			}
+			div>.fl{
+				margin-top:0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div class='box fl'></div>
+			<div class='fl'></div>
+			<div class='fl'></div>
+			<div class='box'></div>
+			<div></div>
+			<div></div>
+			<div class='box'></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+</html>

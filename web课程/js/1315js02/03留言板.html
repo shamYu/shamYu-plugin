@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>留言版</h3>
+		<hr />
+		<div id='div1'>
+			<!--<p>1楼：1</p>
+			<p>2楼：2</p>
+			<p>3楼：3</p>-->
+		</div>
+		<textarea name="" rows="20" cols="40" id='text'></textarea>
+		<input type="button" id="btn" value="发表留言" />
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+		var oBtn=document.getElementById("btn");
+		var oText=document.getElementById("text");
+		
+		var iCount=0;
+		
+		oBtn.onclick=function () {
+			
+			//每次点击内容都被替换
+//			oDiv.innerText=oText.value;
+			//老内容不被替换，但是不换行
+//			oDiv.innerText+=oText.value;
+			
+			//换行需要插入br元素，因此不能使用innerText;
+//			oDiv.innerText+=oText.value+'<br />';
+//			oDiv.innerHTML+=oText.value+'<br />';
+			
+			//每次点击楼层+1;
+//			iCount+=1;
+			iCount++;
+			oDiv.innerHTML+='<p>'+iCount+'楼：'+oText.value+'</p>';
+
+//			\->转义->转变n的意义->\n换行
+//			oText.value+='哈哈哈哈哈\n';
+		}
+		
+	</script>
+</html>

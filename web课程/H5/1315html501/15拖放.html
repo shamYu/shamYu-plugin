@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+			}
+			#div1{
+				background: red;
+			}
+			#div2{
+				background: green;
+				margin-left:300px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--要能拖，需要设置draggable="true"-->
+		<div id='div1' draggable="true">被拖的元素</div>
+		<div id='div2'>目标元素</div>
+	</body>
+	<script type="text/javascript">
+				
+//		1:拖放开始时,被拖元素背景变蓝,内容变为,正在拖.
+//		2:进入目标元素时,把目标元素背景变黄,目标元素的内容设置为'可以松开鼠标'了;
+//		3:离开目标元素时,目标元素背景和内容都变成原来的背景和内容.
+//		4:鼠标松开后,目标元素背景变成被拖元素的背景,内容变成'我变了';
+		
+		var oDiv1=document.getElementById("div1");
+		var oDiv2=document.getElementById("div2");
+		
+		oDiv1.addEventListener('dragstart',start);
+		
+		function start(){
+			this.style.background='blue';
+			this.innerText='正在拖';
+		}
+		
+		oDiv2.addEventListener('dragenter',enter)
+		
+		function enter(){
+			this.style.background='yellow';
+			this.innerText='可以松开鼠标了';
+		}
+		
+		oDiv2.addEventListener('dragleave',leave);
+		
+		var str=oDiv2.innerText;
+		var color2=getComputedStyle(oDiv2).background;
+		
+		function leave(){
+			this.style.background=color2;
+			this.innerText=str;
+		}
+		
+		oDiv2.addEventListener('dragover',over);
+		//drop事件需要在dragover事件内组织默认事件才能触发
+		oDiv2.addEventListener('drop',drop);
+		
+		var color1=getComputedStyle(oDiv1).background;
+		
+		function over(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+		}
+		
+		function drop(){
+			this.style.background=color1;
+			this.innerText='我变了';
+			console.log('鼠标松开了')
+		}
+		
+		oDiv1.addEventListener('dragend',end);		
+		function end(){
+//			oDiv2.style.background='red';
+//			oDiv2.innerText='我变了';
+			console.log('拖放结束了')
+		}
+		
+		
+	</script>
+</html>

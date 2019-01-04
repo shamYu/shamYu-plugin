@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			div{
+				width: 50px;
+				height: 50px;
+				background: red;
+				border-radius:50%;
+				position: absolute;
+				text-align: center;
+				line-height: 50px;
+				cursor: pointer;
+				font-size: 14px;
+				color:#fff;
+			}
+			input{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="插入泡泡" />
+	</body>
+	<script type="text/javascript">
+		
+		//点击按钮插入一个div，是圆的。位置随机。(不能超出可视范围)
+		//每个div都会自己抖动。
+		//鼠标移入div,被移入的div停止抖动，其他div不受影响。
+		//每个div都可以拖拽。
+		
+		var oBtn=document.getElementById("btn");
+		var win_w=document.documentElement.clientWidth;
+		var win_h=document.documentElement.clientHeight;
+		
+		var names=['杨幂','班长','范冰冰','林志玲','高圆圆','巩俐','章子怡','周冬雨','蒙司机'];
+		
+		oBtn.onclick=createPaopao;
+		
+		//利用委托给所有的div处理拖拽逻辑
+		document.addEventListener('mouseover',overDiv);
+		document.addEventListener('mouseout',leaveDiv);
+		document.addEventListener('mousedown',moveDiv);
+		
+		function createPaopao(){
+			//创建一个泡泡，初始化样式和内容，并插入body;
+			var oDiv=initPaopao();
+			
+			//每个div设置一个定时器，关闭定时器时可以对号入座
+			oDiv.timer=setInterval(dese(oDiv),50);						
+		}
+		
+		function initPaopao(){
+			var oDiv=document.createElement("div");
+			document.body.appendChild(oDiv);
+			oDiv.style.background='rgb('+getRand(0,256)+','+getRand(0,256)+','+getRand(0,256)+')';
+			oDiv.style.left=getRand(0,win_w-oDiv.offsetWidth)+'px';
+			oDiv.style.top=getRand(oBtn.offsetHeight,win_h-oDiv.offsetHeight)+'px';
+			oDiv.innerText=names[getRand(0,names.length)];
+			return oDiv;
+		}
+		
+		//拖拽逻辑
+		function moveDiv(ev){
+			
+			var ev=ev||window.event;
+			var et=ev.target||ev.srcElement;
+			//如果事件源，不是div，终止函数调用
+			if(et.nodeName!='DIV'){
+				return
+			}			
+			var disX=ev.clientX-et.offsetLeft;
+			var disY=ev.clientY-et.offsetTop;
+			
+			//缓存当前的this;
+			var oDiv=et
+			
+			document.onmousemove=function(ev){
+				var ev=ev||window.event;
+//				阻止默认事件
+				ev.preventDefault();
+				oDiv.style.left=ev.clientX-disX+'px';
+				oDiv.style.top=ev.clientY-disY+'px';
+			}
+			document.onmouseup=function(){
+				document.onmousemove=null;
+				document.onmouseup=null;
+			}
+		}
+		
+		function overDiv(ev){
+			var ev=ev||window.event;
+			var et=ev.target||ev.srcElement;
+			//如果事件源，不是div，终止函数调用
+			if(et.nodeName!='DIV'){
+				return
+			}
+			//鼠标移入关闭自己的定时器
+			clearInterval(et.timer);
+		}
+		
+		function leaveDiv(ev){
+			var ev=ev||window.event;
+			var et=ev.target||ev.srcElement;
+			//如果事件源，不是div，终止函数调用
+			if(et.nodeName!='DIV'){
+				return
+			}
+			//鼠标移出时开启自己的定时器
+			et.timer=setInterval(dese(et),50);
+		}
+		//随机移动的逻辑
+		function dese(ele){
+			return function(){
+				ele.style.left=ele.offsetLeft+getRand(-2,3)+'px';
+				ele.style.top=ele.offsetTop+getRand(-2,3)+'px';
+			}			
+		}
+		//获取任意两个数之间的随机整数的逻辑
+		function getRand(a,b){
+			return Math.floor(Math.random()*(a-b))+b;
+		}
+		
+	</script>
+</html>

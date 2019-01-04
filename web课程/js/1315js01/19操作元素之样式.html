@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: green !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div'></div>
+	</body>
+	<script type="text/javascript">
+		
+//		js操作元素的步骤:
+//			1:获取元素;
+//			2:对号入座操作元素;
+//				a:操作样式
+//				b:操作内容
+//				c:操作属性
+		
+//		object(对象);oDiv中，o指明了oDiv这个变量的数据类型是object
+		var oDiv=document.getElementById("div");
+		
+//		oDiv.style.background='red';
+			
+//		oDiv.style.cssText='background: red !important;';
+		
+//		修改单个样式的公式:
+//			元素.style.样式名=样式值(字符串);
+//			如果样式名是带-,则把样式名转换成驼峰命名;			
+//			oDiv.style.fontSize='64px';
+		
+//		修改多个样式:		
+//			元素.style.cssText=行间样式值(字符串);		
+//			oDiv.style.cssText='background: red; font-size: 24px;' ->批量设置多个样式(跟写行间样式一样);
+		
+//		js只能操作行间样式(获取和设置都只能获取和设置行间样式);
+		
+//		获取样式(如果行间没有style属性，则获取空字符串):
+//			元素.style.样式名;
+
+		
+	</script>
+</html>

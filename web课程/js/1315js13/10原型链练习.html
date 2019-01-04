@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		function A(){};
+		function B(){};
+		
+		A.prototype.name='a';
+		B.prototype.name='b';
+		Object.prototype.name='c';
+		
+		var oA=new A();
+//		console.log(oA.name);//a
+		
+		var oB=new B();
+//		console.log(oB.name);//b
+		
+		B.prototype=oA;
+		
+		//oB创建时，B.prototype是没有变化的
+//		console.log(oB.name);//b
+		//new B()创建新的实例，创建前，B.prototype已经变成了oA。new B()->oA->A.prototype->Object,prototype
+//		console.log(new B().name);//a
+		
+		var c={};
+		oA=c;
+		
+		console.log(oB.name);//b
+		console.log(new B().name);//a
+		console.log(new A().name);//a
+		
+	</script>
+</html>

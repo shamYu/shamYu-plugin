@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		function show(){
+			console.log(this);
+		}
+		
+		show();//this指向window
+		
+//		window.show();如果window来调用函数,可以省略window.
+		
+//		用var 声明的全局变量,以及全局环境下声明的函数,实际上就是给window添加自定义属性
+		
+//		var abc=100;		
+//		window.abc=100;
+//		
+//		abc=200;
+//		window.abc=200;
+		
+		//定时器的第一个函数内的this是window
+//		setTimeout(function(){
+//			console.log(this);
+//		},1000);
+		
+		//window在调用匿名函数
+		
+		(function(){
+			console.log(this);//window
+		})();
+		
+		//window在调用show
+//		function show(){
+//			console.log(this);
+//		}		
+//		show();
+		
+		
+	</script>
+</html>

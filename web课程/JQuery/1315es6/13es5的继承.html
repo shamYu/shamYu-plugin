@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		function Life(){};
+		
+		Life.prototype.breathe=function(){
+			console.log('我会呼吸');
+		}
+		
+		function Person(){
+			this.walk=true;
+		};
+		//继承公有属性
+		Person.prototype=new Life();
+		
+		Person.prototype.speak=function(){
+			console.log('我会说话');
+		}
+		
+		function Banz(name){
+			//继承私有属性
+			Person.call(this);
+			this.name=name;
+		}
+		//继承公有属性	
+		Banz.prototype=new Person();
+		
+//		班长继承人类,人类继承生物
+		
+		var banz=new Banz('班长');
+		
+		//实例默认继承类的原型
+		banz.__proto__==Banz.prototype
+		
+	</script>
+</html>

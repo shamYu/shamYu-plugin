@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div' title='哈哈哈'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div");
+		
+//		oDiv.attributes -> 属性节点的数组
+		
+		oDiv.attributes[0].nodeName //获取属性名
+		oDiv.attributes[0].name
+		
+//		oDiv.attributes[0].nodeValue='div2' //修改属性值
+		oDiv.setAttribute('id','div2');
+		
+//		oDiv.attributes[1].nodeValue='呵呵呵' //修改属性值
+		oDiv.setAttribute('title','呵呵呵');
+		
+		
+	</script>
+</html>

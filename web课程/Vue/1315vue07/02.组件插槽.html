@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <div is='div1'>
+            <p slot='h3'>pppppp</p>
+            <div slot='section'>divdivd</div>
+        </div>
+        <div is='div1'>
+            <!-- 通过slot属性来标记不同的内容(标签) -->
+            <h3 slot='h3'>{{msg}}</h3>
+            <section slot='section'>section</section>
+        </div>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    // const div2={
+    //     template:
+    //     `<div>
+    //         <h3>哈哈哈哈哈</h3>
+    //         <input type="text">
+    //         <div></div>
+    //     </div>`
+    // }
+
+    // const div1={
+    //     template:
+    //     `<div>
+    //         <input type="text">
+    //         <div></div>
+    //         // slot->插槽，可以保留主键内预设的内容，slot的位置就是预设内容显示在组件内的位置
+               // slot->是属于父组件的视图.
+    //         <slot></slot>
+    //     </div>`
+    // }
+
+    const div1={
+        template:
+        `<div>
+            //通过name属性匹配不同的预设内容
+            <slot name='section'></slot>
+            <input type="text">
+            <div></div>
+            <slot name='h3'></slot>
+        </div>`,
+        data(){return {msg:'子组件'}}
+    }
+
+    new Vue({
+        el:"#app",
+        components:{div1},
+        data:{msg:'父组件'}
+    })
+
+</script>
+</html>

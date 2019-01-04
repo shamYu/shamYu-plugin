@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id='ul'>
+			<li>1</li>
+			<li>2</li>
+			<li id='div1'>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		var oLi=document.getElementById("div1");
+		var oUl=document.getElementById("ul");
+		
+		var oP=document.createElement("p");
+		
+		//appendChild(oP)插入的元素会出现在父元素的最后面
+//		oUl.appendChild(oP);		
+//		oP.innerText='我是新来的p';
+		
+		//oUl.insertBefore(oP,oLi);
+		//oP.innerText='我是新来的p';
+		
+		//变相实现insertAfter
+		oUl.insertBefore(oLi,oP);
+
+//		插入兄弟节点到某个已知节点的前面:
+//			父元素.insertBefore(新节点,已知节点);
+		
+	</script>
+</html>

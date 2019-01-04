@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1{
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            border:1px solid #000;
+            box-shadow: 0 0 20px #666;
+            left: 50%;
+            top:50%;
+            margin-left:-250px;
+            margin-top: -250px;
+            display: flex
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <div is='vDiv1'></div>
+        <div is='vDiv2'></div>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script src="../js/vuex.js"></script>
+<script>
+    //使用vuex实现以下效果。
+    //box1和box2分别做成两个不同的组件。在box1中的颜色框内选中了颜色之后，把box2内的p的背景色变成选中的颜色
+
+    const store=new Vuex.Store({
+        strict:true,
+        state:{color:''},
+        mutations:{
+            setColor(state,val){
+                state.color=val
+            }
+        },
+        actions:{
+            fn1(store,val){
+                store.commit('setColor',val)
+            }
+        }
+    })
+
+    const vDiv1={
+        template:
+        `<div id='box1'>
+            <input type="color" v-model='color'>
+            {{rgb}}
+        </div>`,
+        data(){
+            return {color:''}
+        },
+        watch:{
+            color(newVal){
+                // this.$store.commit('setColor',newVal);
+                this.$store.dispatch('fn1',newVal);
+            }
+        },
+        computed:{
+            rgb(){
+                return this.$store.state.color;
+            }
+        }
+    }
+    const vDiv2={
+        template:
+        `<div id='box2'>
+            <p :style="{background:rgb}">box2</p>
+        </div>`,
+        computed:{
+            rgb(){
+                return this.$store.state.color
+            }
+        }
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        components:{vDiv1,vDiv2},
+        store
+    })
+
+</script>
+</html>

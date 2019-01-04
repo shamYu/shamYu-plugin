@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="有女朋友的人数" />
+		<input type="button" id="btn2" value="有男朋友的人数" />
+	</body>
+	<script type="text/javascript">
+		var arr=[
+			{
+				name:'班长大人',
+				age:23,
+				sex:'男',
+				hasGf:true,
+				Gf:'唔,真漂亮'
+			},
+			{
+				name:'金刚欧巴',
+				age:22,
+				sex:'男',
+				hasGf:true,
+				Gf:'唔,真漂亮'
+			},
+			{
+				name:'杨幂',
+				age:32,
+				sex:'女',
+				hasBf:true,
+				Bf:'蒙司机'
+			},
+			{
+				name:'范冰冰',
+				age:32,
+				sex:'女',
+				hasBf:true,
+				Bf:'大水牛禽兽'
+			},
+			{
+				name:'洋洋',
+				age:22,
+				sex:'男',
+				handsome:'突破天际',
+				hasGf:true,
+				Gf:'唔,真漂亮'
+			},
+			{
+				name:'浩哥哥',
+				age:22,
+				sex:'男',
+				handsome:'突破天际',
+				hasGf:false,
+				Gf:undefined
+			}
+		]
+		
+		//点击btn1，弹出以上数组中有女朋友的总人数
+		//点击btn2，弹出以上数组中有男朋友的总人数
+		
+		var oBtn1 = document.getElementById("btn1");
+		var oBtn2 = document.getElementById("btn2");
+		oBtn1.onclick=function () {
+			var total=0;
+			for(var i=0;i<arr.length;i++){
+				if(arr[i].hasGf){
+					total++;
+				}
+			}
+			alert(total);
+		}
+		oBtn2.onclick=function () {
+			var total=0;
+			for(var i=0;i<arr.length;i++){
+				if(arr[i].hasBf){
+					total++;
+				}
+			}
+			alert(total);
+		}
+		
+	</script>
+</html>

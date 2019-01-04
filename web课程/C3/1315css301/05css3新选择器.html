@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*:nth-child() ->第几个子元素*/
+			/*:nth-of-type() ->某个类别里面的第几个子元素*/
+			
+			/*是li并且又是第三个子元素*/
+			li:nth-child(3){
+				background: red;
+			}
+			/*li:nth-child(2){
+				background: green;
+			}*/
+			
+			/*是li并且又是这个类别的第一个子元素*/
+			li:nth-of-type(1){
+				background: green;
+			}
+			
+			/*:nth-child()->家里的老几,不分性别*/
+			/*:nth-of-type()->男生里面的老几，女生里面的老几，分性别*/
+			
+			/*不同的子元素集合就会选中不同的p*/
+			p:nth-child(1){
+				background: blue;
+			}
+			
+			p:nth-of-type(1){
+				background: blue;
+			}	
+		</style>
+	</head>
+	<body>
+		<ul>
+			<p>ppp</p>
+			<p>ppp</p>
+			<p>ppp</p>
+			<p>ppp</p>
+			<p>ppp</p>
+			<p>ppp</p>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+			<li>1</li>
+		</ul>
+		<div>
+			<p>3</p>
+			<p>3</p>
+			<p>3</p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        {{msg}}
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+    // var vm=new Vue({
+    //     template:'<h3>{{msg}}</h3>',
+    //     data:{
+    //         msg:'haha'
+    //     }
+    // });
+
+    //如果vue实例没有传入el选项，那么会等待$mount被调用，才能继续生成虚拟节点的步骤。
+    //如果没有el选项，也没有调用$mount,那么vue停止解析。
+    // vm.$mount('#app');
+
+    new Vue({
+        template:'<h3>{{msg}}</h3>',
+        data:{
+            msg:'haha'
+        }
+    }).$mount('#app');
+
+</script>
+</html>

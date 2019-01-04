@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+        #nav{
+            height: 50px;
+            background: mediumseagreen;
+            display: flex;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        #nav>li{
+            width: 150px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 50px;
+        }
+        #nav>li>ul{
+            background: whitesmoke;
+            display: none;
+        }
+        #login{
+            background: orangered;
+        }
+    </style>
+    <script src="js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <ul id="nav">
+        <li>
+            首页
+            <ul>
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+                <li>44444</li>
+                <li>55555</li>
+            </ul>
+        </li>
+        <li>
+            神经病啊
+            <ul>
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+                <li>44444</li>
+                <li>55555</li>
+            </ul>
+        </li>
+        <li>
+            写这么多
+            <ul>
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+                <li>44444</li>
+                <li>55555</li>
+            </ul>
+        </li>
+        <li>
+            导航标题
+            <ul>
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+                <li>44444</li>
+                <li>55555</li>
+            </ul>
+        </li>
+        <li>
+            干神马啊
+            <ul>
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+                <li>44444</li>
+                <li>55555</li>
+            </ul>
+        </li>
+        <li>
+            写的眼花
+            <ul>
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+                <li>44444</li>
+                <li>55555</li>
+            </ul>
+        </li>
+        <li id="login">
+            登录
+        </li>
+    </ul>
+</body>
+    <script>
+        /*导航栏与登录按钮*/
+        $('#nav>li').hover(showNav,hideNav);
+
+        function showNav() {
+            $(this).children('ul').stop().slideDown(500);
+        }
+
+        function hideNav() {
+            $(this).children('ul').stop().slideUp(500);
+        }
+
+    </script>
+</html>

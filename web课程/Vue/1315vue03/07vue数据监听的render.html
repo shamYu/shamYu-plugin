@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <input type="button" @click='show()' value='改变数组'>
+        {{arr}}
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            arr:[],
+        },
+        methods:{
+            show(){
+                // console.log('鬼东西');
+                // this.arr[0]=100;
+                // this.arr.push(100);
+                this.arr.push({name:900});
+            }
+        }
+    })
+
+</script>
+</html>

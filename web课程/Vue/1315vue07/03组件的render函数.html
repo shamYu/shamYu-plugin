@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <div is='box1'></div>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+    const box1={
+
+        // template:'<p>哈哈哈哈</p>',
+        // render(createElement){
+
+        render(h){
+
+            //createElement用于创建虚拟节点，第一个参数是标签名。
+            // return createElement('p','哈哈哈哈');
+
+            //第二个参数是属性节点。
+            // return createElement('p',{
+            //     class:{box:true,active:true},
+            //     style:{width:'100px',height:'100px',background:'red'},
+            //     on:{click:function(){alert(100)}},
+            //     attrs:{id:'p1',title:'我是一个咋咋飞',abc:'edf'}
+            // },'哈哈哈');
+            
+            //最后一个参数是子节点,是一个数组，如果子节点是标签，需要重新调用形参createElement
+            // return createElement('p',[
+            //     createElement('span',[
+            //         createElement('a','哈哈哈')
+            //     ]),
+            //     createElement('a','aaaaa'),
+            // ]);
+
+            return h('p',[
+                h('span',[h('a','哈哈哈')]),
+                h('a','aaaaa'),
+            ]);
+        }        
+    }
+
+    new Vue({
+        el:'#app',
+        components:{box1}
+    })
+
+</script>
+</html>

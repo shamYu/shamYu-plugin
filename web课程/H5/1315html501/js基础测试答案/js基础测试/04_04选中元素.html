@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div id='div2'>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+//		给div1与div2内的所有div添加样式100*100,红色背景,内容分别是'div1'和'div2'以及'div3'
+		function setEle (id) {
+			var oDiv=document.getElementById(id);
+			var aDiv=oDiv.getElementsByTagName('div');
+			for(var i=0;i<aDiv.length;i++){
+				aDiv[i].style.width='100px';
+				aDiv[i].style.height='100px';
+				aDiv[i].style.background='red';
+				aDiv[i].innerText='div'+(i+1);		
+			}				
+		}		
+		setEle('div1');
+		setEle('div2');		
+	</script>
+</html>

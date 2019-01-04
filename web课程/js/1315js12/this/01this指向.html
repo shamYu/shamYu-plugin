@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+	</body>
+	<script type="text/javascript">
+		
+		var oBtn=document.getElementById("btn");
+			
+//		oBtn.click();
+//		oBtn.onclick=function(){
+//			console.log(this)//oBtn
+//		}
+
+//		oBtn.mouseleave();
+//		oBtn.onmouseleave=function(){
+//			console.log(this)//oBtn
+//		}
+//--------------------------------------------------------------------------------		
+//		function fn () {
+//			console.log(this);
+//		}		
+//		oBtn.onclick=fn;//点击时打印oBtn,oBtn.click();
+//		oBtn.onclick=fn();//只调用一次，在页面运行时，打印window。点击事件无效果，因为事件得到的值是undefined
+//---------------------------------------------------------------------------------
+//		(function () {
+//			console.log(this)//window
+//		})();
+		
+//		setInterval(function () {
+//			console.log(this);//window
+//		},100);
+//--------------------------------------------------------------------------------
+//		var oBtn=document.getElementById("btn");
+		
+//		function fn () {
+//			console.log(this);
+//		}
+
+//		fn();//window
+//		fn.apply(oBtn);//oBtn
+		
+	</script>
+</html>

@@ -1,0 +1,32 @@
+{
+    "home":{
+        "title":"首页",
+        "aside":"首页左侧内容",
+        "article":"首页右侧内容",
+        "friendLink":"首页友情链接"
+    },
+    "about":{
+        "title":"关于我们",
+        "aside":"关于左侧内容",
+        "article":"关于右侧内容",
+        "friendLink":"首页友情链接"
+    },
+    "helper":{
+        "title":"帮助",
+        "aside":"帮助左侧内容",
+        "article":"帮助右侧内容",
+        "friendLink":"首页友情链接"
+    },
+    "guides":{
+        "title":"攻略",
+        "aside":"攻略左侧内容",
+        "article":"攻略右侧内容",
+        "friendLink":"首页友情链接"
+    },
+    "contact":{
+        "title":"联系我们",
+        "aside":"联系我们左侧内容",
+        "article":"联系我们右侧内容",
+        "friendLink":"首页友情链接"
+    }
+}

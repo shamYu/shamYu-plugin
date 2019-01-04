@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			div{
+				float: left;
+				/*position: absolute;*/
+				width: 100px;
+				height: 100px;
+				background: red;
+				/*margin:0 auto;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div");
+		
+		//页面载入时，默认初始化一次div的样式
+		initCss();
+		
+		//当窗口尺寸发生变化时就会触发。
+		window.onresize=initCss;
+		
+		function initCss(){		
+			var win_w=document.documentElement.clientWidth;		
+			oDiv.style.marginLeft=(win_w-100)/2+'px';
+		}
+		
+	</script>
+</html>

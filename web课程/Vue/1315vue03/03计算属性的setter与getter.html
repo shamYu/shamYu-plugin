@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        {{total}}
+        <input type="text" v-model='total'>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            num:100,
+        },
+        computed:{
+            // total(){
+            //     return this.num/2;
+            // }
+            total:{
+                get(){
+                    // 计算属性total的依赖是this.num
+                    return this.num/2;
+                },
+                //手动修改计算属性会报错,只能通过修改计算属性的依赖来改变计算属性的值
+                //计算属性默认没有设置setter,可以手动设置
+                set(val){
+                    this.num=val;
+                }
+            }
+        }
+    })
+
+</script>
+</html>

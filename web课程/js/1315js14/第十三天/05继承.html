@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		通过构造函数创建一个块级元素类.
+//		通过构造函数创建一个自定义元素类.
+//		让自定义元素类继承块级元素类.
+		
+//		封装一个函数,利用自定义元素类的某个实例,实现将这个实例代表的标签插入body
+		
+		function Block(){
+			this.globalCss={
+				display:'block',
+			}
+		}
+		
+		function CustomEle(tag,oStyle,str){
+			Block.call(this);
+			this.tag=tag;
+			this.css=oStyle;
+			this.innerText=str;
+		}
+		
+		var oEle=new CustomEle('oYm',{width:'100px',height:'100px',background:'red'},'hahahahahah');
+		
+		function createEle(ele){
+			
+			var oEle=document.createElement(ele.tag);
+			
+			document.body.appendChild(oEle);
+			
+			for(var prop in ele.css){
+				oEle.style[prop]=ele.css[prop];
+			}
+			for(var prop in ele.globalCss){
+				oEle.style[prop]=ele.globalCss[prop];
+			}			
+			oEle.innerText=ele.innerText;
+		}
+		
+		createEle(oEle);
+		
+	</script>
+</html>

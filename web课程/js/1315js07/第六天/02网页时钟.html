@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//		用程序实现一个网页时钟
+				
+		var showClock=function(){
+			//每隔1秒钟获取一次当前时间
+			var md=new Date();
+			var day=md.getDay();
+			
+			var sdate=md.getFullYear()+'年'+(md.getMonth()+1)+'月'+md.getDate()+'日';
+			
+			var week='';
+			switch(day){
+				case 0:
+					week='星期天'
+					break;
+				case 1:
+					week='星期一'
+					break;
+				case 2:
+					week='星期二'
+					break;
+				case 3:
+					week='星期三'
+					break;
+				case 4:
+					week='星期四'
+					break;
+				case 5:
+					week='星期五'
+					break;
+				case 6:
+					week='星期六'
+					break;
+			}
+			
+			var h=md.getHours();
+//			h = h<10 ? '0'+h : h;
+			h=addZero(h);
+						
+			var m=md.getMinutes();
+//			m = m<10 ? '0'+m : m;
+			m=addZero(m);
+			
+			var s=md.getSeconds();
+//			s = s<10 ? '0'+s : s;
+			s=addZero(s);
+			
+			var time=h+':'+m+':'+s;
+			
+			document.body.innerText=sdate+' '+week+' '+time;
+		}
+		
+		setInterval(showClock,1000);
+		
+		function addZero(str){
+			return str<10 ? '0'+str : str;
+		}
+		
+	</script>
+</html>

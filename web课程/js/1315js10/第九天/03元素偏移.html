@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			li{
+				width: 100px;
+				height: 100px;
+				background: red;
+				float: left;
+				margin:1px 0 0 1px;
+			}
+			ul{
+				float: left;				
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="button" id="btn1" value="插入元素" />
+		</div>
+		<ul></ul>
+	</body>
+	<script type="text/javascript">
+//		点击按钮btn1,在ul内插入1个li,不管插入多少个li,保障ul一定在页面内水平居中.(不能将ul设为行内元素等);
+		
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+		
+		var oUl=document.getElementsByTagName('ul')[0];
+		
+		oBtn1.onclick=insertLi;
+		
+		function insertLi(){
+			
+			var oLi=document.createElement("li");
+			
+			oUl.appendChild(oLi);
+			
+			var win_w=document.documentElement.clientWidth;
+			
+			var ul_w=oUl.offsetWidth;
+			
+			//单个li的宽
+//			var li_w=parseInt(getComputedStyle(oLi).width);
+//			//所有li的数组
+//			var aLi=document.getElementsByTagName('li');
+//			//所有li所占空间的宽就应该是ul的容积宽
+//			var ul_w=li_w*aLi.length+aLi.length*1;
+						
+			var left=(win_w-ul_w)/2;
+			
+			oUl.style.marginLeft=left+'px';
+		}
+		
+		
+		
+	</script>
+</html>

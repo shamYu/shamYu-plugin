@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="请求新浪数据" />
+	</body>
+	<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var oBtn=document.getElementById("btn");
+		
+//		function fn(data){
+//			console.log(data);
+//		}
+//		
+//		oBtn.onclick=function(){
+//			var oScript=document.createElement("script");
+//			document.body.appendChild(oScript);
+//			oScript.src='http://money.finance.sina.com.cn/jiaoyifenxi/api/openapi.php/DataService.getUserProfit?callback=fn'
+//		}
+		
+		ajax({
+			method:'GET',
+			isJsonp:'jsonp',
+			url:'http://money.finance.sina.com.cn/jiaoyifenxi/api/openapi.php/DataService.getUserProfit',
+			success:function(data){
+				console.log(data.result.data);
+			}
+		});
+		
+//		function ajax(obj){
+//			var oScript=document.createElement("script");
+//			document.body.appendChild(oScript);
+//			window.success=obj.success;
+//			oScript.src=obj.url+'?callback=success'
+//		}
+				
+	</script>
+</html>

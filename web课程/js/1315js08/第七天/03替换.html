@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>weradfgG</div>
+		<div>ewfasdY</div>
+		<div>sdfadsH</div>
+		<div>asdfsdQ</div>
+		<div>sdfasdN</div>
+	</body>
+	<script type="text/javascript">
+//		把以上每个div的内容的首字母替换成最后一个字母
+		
+		var aDiv=document.getElementsByTagName('div');
+		
+		for(var i=0;i<aDiv.length;i++){
+			var content=aDiv[i].innerText;
+			aDiv[i].innerText=content.slice(-1)+content.slice(1);
+		}
+		
+		
+	</script>
+</html>

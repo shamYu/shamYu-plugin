@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.active{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <!-- 将msg的返回值作为p的文本内容 -->
+        <p v-text='msg'></p>
+        <!-- 将msg的返回值作为p的内容(可以实现插入元素) -->
+        <!-- v-html指令不安全 -->
+        <!-- xss跨站攻击 -->
+        <p v-html='msg'></p>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            msg:'<span>dhdhddhdhdhd</span>'
+        }
+    })
+
+
+</script>
+</html>

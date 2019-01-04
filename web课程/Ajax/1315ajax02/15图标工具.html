@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="谁是最强王者" />
+		<canvas id="oC" width="500" height="300"></canvas>
+	</body>
+	<script src="js/Chart.js" charset="utf-8"></script>
+	<script src="js/promiseajax.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var oC=document.getElementById("oC");
+		var oGc=oC.getContext('2d');
+		
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function(){
+			
+			var arr=[];
+			
+			for(var i=0;i<5;i++){
+				arr.push(getNum(101,0))
+			}
+			
+			ajax({
+				method:'POST',
+				url:'php/showData.php',
+				data:{
+					one:arr[0],
+					two:arr[1],
+					three:arr[2],
+					four:arr[3],
+					five:arr[4],
+				},
+				dataType:'json'
+			}).then(function(data){
+				
+				new Chart(oGc).Radar({
+					labels:['班长','蒙司机','杨幂','范冰冰','王八宏'],
+					datasets:[
+						{
+							fillColor:'orange',
+							data:data
+						}
+					]
+				})
+			})
+		}
+		
+		
+		
+		
+		function getNum(a,b){
+			return Math.floor(Math.random()*(a-b))+b
+		}
+		
+	</script>
+</html>

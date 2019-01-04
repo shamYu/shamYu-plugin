@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width: 400px;
+				/*height: 100px;*/
+				border:3px solid #000;
+				/*overflow: hidden;*/
+				float: left;
+			}
+			
+			#wrap>div{
+				/*所有的子元素div从左往右排列*/
+				float:left;
+				
+				/*所有的子元素div从右往左排列*/
+				/*float:right;*/								
+				/*display: inline-block;*/
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			#div2{
+				height: 100px;
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--浮动元素:宽高由子元素撑开。默认在一行显示。-->
+		<!--浮动元素会导致其父元素的高度变0(高度塌陷)-->
+		
+		<!--解决高度塌陷问题:
+			1:给父元素直接设置高;(不推荐,不灵活);
+			2:给父元素设置overflow:hidden;(不能设置其他值);
+			3:把父元素也设置浮动.(会导致父元素也脱离文档流);-->
+		
+		<div id='wrap'>
+			<div>11</div>
+			<div>22</div>
+		</div>
+		<div id='div2'>
+			
+		</div>
+	</body>
+</html>

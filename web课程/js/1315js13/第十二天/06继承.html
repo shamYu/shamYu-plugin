@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//		根据块级元素的特性创建一个块级对象,根据行内元素的特性创建一个行内对象。
+//		创建一个自定义标签对象,如果你希望它是块级元素,使其继承块级对象,反之继承行内对象.
+		
+		var block={
+			css:{
+				display:'block'
+			}
+		}
+		
+		var inline={
+			css:{
+				display:'inline'
+			}
+		}
+		
+		var oYm={
+			tag:'oYm',
+			id:'ym1',
+			innerText:'我是杨幂',
+			css:{
+				width:'100px',
+				height:'100px',
+				background:'red',
+			}
+		}
+		
+//		oYm.__proto__=block;
+
+		oYm.css.__proto__=block.css;
+		
+		createEle(oYm);
+		
+		function createEle(obj){
+			var oEle=document.createElement(obj.tag);
+			document.body.appendChild(oEle);
+			oEle.id=obj.id;
+			oEle.innerText=obj.innerText;
+			for(var prop in obj.css){
+				oEle.style[prop]=obj.css[prop];
+			}
+		}
+		
+		
+	</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="../js/vue1.js"></script>
+<body>
+    <div id='app'>
+        <p>{{week}}</p>
+        <span>{{contend}}</span>
+    </div>
+</body>
+<script>
+    //页面载入,在p内显示当前是星期几.如果是星期天,将p的内容设置为:今晚别看决赛.
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            week:'',
+            content:''
+        },
+        created(){
+            var d=new Date().getDay();
+            switch(d){
+                case 0:
+                    this.week='星期天';
+                    this.content='今晚别看球';
+                    break;
+                case 1:
+                    this.week='星期一';
+                    break;
+                case 2:
+                    this.week='星期二';
+                    break;
+                case 3:
+                    this.week='星期三';
+                    break;
+                case 4:
+                    this.week='星期四';
+                    break;
+                case 5:
+                    this.week='星期五';
+                    break;
+                case 6:
+                    this.week='星期六';
+                    break;
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // 1:组件同时一个vue实例,除了el属性,别的属性与一般的vue实例是一样.
+    // 可以有computed,watch,自定义指令,过滤器,所有生命周期钩子函数.
+    // data属性必须是函数,然后return一个json对象.
+
+    // 2:全局的组件注册,Vue.component('组件名',{参数});
+    // 局部的组件注册,给vm添加一个components属性;
+
+    // 3:组件内的this指向组件,而不是父组件.
+
+    // 4:父传子:子组件用props:['数据名']声明数据,并且在组件的自定义标签上赋值.:数据名=父组件数据名
+
+    // 5:子传父:子组件触发一个子组件的自定义事件,这个事件触发一个函数,这个函数接收到的数据就是子组件传递的数据
+    // //给子组件声明一个自定义事件send。
+    // <aaa @send='一个函数'></aaa>; this.$emit('send',100);
+
+</script>
+</html>

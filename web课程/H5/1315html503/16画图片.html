@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background: #000;
+			}
+			#oC{
+				background: #fff;
+				margin-left:200px;
+				margin-top:50px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='oC' width="500" height="500">
+			您的浏览器不支持canvas绘图
+		</canvas>
+		<!--<img src="img/23.jpg"/>-->
+	</body>
+	<script type="text/javascript">
+		
+		window.onload=function(){
+//			var oImg=document.querySelector('img');
+
+			var oC=document.getElementById("oC");
+			//oGc->绘图工具(画布)->通过canvas标签的getContext()就能获得一个绘图的工具.
+			var oGc=oC.getContext('2d');
+//			第一个参数是需要绘制的图片对象,后面的参数是坐标和大小
+//			oGc.drawImage(oImg,0,0);
+//			oGc.drawImage(oImg,0,0,200,200);
+
+//			var oImg=document.createElement("img");
+//			oImg.src='img/23.jpg';
+//			oImg.onload=function(){
+//				oGc.drawImage(oImg,0,0);
+//			}
+			
+			var oImg=new Image();
+			oImg.src='img/23.jpg';//异步操作
+			oImg.onload=function(){
+				oGc.drawImage(oImg,0,0);
+			}			
+		}
+		
+		
+	</script>
+</html>

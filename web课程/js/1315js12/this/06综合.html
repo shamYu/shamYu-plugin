@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		var a=10;//->window.a=10;		
+//		var b=(function  (b) {
+//			return this.a+b;
+//		})(10);		
+//		console.log(b);//20		
+//----------------------------------------------------------------------------------
+//		var a=10;		
+//		var b=(function  (a) {
+//			return this.a+a;
+//		})(a);
+//		console.log(b);//20
+//---------------------------------------------------------------------------------
+//		var a=10;		
+//		var b=(function  (a) {
+//			return this.a+this.a;
+//		})(20);
+//		console.log(b);//20
+//-----------------------------------------------------------------------------------
+//		var a=10;		
+//		var b=(function (a){
+//			a=this.a+a;
+//			return this.a+a;
+//		})(a);
+//		console.log(b);//30
+//-----------------------------------------------------------------------------------
+		
+//		var age=10;		
+//		var oYm={age:30};
+//		var oFbb={age:20};
+//		
+//		function fn (obj) {
+//			return obj.age+this.age;
+//		}		
+//		var b=fn(oYm);
+//		console.log(b);//40
+//		
+//		var b=fn.call(oFbb,oYm);
+//		console.log(b);//50
+		
+//----------------------------------------------------------------------------------
+//		var age=10;		
+//		var oYm={age:30};
+//		var oFbb={age:20};		
+//		Object.prototype.fn=function (obj) {
+//			return obj.age+this.age;
+//		}		
+//		var b=oYm.fn(oFbb);
+//		console.log(b);//50
+//		
+//		var b=oFbb.fn.call(window,oYm);
+//		console.log(b);//40
+
+//---------------------------------------------------------------------------------
+		var oYm={age:30};
+		var oFbb={age:20};		
+		Object.prototype.fn=function (obj) {
+			return obj.age+this.age;
+		}
+		Array.prototype.age=10;		
+		var b=oYm.fn([oFbb]);
+		console.log(b);//40
+		
+		var b=oFbb.fn.call(oYm,[window]);
+		console.log(b);//40
+		
+	</script>
+</html>

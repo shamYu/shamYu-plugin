@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <router-link :to='{name:"home"}'>首页</router-link>
+        <router-link :to='{name:"item",params:{abc:"about"}}'>关于我们</router-link>
+        <router-link :to='{name:"item",params:{abc:"contact"}}'>联系我们</router-link>
+        <router-link :to='{name:"item",params:{abc:"waiter"}}'>客服</router-link>
+        <router-view :obj='obj'></router-view>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+
+    //动态路由,当路由视图的布局结构相同时,可以多个视图共用一个组件对象,然后根据不同的路由显示不同的数据.
+    //根据路由参数来实现不同的路由显示不同的数据.
+    
+    const home={
+        template:'<div><p>主页</p></div>'
+    }
+    const public={
+        template:
+        `<div>
+            <h3>{{title}}</h3>
+            <p>{{content}}</p>
+        </div>`,
+        props:['obj'],
+        //动态路由视图在切换时,不会重复的创建和销毁
+        created(){
+            console.log('组件创建');
+        },
+        mounted(){
+            console.log('组件挂载');
+        },
+        destroyed(){
+            console.log('组件销毁');
+        },
+        computed:{
+            title(){
+                for(var prop in this.obj){
+                    if(prop==this.$route.params.abc){
+                        return this.obj[prop].title
+                    }
+                }
+            },
+            content(){
+                for(var prop in this.obj){
+                    if(prop==this.$route.params.abc){
+                        return this.obj[prop].content
+                    }
+                }
+            },
+        },
+    }
+
+    const router=new VueRouter({
+        routes:[
+            {
+                path:'/home',
+                name:'home',
+                component:home
+            },
+            {   
+                path:'/:abc',
+                name:'item',
+                component:public
+            },
+            {
+                path:'*',
+                redirect:'/home',
+            }
+        ]
+    })
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            obj:{
+                about:{title:'关于我们',content:'我们是一群的勤劳的攻城狮'},
+                contact:{title:'联系我们',content:'不要把我的电话号码贴在电线杆上,下面是我的号码'},
+                waiter:{title:'客服',content:'客服竭诚为你服务，嘻嘻'}
+            }
+        },
+        router,
+    })
+
+</script>
+</html>

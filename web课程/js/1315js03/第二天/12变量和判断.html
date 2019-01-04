@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 100px;
+				border:1px solid #000;
+				margin-left:10px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1'>这是第0次点击</div>
+		<div id='div2'>这是第0次点击</div>
+	</body>
+	<script type="text/javascript">
+//		点击两个div,根据相应div的点击次数,每点击一次,相应div的内容设置为：这是第*次点击。
+//		点击div1时，如果div2的点击次数是奇数，div1的背景设置为红色，如果是偶数，div1的背景设置为绿色
+//		点击div2时，如果div1的点击次数是奇数，div2的背景设置为绿色，如果是偶数，div2的背景设置为红色
+		
+		var oDiv1=document.getElementById("div1");
+		var oDiv2=document.getElementById("div2");
+		
+//		div1的点击次数
+		var iCount1=0;
+//		div2的点击次数
+		var iCount2=0;
+		
+		oDiv1.onclick=function () {
+			iCount1++
+			oDiv1.innerText='这是第'+iCount1+'次点击';
+			if(iCount2%2!=0){
+				oDiv1.style.background='red';
+			}else{
+				oDiv1.style.background='green';
+			}
+		}
+		
+		oDiv2.onclick=function () {
+			iCount2++
+			oDiv2.innerText='这是第'+iCount2+'次点击';	
+			if(iCount1%2!=0){
+				oDiv2.style.background='green';
+			}else{
+				oDiv2.style.background='red';
+			}
+		}
+		
+	</script>
+</html>

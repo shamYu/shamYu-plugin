@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea  id='text1' rows="10" cols="30"></textarea>
+		<input type="button" id="btn" value="过滤" />
+		<textarea  id='text2' rows="10" cols="30"></textarea>
+	</body>
+	<script type="text/javascript">
+		
+		var oText1=document.getElementById("text1");
+		var oText2=document.getElementById("text2");
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function(){
+			
+			var re=/草|干|你妹|卧槽/g;
+			
+			oText2.value=oText1.value.replace(re,'*');
+		}
+		
+		
+	</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>   
+        <p v-for='d in arr'>{{d.name}}+{{d.age}}</p>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script src="js/vue-resource@1.3.4.js"></script>
+<script>
+
+    new Vue({
+        el:'#app',
+        data:{arr:[]},
+        created(){
+
+            //通过$http的get方法请求后端数据。get方法封装了promise
+            // this.$http.get('js/data.json').then((data)=>{
+            //     console.log(data)
+            //     this.arr=data.body
+            // });
+
+            Vue.http({
+                method:'get',
+                url:'js/data.json',
+            }).then(data=>{
+                this.arr=data.body
+            })
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var oYm={
+			name:'杨幂'
+		}
+		
+		var oFbb={
+			name:'范冰冰',
+			sayName:function(){
+				alert(this.name);
+			}
+		}
+		
+//		sayName()是对象的私有属性,只有oFbb能访问.
+//		oYm.sayName();报错，因为oYm没有这个属性
+		
+		//toString是一个公有方法。oYm与oFbb都属于object这个类。toString是这个类的特征之一。		
+		oYm.toString();
+		
+//		Object.prototype(原型) -> Object这个类所有特性(公有属性)的集合,是一个对象.
+//		Object.prototype
+		
+		//给Object这个类添加一个公有方法，只要属于这个类，就默认可以调用sayName;
+		//对于所有属于Object这个类型的所有对象来说，sayName是公有方法。
+		//对于Object.prototype来说，sayName是它的私有方法。
+		Object.prototype.sayName=function(){
+			alert(this.name);
+		}
+				
+		Object.prototype.abc='班长大人棒棒哒';
+		
+	</script>
+</html>

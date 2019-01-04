@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>1</li>
+			<li>2</li>
+			<li id='li3'>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+		<ul id="ul2">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		
+		var aLi1=document.getElementsByTagName('li');//10个li;
+		
+		var oUl=document.getElementById("ul1");
+		
+		var aLi2=oUl.getElementsByTagName('li');//5个li
+		
+//		getElementById前面一定是document,不能是别的元素
+//		var oLi=oUl.getElementById('li3');
+		
+		//批量循环处理
+		for(var i=0;i<aLi2.length;i++){
+			aLi2[i].style.background='red';
+		}
+		
+//		aLi2[0].style.background='red';
+//		aLi2[1].style.background='red';
+//		aLi2[2].style.background='red';
+//		aLi2[3].style.background='red';
+//		aLi2[4].style.background='red';
+		
+		
+		
+	</script>
+</html>

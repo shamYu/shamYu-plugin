@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>0</div>
+	</body>
+	<script type="text/javascript">
+//		给div添加点击事件,每次点击,其内部数字+1
+		var oDiv=document.getElementsByTagName('div')[0];
+		oDiv.onclick=function () {
+			this.innerHTML++;
+		}
+	</script>
+</html>

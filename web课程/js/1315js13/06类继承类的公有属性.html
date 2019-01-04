@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+				
+		//子类继承父类的公有属性，使之变成子类实例的公有属性
+		
+//		实例化new:->生孩子。
+//		孩子.__proto__:->找爸爸。
+//		Object:->老妈。
+//		Object.prototype:->老妈的老公。
+//		孩子的老爸==老妈的老公 (默认是对的);
+		
+		function Human(){};
+		
+		Human.prototype.speak=true;
+		
+		var human=new Human();
+		
+		function Man(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		
+		//子类的原型等于父类的实例。
+//		Man.prototype=human;
+		Man.prototype=new Human();
+		
+		var superMan=new Man('超人',9000);
+		
+		Man.prototype={height:'190cm'};
+		
+		console.log(superMan.speak)//true
+		
+	</script>
+</html>

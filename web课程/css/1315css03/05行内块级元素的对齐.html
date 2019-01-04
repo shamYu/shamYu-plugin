@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap>div{
+				display: inline-block;
+				width: 100px;
+			}
+			#wrap{
+				width: 400px;
+				border:1px solid #000;
+				font-size:0;
+			}
+			#div1{
+				height: 100px;
+				background: red;
+				
+				/*行内块级元素验证顶部对齐*/
+				/*vertical-align:top;*/
+				/*行内块级元素验证中线对齐*/
+				/*vertical-align:middle;*/
+				/*默认对齐文本基线*/
+				/*vertical-align:baseline;*/
+			}
+			#div2{
+				height: 200px;
+				background: green;
+				/*vertical-align:middle;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div id='div1'></div>
+			<div id='div2'></div>
+		</div>
+	</body>
+</html>

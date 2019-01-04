@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text1" value="" />*
+		<input type="text" id="text2" value="" />=
+		<input type="text" id="text3" value="" />
+		<input type="button" id="btn1" value="按钮" />
+		<hr />
+		<input type="text" id="text4" value="" />*
+		<input type="text" id="text5" value="" />=
+		<input type="text" id="text6" value="" />
+		<input type="button" id="btn2" value="按钮" />
+	</body>
+	<script type="text/javascript">
+		
+		//封装成一个有参数的函数。
+		var oText1=document.getElementById("text1");
+		var oText2=document.getElementById("text2");
+		var oText3=document.getElementById("text3");
+		var oBtn1=document.getElementById("btn1");
+		
+		var oText4=document.getElementById("text4");
+		var oText5=document.getElementById("text5");
+		var oText6=document.getElementById("text6");
+		var oBtn2=document.getElementById("btn2");
+				
+		oBtn1.onclick=function(){
+			oText3.value=getResult(oText1.value,oText2.value);
+//			alert(getResult(oText1.value,oText2.value));
+		}
+		
+		oBtn2.onclick=function(){
+			oText6.value=getResult(oText4.value,oText5.value);
+		}
+		
+		//z=x*y
+		function getResult (x,y){
+			var result=x*y;
+			//让函数调用调用表达式有返回的结果;
+			//return 任意表达式
+//			return result;
+			return x*y;
+			
+//			return;//不返回结果，可以不return任何值。但是让后面的语句不执行;
+//			alert(100);//return 后面的语句无法执行
+		}
+		
+//		表示式:原始表达式(单个变量,单个常量),复合表达式(原始表达式 + 操作符),超级复合表达式(操作符的操作数可以是任意的表达式);
+//		表达式都会有一个最终的计算结果
+//		1+1 -> a+b -> (a+1) + (b+1);
+		
+//		函数声明也是表达式(原始表达式,单个变量,返回值就是函数本身);
+//		函数调用也是表达式->
+//			返回值:取决于声明里有没有return 如果有,返回return 后面 表达式的值.如果没有,默认返回undefined
+//			return 的第二个作用，可以让return之后的语句不执行(相当于for循环里的break);
+		
+	</script>
+</html>

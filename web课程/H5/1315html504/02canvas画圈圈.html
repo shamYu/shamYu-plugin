@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background: #111;
+			}
+			#oC{
+				background: #fff;
+				margin-left:200px;
+				margin-top:50px;
+				background: #333;
+				box-shadow: inset 0 0 30px rgba(255,255,255,0.2);
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='oC' width="500" height="500">
+			您的浏览器不支持canvas绘图
+		</canvas>
+	</body>
+	<script type="text/javascript">
+		
+		//创建圆的一个类。需要多少个圆，就实例化多少个圆的实例。
+		
+		var oC=document.getElementById("oC");
+		//oGc->绘图工具(画布)->通过canvas标签的getContext()就能获得一个绘图的工具.
+		var oGc=oC.getContext('2d');
+		//所有的圆		
+		var arcs=[];
+		//圆的个数
+		var num=500;
+		//画布的宽
+		var w=oC.width;
+		//画布的高
+		var h=oC.height;
+		//圆的颜色
+		var color=['#f35d4f','#f36849','#c0d988','#6ddaf1','#f1e85b'];
+		//圆的类
+		function CreateArc(){
+			this.x=getRand(0,501);
+			this.y=getRand(0,501);
+			this.difX=getRand(0,4)-1.5;
+			this.difY=getRand(0,4)-1.5;
+			this.rad=getRand(2,5);
+			this.color=color[getRand(0,color.length)];
+		}
+		//批量创建(实例化)圆		
+		for(var i=0;i<num;i++){
+			arcs.push(new CreateArc())
+		}
+				
+		setInterval(function(){
+			
+			oGc.clearRect(0,0,w,h);
+			//让所有的圆动起来
+			arcs.forEach(function(items,i){
+				
+				oGc.globalCompositeOperation='lighter';
+				
+				//第一个圆
+				var arc1=items;
+				//半径变大系数，连线越多，半径越大
+				var num=1;
+				
+				//循环判断是否该连线
+				for(var j=i+1;j<arcs.length;j++){
+					//第二个圆
+					var arc2=arcs[j];
+					//如果两个圆颜色相同并且圆心距离小于50，就在两个圆心间连线
+					if(arc1.color==arc2.color && getDist(arc1,arc2)<50){
+						oGc.strokeStyle=arc1.color;
+						oGc.lineWidth=1;
+						oGc.beginPath();
+						oGc.moveTo(arc1.x,arc1.y);
+						oGc.lineTo(arc2.x,arc2.y);
+						oGc.closePath();
+						oGc.stroke();
+						num++;
+					}
+				}
+				//圆移动的方向和速度。
+				items.x+=items.difX;
+				items.y+=items.difY;
+				//圆如果移动出画布再从另一个方向回来。
+				items.x=items.x>w?0:items.x;
+				items.x=items.x<0?w:items.x;
+				items.y=items.y>h?0:items.y;
+				items.y=items.y<0?h:items.y;
+				
+				//画两个圆
+				oGc.fillStyle=items.color;
+				oGc.beginPath();
+				oGc.arc(items.x,items.y,(items.rad)*num,0,2*Math.PI);
+				oGc.closePath();
+				oGc.fill();
+				
+				oGc.strokeStyle=items.color;
+				oGc.beginPath();
+				oGc.arc(items.x,items.y,(items.rad+5)*num,0,2*Math.PI);
+				oGc.closePath();
+				oGc.stroke();
+			});						
+		},10);
+		
+		//获取两点间距离的函数封装。
+		function getDist(arc1,arc2){
+			return Math.sqrt(Math.pow((arc1.x-arc2.x),2)+Math.pow((arc1.y-arc2.y),2));
+		}
+		
+		function getRand (a,b){
+			return Math.floor(Math.random()*(a-b))+b;
+		}
+				
+	</script>
+</html>

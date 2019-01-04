@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div'>
+			<input type="text" value="" v-model='item' />
+			<input type="button" value="发表" @click='add()' />
+			<ul>
+				<li v-for='(d,i) in arr'>
+					<!-- <span>{{i+':'}}</span><span :contenteditable='flags[i]'>{{d}}</span> -->
+					<span>{{i+':'}}</span><span :contenteditable='d.flag'>{{d.item}}</span>
+					<input type="button" value="上移" @click='up(i)' />					
+					<input type="button" value="下移" @click='down(i)'/>
+					<input type="button" value="删除" @click='del(i)' />
+					<!-- <input type="button" value="编辑" @click='flag=!flag' /> -->
+					<input type="button" value="编辑" @click='edit(i)' />
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="../js/vue1.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:'#div',
+			data:{
+				arr:[],
+				item:'',
+				flag:false,
+				flags:[],
+				index:NaN
+			},
+			methods:{
+				add(){
+					// this.flags.push(false);
+					// this.arr.push(this.item);
+					this.arr.push({flag:false,item:this.item});
+				},
+				del(i){
+					this.arr.splice(i,1);
+				},
+				up(i){
+					//如果是第一个li，使上移无效
+					if(i==0){return};
+					//当前li内的span的内容
+					// var val=this.arr[i];
+					// this.arr.splice(i-1,0,val);
+					// this.arr.splice(i+1,1);
+
+					var valN=this.arr[i];
+					var valP=this.arr[i-1];
+					this.arr.splice(i-1,2,valN,valP);
+				},
+				down(i){
+					//如果是最后一个li,使下移无效
+					if(i==this.arr.length-1){return};
+					var valN=this.arr[i];
+					var valX=this.arr[i+1];
+					this.arr.splice(i,2,valX,valN);
+				},
+				edit(i){
+					// this.index=i;
+					// this.flags.push(1);
+					// this.flags.pop();
+					// this.flags[i]=!this.flags[i];
+
+					this.arr[i].flag=!this.arr[i].flag;
+				}
+			}
+		})
+	</script>
+</html>

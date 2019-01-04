@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <div is='vDiv1'></div>
+        <div is='vDiv2'></div>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<!-- vuex是一个vue的插件.依赖于vue,因此需要先引入vue,再引入vuex -->
+<script src="js/vuex.js"></script>
+<script>
+
+    const mx={
+        template:`<div><input type="button" value='+' @click='add()'>{{num}}</div>`,
+        computed:{
+            num(){
+                return this.$store.state.msg;
+            }
+        },
+        methods:{
+            add(){
+                this.$store.state.msg++
+            }
+        }
+    }
+
+    var store=new Vuex.Store({
+        state:{msg:0}
+    })
+
+    var vm=new Vue({
+        el:'#app',
+        components:{
+            vDiv1:{mixins:[mx]},
+            vDiv2:{mixins:[mx]}
+        },
+        store,
+    })
+
+</script>
+</html>

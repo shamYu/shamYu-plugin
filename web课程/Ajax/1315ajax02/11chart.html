@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="oC" width="500" height="300"></canvas>
+	</body>
+	<script src="js/promiseajax.js" charset="utf-8"></script>
+	<script src="js/Chart.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		var oC=document.getElementById("oC").getContext('2d');
+		
+		ajax({
+			method:'POST',
+			url:'php/showData.php',
+			data:{
+				one:10,
+				two:20,
+				three:30,
+				four:40,
+				five:50,
+			},
+			dataType:'json',
+		}).then(function(data){			
+			new Chart(oC).Bar({
+				labels : ["周一","周二","周三","周四","周五","周六","周末"],
+			    datasets : [
+			        {
+			            //统计表的背景颜色
+			            fillColor : "rgba(0,0,255,0.5)",
+			            //统计表画笔颜色
+			            strokeColor : "#f60",
+			            //Y坐标数据
+			            data : data
+			        }
+			    ]
+			});
+			
+		})
+		
+		
+	</script>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">			
+			li{
+				padding: 20px 50px;
+				background: red;
+				float: left;
+				margin:1px 0 0 1px;
+			}
+			#box{
+				height: 3px;
+				background: black;
+				position: absolute;
+			}
+			ul{
+				float: left;
+			}
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="button" id="btn1" value="插入元素" />
+		</div>
+		<ul></ul>
+		<div id='box'></div>
+	</body>
+	<script type="text/javascript">
+		
+//		点击按钮btn1,在ul内插入1个li,li的内容任意
+//		不管插入多少个li,保障ul一定在页面内水平居中.(不能将ul设为行内元素等);
+//		如果ul内有li，把div的宽设置为第一个li的宽，div贴在第一个li的底部。
+//		点击任意一个li，div的宽设置为被点击的li的宽，div贴在被点击的li的底部。
+		
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+		var oDiv=document.getElementById("box");
+		
+		var oUl=document.getElementsByTagName('ul')[0];
+		
+		oBtn1.onclick=insertLi;
+		
+		function insertLi(){			
+			//插入li
+			initEle(oUl,'li','我今天心情好');
+			
+			//给oUl设成水平居中
+			setCenter(oUl);
+			
+			var aLi=document.getElementsByTagName('li');			
+			//将box设置到第一个li的下边。			
+			moveDiv(aLi[0]);
+			
+		}
+		
+		function initEle(ele,tag,str){
+			var oLi=document.createElement(tag);			
+			ele.appendChild(oLi);			
+			oLi.onclick=function(){
+				moveDiv(this);
+			};			
+			oLi.innerText=str;
+		}
+		
+		//移动div的逻辑
+		function moveDiv(ele){
+			oDiv.style.width=ele.offsetWidth+'px';
+			oDiv.style.left=ele.offsetLeft+'px';
+			oDiv.style.top=ele.offsetTop+ele.offsetHeight+'px';
+		}
+		
+		//给任意元素设置成水平居中的逻辑封装
+		function setCenter(ele){
+			var win_w=document.documentElement.clientWidth;			
+			var ul_w=ele.offsetWidth;									
+			var left=(win_w-ul_w)/2;			
+			ele.style.marginLeft=left+'px';
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <a href="#home">{{news.home.title}}</a>
+        <a href="#news">{{news.news.title}}</a>
+        <a href="#guides">{{news.guides.title}}</a>
+        <router-view></router-view>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script src="../js/vuex.js"></script>
+<script src="../js/axios.min.js"></script>
+<script src="../js/vue-router.js"></script>
+<script>
+    //使用动态路由实现以上效果。
+    //路由内组件的数据通过data.json获取   
+
+    const store=new Vuex.Store({
+        strict:true,
+        state:{
+            news:{
+                home:{title:''},
+                news:{title:''},
+                guides:{title:''},
+            }
+        },
+        mutations:{
+            setNews(state,val){
+                state.news=val;
+            },
+            setDate(state,{prop,time}){
+
+                // var time=new Date().getSeconds();
+                // if(time>30){
+                //     var str=state.news[val].date.slice(0,9);
+                //     state.news[val].date=str+("-"+time);
+                // }
+                
+                //通过结构赋值传递参数time和prop。
+                if(time>30){
+                    var str=state.news[prop].date.slice(0,9);
+                    state.news[prop].date=str+("-"+time);
+                }
+            }
+        }
+    })
+
+    const com = {
+        template:
+        ` <div>
+            <h3>{{title}}</h3>
+            <p>{{content}}<span>{{date}}</span></p>
+        </div>`,
+        watch:{
+            $route(){
+                // this.$store.commit('setDate',this.$route.params.hash);
+                var prop = this.$route.params.hash;
+                var time = new Date().getSeconds();
+
+                this.$store.commit('setDate',{prop,time});
+            }
+        },        
+        computed:{
+            news(){
+                return this.$store.state.news
+            },
+            title(){
+                for(var prop in this.news){
+                    if(prop==this.$route.params.hash){
+                        return this.news[prop].title
+                    }
+                }
+            },
+            content(){
+                for(var prop in this.news){
+                    if(prop==this.$route.params.hash){
+                        return this.news[prop].content
+                    }
+                }
+            },
+            date(){
+                for(var prop in this.news){
+                    if(prop==this.$route.params.hash){
+                        return this.news[prop].date
+                    }
+                }
+            },
+        }
+    }
+
+    const router = new VueRouter({
+        routes:[
+            {
+                path:'/:hash',
+                component:com
+            },{
+                path:'*',
+                redirect:'/home'
+            }
+        ]
+    })
+
+    var vm = new Vue({
+        el:'#app',
+        router,
+        store,
+        computed:{
+            news(){
+                return this.$store.state.news
+            }
+        },
+        created(){
+            axios.get('data.json').then(res => {
+                this.$store.commit('setNews',res.data)
+            })
+        }
+    })
+
+</script>
+</html>

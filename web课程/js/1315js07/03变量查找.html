@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		变量查找:沿着作用域链查找变量声明在哪里(在哪个作用域里).由里往外查找,先从本作用域开始,如果整条作用域链上没有要查找的变量的声明,就报错
+//			    就近原则(作用域链上有多个声明):如果查找到,就停止查找.
+//		
+//		分析步骤:
+//			先写从里往外的作用域链.
+//			按照就近原则确定变量是哪个变量.
+		
+		var x=100;
+		
+		function fn(){
+			var x=10;
+			function show(){
+				alert(x); //10,就近原则
+			}
+			show();
+		}
+		
+		fn();
+		
+		alert(x);//100
+		
+	</script>
+</html>

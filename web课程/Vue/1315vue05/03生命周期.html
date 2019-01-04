@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        {{total}}
+        <!-- 这4个show的调用顺序->class,title,show1,show2,从上到下，从左到右 -->
+        <p ref='p' :class='show("class")' :title='show("title")'>
+            {{show('show1')}}
+            {{show('show2')}}
+        </p>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    //第一大步：创建数据，数据包括，data的普通属性，计算属性，methods属性，props属性
+    //html模板内的表达式在beforeMount与mounted之间进行求值。(计算属性在beforeMount之前求值)
+    //虚拟节点与watcher在beforeMount与mounted之间进行设置(vm拥有);
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:10
+        },
+        props:{
+            abc:{
+                default:100
+            }
+        },
+        methods:{
+            show(val){
+                debugger;
+                // this.$refs.p.style.background='red';
+                console.log(val)
+            }
+        },
+        computed:{
+            total(){
+                debugger
+                return this.msg*2;
+            }
+        },
+        beforeCreate(){
+            console.log(this.msg);//undefined
+            console.log(this.show);//undefined
+            console.log(this.total);//undefined
+            console.log(this.abc);//undefined
+        },
+        created(){
+            debugger
+            console.log(this.msg);//10
+            console.log(this.show);//function
+            console.log(this.total);//20
+            console.log(this.abc);//100
+        },
+        beforeMount(){
+            debugger
+        },
+        mounted(){
+            debugger
+        }
+    });
+
+
+
+</script>
+</html>

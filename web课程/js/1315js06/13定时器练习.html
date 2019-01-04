@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		function fn(){
+			
+			//定时器内的函数肯定落后于不在定时器的代码运行
+			setTimeout(function(){
+				console.log(x);//15
+				x=5;
+			},0);
+			
+			var x=10;
+			
+			x=15;
+						
+			console.log(x);//5
+			
+			x=20;
+			
+			console.log(x);//15
+			
+			x=5000;
+//					
+			setTimeout(function(){
+				console.log(x);//5
+				x=20;
+			},2000);
+			
+		}
+		
+		fn();
+	</script>
+</html>

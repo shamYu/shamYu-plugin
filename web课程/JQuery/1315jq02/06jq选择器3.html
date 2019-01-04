@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div:nth-child(2){
+				/*display: none;*/
+				/*opacity: 0;*/
+				visibility:hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//选中可见的div
+		$('div:visible').css('background','red');
+		
+		//选中不可见的div,display为none的div
+		$('div:hidden').text('的的地地道道的地地道道的');
+		
+	</script>
+</html>

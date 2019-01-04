@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="按钮1" />
+		<input type="button" value="按钮2" />
+		<input type="button" value="按钮3" />
+		<input type="button" value="按钮4" />
+		<input type="button" value="按钮5" />
+		<input type="button" value="按钮6" />
+		<input type="button" value="按钮7" />
+		<input type="button" value="按钮8" />
+		<input type="button" value="按钮9" />
+		<input type="button" value="按钮10" />
+	</body>
+	<script type="text/javascript">
+		
+		var aInput=document.getElementsByTagName('input');
+		
+		for(let i=0;i<10;i++){
+			//循环10次，有10个局部变量i，点击相应的按钮，会顺着作用域链找到相应的局部变量i;
+			aInput[i].onclick=function(){
+				alert(i);//0,1,2,3,4,5,6,7,8,9
+			}
+		}
+		
+//		{
+//			let i=0;
+//			aInput[i].onclick=function () {
+//				alert(i); //i->第一个按钮的点击函数->块级作用域->全局作用域
+//			}
+//		}
+//		
+//		{
+//			let i=1;
+//			aInput[i].onclick=function () {
+//				alert(i);
+//			}
+//		}
+//		
+//		{
+//			let i=2;
+//			aInput[i].onclick=function () {
+//				alert(i);
+//			}
+//		}
+		
+		
+//		for(var i=0;i<10;i++){
+//			let index=i;
+//			aInput[i].onclick=function () {
+//				alert(index);
+//			}
+//		}
+			
+//		for(var i=0;i<10;i++){
+//			aInput[i].index=i;
+//			aInput[i].onclick=function () {
+//				alert(this.index);
+//			}
+//		}
+		
+//		var index=0;
+//		aInput[0].onclick=function () {
+//			alert(index);
+//		}
+//		
+//		var index1=1;
+//		aInput[1].onclick=function () {
+//			alert(index);
+//		}
+//		
+//		var index2=2;
+//		aInput[2].onclick=function () {
+//			alert(index);
+//		}
+		
+		
+	</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<input type="button" id="btn" value="解绑" />
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		用on()实现绑定.第一个参数绑定的事件名，第二个参数数事件函数。
+		
+		$('ul').on('click',function(){
+			//this会指向绑定的元素(与委托不同)
+			$(this).css('background','red');
+		})
+		
+//		$('ul').bind('click',function(){
+//			$(this).css('background','red');
+//		})
+		
+		$('#btn').on('click',function(){
+			//解除click的绑定.
+			$('ul').off('click');
+			//解除所有的事件绑定.
+//			$('ul').off();
+		})
+		
+		
+	</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="杨幂的名字" />
+		<input type="button" value="杨幂的年龄" />
+		<input type="button" value="杨幂的性别" />
+		<input type="button" value="杨幂的前夫" />
+		<input type="button" value="杨幂的身高" />
+	</body>
+	<script type="text/javascript">
+		
+//		json对象没有length属性来获取json对象的属性个数
+		var oYm={
+			name:'杨幂',
+			age:'32',
+			sex:'female',
+			exhusband:'刘禽兽',
+			height:168
+		}
+		
+		var aInput=document.getElementsByTagName('input');
+		
+		var index=0;
+		
+		for(var prop in oYm){
+			showOym(prop);			
+		}
+		
+		function showOym(prop){
+			aInput[index].onclick=function () {
+				alert(oYm[prop]);
+			};
+			index++;
+		}
+		
+//-----------------------------------------------------------------------
+
+//		for(var prop in oYm){
+//			showOym();			
+//		}
+
+//		function showOym(){
+//			var i=prop;
+//			aInput[index].onclick=function () {
+//				alert(oYm[i]);
+//			};
+//			index++;
+//		}
+
+//------------------------------------------------------------------------		
+
+//		for(let prop in oYm){
+//			aInput[index].onclick=function () {
+//				alert(oYm[prop]);
+//			};
+//			index++;
+//		}
+		
+//		for(var i=0;i<aInput.length;i++){
+//			aInput[i].onclick=function () {
+//				alert(i);
+//			};
+//		}
+		
+	</script>
+</html>

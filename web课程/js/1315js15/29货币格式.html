@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var str='398567238744765734657';
+		
+		//从后往前数，把每隔3个数字前面的空字符串替换成,
+		var re=/\B(?=(\d{3})+\b)/g;
+		
+		var str=str.replace(re,',');
+		
+	</script>
+</html>

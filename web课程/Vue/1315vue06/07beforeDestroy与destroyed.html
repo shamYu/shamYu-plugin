@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            background: red;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <input type="text" v-model='left'>
+        <p>{{left}}</p>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    //p2距离页面左边距(offsetLeft)大于100时，把p2变红。
+
+    //updated与nextTick只应该处理跟视图更新相关的DOM操作问题.
+    var vm=new Vue({
+        el:'#app',
+        data:{left:0},
+        //销毁之后就是视图与数据不再绑定.数据变化不会再导致视图变化.
+        beforeDestroy(){
+            console.log('销毁前')
+        },
+        destroyed(){
+            console.log('销毁后')
+        }
+    })
+</script>
+</html>

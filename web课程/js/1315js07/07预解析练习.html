@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		function test(){
+//			var a;
+			console.log(a); //undefined
+			console.log(foo()); //2
+			var a = 1;
+			function foo() { 
+				return 2;
+			} 
+		} 
+		test();
+
+//		---------------------------------------------------------
+				
+		function foo(){
+			return 3
+		}
+		
+		var a=10;
+		
+		function test(){
+			console.log(a); //undefined，本作用域有a的声明
+			console.log(foo()); //2    本作用域有foo的声明
+			var a = 1;
+			function foo() {
+				var a=3;
+				return 2;
+			} 
+		}
+		
+		test();
+		
+//		-----------------------------------------------------------------------
+		
+//		变量提升:函数声明与var声明会有提升;
+//			        变量提升与函数提升重名,那么只考虑函数提升(忽略变量提升);
+		
+		var a=20;
+		function test(){
+			console.log(a);//function a(){console.log(a)}
+			var a=10;
+			var a=function(){
+				console.log(a);
+			}
+			function a(){
+				console.log(a);
+			}
+		}
+		test();
+		
+	</script>
+</html>

@@ -1,0 +1,304 @@
+/**
+ * fullPage 1.4.5
+ * https://github.com/alvarotrigo/fullPage.js
+ * MIT licensed
+ *
+ * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+ */
+*{
+    margin: 0;
+    padding: 0;
+	border: 0
+}
+html {
+	font:14px '\5FAE\8F6F\96C5\9ED1'Verdana, Arial, Tahoma;
+}
+a{text-decoration:none;}
+ul,li{ list-style:none}
+#superContainer {
+    height: 100%;
+    position: relative;
+}
+.section {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.slide {
+    float: left;
+}
+.slide, .slidesContainer {
+    height: 100%;
+    display: block;
+}
+.slides {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.section.table, .slide.table {
+    display: table;
+    width: 100%;
+}
+.tableCell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.slidesContainer {
+    float: left;
+    position: relative;
+}
+.controlArrow {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin-top: -38px;
+}
+.controlArrow.prev {
+    left: 15px;
+    width: 0;
+    border-width: 38.5px 34px 38.5px 0;
+    border-color: transparent #fff transparent transparent;s
+}
+.controlArrow.next {
+    right: 15px;
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent #fff;
+}
+.scrollable {
+    overflow: scroll;
+}
+.easing {
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;
+}
+#fullPage-nav {
+    position: fixed;
+    z-index: 100;
+    margin-top: -32px;
+    top: 50%;
+    opacity: 1;
+}
+#fullPage-nav.right {
+    right: 17px;
+}
+#fullPage-nav.left {
+    left: 17px;
+}
+.fullPage-slidesNav {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    opacity: 1;
+}
+.fullPage-slidesNav.bottom {
+    bottom: 17px;
+}
+.fullPage-slidesNav.top {
+    top: 17px;
+}
+#fullPage-nav ul,
+.fullPage-slidesNav ul {
+  margin: 0;
+  padding: 0;
+}
+#fullPage-nav li,
+.fullPage-slidesNav li {
+    display: block;
+    width: 21px;
+    height: 21px;
+    margin: 10px;
+    position:relative;
+	
+}
+.fullPage-slidesNav li {
+    display: inline-block;
+}
+#fullPage-nav li a,
+.fullPage-slidesNav li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+#fullPage-nav li .active span,
+.fullPage-slidesNav .active span {
+    background-position: 0 bottom;
+}
+#fullPage-nav span,
+.fullPage-slidesNav span {
+    top: 2px;
+    left: 2px;
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    z-index: 1;
+	background: url(../images/dot.png) 5px 5px no-repeat;
+}
+.fullPage-tooltip {
+    position: absolute;
+    color: #fff;
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    top: -2px;
+}
+.fullPage-tooltip.right {
+    right: 20px;
+}
+.fullPage-tooltip.left {
+    left: 20px;
+}
+.inner{
+	width:1000px;
+	margin:0 auto;
+	}
+.tableCellleft,.tableCellright{ float:left}
+.tableCellright { width:508px}
+.phone{ position:absolute; margin-left:90px; opacity:0 }
+.ktv,.hotel,.movie,.woman,.food,.xiuxian{ position:absolute; margin-left:190px; margin-top:175px;opacity:0}
+.righttop,.rightdown{ margin-left:20px}
+.se1bg img{ float:left}
+.se1bg3,.plogo,.se1cont{position:absolute}
+.se1bg3,.plogo,.se1cont{opacity:0}
+.plogo{ margin-left:198px; margin-top:130px; z-index:106}
+.se1bg3{ margin-top:310px; margin-left:90px;}
+.se1bgs{margin-left:860px;opacity:0}
+.se1bgss{margin-left:760px; margin-top:250px; opacity:0}
+.se2bgs{margin-left:550px; margin-top:-15px;opacity:0; width:60px}
+.se2bgss{margin-left:800px; margin-top:280px; opacity:0; width:120px}
+.se3bgs{margin-left:840px;opacity:0}
+.se3bgss{margin-left:660px; margin-top:300px; opacity:0}
+.se4bgs{margin-left:840px;opacity:0; width:60px}
+.se4bgss{margin-left:760px; margin-top:300px; opacity:0;width:100px}
+.se1cont{margin-left:122px; margin-top:-60px;}
+
+.tableCellleft { width:492px; height:501px}
+.ph1, .sixbox, .tm1, .tm2, .tm3, .tm4, .tm5, .tm6, .tm7, .tm8{ position:absolute; opacity:0;}
+.ph1{ margin-left:122px; margin-top:0px; z-index:103; width:241px; height:500px;}
+.tm1, .tm2, .tm3, .tm5, .tm6, .tm7, .tm8{z-index:106;}
+.tm4{ margin-left:100px;margin-top:220px; z-index:105;}
+.tm1{margin-left:10px;margin-top:290px}
+.tm2{margin-left:123px;margin-top:250px}
+.tm3{margin-left:190px;margin-top:235px}
+.tm5{margin-left:330px;margin-top:165px}
+.tm6{margin-left:30px;margin-top:40px}
+.tm7{margin-left:320px;margin-top:101px}
+.tm8{margin-left:280px;margin-top:250px}
+
+
+.ph4,.load,.lbiao,.lbiao2{ position:absolute;}
+.ph4{ margin-left:-70px; z-index:103; opacity:0}
+.load{margin-left:27px; margin-top:98px; z-index:104;opacity:0}
+.lbiao{ margin-left:70px; margin-top:69px; z-index:105;opacity:0}
+.righttop p{ text-align:left;padding-bottom:30px; font-size:16px; line-height:30px}
+.righttop .p1{ font-size:24px; font-weight:bold; padding:50px 0 20px 0;}
+.righttop h4{ text-align:left; font-size:30px;}
+.img,.button{ float:left; position:relative;opacity:0}
+.img{ left:-10%}
+.button{ bottom:-50px}
+.img div{ padding-top:10px}
+.button{ margin-left:56px; padding-top:60px;}
+#header {top:0;height: 50px;background-color: #fff;box-shadow: 1px 1px 3px rgba(0,0,0,0.2);position: fixed; width: 100%;min-width: 1000px;opacity:0.3;filter: alpha(opacity=30);z-index: 200;
+}
+.logo{ float:left; line-height:50px; padding-left:30px; font-size:30px}
+.menu{ float:right}
+.menu ul{ float:left;line-height:50px; padding-right:30px;}
+.menu ul li{ float:left; text-align:center; padding-left:20px}
+.menu ul li a{  display:block; padding:0px 20px; color:#000;height:48px}
+.menu ul li a:hover{ border-bottom:2px solid #666;}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+}
+
+.modal {
+  display: none;
+  background:url(../images/modalbg.gif);
+  padding:35px 40px 40px 40px;
+  overflow: auto;
+  z-index: 1001;
+  position:fixed;
+  width: 600px;
+  box-shadow:0px 0px 10px #222;
+}
+.closeBtn{ position:absolute; left:659px; top:5px; width:16px; height:16px; background:url(../images/close.gif) no-repeat; cursor:pointer}
+.closeBtn:hover{ background-position:-16px 0px}
+.modaldown, .modalup, .modalup ul{ float:left; width:600px}
+.modaldown{ padding-top:30px}
+.modalup ul li { float:left; width:128px; height:119px; margin-right:108px}
+.modalup ul li a{width:128px; height:119px; background:url(../images/chose.gif); display:block; cursor:pointer;}
+.modalup ul .android a{ background-position:0px 0px}
+.modalup ul .android a:hover, .modalup ul .android .active{ background-position:-128px 0px}
+.modalup ul .iphone a{ background-position:0px -119px}
+.modalup ul .iphone a:hover, .modalup ul .iphone .active{ background-position:-128px -119px}
+.modalup ul .ipad a{ background-position:0px -238px}
+.modalup ul .ipad a:hover, .modalup ul .ipad .active{ background-position:-128px -238px}
+.erwm, .downbtn{ float:left;}
+.erwm{ width:188px;}
+.erwm p{ text-align:center; padding-top:10px;}
+.gray{ color:#afafaf}
+.downbtn{ margin-left:20px; padding-top:10px}
+.downcont{ display:none}
+.show{ display:block}
+.btns {
+    padding-bottom: 20px;
+    padding-top: 16px;
+    border-bottom: 1px dashed #D6D1CB;
+    overflow: hidden;
+    margin-bottom: 19px;}
+.btn{
+	height: 46px;
+	line-height: 49px;
+	width: 121px;
+	border-radius: 3px;
+	font-size: 15px;
+	color: #FFF;
+	text-align: center;
+	padding-left: 25px;
+	cursor: pointer;
+	text-decoration: none;
+}
+.btn-android {
+    float: left;
+    margin-right: 8px;
+    background:url(../images/android-phone.png) no-repeat scroll 11px center #a5c710;
+}
+.btn-android:hover{ background-color:#b1d70b}
+.btn-iphone {
+    float: left;
+    background:url(../images/apple.png) no-repeat scroll 7px center #ff9000;
+}
+.btn-iphone:hover{ background-color:#ff9c1b}
+.btn-ipad {
+    float: left;
+    background:url(../images/apple.png) no-repeat scroll 7px center #4bbfc3;
+}
+.btn-ipad:hover{ background-color:#4aced3}
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*(空格) 后代选择器->body里面所有的子孙元素*/
+			/*body *{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}*/
+			/*body>div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}*/
+			
+			/*#div2>div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}*/
+			
+			/*选中一个元素有10000种方法.无数种方法*/
+			#div2 div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>子div</div>
+		<p>
+			<span>span</span>
+		</p>
+		<div id='div2'>
+			<div>孙子div</div>
+		</div>
+	</body>
+</html>

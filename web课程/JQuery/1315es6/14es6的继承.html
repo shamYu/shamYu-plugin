@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		es6添加了类的概念,不会再用构造函数来充当类了
+		
+		class Life{
+			constructor(){
+				this.abc='哈哈哈'
+			}
+			breathe(){
+				console.log(this.name+'贼会呼吸')
+			}
+		}
+		
+		//声明一个person并继承Life
+		class Person extends Life{
+			//构造函数，用于创建实例的私有属性,constructor固定写法
+			//每个类必须有一个构造函数。
+			constructor(abc){
+				//在子类的构造函数里调用父类的构造函数，通过关键字super来调用，super一定要写在构造函数的最上边
+				super();
+				this.walk=abc;
+			}
+			//公有方法，给所有的实例添加公有方法
+			speak(){
+				console.log(this.name+'贼会说话')
+			}
+		}
+		
+		//通过类来实例化一个人
+//		var man= new Person(true);		
+//		man.__proto__ == Person.prototype;//true
+		
+		class Banz extends Person{
+			constructor(name){
+				//调用person的构造函数
+				super(true);
+				this.name=name
+			}
+			ps(){
+				console.log(this.name+'贼会批图')
+			}
+		}
+		
+		var banz=new Banz('勒布朗源');
+		
+		banz.__proto__==Banz.prototype//true
+		banz.__proto__.__proto__==Person.prototype//true
+		banz.__proto__.__proto__.__proto__==Life.prototype//true
+		
+		
+	</script>
+</html>

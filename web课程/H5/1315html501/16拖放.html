@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div>div{
+				width: 100px;
+				height: 100px;
+				border:1px solid #000; 
+			}
+			#target{
+				width: 200px;
+				height: 200px;
+				border:1px solid #000; 
+				margin-left:100px;
+			}
+			body>div{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+		</div>
+		<div id='target'>目标元素</div>
+	</body>
+	<script type="text/javascript">
+		
+//		1:页面载入给wrap内的5个div随机设置背景色.
+//		2:wrap内的5个div都可以进行拖放操作.
+//		3:wrap内的5个div拖入目标元素时.松开鼠标,将目标元素的背景设置为当前被拖元素的背景;
+		
+		var aDiv=document.querySelectorAll('#wrap>div');
+		var oTarget=document.querySelector('#target');
+		
+		var color='';
+		var ele=null;
+		
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].draggable=true;
+			aDiv[i].style.background='rgb('+rand(0,256)+','+rand(0,256)+','+rand(0,256)+')';
+			aDiv[i].addEventListener('dragstart',start);
+		}
+		
+		oTarget.addEventListener('drop',drop);
+		oTarget.addEventListener('dragover',function(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+		});
+		
+		function start(){
+//			color=this.style.background;
+			ele=this;
+		}
+				
+		function drop(){
+//			this.style.background=color;
+			this.style.background=ele.style.background;
+		}
+		
+		function rand(a,b){
+			return Math.floor(Math.random()*(a-b))+b;
+		}
+		
+	</script>
+</html>

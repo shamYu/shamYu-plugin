@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">			
+			li{
+				padding: 20px 50px;
+				background: red;
+				float: left;
+				margin:1px 0 0 1px;
+			}
+			ul{
+				float: left;
+			}
+			*{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="插入元素" />
+		<ul></ul>
+	</body>
+	<script type="text/javascript">
+//		点击按钮btn1,在ul内插入1个li,li的内容任意
+//		不管插入多少个li,保障ul一定在页面内水平居中.(不能将ul设为行内元素等);
+		
+		var oBtn1=document.getElementById("btn1");
+		var oBtn2=document.getElementById("btn2");
+		
+		var oUl=document.getElementsByTagName('ul')[0];
+		
+		oBtn1.onclick=insertLi;
+		
+		function insertLi(){
+			
+			var oLi=document.createElement("li");
+			
+			oUl.appendChild(oLi);
+			
+			var win_w=document.documentElement.clientWidth;
+			
+			var ul_w=oUl.offsetWidth;
+						
+			var left=(win_w-ul_w)/2;
+			
+			oUl.style.marginLeft=left+'px';
+		}
+		
+	</script>
+</html>

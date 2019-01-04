@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="插入元素" />
+	</body>
+	<script type="text/javascript">
+		
+		var arr=[['div','哈哈哈'],['p','哈哈哈11'],['h3','哈哈哈33'],['ul','哈哈哈44'],['ol','哈哈哈55']];
+		
+//		点击按钮,随机选择arr内的一个元素,根据选中的元素插入相应的标签到body内.每个元素的第一个元素是标签名,第二个是标签的内容
+//		要求每种元素只能插入一次。如果所有的元素都插入过了，弹出'没有元素了'
+		
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=insertEle;
+		
+		function insertEle(){
+			
+			//如果所有的元素都插入过了，就不再插入
+			if(arr.length==0){
+				alert('没有元素了');
+				return;
+			}
+			
+			var index=Math.floor(Math.random()*arr.length);
+			
+			var tagName=arr[index][0];
+			
+			var ele=document.createElement(tagName);
+			
+			document.body.appendChild(ele);
+			
+			ele.innerText=arr[index][1];
+			//把随机到的元素删除，防止下次再重复选中。
+			arr.splice(index,1);
+		}
+		
+	</script>
+</html>

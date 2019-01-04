@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		//自执行函数实际上是一个函数调用表达式，不是一个函数声明表达式
+//		(function(x){
+//			alert(x)
+//		})(100);
+		
+		//没有返回值，因为没有return
+//		var b=(function(x){
+//			alert(x);
+//		})(100);
+//		
+//		alert(b);
+		
+//		var b=(function(x){
+//			alert(x);
+//			return 10;
+//		})(100);
+//		
+//		alert(b);
+		
+//		a的值是10，实参写的是另一个自执行函数。
+
+		var a=(function(a){
+			return a-1;			
+		})(
+			(function(a){
+				return a+1;
+			})(10)
+		)
+		
+	</script>
+</html>

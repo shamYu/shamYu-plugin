@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+			li:nth-child(2){};
+			li:nth-of-type(1){};
+			
+			li:nth-last-child(1){};
+			li:nth-last-of-type(3){};
+			
+			li:nth-last-child{};
+			li:nth-last-of-type{};
+			
+			li:only-child{};
+			li:only-of-type{};
+			
+			li:first-letter{};
+			li:first-line{};
+			
+			li::selection{};
+			
+			li:[abc$='ha']{}
+			li:[abc^='ha']{}
+			li:[abc*='ha']{}
+			
+			li:before{content:''};
+			li:after{content:''};
+			
+			li:not(选择器){};
+			
+			li{
+				opacity: 0-1;
+				color:rgba(0,0,0,0-1);
+				text-shadow:10px 10px 20px #000,12px 12px 20px #000;
+				box-shadow:inset x y 模糊大小 扩展大小 阴影颜色;
+				background-size:100% auto; cover,contain;
+				background:-webkit-linear-gradient(90deg,red 20%,green);
+				background:-webkit-radial-gradient(50px 50px,red,yellow);
+				background-clip:border-box,padding-box,content-box;				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<p>pp</p>
+		</ul>
+	</body>
+</html>

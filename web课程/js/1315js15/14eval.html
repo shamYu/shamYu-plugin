@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'>msg</div>
+	</body>
+	<script type="text/javascript">
+		
+//		eval()->可以把一个字符串变成js代码来运行
+		
+//		var str='({name:alert(100)})';
+
+//		var str='alert(100)';		
+//		var obj=eval(str); //obj是undefined
+		
+//		var str1='var a=100';		
+//		eval(str1);
+		
+		var msg='杨幂';		
+		var oDiv=document.getElementById("div1");
+		
+//		oDiv.innerText=msg;
+//		oDiv.innerText=eval('msg');
+		oDiv.innerText=eval(oDiv.innerText);
+		
+	</script>
+</html>

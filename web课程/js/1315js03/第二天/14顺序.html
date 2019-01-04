@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="快点快点" />
+		<div id='div1'>别点我别点我</div>
+	</body>
+	<script type="text/javascript">
+//		点击按钮,根据点击次数,每点击一次,div的内容设置为：诶呀！别点了！这是第*次点击，
+//		如果点击的次数超过5次,将点击次数重置为0,div的内容变成最开始时的内容；
+		
+		var oBtn=document.getElementById("btn");
+		var oDiv1=document.getElementById("div1");
+		
+		//点击次数
+		var iCount=0;
+		//点击之前将内容存起来
+		var str=oDiv1.innerText;
+		
+		oBtn.onclick=function(){
+			iCount++;
+			if(iCount>5){
+				iCount=0;
+				oDiv1.innerText=str;
+			}else{
+				oDiv1.innerText='诶呀！别点了！这是第'+iCount+'次点击'
+			}			
+		}
+		
+	</script>
+</html>

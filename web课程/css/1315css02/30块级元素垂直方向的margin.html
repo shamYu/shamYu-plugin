@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width: 200px;
+				height: 200px;
+				background: red;
+				/*border:1px solid #000;*/
+				/*padding:1px;*/
+				/*margin-top:150px;*/
+				overflow: hidden;
+			}
+			#wrap>div{
+				/*块级元素垂直方向的margin会产生重叠现象->子元素和父元素的margin取最大值,然后设置在父元素上*/
+				/*解决方法->给父元素设置padding-top或者border-top或者overflow:hidden*/
+				width: 100px;
+				height: 100px;
+				background: blue;
+				margin-top:50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<div></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id='text' value="" />
+		<input type="button" id='btn' value="按钮" />
+	</body>
+	<script type="text/javascript">
+		
+		var str=getCookie('abc');
+		var oText=document.getElementById("text");
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function(){
+			setCookie('abc',oText.value,2*365);
+		}
+		
+		function setCookie(name,val,day){			
+			var d=new Date();		
+			var nowTime=d.getTime();		
+			d.setTime(nowTime+24*60*60*1000*day);		
+			document.cookie=name+'='+val+'; expires='+d.toUTCString();
+		}
+		function getCookie(name){			
+			var arr=document.cookie.split('; ');
+			var val='';
+			arr.forEach(function(items,i){
+				if(items.indexOf(name)!=-1){					
+					var data=items.split('=');
+					val=data[1];
+				}
+			});
+			return val;
+		}
+	</script>
+</html>

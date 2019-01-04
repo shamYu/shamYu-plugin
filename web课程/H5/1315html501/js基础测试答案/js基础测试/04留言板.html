@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="留言" />
+		<input type="text" id="text" value="" />
+		<div></div>
+	</body>
+	<script type="text/javascript">
+//		点击按钮,将文本框输入的文字插入div,要求不替换之前的内容
+		var oBtn=document.getElementById("btn");
+		var oText=document.getElementById("text");
+		var oDiv=document.getElementsByTagName('div')[0];
+		oBtn.onclick=function () {
+			oDiv.innerHTML+=oText.value+'<br />';
+		}
+	</script>
+</html>

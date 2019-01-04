@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1' abc='我是可爱的abc'></div>
+		<div id='div2'></div>
+	</body>
+	<script type="text/javascript">
+//		给div2添加自定义属性edf,值为div1的abc属性值;
+		
+		var oDiv1=document.getElementById("div1");
+		var oDiv2=document.getElementById("div2");
+		
+		var attr=oDiv1.getAttribute('abc');
+		
+		oDiv2.setAttribute('edf',attr);
+		
+	</script>
+</html>

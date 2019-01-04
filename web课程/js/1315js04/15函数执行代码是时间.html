@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+	</body>
+	<script type="text/javascript">
+		
+		var oBtn=document.getElementById("btn");
+		
+//		代码的执行顺序,代码的书写顺序
+//		如果没有函数，那么代码的执行顺序肯定是从上往下的。(执行顺序一定跟书写顺序一致);
+//		浏览器是一个人:我们的写的代码对于浏览器来说就是一个任务清单。
+//		浏览器解析代码时，有些代码马上执行，有些代码在未来的时间执行。
+//		函数内的代码在未来的时间执行。不写函数内的代码会马上执行。
+//		函数内的代码一定是程序运行的最末尾。
+//		声明函数->做一个计划->函数内的代码是执行计划
+
+		var x;
+		
+		oBtn.onclick=function (){
+			alert(x);//100,不是undefined
+		}
+		
+		x=100;
+		
+//		var x;		
+//		x=100;		
+//		console.log(x);//100
+//		
+//		var y;		
+//		console.log(y);//undefined		
+//		y=100;
+		
+		
+		
+	</script>
+</html>

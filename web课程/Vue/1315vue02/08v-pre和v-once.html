@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.active{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <!-- code->显示一行代码 -->
+        <code>var a=100;</code>
+        <!-- pre->按显示一个代码块 -->
+        <pre>
+            var a=100;
+            function (){
+                alert(100);
+            }
+        </pre>
+        
+        <!-- v-once让数据变化不会更新视图，视图只在载入时更新一次 -->
+        <div v-once>{{msg}}</div>
+
+        <!-- v-pre->让插值表达式不求值 -->
+        <div v-pre>{{msg}}</div>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            msg:'<span>dhdhddhdhdhd</span>'
+        }
+    })
+
+
+</script>
+</html>

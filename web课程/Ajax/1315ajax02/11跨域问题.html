@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		跨域->需要获取不同源的页面的数据->去别人家拿东西.		
+//		比较url,协议,域名,ip,端口,只要其中一个不一样,那么两个url就是不同源的关系.不同源默认不能共享数据.
+//		ajax请求数据遵守同源策略,不同源的页面是不能请求数据的.		
+
+		var oP=document.querySelector('p');
+		
+		//进行ajax数据请求的工具。
+		var xhr=new XMLHttpRequest();
+		
+		//http://127.0.0.1:8080/
+		xhr.open('GET','http://127.0.0.1:8080/1315ajax01/data.txt',true);
+		//将请求发送出去。
+		xhr.send();
+		
+		//等待服务器进行相应。
+		//readyState->本次通信的状态，取值是0-4。
+		xhr.onreadystatechange=function(){
+			//请求完成。
+			if(xhr.readyState==4){
+				//请求成功。
+				if(xhr.status==200){
+//					xhr.responseText->服务器返回的结果
+					oP.innerText=xhr.responseText;
+				}
+			}
+		}
+		
+	</script>
+</html>

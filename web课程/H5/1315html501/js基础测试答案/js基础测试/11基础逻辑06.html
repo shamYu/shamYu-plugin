@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>0</div>
+	</body>
+	<script type="text/javascript">
+//		给div添加点击事件。
+//		当当前点击次数是2的整数倍并且是3的整数倍时，将div内的数字设置为当前点击的次数。否则弹出'还不够';
+		
+		var oDiv=document.getElementsByTagName('div')[0];
+		var n=0;
+		oDiv.onclick=function () {
+			n++;
+			if(n%2==0&&n%3==0){
+				this.innerHTML=n;
+			}else{
+				alert('还不够')
+			}
+		}
+		
+	</script>
+</html>

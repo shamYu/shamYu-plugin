@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//原生对象
+		var oDiv=document.querySelector('div');
+		
+		//$()类似组内的每一个元素是原生DOM元素.
+		//jq对象，$()返回类数组，这个类数组一定是一个jq对象。
+		var oDiv1=$('div');
+		
+		//css方法不在原生对象的原型链上。因此会报错。
+//		oDiv.css('background','red');
+		
+		//jq对象的原型链上没有style属性
+		//oDiv1.style.background='red';
+		
+		//jq对象不能用元素对象的方法或者属性,反之原生对象不能使用jq对象的方法或者属性。
+		
+		//检测一个对象是jq对象与否的方法
+		//console.log(oDiv1 instanceof $)//true
+		//console.log(oDiv instanceof $)//false
+		
+	</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <p ref='p1'>ppp1</p>
+        <p ref='p2'>ppp2</p>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script>
+
+    //不要给两个p绑定任何数据.
+    //页面载入,给第一个p背景变红,第二个p背景变绿.
+    //第二个p添加点击事件,点击时弹自身的内容.
+
+    var vm=new Vue({
+        el:'#app',
+        mounted(){
+            this.$refs.p1.style.background='red';
+            this.$refs.p2.style.background='green';
+            this.$refs.p2.addEventListener('click',function(){
+                alert(this.innerText);
+            })
+            //极度不推荐这种写法
+            //this.$el.querySelector('p:nth-child(1)').style.background='red';
+        }
+    })
+
+</script>
+</html>

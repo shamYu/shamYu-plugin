@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//声明的同时又调用;
+		//既可以马上运行，又可以使x是局部变量;
+		(function(){
+			var x=100;
+			alert(x);
+		})();
+		
+		//函数声明,在调用前声明还是在调用后声明，无所谓。
+		function show(){
+			alert(100);
+		}
+		//函数表达式，一定要写在调用之前。
+		var show=function(){
+			alert(100);
+		}
+		
+		//自执行函数的写法 -> (匿名函数声明)();后一个括号是匿名函数的调用符号
+		(function(){
+			alert(100);
+		})();
+		
+//---------------------------------------------
+		//使用了全局变量，不安全
+//		var x=100;
+//		alert(x);
+//----------------------------------------------
+//		函数需要有名字才能调用
+//		function show(){
+//			var x=100;
+//			alert(x);
+//		}
+//		show();
+		
+	</script>
+</html>

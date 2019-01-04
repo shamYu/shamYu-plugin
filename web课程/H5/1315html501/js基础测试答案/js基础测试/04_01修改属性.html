@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+		<input type="checkbox" value="" />
+		<input type="text" value="" />
+		<textarea name="" rows="" cols=""></textarea>
+		<div></div>
+		<img src=""/>
+	</body>
+	<script type="text/javascript">
+
+//		将按钮的value修改为'弹出';
+		var oBtn=document.getElementById("btn");
+		oBtn.value='弹出';
+//		将复选框设置为勾选;
+		var aInput=document.getElementsByTagName('input');
+		aInput[1].checked=true;
+//		给按钮添加点击事件,弹出输入在文本域内的文本;
+		oBtn.onclick=function () {
+			alert(aInput[2].value);
+		}
+//		将文本框设置为禁用.
+		aInput[2].disabled=true;
+//		让div获得box类样式.
+		document.getElementsByTagName('div')[0].className='box';
+		var oImg=document.getElementsByTagName('img')[0];
+//		用js给图片标签引入一张图片，设置宽高为200*200;
+		oImg.src='img/1.png';
+		oImg.width='200';
+		oImg.height='200';
+		
+	</script>
+</html>

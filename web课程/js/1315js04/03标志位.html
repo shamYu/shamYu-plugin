@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="加数字" />
+		<div id='div1'>这是第0次点击</div>
+	</body>
+	<script type="text/javascript">
+//		点击按钮,根据点击次数,每点击一次,div的内容设置为：这是第*次点击，并且如果点击次数为奇数，div的背景设置为绿色，如果是偶数，div背景设置为红色
+		var oDiv=document.getElementById("div1");
+		var oBtn=document.getElementById("btn");
+		
+		var iCount=0;
+		
+		//true表示点击次数是奇数，标记为绿色。false标记为红色
+		//程序在两个状态间切换。
+		var flag=true;
+		
+		oBtn.onclick=function () {
+			
+			iCount++;
+			
+			if(flag){
+				oDiv.style.background='green';
+//				flag=false;
+			}else{
+				oDiv.style.background='red';
+//				flag=true;
+			}
+			
+			flag=!flag;
+								
+			oDiv.innerText='这是第'+iCount+'次点击';		
+		}
+	</script>
+</html>

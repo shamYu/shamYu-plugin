@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div>
+        <p>{{msg}}</p>
+        <p>{{msg}}</p>
+    </div> -->
+    <div id='app'>
+        <p @click='show()'>{{msg}}</p>       
+        <iframe id='el' src="main.html" frameborder='0'></iframe>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script>
+
+    window.onload=function(){
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                msg:'老娘是父组件'
+            },
+            methods:{
+                show(){
+                    alert('我是父组件的p')
+                }
+            }
+        });
+
+        //storage事件当本地存储的数据真正发生变化时会触发。
+        //ev.key就是发生变化的数据名。
+        //ev.newValue就是每次变化的新值.
+        //ev.oldValue就是每次变化之前的值
+        
+        window.onstorage=function(ev){
+            if(ev.key=='abc'){
+                // vm.msg=localStorage.getItem('abc');
+                vm.msg=ev.newValue;
+            }
+        }
+
+        // var oEl=document.getElementById('el');
+        //新窗口对象的vue实例的msg数据
+        // var str=oEl.contentWindow.vm.msg;
+
+        // setTimeout(function(){
+        //     vm.msg=oEl.contentWindow.vm.msg;
+        // },1000);
+
+    }
+
+   
+</script>
+</html>

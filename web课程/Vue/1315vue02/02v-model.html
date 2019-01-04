@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.active{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+
+        <!-- v-model绑定的是布尔值，并且用于checkbox或radio,那么绑定的是一个布尔值 -->
+        <!-- <input type="checkbox" v-model='flag'>
+        <input type="button" @click='flag=!flag' value='按钮'>
+        {{flag}}
+        <div :class='{active:flag}'>jjjjjjjjj</div> -->
+        
+        <!-- 如果绑定的数据是一个数组,并且checkbox有value属性,那么操作时会给数组添加或者删除value -->
+        <!-- <h3>你喜欢谁?</h3>
+        <input type="checkbox" v-model='arr' value='杨幂'>杨幂<br>       
+        <input type="checkbox" v-model='arr' value='胡歌'>胡歌<br>       
+        <input type="checkbox" v-model='arr' value='幸运姐'>幸运姐<br>        -->
+        <!-- {{arr}} -->
+        
+        <!-- 这里绑定的是被选中的option里面的value -->
+        <select v-model='option'>
+            <option value="aaaa">aaaa</option>
+            <option value="bbbb">bbbb</option>
+            <option value="ccccc">ccccc</option>
+        </select>
+        {{option}}
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            // arr:[]
+            // flag:true
+            option:'',
+        }
+    })
+
+
+</script>
+</html>

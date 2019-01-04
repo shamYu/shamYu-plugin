@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=[1,2,3,'哈哈哈','杨幂',66,99,100,88,'你',22,1,'在',8,'哪里'];
+		
+//		找到这个数组内的所有字符串,然后拼接在一起,最后弹出拼接后的字符串
+		
+//		用一个变量存所有找到的字符串
+		var wan='';
+		
+		//循环找出所有的字符串
+		for(var i=0;i<arr.length;i++){
+			if(typeof arr[i] == 'string'){
+				wan+=arr[i];
+			}
+		}
+		
+		//弹出结果
+		alert(wan);
+		
+		
+	</script>
+</html>

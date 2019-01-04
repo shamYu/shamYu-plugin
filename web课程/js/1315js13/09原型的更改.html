@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+						
+		//人类
+		function Human(){};
+		
+		Human.prototype.speak=true;
+		
+		//男人
+		function Man(name,age){
+			this.name=name;
+			this.age=age;
+		}
+		//让Man的实例的上一层原型对象变成人类的实例,人类的实例的上一级原型对象就是人类的原型
+		Man.prototype=new Human();
+		
+		//实例的上一层原型对象默认是其构造函数的原型
+		var superMan=new Man('超人',9000);
+		
+		//改变Man的原型并不一定会改变superMan的原型链
+		Man.prototype={height:'190cm'};
+		
+
+		
+	</script>
+</html>

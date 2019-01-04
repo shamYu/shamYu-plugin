@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		1:属性名与属性值的变量名相同时,可以合并
+		
+//		var name='杨幂';
+//		var age=900;
+		
+//		var obj={name,age};
+		
+//		等同于以下写法
+//		var obj={
+//			name:name，
+//			age:age
+//		}
+//				
+//		2:属性是函数时,省略function关键字
+			
+//			var obj={
+//				skill(){}
+//			}
+//			等同于以下写法
+//			var obj={
+//				skill:function(){}
+//			}
+			
+//		3:属性表达式
+			
+			var abc='name';			
+			var obj={
+//				以[]内表达式的值作为属性名
+//				[abc]:'欧阳',
+//				['n'+'ame']:'欧阳',
+				[fn()]:'欧阳',
+			}
+			
+			console.log(obj.name);
+//			console.log(obj[abc]);
+			
+			function fn(){
+				return 'name'
+			}
+			
+			var obj1={
+				//如果表达式的返回值不是字符串，那么会隐式转换为字符串
+//				[1+1]:'杨幂',
+				[obj]:'杨幂',
+			}
+			
+//			console.log(obj1['2']);
+			console.log(obj1['[object Object]']);
+			
+	</script>
+</html>

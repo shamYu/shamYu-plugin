@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		
+		1:ev.dataTransfer.files->获取拖入的文件列表.files->files[i]->文件.
+		2:异步操作->不阻塞代码.->肯定落后于同步操作.->完成时间是不确定的.->异步监听->完成时自动触发一个函数.
+			new FileReader();fr.readAsDataURL(fl);setTimeout();
+		3:表单验证->表单元素.validity
+				 invalid事件->检测输入的内容不合法,就会触发.
+		
+		4:audio,video,controls,autoplay,muted,poster;
+			oV.play(),oV.pause(),oV.muted=true;
+			oV.currentTime->设置时控制视频进度.oV.duration->总时长;
+			oV.videoWidth.oV.videoHeight.
+			oV.webkitRequestFullScreen();
+		
+	</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" placeholder="长" v-model='long'>
+        <input type="text" placeholder="宽" v-model='width'>
+        <input type="text" placeholder="高" v-model='height'>
+        <div>{{total}}</div>
+    </div>
+</body>
+<script src="../js/vue1.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            long:0,
+            width:0,
+            height:0
+        },
+        computed:{
+            total(){
+                return this.long*this.width*this.height;
+            }
+        }
+    })
+</script>
+</html>

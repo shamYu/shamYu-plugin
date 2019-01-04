@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<!--杨幂 i love you-->
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+//		var str='amazing';
+//		split的参数是一个空字符串，那么默认切割出所有的字符
+//		var arr=str.split('');
+
+		var str='杨幂-i-love-you';
+//		按-来切割，剩下的部分变成元素
+		var arr=str.split('-');
+		
+		document.getElementById("div1").innerText=arr.join(' ');
+		
+//		不写参数无法切割字符串		
+//		var arr=str.split();
+		
+		
+		
+	</script>
+</html>

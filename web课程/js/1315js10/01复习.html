@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				padding: 50px;
+				height: 50px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+	<script type="text/javascript">
+		
+//		1:let声明变量,const声明常量
+//			a:声明的标识符不会变成window的属性.
+//			b:都没有预解析(没有提升).
+//			c:都不能重复声明同一个变量.(const声明的变量不能二次赋值).
+//			d:在块级作用域内声明时,标识符都会变成块级作用域的局部变量.
+//		2:块级作用域->{}(非json).函数的{}构成函数作用域.其他{}构成块级作用域.
+//		3:for in循环 ->for(var prop in obj){}->prop是属性名,obj[prop]属性值.
+//		4:BOM
+//			a:confirm()->确认框.prompt()->输入框.
+//			b:offsetWidth->(你看到的元素的大小)->width+padding+border
+//			  clientWidth->(内部的宽)->width+padding //300px
+//			  scrollWidth->(实际内容的宽)->实际的内容宽+padding
+//			c:浏览器相关尺寸:
+//				document.documentElement.clientWidth->页面可视区域的宽.不包括滚动条
+//				window.innerWidth->浏览器内部的宽->window.outerWidth->浏览器这个软件窗口的宽
+//			d:元素的偏移
+//				offsetLeft,offsetTop->获取的是子元素相对于最近的具有定位属性的祖先元素的左(上)边距.如果没有,相对于页面左边.
+////				不能通过设置偏移来移动元素
+//			e:document.documentElement.scrollTop->页面卷去的距离.可以设置,可以获取.
+//			f:窗口尺寸变化事件window.onresize=函数声明.滚动条滚动事件:window.onscroll=函数声明
+				
+	</script>
+</html>

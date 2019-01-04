@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			ul{
+				border: 3px solid black;
+				width: 98%;
+				height: 500px;
+				margin: 6px;
+			}
+			li{
+				margin:10px 4px;
+			}
+			.active{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button"  value="点击生成邮件" />
+		<ul></ul>
+		<input type="button" value="全选"/>
+		<input type="button" value="反选"/>
+		<input type="button" value="删除邮件"/>		
+		
+		<script type="text/javascript">
+			
+			//点击生成邮件按钮，在ul内生成一个li,li内需要一个复选框，复选框后面文字：'这是第*封邮件'。
+			//点击全选按钮，页面上所有的li要变红，复选框要勾上。
+			//点击反选按钮，红的li变白，白的li变红。复选框切换状态。
+			//点击删除邮件，删除红色的li。删除前提升：'确定删除这*封邮件吗',点击确定就删除，取消不删除。
+			//点击页面上所有的li，可以切换被点击里的颜色。并且切换li内复选框的状态。
+			
+			var aEle=document.body.children;			
+			var oUl=aEle[1];
+			var aLi=oUl.children;
+			
+			aEle[0].onclick=insertEmail;
+			aEle[2].onclick=selectAll;
+			aEle[3].onclick=inverseAll;
+			aEle[4].onclick=deleteRed;
+			
+			function deleteRed(){
+				var num=0;
+				for(var i=0;i<aLi.length;i++){
+					if(!aLi[i].flag){
+						num++;
+					}
+				}
+				//如果没有选中邮件，终止函数调用
+				if(num==0){
+					alert('还没选择邮件');
+					return
+				}
+				//是否能删除邮件
+				var canDel=confirm('你确定删除这'+num+'封邮件吗？');
+				
+				if(canDel){
+					for(var i=aLi.length-1;i>=0;i--){
+						//如果是红色的，就删除
+						if(!aLi[i].flag){
+							oUl.removeChild(aLi[i]);
+						}
+					}
+				}
+//				给所有的li排序
+				sortLi();
+			}
+			
+			function insertEmail(){
+				var oLi=document.createElement("li");
+				oUl.appendChild(oLi);
+				
+				//true表示背景白;
+				oLi.flag=true;
+//				给所有的li排序
+				sortLi();	
+				oLi.onclick=function(){
+					toggleRed(this);
+				};
+			}
+			//给所有的li排序
+			function sortLi(){
+				for(var i=0;i<aLi.length;i++){
+					aLi[i].innerHTML='<input type="checkbox" /><span>这是第'+(aLi.length-i)+'封邮件</span>';
+				}	
+			}
+			//红白切换逻辑
+			function toggleRed(ele){
+				if(ele.flag){
+					ele.className='active';
+					ele.children[0].checked=true;
+				}else{
+					ele.className='';
+					ele.children[0].checked=false;
+				}
+				ele.flag=!ele.flag;
+			}
+			
+			function selectAll(){
+				for(var i=0;i<aLi.length;i++){
+					aLi[i].className='active';
+					aLi[i].children[0].checked=true;
+					//变红之后flag应该变成false表示红色
+					aLi[i].flag=false;
+				}
+			}
+			
+			function inverseAll(){
+				for(var i=0;i<aLi.length;i++){
+					toggleRed(aLi[i]);
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

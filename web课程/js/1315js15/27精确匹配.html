@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var str='王力宏你就是力哥！';
+		
+//		力?=宏 ->找到一个后面是宏的力 		
+//		var re=/力(?=宏)/g;
+
+//		(?<=王)力 ->找到一个前面是王的力 
+		var re=/(?<=王)力/g;
+		
+		str=str.replace(re,'八');
+				
+	</script>
+</html>

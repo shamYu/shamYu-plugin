@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			//TypeError -> 类型错误
+			//Cannot read property 'style' of null->不能读取null的style属性
+			
+			//浏览器解析html文档是从上往下解析的,当解析到以下代码时,div还没有生成,因此无法获取元素
+			var oDiv=document.getElementById("div1");			
+//			oDiv.style.background='red';
+
+//			判断一个元素存在不存在,可以直接把元素放在判断条件里;
+//			还可以用类似的方法判断一个变量是否被赋值,因为没被赋值的变量是undefined,undefined就是false
+			if(oDiv){
+				oDiv.style.background='red';
+			}else{
+				alert('此元素不存在');
+			}
+
+		</script>
+	</head>
+	<body>
+		<div id='div1'>123123</div>
+	</body>
+	
+</html>

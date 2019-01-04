@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 视图 -->
+    <div id='app'>
+        {{msg}}
+        <p>{{msg}}</p>
+        <span>{{msg}}</span>
+    </div>
+    <!-- 视图 -->
+    <div id='div1'>{{msg}}</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    
+    //vue是一个数据驱动的框架
+    //数据驱动->数据作为项目的逻辑驱动,不是以DOM节点作为驱动.
+    //软件设置模式->mvc,mvvm
+    //mvc:m-model(数据模型)(电视节目);v-view(视图)(电视机);c-control(控制器)(遥控器);
+    //mvvm:m-model(数据模型)(电视接);v-view(视图)(电视机);view-model(视图数据模型)(声控控制器);
+    //mvc与mvvm的区别->mvvm弱化了c的作用,把c替换成了vm;分工更细致,更注重数据与视图
+    //vue是一个mvvm框架.vm就是每个vue的实例.
+
+    var vm = new Vue({
+        //将数据与视图绑定
+        //如果选择器匹配多个元素,那么默认以第一个元素作为视图
+        //不能以body或者html作为视图
+        el:'#app',
+        //model
+        data:{
+            msg:'我是一个可爱的内容'
+        }
+    });
+
+    //比较传统的mvc模式
+    // var oDiv=document.getElementById('div1');
+    // //数据model
+    // var msg='哈哈哈哈';
+    // //控制器,control
+    // oDiv.innerHTML=msg;
+
+
+</script>
+</html>

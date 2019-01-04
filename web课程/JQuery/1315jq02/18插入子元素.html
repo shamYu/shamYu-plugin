@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>我先来的</p>
+		<div></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		var oP=document.createElement("p");
+//		var oDiv=document.querySelector('div');		
+//		oDiv.appendChild(oP);
+		
+		//因为$()函数永远返回jq对象,为了防止混淆,推荐jq对象的变量名称,在前面加$
+//		var $oP=$('<p></p>');
+//		可以直接写开标签
+//		var $oP=$('<p>');
+//		$oP.text('哈哈哈');
+//		$('div').append($oP);
+		
+		//可以直接在append里写上html标签实现插入,可以实现逐个插入
+//		$('div').append('<p>hhhhh</p>');
+//		$('div').append('<p>wwwww</p>');
+		
+		//html是全部内容替换成<p>uuuu</p>
+//		$('div').html('<p>uuuu</p>');
+		
+		//子元素插入父元素用appendTo;
+//		$oP=$('<p>');
+//		$oP.text('哈哈哈哈哈');
+//		父元素可以用jq对象表示
+//		$oP.appendTo($('div'));
+//		父元素可以写选择器选中
+//		$oP.appendTo('div');
+		
+//		append()和appendTo()都是把子元素插入到父元素的最后面
+//--------------------------------------------------------------------------------------
+		
+//		$oP=$('<p>111111</p>');
+//		$('div').prepend($oP);
+		
+//		$oP1=$('<p>333333</p>');
+//		$('div').prepend($oP1);
+		
+//		$oP.prependTo('div');
+//		$oP1.prependTo('div');
+
+//		prepend()和prependTo()都是把子元素插入到父元素的最前面
+		
+		//prepend()和prependTo()，append()和appendTo()如果操作的是一个页面上已经存在的元素，那么实现剪切操作
+//		$('p').appendTo('div');
+		
+		
+	</script>
+</html>

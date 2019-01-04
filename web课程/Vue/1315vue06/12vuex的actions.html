@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <div is='vDiv1'></div>
+        <div is='vDiv2'></div>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<!-- vuex是一个vue的插件.依赖于vue,因此需要先引入vue,再引入vuex -->
+<script src="js/vuex.js"></script>
+<script>
+
+    //vuex共享数据。
+    // 组件引用vuex的数据->用计算属性引入。this.$store.state.数据名
+    //修改共享数据的逻辑,必须都写在mutations内.
+    //修改数据涉及异步操作,需要在actions内触发mutations
+    //在组件内触发actions
+
+    //组件->actions(dispatch)->mutations(commit)->修改state
+
+    const mx={
+        template:`<div><input type="button" value='+' @click='add()'>{{num}}</div>`,
+        computed:{
+            num(){
+                return this.$store.state.msg;
+            }
+        },
+        methods:{
+            add(){
+                // this.$store.state.msg++
+                //每次点击,通过commit触发store的mutations内的change方法.
+                //通过触发mutations
+                // this.$store.commit('change',100);
+                
+                //dispatch是用来触发actions内的方法
+                this.$store.dispatch('commitChange',100);
+            }
+        }
+    }
+
+    var store=new Vuex.Store({
+        //vuex的严格模式
+        strict:true,
+        state:{msg:0},
+        //vuex的数据,严格模式下,只能在mutations内修改.在mutations之外修改state的数据都会报错
+        mutations:{
+            //state->当前store对象内的state属性。
+            //val->调用change时传递过来的实参
+            change(state,val){
+                console.log(val);
+                state.msg++;
+
+                //mutations也不支持异步操作.
+                // setTimeout(function(){
+                //     state.msg++;
+                // },1000);
+            },
+        },
+        actions:{
+            //store->当前的store对象。不是state，
+            //val->传入 commitChange的实参。
+            commitChange(store,val){
+                setTimeout(function(){
+                    store.commit('change',val);
+                },1000)
+            }
+        }
+    })
+
+    var vm=new Vue({
+        el:'#app',
+        components:{
+            vDiv1:{mixins:[mx]},
+            vDiv2:{mixins:[mx]}
+        },
+        store,
+    })
+
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div1");
+		
+		var i=0;
+		
+		function moveRight(){
+			i++;
+			if(i>1000){
+				clearInterval(timer);
+			}else{
+				oDiv.style.marginLeft=i+'px';
+			}			
+		}
+		
+		function moveLeft(){
+			i--;
+			if(i<-10){
+				clearInterval(timer);
+			}else{
+				oDiv.style.marginLeft=i+'px';
+			}			
+		}
+		
+//		一个元素最好同一时间只有一个定时器在控制它;
+		
+		var timer1=setInterval(moveLeft,10);
+		var timer2=setInterval(moveRight,10);
+		
+	</script>
+</html>

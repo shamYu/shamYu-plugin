@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="插入数据" />
+		<ul id='ul'></ul>
+	</body>
+	<script type="text/javascript">
+		
+		var oUl=document.getElementById("ul");
+		var oBtn=document.getElementById("btn");
+		
+//		var arr=[111,222,333,444,555];
+//		fn(arr);
+
+		function abc(data){
+			data.forEach(function(items){
+				var oLi=document.createElement("li");
+				oUl.appendChild(oLi);
+				oLi.innerText=items;
+			})
+		}
+		
+		//点击按钮，插入script，script引入一个跨域文件，跨域文件返回跨域数据.		
+		oBtn.onclick=function(){
+			var oScript=document.createElement("script");
+			document.body.appendChild(oScript);
+			//callback的作用就是把请求方使用跨域数据的函数名字传入跨域文件，使跨域文件调用正确的函数
+			//这个传函数名的数据名习惯叫callback,用其他名字也可以，但是需要保证前后端一致。
+			//jsonp请求只能请求支持jsonp请求的文件
+			oScript.src='http://127.0.0.1:8080/1315ajax02/php/getData.php?callback=abc&t';
+		}
+				
+	</script>
+	
+</html>

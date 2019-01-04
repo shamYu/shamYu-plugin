@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			h3{
+				text-align: center;
+			}
+			body>div{
+				width: 800px;
+				margin:0 auto;
+			}
+			body>div>:nth-child(2)>*{
+				float: left;
+				width: 330px;
+				padding: 30px;
+				margin:10px 0 0 10px;
+				height: 140px;
+			}
+			/*body>div>:nth-child(2) h3*/
+			h3:nth-last-child(2){
+				line-height: 70px;
+			}
+			body>div>:nth-child(2)>:nth-child(1){
+				background: red;
+			}
+			body>div>:nth-child(2)>:nth-child(2){
+				background: blue;
+			}
+			body>div>:nth-child(2):after{
+				content: '';
+				display: block;
+				clear: both;
+			}
+			span{
+				background: yellow;
+			}
+			/*span+p*/
+			body>div>:nth-child(2)>p:nth-child(4){
+				background: green;
+				width: 250px;
+				height: 100px;
+			}
+			h3:only-child{
+				line-height: 100px;
+			}
+			p:nth-child(2){
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div>
+				<h3>四大名捕</h3>
+			</div>
+			<div>
+				<div>
+					<h3>杨幂</h3>
+					<p>哈哈哈哈哈哈哈或</p>
+				</div>
+				<div>
+					<h3>范冰冰</h3>
+					<p>呵呵呵呵呵呵</p>
+				</div>
+				<span>郭德纲</span>
+				<p>李志玲</p>				
+			</div>
+			<div>
+				<h3>柳永</h3>
+			</div>
+		</div>
+	</body>
+</html>

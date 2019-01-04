@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		//点击任意li，被点击的li和前面的li全部变红，后面的全部变白
+		
+		var aLi=document.getElementsByTagName('li');
+		
+		for(var i=0;i<aLi.length;i++){
+			//给每个li存下标
+			aLi[i].index=i;
+			aLi[i].onclick=function(){
+				//每次点击是，循环判断，小于等于被点击li的下标，变红，大于被点击li的下标，变白。
+				for(var i=0;i<aLi.length;i++){
+					//如果当前循环的元素的下标大于等于当前被点击li的下标，就变红，其他情况(大于)，就变白
+					if(aLi[i].index<=this.index){
+						aLi[i].style.background='red';
+					}else{
+						aLi[i].style.background='';
+					}
+				}
+			}
+		}
+		
+//		for(var i=0;i<aLi.length;i++){
+//			//给每个li存下标
+//			aLi[i].index=i;
+//			aLi[i].onclick=function(){
+//				for(var i=0;i<this.index+1;i++){
+//					aLi[i].style.background='red';
+//				}
+//				for(var i=this.index+1;i<aLi.length;i++){
+//					aLi[i].style.background='';
+//				}
+//			}
+//		}
+
+//--------------------------------------------------------------------------------		
+//		var index=0;
+//		aLi[index].onclick=function(){
+//			for(var i=0;i<index+1;i++){
+//				aLi[i].style.background='red';
+//			}
+//			for(var i=index+1;i<aLi.length;i++){
+//				aLi[i].style.background='';
+//			}
+//		}
+//		
+//		var index2=1;
+//		aLi[1].onclick=function(){
+//			for(var i=0;i<index2+1;i++){
+//				aLi[i].style.background='red';
+//			}
+//			for(var i=index2+1;i<aLi.length;i++){
+//				aLi[i].style.background='';
+//			}
+//		}
+//		
+//		var index3=2;
+//		aLi[index3].onclick=function(){
+//			for(var i=0;i<index3+1;i++){
+//				aLi[i].style.background='red';
+//			}
+//			for(var i=index3+1;i<aLi.length;i++){
+//				aLi[i].style.background='';
+//			}
+//		}
+		
+	</script>
+</html>

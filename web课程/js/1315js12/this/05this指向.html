@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//		function fn () {
+//			console.log(this);
+//			return document
+//		}		
+//		fn();//window		
+//		fn.call(document.body);//body
+//---------------------------------------------------------------------------------		
+//		function fn () {
+//			console.log(this);
+//			return document;
+//		}		
+//		fn();//window		
+//		fn.call(fn());//document
+//---------------------------------------------------------------------------------		
+//		var oYm={name:'杨幂'};		
+//		function fn(){
+//			console.log(this);
+//			return oYm;
+//		}		
+//		fn();//window
+//		fn.apply(fn());//oYm
+//----------------------------------------------------------------------------------
+//		var oYm={name:'杨幂'};
+//		oYm.fn=function () {
+//			console.log(this);
+//		}
+//		function fn(){
+//			console.log(this);
+//			return oYm;
+//		}		
+//		fn();//window
+//		fn().fn();//oYm
+//----------------------------------------------------------------------------------
+//		var oYm={name:'杨幂'};
+//		var oFbb={name:'范冰冰'};
+//		oYm.fn=function () {
+//			console.log(this);
+//		}
+//		function fn(){
+//			console.log(this);
+//			return oYm;
+//		}		
+//		fn.call(oYm);//oYm
+//		fn().fn.call(oFbb);//oFbb
+//------------------------------------------------------------------------------------
+//		var oYm={name:'杨幂'};
+//		var oFbb={name:'范冰冰'};
+//		oYm.fn=function () {
+//			console.log(this);
+//		}
+//		oFbb.fn=oYm.fn;
+//		function fn(obj){
+//			console.log(this);
+//			return obj;
+//		}		
+//		fn(oYm);
+//		fn(oFbb).fn();
+//-----------------------------------------------------------------------------------
+		var oYm={name:'杨幂'};
+		var oFbb={name:'范冰冰'};
+		Object.prototype.fn=function(){
+			console.log(this);
+		}
+		function fn(obj){
+			console.log(this);
+			return obj;
+		}		
+		fn(oFbb);//window
+		fn(oYm).fn.call(oFbb);//oFbb
+		
+	</script>
+</html>

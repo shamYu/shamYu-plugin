@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>fff</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		var oDiv=document.querySelector('div');
+		
+		//把元素对象转换为jq对象，就是把原生对象传入$();
+//		$(oDiv).css('background','red');
+		
+		//把jq对象转换为原生对象,加下标,或者使用get(下标).
+		//get()返回原生对象.eq()返回jq对象
+//		$('div')[0].style.background='red';		
+		$('div').get(0).style.background='red';
+		
+	</script>
+</html>

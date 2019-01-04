@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'></div>
+</body>
+<script src="js/vue1.js"></script>
+<script src="js/vue-resource@1.3.4.js"></script>
+
+<script>
+	
+	//用get传递数据
+//	Vue.http({
+//		type:'get',
+//		url:'1.get.php?username=900&age=800',
+//		url:'1.get.php',
+//		params:{username:777,age:666}
+//	}).then(function (data){
+//		console.log(data.data);
+//	}).catch(function (err) {
+//		console.log(err.status);
+//	});	
+	
+	//用post传递数据
+//	Vue.http({
+//		method:'post',
+//		url:'1.post.php',
+//		
+//		body:{username:777,age:666},
+//		emulateJSON:true,
+//		
+//		headers:{
+//			'Content-type':'application/x-www-form-urlencoded'
+//		}
+//	}).then(function (data){
+//		console.log(data.data);
+//	}).catch(function (err) {
+//		console.log(err.status);
+//	});	
+		
+
+    new Vue({
+        el:'#app',
+        created(){
+        	
+//			this.$http.get('1.get.php',{params:{username:999,age:888}}).then(function(data){
+//				console.log(data);
+//			})
+			
+//			this.$http.get('1.get.php?username=hhh&age=8888').then(function(data){
+//				console.log(data);
+//			})
+			
+//			this.$http.post('1.post.php',{username:900,age:800},{emulateJSON:true}).then(function(data){
+//				console.log(data);
+//			})
+			
+			//jsonp请求
+//			this.$http.jsonp('url?callback=fn').then(function(data){console.log(data)})
+        }
+    })
+
+</script>
+
+</html>

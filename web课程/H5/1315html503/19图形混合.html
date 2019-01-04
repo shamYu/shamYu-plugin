@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background: #000;
+			}
+			#oC{
+				background: #fff;
+				margin-left:200px;
+				margin-top:50px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='oC' width="500" height="500">
+			您的浏览器不支持canvas绘图
+		</canvas>
+		<!--<img src="img/23.jpg"/>-->
+	</body>
+	<script type="text/javascript">
+		
+		window.onload=function(){
+
+			var oC=document.getElementById("oC");
+			var oGc=oC.getContext('2d');
+			
+//			oGc.globalCompositeOperation='lighter';
+//			oGc.globalCompositeOperation='destination-over';
+//			oGc.globalCompositeOperation='destination-out';
+//			oGc.globalCompositeOperation='copy';
+			oGc.globalCompositeOperation='xor';
+			
+			oGc.fillStyle='red';
+			oGc.fillRect(100,100,200,200);
+			
+			oGc.fillStyle='blue';
+			oGc.fillRect(200,200,200,200);
+			
+		}
+		
+		
+	</script>
+</html>

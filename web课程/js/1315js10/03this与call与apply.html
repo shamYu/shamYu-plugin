@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var name='window';
+		
+		var hork={
+			hair:'black',
+			trunGreen:function(){
+				this.hair='green'
+			}
+		}
+		
+		var oYm={
+			name:'杨幂'
+		}
+		
+		function showName (str,str2){
+			alert(this.name+str+str2);
+		}
+		
+//		showName();//window
+		
+//		hork.trunGreen();
+//		oYm.turnGreen();//oYm没有turnGreen的方法，因此报错
+		
+//		oYm.showName();//oYm没有show()的方法，因此报错
+		
+		//临时让oYm来调用一次showName。call->改变调用函数的对象,改变this.
+//		showName.call(oYm);
+		
+		//临时让oYm来调用一次showName。apply->改变调用函数的对象,改变this.
+		showName.apply(oYm);
+		
+//		call传实参,用列表,一个一个写,用逗号隔开
+//		showName.call(oYm,'我爱你','你知道吗?');
+
+//		apply传实参,用数组,所有的参数写在一个数组内
+//		showName.apply(oYm,['我爱你','你知道吗']);
+		
+		/*var arr=[1,2,3,345,456,76,67,7,8,8,88];*/
+		
+//		Math.min(1,2,3,345,456,76,67,7,8,8,88);
+//		Math.max(1,2,3,345,456,76,67,7,8,8,88);
+		
+//		Math.min(arr);//NaN
+//		Math.max(arr);//NaN
+		
+		//不改变调用的对象,只改变传参的方式
+		/*Math.min.apply(Math,arr);//1
+		Math.max.apply(Math,arr);//456*/
+		
+	</script>
+</html>

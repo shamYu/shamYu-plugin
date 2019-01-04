@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="btn1" id="btn1" value="绑定" />
+		<input type="button" name="btn1" id="btn2" value="解绑" />
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		oDiv.addEventListener('click',show);
+//		oDiv.removeEventListener('click',show);
+		
+		//on支持事件的扩展命名。用法是在事件名后面再写个.然后起一个自定义名称
+		$('#btn1').on('click.amazing',function(){
+			alert(100)
+		});
+		
+		$('#btn1').on('click.crazy',function(){
+			alert(1200)
+		});
+		
+		$('#btn2').on('click',function(){
+			$('#btn1').off('click.amazing');
+		})
+				
+//-------------------------------------------------------------------------------------------		
+//		$('#btn1').on('click',fn1);
+//		$('#btn1').on('click',fn2);
+//		
+//		$('#btn2').on('click',function(){
+//			//使click事件触发时，不调用fn1，间距实现解绑
+//			$('#btn1').off('click',fn1);
+//		})
+//		
+//		function fn1(){
+//			alert(100)
+//		}
+//		function fn2(){
+//			alert(200)
+//		}
+		
+		
+		
+	</script>
+</html>

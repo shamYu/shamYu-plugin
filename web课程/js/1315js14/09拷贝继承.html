@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var oYm={
+			name:'杨幂',
+			age:32,
+			height:'168cm',
+			weight:'45kg',
+			sex:'女',
+			husband:{
+				name:'畜生'
+			}
+		}
+		//继承的目的->让某个对象可以访问某些属性
+		var oFbb={};
+		
+		//把oYm原型链上所有的可枚举属性全部拷贝到范冰冰对象上。(相当于oFbb继承了oYm);
+		//浅拷贝->直接复制所有的属性值
+		for(var prop in oYm){
+			oFbb[prop]=oYm[prop];
+			
+			//浅拷贝遇到对象属性是，拷贝的是引用，因此导致oFbb.husband与oYm.husband是同一个对象
+			//oFbb.husband=oYm.husband
+		}
+		
+		//浅拷贝如果遇到拷贝的属性是对象，那么需要对这个属性对象再进行一次浅拷贝
+		
+//		oFbb.husband={};
+//		oFbb.husband['name']=oYm.husband['name'];
+		
+	</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			#wrap{
+				width: 505px;
+				height: 300px;
+				border:3px solid #000;
+				margin:100px auto;
+				overflow: hidden;
+			}
+			ul{
+				display: flex;
+				-webkit-animation: 4s banz linear infinite;
+			}
+			
+			@-webkit-keyframes banz{
+				from{margin-left:0}
+				to{margin-left:-505px}
+			}
+			
+			li{
+				width: 100px;
+				flex-shrink:0;
+				height: 300px;
+				margin-left:1px;
+				text-align:center;
+				line-height: 300px;
+				font-size: 24px;
+				color: #fff;
+			}
+			.red{
+				background: red;
+			}
+			.blue{
+				background: blue;
+			}
+			.yellow{
+				background: yellow;
+			}
+			.pink{
+				background: pink;
+			}
+			.green{
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='wrap'>
+			<ul>
+				<li class='red'>1</li>
+				<li class='blue'>2</li>
+				<li class='green'>3</li>
+				<li class='pink'>4</li>
+				<li class='yellow'>5</li>
+				<li class='red'>1</li>
+				<li class='blue'>2</li>
+				<li class='green'>3</li>
+				<li class='pink'>4</li>
+				<li class='yellow'>5</li>
+			</ul>
+		</div>
+	</body>
+</html>

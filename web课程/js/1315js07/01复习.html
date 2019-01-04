@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		1:函数return两个作用:
+			a:让函数调用有返回值.
+				var b=fn();alert(fn());fn() + fn()
+			b:让return后面的代码不执行(类似于break);
+		
+		2:作用域(执行环境):
+			全局环境下可以访问全局变量,不能访问局部变量.
+			局部环境(函数作用域,块级作用域->ECMAScript6):可以访问到当前作用域内的变量和全局变量.
+			注意:同一个函数,调用多次,则会创建不同的局部变量,就算名字一样.
+				函数调用结束会销毁局部变量以节约内存
+		
+		3:var md=new Date();
+		  md.getFullYear();
+		  md.getMonth();
+		  md.getDay();
+		  md.getDate();
+		  md.getHours();
+		  md.getMinutes();
+		  md.getSeconds();
+		  md.getTime();
+		
+		  md.setTime();//设置当前时间，参数写毫秒
+		 
+		4:数学对象,字面量,直接使用.
+		
+			Math.PI
+			Math.floor();
+			Math.ceil();
+			Math.round();
+			
+			Math.abs();
+			Math.pow();
+			Math.sqrt();
+			Math.cbrt();
+			
+			Math.random();//返回0到1，不包括1
+			
+			Math.min(9,8);
+			Math.max(9,8);
+		
+	</script>
+</html>

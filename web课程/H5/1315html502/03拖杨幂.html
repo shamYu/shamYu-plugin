@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 250px;
+				height: 250px;
+				border:1px solid #000;
+				float: left;
+				margin-left:5px;
+			}
+			*{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<img id='img' draggable="true" width="400" src="img/bb.jpg"/>
+		<div>
+			<div class='box' draggable="true"></div>
+			<div class='box' draggable="true"></div>
+			<div class='box' draggable="true"></div>
+			<div class='box' draggable="true"></div>
+			<div class='box' draggable="true"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oImg=document.getElementById("img");
+		var aBox=document.getElementsByClassName('box');
+		
+		oImg.addEventListener('dragstart',imgStart);
+		
+		for(var i=0;i<aBox.length;i++){
+			aBox[i].index=i;
+			aBox[i].addEventListener('dragstart',imgStart);
+			aBox[i].addEventListener('drop',imgDrop);
+			aBox[i].addEventListener('dragover',prevent);
+		}
+		
+		function imgDrop(ev){
+			var ev=ev||window.event;
+			//获取共享的图片地址
+			var src=ev.dataTransfer.getData('img');
+			//如果拖动的是一个空的div，则src就没有数据，那么就应该总之函数调用
+			if(src=='')return;
+
+			//获取被拖的box的下标
+			var index=ev.dataTransfer.getData('i');
+			//如果松开鼠标时，如果自己拖自己，需要终止函数调用。
+			if(index===this.index)return;
+						
+			//创建图片标签
+			var oImg=document.createElement("img");
+			//设置图片地址
+			oImg.src=src;
+			oImg.width='250';
+			oImg.height='250';
+			//插入图片标签到当前放开的div里
+			this.appendChild(oImg);
+			//删除被拖的box的子元素img
+			if(index!=''){
+				aBox[index].removeChild(aBox[index].children[0]);
+			}			
+		}
+		
+		function prevent(ev){
+			var ev=ev||window.event;
+			ev.preventDefault();
+		}
+		
+		function imgStart(ev){
+			var ev=ev||window.event;
+			//如果拖动的是图片。共享图片的src
+			if(this.nodeName=='IMG'){
+				ev.dataTransfer.setData('img',this.src);
+			//如果拖动的是div，共享div的子元素的src和当前div的下标
+			}else if(this.nodeName=='DIV'){
+				if(this.children[0]){
+					ev.dataTransfer.setData('i',this.index);
+					ev.dataTransfer.setData('img',this.children[0].src);
+				}				
+			}
+			
+		}
+		
+		
+	</script>
+</html>

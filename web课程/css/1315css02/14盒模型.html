@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				
+				/*盒模型设置的width和height->盒子货物的宽高*/
+				
+				width:100px;
+				height:100px;
+				background: red;
+				/*#000->黑色;#fff->白色*/
+				border:10px solid #000;
+				/*border-width: 1px;
+				border-style:solid;
+				border-color:black*/
+				
+				/*内边距->盒子内的泡沫(填充物),货物和盒子的距离*/
+				padding:10px;
+				
+				/*padding是复合样式*/
+				/*padding:10px 10px 10px 10px;*/
+				/*padding-left:10px;
+				padding-right:10px;
+				padding-top:10px;
+				padding-bottom:10px;*/
+				
+				/*外边距->盒子与盒子直接的距离*/
+				margin:100px;
+				/*margin是复合样式*/
+				/*margin:100px 100px 100px 100px;
+				margin-left:100px;
+				margin-right:100px;
+				margin-top:100px;
+				margin-bottom:100px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<!--盒模型->任何的元素,都可以看成一个现实生活中的盒子.-->
+		<div id='div1'></div>
+		
+		<!--现实生活中的盒子->大小->外部尺寸(体积的宽高)->内部容积的宽高->边框的宽-->
+		<!--盒模型:
+			
+			盒子所占空间的宽->width+padding+border+margin
+			
+			盒子体积的宽->width+padding+border
+			盒子内部体积的宽->width+padding
+			盒子容积的宽->width
+			
+			如果要在一个大盒子放3个小盒子->如果要放得进去，已知大盒子的容积的宽是600px,则小盒子所占空间的宽不能超过200px;-->
+			
+		
+	</body>
+</html>

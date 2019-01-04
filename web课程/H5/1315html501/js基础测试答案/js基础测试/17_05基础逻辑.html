@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div><!--人0--></div>
+		<p><!--巴1--></p>
+		<article><!--幂2--></article>
+		<section></section>
+		<h1></h1>
+		<h2></h2>
+		<h3></h3>
+		<h4></h4>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=['班长大人','金刚欧巴','杨幂','洋洋','毛姐姐','唐姐姐','慧妹妹','浩哥哥'];
+		
+//		将数组内的所有元素的最后一个字符和相应元素的下标拼接，分别存放在一个body的子元素内
+		var aEle=document.body.getElementsByTagName('*');
+		for(var i=0;i<arr.length;i++){
+			var str=arr[i].charAt(arr[i].length-1);
+			aEle[i].innerHTML=str+i;
+		}
+		
+	</script>
+</html>

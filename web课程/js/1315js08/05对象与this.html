@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点击" />
+	</body>
+	<script type="text/javascript">
+		
+		var hork={
+			name:'班纳',
+			sex:'男',
+			hair:'黑',
+			turnGreen:showGreen
+		}
+		
+		var baoQ={
+			name:'宝强',
+			sex:'男',
+			hair:'黑',
+			turnGreen:showGreen
+		}
+		
+		//this->表示哪个对象，需要在this所在的函数被调用时,才能确定。
+		function showGreen(){
+			//谁发动这个技能，就让谁的头发变绿
+			this.hair='绿';
+		}
+		
+		//在函数调用前面有没有其他的对象名，如果有，那么这个函数就是被这个对象调用
+		hork.turnGreen();//this表示hork；
+		baoQ.turnGreen();//this表示baoQ；
+		
+		var oBtn=document.getElementById("btn");
+		
+		//浏览器隐式调用事件函数。
+		oBtn.onclick=function () {
+			alert(this.value);
+		}
+		
+		//谁调用它，它就指向谁。隐式调用也是用以下方式来调用的。
+//		oBtn.click();
+		
+	</script>
+</html>

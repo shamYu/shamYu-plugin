@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="切换" />
+		<!--<div id='div' style='display: block;'></div>-->
+		<div id='div' class='active' abc='edf'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv=document.getElementById("div");
+		var oBtn=document.getElementById("btn");
+		
+		var abc='edf';
+		//标志位->标记一个状态(div是显示的还是隐藏);
+		var flag=true;
+		
+		oBtn.onclick=function(){
+			if(flag){
+				oDiv.style.display='none';
+			}else{
+				oDiv.style.display='block';
+			}			
+			flag=!flag;
+		}
+		
+//		oBtn.onclick=function(){
+//			if(flag){
+//				oDiv.style.display='none';
+//				flag=false;
+//			}else{
+//				oDiv.style.display='block';
+//				flag=true;
+//			}
+//		}
+		
+//		oBtn.onclick=function(){
+//			if(abc=='edf'){
+//				oDiv.style.display='none';
+//				abc='133';
+//			}else{
+//				oDiv.style.display='block';
+//				abc='edf';;
+//			}
+//		}
+		
+//		oBtn.onclick=function(){
+//			if(oDiv.getAttribute('abc')=='edf'){
+//				oDiv.style.display='none';
+//				oDiv.setAttribute('abc','天王盖地虎小鸡炖蘑菇');
+//			}else{
+//				oDiv.style.display='block';
+//				oDiv.setAttribute('abc','edf');
+//			}
+//		}
+		
+//		oBtn.onclick=function(){
+//			if(oDiv.className=='active'){
+//				oDiv.style.display='none';
+//				oDiv.className='';
+//			}else{
+//				oDiv.style.display='block';
+//				oDiv.className='active';
+//			}
+//		}
+		
+//		oBtn.onclick=function(){
+//			if(oDiv.style.display!='none'){
+//				oDiv.style.display='none';
+//			}else{
+//				oDiv.style.display='block';
+//			}
+//		}
+		
+//		oBtn.onclick=function(){
+//			if(oDiv.style.display!='none'){
+//				oDiv.style.display='none';
+//			}else{
+//				oDiv.style.display='block';
+//			}
+//		}
+		
+	</script>
+</html>

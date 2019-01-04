@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <ul>
+            <li></li>
+            <li ref='li2'></li>
+            <li ref='li3'></li>
+        </ul>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            val:'red'
+        },
+        mounted(){
+            //通过vm实例的$refs属性来找到相应的被标记的标签
+            //this.$refs.属性名是一个原生元素
+            this.$refs.li2.style.background=this.val;
+            this.$refs.li3.style.background=this.val;
+        }
+    })
+
+</script>
+</html>

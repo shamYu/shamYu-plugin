@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+		var arr=['班长大人','金刚欧巴','杨幂','洋洋','毛姐姐','唐姐姐','慧妹妹','浩哥哥'];
+		
+		//判断arr内是否存在'杨幂'，如果存在，弹出其在数组内的下标，如果不存在，弹出'杨幂在哪里？'
+		
+		var index=null;
+		
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]=='杨幂'){
+				index=i;
+			}
+		}
+		
+		if(typeof index=='number'){
+			alert(index)
+		}else{
+			alert('杨幂在哪里')
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="电你" />
+	</body>
+	<script type="text/javascript">
+		
+//		es提供了另一种书写匿名函数的方式
+		
+//		function (){
+//			alert(100);
+//		}
+		
+//		()=>{alert(100)};//->箭头函数的声明
+		
+//		(()=>{alert(100)})();//自执行箭头函数
+		
+//		((x)=>{
+//			alert(x)
+//		})(10);
+		
+		//如果形参只有一个，可以省略()
+//		(x=>{
+//			alert(x)
+//		})(10);
+//-----------------------------------------------------------		
+//		(x=>{
+//			return x+1
+//		})(10);
+		
+		//如果只有一个return语句，那么可以省略掉return与{}
+//		var abc=(x=>x+1)(10);
+		
+		//取两个数之间的随机整数
+//		var num=((a,b)=>Math.floor(Math.random()*(a-b))+b)(2,6);
+		
+		
+		(function(){
+			var oBtn=document.getElementById("btn");
+			console.log(this);//window
+//			oBtn.onclick=function(){
+//				console.log(this);//oBtn
+//			}
+			
+//			箭头函数内没有this。
+//			箭头函数内的this在那里->在箭头函数所在的函数声明里
+//			不推荐事件句柄用箭头函数
+			oBtn.onclick=()=>{
+				console.log(this);//window
+			}
+		})();
+			
+	</script>
+</html>

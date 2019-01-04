@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div>
+				<p>
+					<a href="#">
+						<span>哈哈哈哈</span>
+					</a>
+				</p>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		//选中a
+//		$('span:contains(哈)').parent().css('background','red');
+//		//选中p
+//		$('span:contains(哈)').parent().parent().css('background','red');
+//		//选中div
+//		$('span:contains(哈)').parent().parent().parent().css('background','red');
+		
+//		所有的祖先元素		
+//		$('span:contains(哈)').parents().css('background','red');
+
+//		所有祖先元素里面的div		
+//		$('span:contains(哈)').parents('div').css('background','red');
+
+//		祖先元素的div里的第一个。(从里往外数)		
+//		$('span:contains(哈)').parents('div').eq(0).css('background','red');
+		
+//		找到离自己最近的div祖先元素.不写参数选不中元素.		
+//		$('span:contains(哈)').closest('div').css('background','red');
+
+//		还可以选中自己
+//		$('span:contains(哈)').closest('span').css('background','red');
+
+//		查找最近的具有定位属性的祖先元素.如果没有,则最终找到html
+//		$('span:contains(哈)').offsetParent().css('background','red');
+		
+	</script>
+</html>

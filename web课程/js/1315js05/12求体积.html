@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" placeholder="长" value="" />
+		<input type="text" placeholder="宽" value="" />
+		<input type="text" placeholder="高" value="" />
+		<input type="button" value="计算体积" />
+	</body>
+	<script type="text/javascript">
+		
+		var aInput=document.getElementsByTagName('input');
+		
+		aInput[3].onclick=function () {
+			getTiji(aInput[0].value,aInput[1].value,aInput[2].value);
+		}
+		
+		//不要在函数声明内再声明别的函数。
+		function getTiji(x,y,z){
+			alert(x*y*z);
+		}
+		
+	</script>
+</html>

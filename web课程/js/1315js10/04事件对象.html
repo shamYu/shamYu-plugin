@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				height: 2000px;
+			}
+		</style>
+	</head>
+	<body>
+		爱上了咖啡哈市的金凤凰
+	</body>
+	<script type="text/javascript">
+				
+//		事件句柄(handle)->事件触发函数->如果有形参,那么在事件发生时,系统会自动传入跟当前事件相关的一个事件对象进入函数(依赖注入);
+		
+//		事件对象->记录每个事件发生时候的各种细节.
+		
+//		ev.clientX->鼠标事件发生时鼠标的横坐标->相对于可视窗口的横坐标
+//		ev.clientY->鼠标事件发生时鼠标的纵坐标->相对于可视窗口的纵坐标
+
+//		ev.pageX->鼠标事件发生时鼠标的横坐标->相对于文档的横坐标
+//		ev.pageY->鼠标事件发生时鼠标的纵坐标->相对于文档的纵坐标
+		
+		document.onclick=function(ev){			
+//			//兼容不同浏览器的事件对象获取。window.event->id的获取方式
+//			var ev = ev || window.event;			
+			console.log(ev);
+//			alert('横坐标'+ev.clientX+' '+'纵坐标'+ev.clientY);
+			alert('横坐标'+ev.pageX+' '+'纵坐标'+ev.pageY);
+		}
+		
+		//任何事件都有事件对象.
+//		document.onmousemove=function(ev){
+//			console.log(ev);
+//			console.log('横坐标'+ev.clientX+' '+'纵坐标'+ev.clientY);
+//		}
+
+		
+	</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        {{abc}}
+        {{msg}}
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+    var abc='ninininini';
+
+    // vm带$的属性是vm的默认属性,不带的是用户自定义的属性
+
+    var vm = new Vue({
+        el:'div',
+        data:{
+            //data对象内的属性都会变成vue实例本身的属性,并且还是通过set和get监听的
+            abc:'我我哦我我我我我我',
+            msg:'hdhdhd',
+        }
+    });
+
+
+</script>
+</html>

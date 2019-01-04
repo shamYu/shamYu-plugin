@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				border:1px solid #000;
+				display: none;
+			}
+			div.active{
+				display: block;
+			}
+			input.active{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<input class='active' type="button" value="1111" />
+		<input type="button" value="2222" />
+		<input type="button" value="3333" />
+		<input type="button" value="4444" />
+		<input type="button" value="5555" />
+		<div class='active'>1111</div>
+		<div>2222</div>
+		<div>3333</div>
+		<div>4444</div>
+		<div>5555</div>
+	</body>
+	<script type="text/javascript">
+		
+		var aInput=document.getElementsByTagName('input');
+		var aDiv=document.getElementsByTagName('div');
+		
+		//所有大括号内的代码都必须缩进一格
+		for(var i=0;i<aInput.length;i++){
+			
+			//给所有的li来一个自定义属性，用于存每个li的下标
+			aInput[i].index=i;
+			
+			aInput[i].onclick=function () {
+				for(var i=0;i<aDiv.length;i++){
+					aDiv[i].className='';
+					aInput[i].className='';
+				}
+				//要显示的div的下标跟被点击的input的下标一致。
+				aDiv[this.index].className='active';
+				this.className='active';
+			}
+		}
+		
+		//第一个input的下标
+//		var index=0;
+		
+//		aInput[index].onclick=function () {
+//			for(var i=0;i<aDiv.length;i++){
+//				aDiv[i].className='';
+//				aInput[i].className='';
+//			}
+//			aDiv[index].className='active';
+//			this.className='active';
+//		}		
+		
+		//第二个input的下标
+//		var index2=1;
+		
+//		aInput[index2].onclick=function () {
+//			for(var i=0;i<aDiv.length;i++){
+//				aDiv[i].className='';
+//				aInput[i].className='';
+//			}
+//			aDiv[index2].className='active';
+//			this.className='active';
+//		}
+		
+		//第三个input的下标
+//		var index3=2;
+
+//		aInput[index3].onclick=function (){
+//			for(var i=0;i<aDiv.length;i++){
+//				aDiv[i].className='';
+//				aInput[i].className='';
+//			}
+//			aDiv[index3].className='active';
+//			this.className='active';
+//		}
+		
+		
+	</script>
+</html>

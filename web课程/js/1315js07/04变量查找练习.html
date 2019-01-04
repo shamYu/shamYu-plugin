@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		var a=10;
+//		
+//		function show(){
+//			var a=100;
+//			function add(){
+//				a=200;
+//				alert(a);//200
+//			}
+//			add();
+//			alert(a);//200
+//		}
+//		
+//		show();
+//		alert(a);//10
+//-------------------------------------------------------------		
+		
+//		var a=10;
+//		
+//		function show(){
+//			var a=100;
+//			function add(){
+//				var a=200;
+//				alert(a);//200
+//			}
+//			add();
+//			alert(a);//100
+//		}
+//		
+//		show();
+//		alert(a);//10
+		
+//--------------------------------------------------------------		
+		
+//		var a=10;
+//		
+//		function show(){
+//			a=100;
+//			function add(){
+//				a=200;
+//				alert(a);//200
+//			}
+//			add();
+//			alert(a);//200
+//		}
+//		
+//		show();
+//		alert(a);//200
+		
+//----------------------------------------------------------------------		
+//		var a=10;
+//		
+//		function show(){
+//			a=100;
+//			function add(){
+//				var a=200;
+//				alert(a);//200
+//			}
+//			add();
+//			alert(a);//100
+//		}
+//		
+//		show();
+//		alert(a);//100
+		
+//--------------------------------------------------------------------------		
+		var a=10;
+		
+//		有形参的函数声明就相当于有一个与形参名字一样的局部变量;
+
+		function show(a){
+			a=100;
+			function add(a){
+				a=200;
+				alert(a);//200
+			}
+			add();
+			alert(a);//100
+		}
+		
+		show();
+		alert(a);//10
+		
+		
+	</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div+p{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>div</div>
+		<span>jhhhhhh</span>
+		<span>jhhhhhh</span>
+		<span>jhhhhhh</span>
+		<span>jhhhhhh</span>
+		<span>jhhhhhh</span>
+		<span>jhhhhhh</span>
+		<span>jhhhhhh</span>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+//		$('div+p').css('background','red');
+
+//		div后面紧挨着的元素
+		$('div+').css('background','red');
+		
+//		div后面所有的兄弟元素
+		$('div~').css('background','red');
+		
+//		div后面所有的兄弟元素中的span		
+		$('div~span').css('background','red');
+		
+	</script>
+</html>

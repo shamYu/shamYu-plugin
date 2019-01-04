@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <p>总价：{{total}}</p>
+        <production @event='getCount'></production>
+        <production @send-count='getCount' @send-price='getPrice'></production>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+    const production={
+        template:
+        `<div>
+            <input type='text' v-model='count' /> 
+            <input type='text' v-model='price' />
+        </div>`,
+        data(){
+            return {
+                count:0,
+                price:0
+            }
+        },
+        // computed:{
+        //     total(){
+        //         return this.count*this.price
+        //     }
+        // },
+        watch:{
+            count(){
+                this.$emit('send-count',this.count);
+            },
+            price(){
+                this.$emit('send-price',this.price);
+            }
+        }
+    }
+
+    var vm= new Vue({
+        el:'#app',
+        data:{
+            count:0,
+            price:0
+        },
+        methods:{
+            getCount(val){
+                this.count=val;
+            },
+            getPrice(val){
+                this.price=val;
+            },
+        },
+        computed:{
+            total(){
+                return this.count*this.price
+            }
+        },
+        components:{production}
+    })
+
+</script>
+</html>

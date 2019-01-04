@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div>div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+				font-size: 60px;
+				/*display: none;*/
+			}
+			#div1{
+				/*定位层级->数值越大可见优先级越高*/
+				/*先比较父元素层级,再比较子元素层级*/
+				/*父元素的层级一样,谁在后面看见谁*/
+				z-index:1;
+				position: relative;
+			}
+			#div2{
+				z-index:3;
+				position: relative;
+			}
+			#div3{
+				z-index:2;
+				position: relative;
+			}
+			#div1>div{
+				z-index:99999999;
+			}
+			#div2>div{
+				z-index:8888888;
+			}
+			#div2>div{
+				z-index:10;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='div1'>
+			<div>1</div>
+		</div>
+		<div id='div2'>
+			<div>2</div>
+		</div>
+		<div id='div3'>
+			<div>3</div>
+		</div>
+	</body>
+</html>

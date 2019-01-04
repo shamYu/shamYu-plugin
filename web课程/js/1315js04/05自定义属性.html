@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				/*隐藏元素,所占空间还在*/
+				/*visibility: hidden;*/
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="切换" />
+		<div id='div1'>11</div>
+		<input type="button" id="btn2" value="切换" />
+		<div id='div2'>22</div>
+	</body>
+	<script type="text/javascript">
+		
+//		var oDiv1=document.getElementById("div1");
+		var oBtn1=document.getElementById("btn1");
+		
+//		var oDiv2=document.getElementById("div2");
+		var oBtn2=document.getElementById("btn2");
+		
+		var aDiv=document.getElementsByTagName('div');
+		
+		//div1的标志位
+//		var flag1=true;
+		//div2的标志位
+//		var flag2=true;
+		
+//		var div1_flag=true;		
+//		var div2_flag=true;
+		
+		//给oDiv1元素添加一个自定义属性，让这个属性来作为div1标志位
+//		aDiv[0].flag=true;
+		//给oDiv2元素添加一个自定义属性，让这个属性来作为div2标志位
+//		aDiv[1].flag=true;		
+				
+		for(var i=0;i<aDiv.length;i++){
+			aDiv[i].flag=true;
+		}
+		
+		oBtn1.onclick=function(){
+			if(aDiv[0].flag){
+				aDiv[0].style.visibility='hidden';
+			}else{
+				aDiv[0].style.visibility='visible';
+			}			
+			aDiv[0].flag=!aDiv[0].flag;
+		}
+		
+		oBtn2.onclick=function(){
+			if(aDiv[1].flag){
+				aDiv[1].style.visibility='hidden';
+			}else{
+				aDiv[1].style.visibility='visible';
+			}			
+			aDiv[1].flag=!aDiv[1].flag;
+		}
+				
+	</script>
+</html>

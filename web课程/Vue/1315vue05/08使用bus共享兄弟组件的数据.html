@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <bro1></bro1>
+        <bro2></bro2>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    var bus=new Vue();
+
+    const bro1={
+        template:`<input type="text" v-model='msg'>`,
+        data(){
+            return {
+                msg:''
+            }
+        },
+        created(){
+            bus.$on('send',(val)=>{this.msg=val})
+        },
+        watch:{
+            msg(){
+                bus.$emit('send',this.msg)
+            }
+        }
+    }
+
+    const bro2={
+        template:`<input type="text" v-model='msg'>`,
+        data(){
+            return {
+                msg:''
+            }
+        },
+        watch:{
+            msg(){
+                bus.$emit('send',this.msg)
+            }
+        },
+        created(){
+            bus.$on('send',(val)=>{this.msg=val})
+        }
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        components:{bro1,bro2}
+    })
+</script>
+</html>

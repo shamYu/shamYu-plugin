@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div'>
+			<input type="text" v-model='msg' />
+			<input type="button" value="发表" @click='add()' />
+			<ul>
+				<li is='vLi' v-for='(d,i) in arr' :arr='arr' :items='d' :index='i'></li>
+			</ul>
+		</div>
+	</body>
+	<script src="../js/vue1.js" charset="utf-8"></script>
+	<script type="text/javascript">
+	
+		//把以上的每一个li变成一个组件，(提示:给自定义标签用v-for);		
+		const vLi={
+			template:
+			`<li>
+				<span>{{index+1+':'}}</span><span :contenteditable='flag'>{{items}}</span>
+				<input type="button" value="上移" @click='up(index)' />					
+				<input type="button" value="下移" @click='down(index)' />
+				<input type="button" value="删除" @click='del(index)' />
+				<input type="button" value="编辑" @click='flag=!flag' />
+			</li>`,
+			data(){
+				return {
+					flag:false
+				}
+			},			
+			props:['items','index','arr'],
+			methods:{
+				up(i){
+					var val=this.arr[i];
+					this.arr.splice(i-1,0,val);
+					this.arr.splice(i+1,1);
+				},
+				down(i){
+					var val=this.arr[i];
+					this.arr.splice(i+2,0,val);
+					this.arr.splice(i,1);
+				},
+				del(i){
+					this.arr.splice(i,1);
+				}
+			}
+		}
+
+		var vm=new Vue({
+			el:'#div',
+			data:{
+				arr:[],
+				msg:''
+			},
+			methods:{
+				add(){
+					this.arr.push(this.msg);
+				}
+			},
+			components:{vLi}
+
+		})
+
+	</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="新闻列表" />
+		<ul></ul>
+	</body>
+	<script type="text/javascript">
+		
+		var oBtn=document.getElementById("btn");
+		
+		var oUl=document.querySelector('ul');
+		
+		oBtn.onclick=function(){
+			var xhr=new XMLHttpRequest();
+			
+			xhr.open('GET','php/getNews.php',true);
+			xhr.send();
+			
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200){
+						//每次ajax请求数据都必须先打印返回结果
+						console.log(xhr.responseText);
+						var data=JSON.parse(xhr.responseText);
+						console.log(data);
+						data.forEach(function(items,i){
+							var oLi=document.createElement("li");
+							oUl.appendChild(oLi);
+							oLi.innerHTML='<a href="#">'+items.title+'</a>'+items.date;
+						})
+					}
+				}
+			}
+		}
+		
+	</script>
+</html>

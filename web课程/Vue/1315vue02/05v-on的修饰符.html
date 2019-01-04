@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div.active{
+            display: none
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+
+        <div @click='show()'>
+            <!-- stop->阻止冒泡 -->
+            <p @click.stop='add($event)'>1111111</p>
+            <!-- prevent->阻止默认事件 -->
+            <input @keydown.prevent='add($event)'>
+
+            <!-- <input type="button" value="点击" @click.left.stop='click("left")' /> -->
+            <!-- <input type="button" value="点击" @click.right.prevent='click("right")' /> -->
+            <input type="button" value="点击3" @click.middle='click("middle")' />
+            
+            <!-- 阻止冒泡修饰符与once没有办法兼容 -->
+            <input type="button" value='一次点击' @click.once='add($event)' />
+
+        </div>
+        
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+   var vm=new Vue({
+        el:'#div',
+        data:{
+            flag:'',
+            //在这里this指向window,不是指向vue实例.
+            // num:this.num1+this.num2
+        },
+        methods:{
+            add(ev){
+                ev.stopPropagation();
+                console.log('p');
+            },
+            show(ev){
+                console.log('div')
+            },
+            click(str){
+                console.log(str)
+            }
+        }
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="切换" />
+		<div></div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$('#btn').on('click',function(){
+			//滑入
+//			$('div').slideDown(2000);
+			//滑出
+//			$('div').slideUp(2000);
+			//如果隐藏就滑入,如果显示就滑出.
+			$('div').slideToggle(1000);
+		})
+
+//		特效方法的参数:
+//			1:时间参数,单位是毫秒,可以预设.slow,fast,normal
+//			2:动画的形式,默认是swing(缓冲),linear表示运行
+//			3:回调函数,动画结束之后触发的函数.
+		
+//		动画队列:
+//			链式调用特效方法
+//		动画延迟:
+//			在特效方法前面,使用delay(毫秒),实现动画延迟执行.delay只能延迟动画执行,不能延迟其他代码执行
+		
+	</script>
+</html>

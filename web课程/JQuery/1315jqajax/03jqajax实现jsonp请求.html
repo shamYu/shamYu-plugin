@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$.ajax({
+			type:'GET',
+			url:'http://money.finance.sina.com.cn/jiaoyifenxi/api/openapi.php/DataService.getUserProfit',
+			data:{
+				num:10,
+				page:1,
+			},
+			//需要jsonp请求数据，只需要dataType设置为jsonp即可。
+			dataType:'jsonp',
+			//发送函数名的数据名如果不希望使用callback，则需要是jsonp属性来进行额外的配置。
+//			jsonp:'abc',
+			success:function(data){
+				console.log(data);
+			}
+		})
+		
+	</script>
+</html>

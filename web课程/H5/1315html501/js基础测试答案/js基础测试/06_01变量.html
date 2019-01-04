@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text" value="10" />
+	</body>
+	<script type="text/javascript">
+		//在文本框内输入任意文字，失去焦点后弹出没输入之前的内容(不要给我直接alert(10));
+		var oText=document.getElementById("text");
+		//没输入文字之前将文本存起来。在未来使用。
+		var str=oText.value;		
+		oText.onblur=function () {
+			alert(str);
+			str=oText.value;
+		}
+		
+	</script>
+</html>

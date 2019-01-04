@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="取消事件" />
+	</body>
+	<script type="text/javascript">
+		
+//		document.onclick=function(){
+//			alert(100)
+//		}
+//		//取消事件
+//		document.onclick=null
+				
+		document.addEventListener('click',show)
+		
+		function show(){
+			alert(100);
+		}
+				
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function(ev){
+			var ev=ev||window.event;
+			ev.stopPropagation();
+//			ev.cancelBubble=true;
+
+			//removeEventListener取消的事件函数一定需要是外部
+			document.removeEventListener('click',show);			
+		}
+		
+	</script>
+</html>

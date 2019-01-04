@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id='text' value="" />
+		<input type="button" id='btn' value="按钮" />
+	</body>
+	<script type="text/javascript">
+		
+		//存储了一个叫str的临时数据，(页面关闭后消失)
+//		document.cookie='str="杨幂"';
+		
+		//存储一个带过期时间的数据
+//		document.cookie='str="杨幂";Expires='+new Date('2019-01-01').toUTCString();
+		
+		var d=new Date();
+		
+		var nowTime=d.getTime();
+		//将当前时间设置为一天之后
+		d.setTime(nowTime+24*60*60*1000);
+		//将str设置为一天之后过期
+		document.cookie='str="杨幂";Expires='+d.toUTCString();
+		
+		//修改str数据
+		document.cookie='str="范冰冰";Expires='+d.toUTCString();
+				
+//		增,删,改,查.
+		
+	</script>
+</html>

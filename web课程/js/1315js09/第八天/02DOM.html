@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">		
+//		用DOM操作在body内插入以上元素,保证嵌套关系与属性一致
+		
+//		<!--恐怖游轮-->
+//		<div id='div'>
+//			<!--明日边缘-->
+//			盗梦空间
+//			<p id='p'>
+//				<input type="text" name="abc" id="btn" value="点击" />
+//			</p>
+//		</div>
+		
+		var comm1=document.createComment('恐怖游轮');
+		document.body.appendChild(comm1);
+		
+		var oDiv=document.createElement("div");
+		document.body.appendChild(oDiv);
+		
+		oDiv.setAttribute('id','div');
+		
+		var comm2=document.createComment("明日边缘");
+		oDiv.appendChild(comm2);
+		
+		var sText=document.createTextNode("盗梦空间");
+		oDiv.appendChild(sText);
+		
+		var oP=document.createElement("p");
+		oDiv.appendChild(oP);
+		oP.setAttribute('id','p');
+		
+		var oInput=document.createElement("input");
+		oP.appendChild(oInput);
+		oInput.setAttribute('name','abc');
+		oInput.type='button';
+		oInput.value='点击';
+		oInput.id='btn';
+		
+	</script>
+</html>

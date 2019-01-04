@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div>div{
+				width: 200px;
+				height: 200px;
+				text-align: center;
+				line-height: 200px;
+				background: red;
+				border-radius: 50%;
+				transition: 2s linear;
+				font-size: 100px;
+			}
+			body>div:hover>div{
+				-webkit-transform:rotate(360deg);
+				/*-webkit-transform:translateX(628px);*/
+				/*margin-left:628px;*/
+				margin-left:calc(3.14 * 200px);
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div>你</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body></body>
+<script>
+    // 1:标签部分，js部分,App.vue->主页的标签部分(视图部分),main.js->主页的js部分
+
+    //路径, import vue from 'vue' ->在依赖文件夹(node-modules)找vue的依赖文件
+    //路径, import vue from 'abc' ->在依赖文件夹(node-modules)找abc的依赖文件
+
+    //路径, import vue from './abc' ->在同级目录下找文件abc.vue,js
+    //路径, import vue from '../abc' ->在上级目录下找文件abc.vue,js
+
+    //路径, import vue from '@/abc' ->在src文件夹下面找abc文件(或者文件夹)
+
+    //路径, import vue from '@/abc' 
+    //->在src文件夹下面找abc文件(或者文件夹),如果abc是一个文件夹,那么查找这个文件夹下的index.js
+
+    // 标签部分拆分(标签拆分成组件的方式是没有对错的)->
+    // a:一个组件一个.vue.
+    // b:.vue如何导入导出->子组件导出,父组件导入.
+    
+    // js部分拆分:
+    // a:一个插件一个新的js
+    // b:一个功能一个新的js
+    
+    // 被拆分的页面(标签和js)都需要导入导出.
+    // 需要别的模块内的数据->就导入这个模块.
+    // 被导入的模块必须有导出
+
+    //一个模块(分页面),只能有一个exports default
+
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'>
+			{{abs}}
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		
+		var vm=new Vue({
+			el:'#div1',
+			data:{
+				msg:'哈哈哈哈哈',
+				abs:'呵呵呵额',
+			}
+		})
+		
+		function Vue(obj){
+            //缓存当前的实例
+			var _this=this;
+			this.ele=document.querySelector(obj.el);
+			this.$data=obj.data;
+			//批量做数据监听
+			for(var prop in obj.data){
+				//中间变量用于存储修改的值
+				var val=obj.data[prop];
+				Object.defineProperty(obj.data,prop,{
+					get(){
+						return val
+					},
+					set(newVal){
+						//数据变化时更新DOM
+						_this.ele.innerText=newVal;
+						val=newVal;
+					}
+				})
+				//默认修改一次数据
+				obj.data[prop]=val;
+			}			
+		}
+			
+		
+	</script>
+	
+</html>

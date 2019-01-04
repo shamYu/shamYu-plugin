@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script src="js/jquery-1.11.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//第一个参数表示是否深拷贝.第二个参数就是合并的最终对象,其他参数是参与合并的对象.
+//		$.extend(true, target object, object1,object2,object3);
+		
+		var oYm={
+			name:'大咪咪',
+			exhusband:{
+				name:'禽兽',
+				hair:'deepGreen',
+				trunGreen:function(){
+					this.hair='deepGreen'*3;
+				}
+			}
+		}
+		
+		var oFbb={
+			name:'大冰冰',
+			smell:'贼臭',
+			exhusband:{
+				name:'畜生',
+				hair:'no hair',
+				power:'max'
+			}
+		}
+		
+//		浅拷贝
+//		$.extend(oFbb,oYm);
+//		深拷贝
+		$.extend(true,oFbb,oYm);
+		
+		console.log(oFbb);
+		
+	</script>
+</html>

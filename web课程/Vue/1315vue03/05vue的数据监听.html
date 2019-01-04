@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <input type="button" value='改变值' @click='change()'>
+        {{arr}}
+        {{obj}}
+        {{msg}}
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'#app',
+        //vue实例的所有data属性都有setter,属性值如果是object那么会有递归监听
+        data:{
+            //vue给data内的属性设置监听时，如果这个属性是object类型，会有递归设置监听的操作。
+
+            //arr[0]的类型不是object因此没有监听
+            arr:[111],
+            //arr[0]的类型是object,因此会对arr[0]内的所有属性进行递归监听
+            // arr:[{num:1111}],
+            obj:{},
+            msg:'我要变'
+        },
+        methods:{
+            change(){
+                //修改msg会导致视图更新，视图更新后会将arr重新求值，以显示变化后的结果
+                // this.msg='你变了';
+                //单独修改数组的元素不会导致视图更新，视图不更新arr不会重新求值，因此不会显示出变化后的结果
+                // this.arr[0]=100;
+                // this.arr[0].num=200;
+
+                //直接修改arr才会导致视图更新
+                this.arr.push(200);
+                this.arr.shift();
+                
+                // obj.name没有setter，因此改变它不会导致视图更新
+                // this.obj.name='hhhhh';
+                //obj有setter，因此它的改变会导致视图更新
+                // this.obj={name:'hhhhh'};
+            }
+        }
+    })
+
+</script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		
+		//全局环境下都以严格模式解析
+		'use strict'		
+//		var x=100;		
+//		function show(){
+//			//局部严格模式。
+//			'use strict'
+//		}
+		
+//		1:严格模式下,声明变量不能省略var关键字		
+//			x=100;//引用错误，x没经过声明
+			
+//			function fn(){
+				//非严格模式下，省略var关键字声明的变量会变成全局变量
+//				x=200;
+//			}			
+//			fn();
+//			console.log(x);
+
+//		2:禁止this默认指向window;		
+//			function fn(){
+//				console.log(this);
+//			}			
+//			fn();//undefined
+//			fn.call(window);//window
+		
+//		3:禁止删除变量(显示报错);非严格模式下不错报。
+//			var obj={
+//				name:'哈哈哈',
+//				age:8000
+//			}
+			//删除对象的一个属性
+//			delete obj.name
+			
+//			var abc=200;			
+//			delete window.abc;//删不掉，报错
+		
+//		4:允许属性重名,不允许参数重名
+
+			//严格模式下允许，实际上最后只有一个属性name，值是哈哈2
+//			var obj={
+//				name:'哈哈1',
+//				name:'哈哈2',
+//			}
+//			
+//			function fn(a,a){
+//				console.log(a);
+//			}
+			
+//			fn(2,3);//非严格模式下，打印3，严格模式下不允许在一个作用域里出现两个同名的形参
+		
+//		5:禁止arguments追踪
+			
+//			function fn(a){
+//				a=10;
+				//非严格模式下，形参的变化会导致arguments内元素的变化。
+				//严格模式下禁止这个行为
+//				console.log(arguments[0])
+//			}			
+//			fn(1);//非严格模式打印10，严格模式打印1
+		
+//		6:禁止使用arguments.callee
+//			var i=0;
+//			(function(){
+//				i++;
+//				if(i<10){
+//					console.log(i);
+//					arguments.callee();//严格模式下调用callee会报错
+//				}				
+//			})()
+		
+//		7:独特的eval作用域
+//			严格模式下,以下的a会是一个局部变量
+//			eval('var a=100');
+//			console.log(a);//报错
+		
+//		8:对只读属性进行赋值或者对不可删除属性进行删除,显示报错.
+		
+			var obj={name:'7888'};
+			
+			var des=Object.getOwnPropertyDescriptor(obj,'name');
+			
+			Object.defineProperty(obj,'name',{
+				configurable:false,
+				writable:false,
+			})
+			
+			//非严格模式下，修改失败，但是不报错，严格模式下，修改失败，同时报错
+//			obj.name='9888';
+			//非严格模式下，删除失败，但是不报错，严格模式下，删除失败，同时报错
+//			delete obj.name;
+			
+	</script>
+</html>

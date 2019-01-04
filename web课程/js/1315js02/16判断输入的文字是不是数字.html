@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text1" value="" />*
+		<input type="text" id="text2" value="" />
+		<input type="button" id="btn" value="求乘积" />
+	</body>
+	<script type="text/javascript">
+		var oText1=document.getElementById("text1");
+		var oText2=document.getElementById("text2");
+		var oBtn=document.getElementById("btn");
+		
+//		字符串str转数字:+str, str*1;
+//		数字转字符串:加上空字符串;i+'';
+//		其他类型转布尔值:!!1
+		
+		oBtn.onclick=function(){
+			
+			if(oText1.value*1 && oText2.value*1){
+				var result=oText1.value*oText2.value;
+				alert(result);
+			}else{
+				alert('请输入数字');
+			}
+			
+//			if(+oText1.value && +oText2.value){
+//				var result=oText1.value*oText2.value;
+//				alert(result);
+//			}else{
+//				alert('请输入数字');
+//			}
+			
+//			if(isNaN(oText1.value)||isNaN(oText2.value)){
+//				alert('请输入数字');
+//			}else{
+//				var result=oText1.value*oText2.value;
+//				alert(result);
+//			}			
+		}
+		
+	</script>
+</html>

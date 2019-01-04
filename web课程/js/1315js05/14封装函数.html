@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1'></div>
+		<div id='div2'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var oDiv1=document.getElementById("div1");
+		var oDiv2=document.getElementById("div2");
+		
+		for(var a=1;a<5;a++){
+			console.log('呵呵');
+			oDiv1.innerHTML+='哈哈*'+i;
+		}
+		
+		for(var b=2;b<4;b++){
+			console.log('你妹');
+			oDiv2.innerHTML+='的确*'+i;
+		}
+		
+		for(var c=1;c<4;c++){
+			console.log('好靓');
+			document.body.innerHTML+='是的*'+i;
+		}
+		
+		fn('呵呵','哈哈*',5,1,oDiv1);
+		fn('你妹','的确*',4,2,oDiv2);
+		fn('好靓','是的*',4,1,document.body);
+		
+		function fn(str1,str2,num,num2,ele){
+			for(var i=num2;i<num;i++){
+				console.log(str1);
+				ele.innerHTML+=str2+i;
+			}
+		}
+		
+	</script>
+</html>

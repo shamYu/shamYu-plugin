@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>购物车</h3>
+		<input type="checkbox" id='btn' value="西瓜" />西瓜
+	</body>
+	<script type="text/javascript">
+		
+//		本地存储:
+//			1:永久存储数据到本地.
+//			2:共享数据(同源间页面可以共享)。跨浏览器就不能共享了
+		
+		var oBtn=document.getElementById("btn");
+		
+		var flag=false;
+		
+		oBtn.onclick=function(){
+			flag=this.checked;
+			window.localStorage.setItem('checked',flag);
+		}
+		
+		//storage事件->共享数据真正发生变化时才触发。包括新增，包括删除。
+		window.onstorage=function(ev){
+			
+//			console.log('变化了');
+//			var newVal=window.localStorage.getItem('checked');
+//			oBtn.checked=eval(newVal);
+			
+			var ev=ev||window.event;
+//			ev.newValue->共享数据变化之后的值
+//			ev.oldValue->共享数据变化之前的值
+//			ev.key->变化的共享数据的属性名。
+			oBtn.checked=eval(ev.newValue);
+			console.log(ev.key);
+		}
+		
+	</script>
+</html>

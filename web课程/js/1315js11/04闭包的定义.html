@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点击" />
+	</body>
+	<script type="text/javascript">
+		
+//		闭包的形成:
+//			1:子函数内使用了某个祖先函数内声明的一个变量(闭包变量,受保护的数据).
+//			2:子函数还可以在任意时间被调用.
+//		
+//		闭包的影响:
+//			1:闭包变量会一致存在内存之中.不会被销毁;
+//			2:那个祖先函数被调用多少次,就会构成多少个局部变量(互不相同);
+//			3:子函数调用时,会顺着对应的作用域链找到相应的闭包变量;
+		
+		//闭包，因为可以通过全局fn任意时间调用子函数。
+//		function show(){
+//			var x=10;
+//			return function(){
+//				console.log(x);
+//			}
+//		}
+//		
+//		var fn=show();
+		
+//		var oBtn=document.getElementById("btn");
+//		
+//		//闭包，因为可以任意时间调用事件句柄。
+//		function show(){
+//			var x=10;
+//			oBtn.onclick=function(){
+//				alert(x);
+//			}
+//		}
+		
+		var abc=null;
+		
+		function show(){
+			var x=10;
+			abc=function(){
+				console.log(x);
+			}
+		}	
+		show();
+			
+	</script>
+</html>

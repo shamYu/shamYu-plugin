@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				height: 800px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" id="btn" value="按钮" />
+		<a href="#div1">跳到div1</a>
+		<a href="#div2">跳到div2</a>
+		<div id='div1'>111111</div>
+		<div id='div2'>22222</div>
+	</body>
+	<script type="text/javascript">
+		
+		var oBtn=document.getElementById("btn");
+		
+		oBtn.onclick=function(){
+			
+			//window.location->url对象
+			console.log(window.location);
+
+			//当前网页的url地址
+//			console.log(window.location.href);
+			//将当前网页的地址改成别的地址,相当于跳转
+//			window.location.href='http://www.baidu.com';
+			
+			//hash->哈希值,就是url后面#以及后面的部分
+//			console.log(window.location.hash);
+			
+			//网页的搜索关键字
+//			console.log(window.location.search);
+			
+			//刷新当前网页
+			window.location.reload();
+			
+		}
+		
+	</script>
+</html>

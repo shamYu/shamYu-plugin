@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				margin-left:1px;
+				float: left;
+				margin-top:1px;
+			}
+		</style>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+				
+		for(var i=0;i<500;i++){
+			document.body.innerHTML+='<div>这是第0次点击</div>'
+		}
+		
+		//getElementsByTagName->可以获取到一个数组。数组里面的每个元素就是页面上所有的div;
+		
+		var aDiv=document.getElementsByTagName('div');
+		
+//		给页面上的500个div添加点击事件.每次点击,自身的点击次数+1;然后内容改成自身的点击次数.
+		
+		for(var i=0;i<aDiv.length;i++){
+			//给每个div添加自己的点击次数，默认是0，自定义属性前面不用写var;
+			aDiv[i].iCount=0;		
+			aDiv[i].onclick=function(){
+				this.iCount++;
+				this.innerText='这是第'+this.iCount+'次点击';
+			}
+		}
+		
+//		var iCount=0;		
+//		aDiv[0].onclick=function () {
+//			iCount++;
+//			aDiv[0].innerText='这是第'+iCount+'次点击';
+//		}
+//		
+//		var iCount1=0;		
+//		aDiv[1].onclick=function () {
+//			iCount1++;
+//			aDiv[1].innerText='这是第'+iCount1+'次点击';
+//		}
+//		
+//		var iCount2=0;		
+//		aDiv[2].onclick=function () {
+//			iCount1++;
+//			aDiv[2].innerText='这是第'+iCount2+'次点击';
+//		}
+		
+	</script>
+</html>

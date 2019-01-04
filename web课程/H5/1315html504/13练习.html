@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="text" value="" /><br />
+		<input type="radio" name="superman" value="王八宏" />王八宏
+		<input type="radio" name="superman" value="张文茂" />张文茂<br />
+		备注:
+		<textarea name="" rows="10" cols="30"></textarea>
+	</body>
+	<script type="text/javascript">
+		
+		window.onload=function(){
+			
+			var oText=document.getElementById("text");
+			var aRadio=document.querySelectorAll('[type="radio"]');
+			var oArea=document.querySelector('textarea');
+			
+			oText.value=window.localStorage.getItem('user');
+			oArea.value=window.localStorage.getItem('beizhu');
+			
+			//判断两个radio,哪个radio的value与superman的值相同,相同的打钩.
+			for(var i=0;i<aRadio.length;i++){
+				if(aRadio[i].value==window.localStorage.getItem('superman')){
+					aRadio[i].checked=true;
+				}
+			}
+			
+			window.onunload=function(){			
+				window.localStorage.setItem('user',oText.value);
+				window.localStorage.setItem('beizhu',oArea.value);
+				//哪个是被勾的,就存哪个的value;
+				for(var i=0;i<aRadio.length;i++){
+					if(aRadio[i].checked){
+						window.localStorage.setItem('superman',aRadio[i].value);
+					}
+				}
+			}
+		}
+		
+		
+		
+		
+		
+	</script>
+</html>

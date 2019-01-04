@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<div id='div'>
+			哈哈
+		</div>-->
+		<div id='div1'></div>
+	</body>
+	<script type="text/javascript">
+		
+		var id='div';
+		var str='哈哈哈哈';
+		
+		var oDiv=document.getElementById("div1");
+		//不支持换行。
+//		oDiv.innerHTML="<div id='"+id+"'>"+str+"</div>";
+
+//		字符串模板，需要变成变量的地方使用 ${变量名}，支持换行
+		oDiv.innerHTML=
+		`<div id='${id}'>
+			${str}
+		</div>`;
+
+		
+	</script>
+</html>

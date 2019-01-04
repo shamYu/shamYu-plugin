@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			.box>li{
+				float: left;
+				width: 200px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				background: red;
+				margin-left:1px;
+				cursor: pointer;
+			}
+			li ul{
+				display: none;
+			}
+			li li{
+				background: pink;
+				margin-top:1px;
+			}
+			a{
+				color:#fff;
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class='box'>
+			<li>
+				<a href="#">点我我就伸舌头</a>
+				<ul>
+					<li>舌头1</li>
+					<li>舌头2</li>
+					<li>舌头3</li>
+					<li>舌头4</li>
+					<li>舌头5</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">点我我就伸舌头</a>
+				<ul>
+					<li>舌头1</li>
+					<li>舌头2</li>
+					<li>舌头3</li>
+					<li>舌头4</li>
+					<li>舌头5</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">点我我就伸舌头</a>
+				<ul>
+					<li>舌头1</li>
+					<li>舌头2</li>
+					<li>舌头3</li>
+					<li>舌头4</li>
+					<li>舌头5</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">点我我就伸舌头</a>
+				<ul>
+					<li>舌头1</li>
+					<li>舌头2</li>
+					<li>舌头3</li>
+					<li>舌头4</li>
+					<li>舌头5</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">点我我就伸舌头</a>
+				<ul>
+					<li>舌头1</li>
+					<li>舌头2</li>
+					<li>舌头3</li>
+					<li>舌头4</li>
+					<li>舌头5</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		//给box内的子元素li添加点击事件，点击时显示它自身的子元素ul
+		//给box内的子元素li添加移入移出事件，移入时背景变orange，移出时变原来的颜色。
+		var oUl=document.getElementsByTagName('ul')[0];
+		var aLi=oUl.children;
+		
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].onclick=function () {
+				var oUl=this.getElementsByTagName('ul')[0];
+				oUl.style.display='block';
+			}
+			aLi[i].onmouseover=function () {
+				this.style.background='orange';
+			}
+			aLi[i].onmouseleave=function () {
+				this.style.background='red';
+			}
+		}
+		
+	</script>
+</html>

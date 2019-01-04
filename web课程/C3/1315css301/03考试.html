@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		
+//		1:多选第一题
+		
+		function show(){
+			console.log(this)//window
+		}		
+		show();
+		
+		(function(){console.log(this)})()//window
+
+//---------------------------------------------------------------------
+//		(function(){
+//			return function(){
+//				console.log(this)//window
+//			}
+//		})()()
+		
+//		以上写法等同于下面的写法,因此第二个括号调用return的函数
+//		var fn=(function(){
+//			return function(){
+//				console.log(this)
+//			}
+//		})();		
+//		fn()
+		
+//-----------------------------------------------------------------------------		
+		
+//		(function(){
+//			return function(){
+//				console.log(this)//window
+//			}
+//		}).call(document)();
+
+//-------------------------------------------------------------------------------
+	
+	var obj={a:1,b:2,c:3,d:4,e:5};
+	
+	for(var prop in obj){
+		setTimeout(log(prop),500);
+	}
+	
+	//第一个定时器作用域
+//	function log('a'){
+//		return function(){
+//			console.log('a'+":",5);
+//		}
+//	}
+	//第二个定时器作用域
+//	function log('b'){
+//		return function(){
+//			console.log('b'+":",5);
+//		}
+//	}
+	//第三个定时器作用域
+//	function log('c'){
+//		return function(){
+//			console.log('c'+":",5);
+//		}
+//	}
+	//第四个定时器作用域
+//	function log('d'){
+//		return function(){
+//			console.log('d'+":",5);
+//		}
+//	}
+	//第五个定时器作用域
+//	function log('e'){
+//		return function(){
+//			console.log('e'+":",5);
+//		}
+//	}
+	
+//	function log(i){
+//		return function(){
+//			console.log(i+":",obj[prop]);
+//		}
+//	}
+
+//--------------------------------------------------------------------------------------
+	
+//	var i=6;									i-- 
+//	while(i--){
+//		if(i%2){								6 5 4 3 2 1 0
+//			setTimeout(show(i),0)// 5,3,1
+//		}										i
+//	}											5 4 3 2 1 0
+//												
+//												i%2
+//	function show (i){							1 0 1 0 1 0
+//		return function(){
+//			console.log(i)
+//		}
+//	};
+	
+//---------------------------------------------------------------------------------------------	
+	
+	
+	
+	</script>
+</html>

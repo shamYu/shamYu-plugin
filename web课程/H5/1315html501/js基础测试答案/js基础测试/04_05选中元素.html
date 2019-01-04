@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id='div1' class='box'>
+			<div class='box'></div>
+			<div></div>
+			<div class='box'></div>
+			<div></div>
+		</div>
+		<div id='div2' class='box'>
+			<div></div>
+			<div class='box'></div>
+			<div class='box'></div>
+			<div></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+//		给div1与div2内的所有box添加样式100*100,红色背景,内容分别是'box1'和'box2';
+		function setEle (id) {
+			var oDiv=document.getElementById(id);
+			var aDiv=oDiv.getElementsByClassName('box');
+			for(var i=0;i<aDiv.length;i++){
+				aDiv[i].style.width='100px';
+				aDiv[i].style.height='100px';
+				aDiv[i].style.background='red';
+				aDiv[i].innerText='box'+(i+1);		
+			}				
+		}		
+		setEle('div1');
+		setEle('div2');	
+	</script>
+</html>

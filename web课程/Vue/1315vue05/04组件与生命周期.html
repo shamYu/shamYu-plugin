@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <up @send='1+1'></up>
+        <!-- 这4个show的调用顺序->class,title,show1,show2,从上到下，从左到右 -->
+        <p ref='p' :class='show("class")' :title='show("title")'>
+            {{show('show1')}}
+            {{show('show2')}}
+        </p>
+        <down></down>
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    //第一大步：创建数据，数据包括，data的普通属性，计算属性，methods属性，props属性
+    //html模板内的表达式在beforeMount与mounted之间进行求值。(计算属性在beforeMount之前求值)
+    //虚拟节点与watcher在beforeMount与mounted之间进行设置(vm拥有);
+
+    //如果有组件.钩子函数的执行顺序
+    // 父组件->beforeCreate->created->beforeMount
+    //         子组件up->beforeCreate->created->beforeMount
+    //             子组件down->beforeCreate->created->beforeMount
+
+    // 最后->子组件up->mounted->子组件down->mounted->父组件mounted
+
+    var up={
+        template:'<div></div>',
+        data(){
+            return {
+                msg:'组件的msg'
+            }
+        },
+        beforeCreate(){
+            debugger
+        },
+        created(){
+            debugger
+        },
+        beforeMount(){
+            debugger
+        },
+        mounted(){
+            debugger
+        }
+    }
+
+    var down={
+        template:'<div></div>',
+        data(){
+            return {
+                msg:'组件的msg'
+            }
+        },
+        beforeCreate(){
+            debugger
+        },
+        created(){
+            debugger
+        },
+        beforeMount(){
+            debugger
+        },
+        mounted(){
+            debugger
+        }
+    }
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:10
+        },
+        methods:{
+            show(val){
+                debugger;
+                // this.$refs.p.style.background='red';
+                console.log(val)
+            }
+        },
+        components:{up,down},
+        beforeCreate(){
+            debugger
+        },
+        created(){
+            debugger
+        },
+        beforeMount(){
+            debugger
+        },
+        mounted(){
+            debugger
+        }
+    });
+
+
+
+</script>
+</html>

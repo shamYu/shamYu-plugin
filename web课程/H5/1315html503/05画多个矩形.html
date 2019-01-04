@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				background: #000;
+			}
+			#oC{
+				background: #fff;
+				margin-left:200px;
+				margin-top:50px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id='oC' width="500" height="500">
+			您的浏览器不支持canvas绘图
+		</canvas>
+	</body>
+	<script type="text/javascript">
+		
+		var oC=document.getElementById("oC");
+		//oGc->绘图工具(画布)->通过canvas标签的getContext()就能获得一个绘图的工具.
+		var oGc=oC.getContext('2d');
+		
+		//前两个参数是左上角坐标。后两个参数就是矩形的宽高
+//		oGc.fillRect(100,100,100,100);
+//		oGc.fillRect(150,150,100,100);
+//		oGc.fillRect(200,200,100,100);
+//		oGc.fillRect(250,250,100,100);
+		
+		oGc.strokeRect(100,100,100,100);
+		oGc.strokeRect(150,150,100,100);
+		oGc.strokeRect(200,200,100,100);
+		oGc.strokeRect(250,250,100,100);
+		
+		
+	</script>
+</html>

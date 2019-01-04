@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'>
+        <input type="button" @click='change()' value='点击'>
+        {{obj.name}}
+        {{arr[0]}}
+    </div>
+</body>
+<script src="js/vue1.js"></script>
+<script>
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            obj:{},
+            arr:[],
+        },
+        methods:{
+            change(){
+                // this.obj.name='如花';
+                // this.arr[0]='屎壳郎';
+
+                // set方法会强制视图更新,就算参数不是watcher的依赖。
+
+                //通过构造函数Vue来调用
+                // Vue.set(this.obj,'name','如花');
+                //通过当前实例的$set方法来调用
+                this.$set(this.obj,'name','如花');
+
+                this.$set(this.arr,0,'屎壳郎')
+            }
+        }
+    })
+
+</script>
+</html>
