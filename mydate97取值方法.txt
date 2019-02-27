@@ -1,0 +1,12 @@
+ WdatePicker({
+                    el:id,
+                    skin:'whyGreen',
+                    dateFmt:'yyyy-MM',
+                    onpicked:function () {
+                        console.log($dp.cal.date)
+                        $scope.$apply(function () {
+                            ctrl.dateObject[type] = $dp.cal.date.M;
+                            $('#'+id).html("");  //去掉自动赋值
+                        })
+                    }
+                })
