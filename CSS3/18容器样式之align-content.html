@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+				list-style: none;
+			}
+			html,body{
+				height:100%
+			}
+			
+			ul{
+				width: 603px;
+				height: 100%;
+				/*弹性盒模型声明，要给容器添加这个样式。2012年的新语法*/
+				display:flex;
+				
+				flex-direction:row;
+				flex-wrap:wrap;
+				
+				/*flex-direction->项目的排序.
+				justify-content->水平方向的分布;
+				align-items->垂直方向的分布;
+				flex-wrap->是否换行,如何换行;
+				align-content->换行后垂直方向的分布;*/
+				
+				/*flex-flow->flex-direction和flex-wrap的另一种书写*/
+				
+				/*align-content: flex-start;
+				align-content: flex-end;*/
+				/*align-content: center;*/
+				/*align-content: space-around;*/
+				align-content: space-between;
+							
+			}
+			li{
+				width: 200px;
+				height: 100px;
+				background: red;
+				margin-left:1px;
+				margin-top:1px;
+				text-align: center;
+				line-height: 100px;
+				color:#fff;
+				font-size:24px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+	</body>
+</html>

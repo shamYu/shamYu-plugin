@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+				list-style: none;
+			}
+			
+			ul{
+				width: 500px;
+				/*弹性盒模型声明，要给容器添加这个样式。2012年的新语法*/
+				display:flex;
+				/*默认值,父元素宽不够时,不换行*/
+				/*flex-wrap:nowrap;*/
+				
+				/*父元素宽不够,设置换行*/				
+				/*flex-wrap:wrap;*/	
+				
+				/*往上换行*/
+				flex-wrap:wrap-reverse;			
+			}
+			li{
+				width: 200px;
+				height: 100px;
+				background: red;
+				margin-left:1px;
+				margin-top:1px;
+				text-align: center;
+				line-height: 100px;
+				color:#fff;
+				font-size:24px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>

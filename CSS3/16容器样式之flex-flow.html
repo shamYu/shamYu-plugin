@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+				list-style: none;
+			}
+			
+			ul{
+				width: 500px;
+				/*弹性盒模型声明，要给容器添加这个样式。2012年的新语法*/
+				display:flex;
+				
+				/*flex-direction: row-reverse;				
+				flex-wrap:wrap;*/
+				
+				/*是flex-direction与flex-wrap的简写*/
+				/*可以只写一个值,用以代替以上任意某个样式*/
+				flex-flow:row-reverse wrap;
+				/*flex-flow:wrap;*/
+					
+			}
+			li{
+				width: 200px;
+				height: 100px;
+				background: red;
+				margin-left:1px;
+				margin-top:1px;
+				text-align: center;
+				line-height: 100px;
+				color:#fff;
+				font-size:24px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>
