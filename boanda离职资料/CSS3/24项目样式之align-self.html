@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+				list-style: none;
+			}
+			html,body{
+				height:100%;
+			}
+			
+			/*order->自定义排序,值越小越靠前.
+			flex-frow->自动填满某条轴.取决于flex-direction的设置*/
+			/*flex-shrink->非0会缩小，0就是不缩小*/
+			/*flex-basis->width*/
+			/*align-self->项目自己的align-items*/
+			
+			/*flex:1 0 100px;->flex-frow,flex-shrink,flex-basis的简写*/
+			
+			ul{
+				height: 100%;
+				/*弹性盒模型声明，要给容器添加这个样式。2012年的新语法*/
+				display:flex;
+				flex-direction: column;
+				align-items: flex-start;		
+			}
+			li{				
+				width: 200px;
+				height: 100px;
+				background: red;
+				margin-left:1px;
+				margin-top:1px;
+				text-align: center;
+				line-height: 100px;
+				color:#fff;
+				font-size:24px;
+			}
+			li:nth-child(2){
+				/*让当前的项目子元素有一个自己的align-items对齐方式*/
+				align-self:center;
+			}
+			li:nth-child(3){
+				align-self: flex-end;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</body>
+</html>

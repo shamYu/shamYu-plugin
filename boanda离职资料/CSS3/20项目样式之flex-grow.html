@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+				list-style: none;
+			}
+			html,body{
+				height:100%
+			}
+			
+			ul{
+				height: 100%;
+				/*弹性盒模型声明，要给容器添加这个样式。2012年的新语法*/
+				display:flex;
+				flex-direction: column;	
+			}
+			li{
+				/*flex-grow->非0表示会放大，默认值是auto->与内容的宽一致*/
+				/*设置flex-grow非0之后,子元素会默认将父元素剩余的宽分掉.*/
+				/*父元素剩余的宽=父元素的宽-子元素原始宽的和*/
+				/*如何分,按grow的数值比例来分配父元素剩余的宽*/
+				/*设置flex-grow之后得到额外的宽
+				当前子元素的grow值/所有子元素grow值的总和*父元素剩余的宽*/				
+				/*设置flex-grow了之后的元素的宽->原始的宽+额外的宽*/
+				flex-grow:1;
+				height: 0;
+				/*为了让父元素剩余的宽和父元素的宽一致,将所有子元素默认的宽设为0*/
+				width: 100px;
+				background: red;
+				margin-left:1px;
+				margin-top:1px;
+				text-align: center;
+				line-height: 100px;
+				color:#fff;
+				font-size:24px;
+			}
+			li:nth-child(1){
+				flex-grow:2;
+			}
+			li:nth-child(2){
+				flex-grow:4;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>

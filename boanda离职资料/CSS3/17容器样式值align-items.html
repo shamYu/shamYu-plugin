@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+				list-style: none;
+			}
+			html,body{
+				height:100%
+			}
+			
+			ul{
+				height: 100%;
+				/*弹性盒模型声明，要给容器添加这个样式。2012年的新语法*/
+				display:flex;
+				
+				/*确定当前轴是X轴*/
+				flex-direction: row;
+				
+				/*当前轴方向居中*/
+				/*justify-content: center;*/
+				/*另一条轴方向居中分布*/								
+				/*align-items:center;*/
+				
+				/*设置在另一条轴的开始位置对齐*/
+				align-items:flex-start;
+				
+				/*设置在另一条轴的结束位置对齐*/
+				/*align-items:flex-end;*/
+				
+				/*项目的第一个的文本基线作为对齐线*/
+				/*align-items:baseline;*/
+						
+			}
+			li{
+				width: 200px;
+				height: 100px;
+				background: red;
+				margin-left:1px;
+				margin-top:1px;
+				text-align: center;
+				line-height: 100px;
+				color:#fff;
+				font-size:24px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li style='height:300px;background: green; font-size:200px;line-height: 300px;'>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>

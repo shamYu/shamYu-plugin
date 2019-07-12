@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding:0;
+				margin: 0;
+				list-style: none;
+			}
+			html,body{
+				height:100%
+			}
+			
+			ul{
+				height: 100%;
+				/*弹性盒模型声明，要给容器添加这个样式。2012年的新语法*/
+				display:flex;
+				/*排列在纵轴*/
+				flex-direction: column;	
+			}
+			li{
+				flex-grow:1;
+				height: 0;
+				/*为了让父元素剩余的宽和父元素的宽一致,将所有子元素默认的宽设为0*/
+				width: 200px;
+				background: red;
+				margin-left:1px;
+				margin-top:1px;
+				line-height: 100%;
+				text-align: center;
+				color:#fff;
+				font-size:24px;
+			}
+			li:nth-child(1){
+				flex-grow:2;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</body>
+</html>
